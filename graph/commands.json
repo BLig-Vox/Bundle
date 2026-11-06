@@ -1,0 +1,2491 @@
+{
+  "schemaVersion": 1,
+  "commands": [
+    {
+      "id": "command:artisan:--version",
+      "executable": "php artisan",
+      "name": "--version",
+      "namespace": null,
+      "occurrences": [
+        {
+          "ownerId": "item:369e48c67c415bbf",
+          "invocation": "php artisan --version",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 53,
+            "endLine": 53
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:about",
+      "executable": "php artisan",
+      "name": "about",
+      "namespace": null,
+      "occurrences": [
+        {
+          "ownerId": "item:2dfb6353e20e96db",
+          "invocation": "php artisan about",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 54,
+            "endLine": 54
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:auth:clear-resets",
+      "executable": "php artisan",
+      "name": "auth:clear-resets",
+      "namespace": "auth",
+      "occurrences": [
+        {
+          "ownerId": "item:1b0891d2902abed4",
+          "invocation": "auth:clear-resets",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 338,
+            "endLine": 338
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:cache:clear",
+      "executable": "php artisan",
+      "name": "cache:clear",
+      "namespace": "cache",
+      "occurrences": [
+        {
+          "ownerId": "item:56e4f19d42461512",
+          "invocation": "cache:clear",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 235,
+            "endLine": 235
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:cache:forget",
+      "executable": "php artisan",
+      "name": "cache:forget",
+      "namespace": "cache",
+      "occurrences": [
+        {
+          "ownerId": "item:38c7d3371c976dd7",
+          "invocation": "cache:forget",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 236,
+            "endLine": 236
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:cache:prune-stale-tags",
+      "executable": "php artisan",
+      "name": "cache:prune-stale-tags",
+      "namespace": "cache",
+      "occurrences": [
+        {
+          "ownerId": "item:a6c5af9e8ec69ebf",
+          "invocation": "cache:prune-stale-tags",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 237,
+            "endLine": 237
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:channel:list",
+      "executable": "php artisan",
+      "name": "channel:list",
+      "namespace": "channel",
+      "occurrences": [
+        {
+          "ownerId": "item:7b83ab52c716ff6f",
+          "invocation": "channel:list",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 346,
+            "endLine": 346
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:clear-compiled",
+      "executable": "php artisan",
+      "name": "clear-compiled",
+      "namespace": null,
+      "occurrences": [
+        {
+          "ownerId": "item:62156775a31f422b",
+          "invocation": "clear-compiled",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 255,
+            "endLine": 255
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:config:cache",
+      "executable": "php artisan",
+      "name": "config:cache",
+      "namespace": "config",
+      "occurrences": [
+        {
+          "ownerId": "item:56fec6003059a5be",
+          "invocation": "config:cache",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 229,
+            "endLine": 229
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:config:clear",
+      "executable": "php artisan",
+      "name": "config:clear",
+      "namespace": "config",
+      "occurrences": [
+        {
+          "ownerId": "item:399dc0281abbc2f8",
+          "invocation": "config:clear",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 230,
+            "endLine": 230
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:config:publish",
+      "executable": "php artisan",
+      "name": "config:publish",
+      "namespace": "config",
+      "occurrences": [
+        {
+          "ownerId": "item:652400405ed48a95",
+          "invocation": "config:publish",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 231,
+            "endLine": 231
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:config:show",
+      "executable": "php artisan",
+      "name": "config:show",
+      "namespace": "config",
+      "occurrences": [
+        {
+          "ownerId": "item:1ad0a3e1959f77f7",
+          "invocation": "config:show",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 228,
+            "endLine": 228
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:db",
+      "executable": "php artisan",
+      "name": "db",
+      "namespace": null,
+      "occurrences": [
+        {
+          "ownerId": "item:a68cd46199ec706a",
+          "invocation": "db",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 193,
+            "endLine": 193
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:db:monitor",
+      "executable": "php artisan",
+      "name": "db:monitor",
+      "namespace": "db",
+      "occurrences": [
+        {
+          "ownerId": "item:504aeedae0cc2a4d",
+          "invocation": "db:monitor",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 196,
+            "endLine": 196
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:db:seed",
+      "executable": "php artisan",
+      "name": "db:seed",
+      "namespace": "db",
+      "occurrences": [
+        {
+          "ownerId": "item:0f332552d6bead4b",
+          "invocation": "db:seed",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 186,
+            "endLine": 186
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:db:show",
+      "executable": "php artisan",
+      "name": "db:show",
+      "namespace": "db",
+      "occurrences": [
+        {
+          "ownerId": "item:0febc0b8cba0cfba",
+          "invocation": "db:show",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 194,
+            "endLine": 194
+          }
+        },
+        {
+          "ownerId": "example:4564d3d7475c7612",
+          "invocation": "php artisan db:show",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 202,
+            "endLine": 202
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:db:table",
+      "executable": "php artisan",
+      "name": "db:table",
+      "namespace": "db",
+      "occurrences": [
+        {
+          "ownerId": "item:2257190b9288502c",
+          "invocation": "db:table",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 195,
+            "endLine": 195
+          }
+        },
+        {
+          "ownerId": "example:4564d3d7475c7612",
+          "invocation": "php artisan db:table users",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 203,
+            "endLine": 203
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:db:wipe",
+      "executable": "php artisan",
+      "name": "db:wipe",
+      "namespace": "db",
+      "occurrences": [
+        {
+          "ownerId": "item:d33d12a3082466ff",
+          "invocation": "db:wipe",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 187,
+            "endLine": 187
+          }
+        },
+        {
+          "ownerId": "note:4315278bbf761ee4",
+          "invocation": "db:wipe",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 189,
+            "endLine": 189
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:dev",
+      "executable": "php artisan",
+      "name": "dev",
+      "namespace": null,
+      "occurrences": [
+        {
+          "ownerId": "item:50786f6bb9f458c2",
+          "invocation": "dev",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 74,
+            "endLine": 74
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:dev:list",
+      "executable": "php artisan",
+      "name": "dev:list",
+      "namespace": "dev",
+      "occurrences": [
+        {
+          "ownerId": "item:8b6457bf63c1137d",
+          "invocation": "dev:list",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 75,
+            "endLine": 75
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:docs",
+      "executable": "php artisan",
+      "name": "docs",
+      "namespace": null,
+      "occurrences": [
+        {
+          "ownerId": "item:106109619319f64f",
+          "invocation": "php artisan docs",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 55,
+            "endLine": 55
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:down",
+      "executable": "php artisan",
+      "name": "down",
+      "namespace": null,
+      "occurrences": [
+        {
+          "ownerId": "item:540fd87ef384edea",
+          "invocation": "down",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 335,
+            "endLine": 335
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:dusk",
+      "executable": "php artisan",
+      "name": "dusk",
+      "namespace": null,
+      "occurrences": [
+        {
+          "ownerId": "example:c62803563436ca1b",
+          "invocation": "php artisan dusk",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 428,
+            "endLine": 428
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:env",
+      "executable": "php artisan",
+      "name": "env",
+      "namespace": null,
+      "occurrences": [
+        {
+          "ownerId": "item:bb072c1e381a326b",
+          "invocation": "env",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 332,
+            "endLine": 332
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:env:decrypt",
+      "executable": "php artisan",
+      "name": "env:decrypt",
+      "namespace": "env",
+      "occurrences": [
+        {
+          "ownerId": "item:f8e87ab010a68bc4",
+          "invocation": "env:decrypt",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 334,
+            "endLine": 334
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:env:encrypt",
+      "executable": "php artisan",
+      "name": "env:encrypt",
+      "namespace": "env",
+      "occurrences": [
+        {
+          "ownerId": "item:8e8cd07161e9266e",
+          "invocation": "env:encrypt",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 333,
+            "endLine": 333
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:event:cache",
+      "executable": "php artisan",
+      "name": "event:cache",
+      "namespace": "event",
+      "occurrences": [
+        {
+          "ownerId": "item:4edb7aaca057000c",
+          "invocation": "event:cache",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 247,
+            "endLine": 247
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:event:clear",
+      "executable": "php artisan",
+      "name": "event:clear",
+      "namespace": "event",
+      "occurrences": [
+        {
+          "ownerId": "item:1a47667180cc2d5b",
+          "invocation": "event:clear",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 248,
+            "endLine": 248
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:event:generate",
+      "executable": "php artisan",
+      "name": "event:generate",
+      "namespace": "event",
+      "occurrences": [
+        {
+          "ownerId": "item:644dd38be1ddd69f",
+          "invocation": "event:generate",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 249,
+            "endLine": 249
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:event:list",
+      "executable": "php artisan",
+      "name": "event:list",
+      "namespace": "event",
+      "occurrences": [
+        {
+          "ownerId": "item:44f6d66ea839a1d4",
+          "invocation": "event:list",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 246,
+            "endLine": 246
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:help",
+      "executable": "php artisan",
+      "name": "help",
+      "namespace": null,
+      "occurrences": [
+        {
+          "ownerId": "item:1d05459bdb1f91d9",
+          "invocation": "php artisan help migrate",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 52,
+            "endLine": 52
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:horizon",
+      "executable": "php artisan",
+      "name": "horizon",
+      "namespace": null,
+      "occurrences": [
+        {
+          "ownerId": "example:e2c12f767fa44fdf",
+          "invocation": "php artisan horizon",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 410,
+            "endLine": 410
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:install:api",
+      "executable": "php artisan",
+      "name": "install:api",
+      "namespace": "install",
+      "occurrences": [
+        {
+          "ownerId": "item:a14a78f3eb98c326",
+          "invocation": "install:api",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 344,
+            "endLine": 344
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:install:broadcasting",
+      "executable": "php artisan",
+      "name": "install:broadcasting",
+      "namespace": "install",
+      "occurrences": [
+        {
+          "ownerId": "item:3878dd25a88a3bc4",
+          "invocation": "install:broadcasting",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 345,
+            "endLine": 345
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:key:generate",
+      "executable": "php artisan",
+      "name": "key:generate",
+      "namespace": "key",
+      "occurrences": [
+        {
+          "ownerId": "item:4d74120fdb77ebfa",
+          "invocation": "key:generate",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 331,
+            "endLine": 331
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:lang:publish",
+      "executable": "php artisan",
+      "name": "lang:publish",
+      "namespace": "lang",
+      "occurrences": [
+        {
+          "ownerId": "item:fef697176a0bc091",
+          "invocation": "lang:publish",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 349,
+            "endLine": 349
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:list",
+      "executable": "php artisan",
+      "name": "list",
+      "namespace": null,
+      "occurrences": [
+        {
+          "ownerId": "item:a473abf214a4fde1",
+          "invocation": "php artisan list",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 50,
+            "endLine": 50
+          }
+        },
+        {
+          "ownerId": "item:aeb924826cd86ec3",
+          "invocation": "php artisan list make",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 51,
+            "endLine": 51
+          }
+        },
+        {
+          "ownerId": "note:a19f088211d04bb1",
+          "invocation": "php artisan list",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 57,
+            "endLine": 57
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:make:cache-table",
+      "executable": "php artisan",
+      "name": "make:cache-table",
+      "namespace": "make",
+      "occurrences": [
+        {
+          "ownerId": "item:8eed2b736d492f6c",
+          "invocation": "make:cache-table",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 132,
+            "endLine": 132
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:make:cast",
+      "executable": "php artisan",
+      "name": "make:cast",
+      "namespace": "make",
+      "occurrences": [
+        {
+          "ownerId": "item:d54ad6e3e82cdd0b",
+          "invocation": "make:cast",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 113,
+            "endLine": 113
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:make:channel",
+      "executable": "php artisan",
+      "name": "make:channel",
+      "namespace": "make",
+      "occurrences": [
+        {
+          "ownerId": "item:34c29d6584fab606",
+          "invocation": "make:channel",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 125,
+            "endLine": 125
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:make:class",
+      "executable": "php artisan",
+      "name": "make:class",
+      "namespace": "make",
+      "occurrences": [
+        {
+          "ownerId": "item:603c05af5647956e",
+          "invocation": "make:class",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 90,
+            "endLine": 90
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:make:command",
+      "executable": "php artisan",
+      "name": "make:command",
+      "namespace": "make",
+      "occurrences": [
+        {
+          "ownerId": "item:5e61724ab2afcb50",
+          "invocation": "make:command",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 96,
+            "endLine": 96
+          }
+        },
+        {
+          "ownerId": "example:51a554c394e44281",
+          "invocation": "php artisan make:command ImportProducts",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 375,
+            "endLine": 375
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:make:component",
+      "executable": "php artisan",
+      "name": "make:component",
+      "namespace": "make",
+      "occurrences": [
+        {
+          "ownerId": "item:369160dcd0abfa20",
+          "invocation": "make:component",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 104,
+            "endLine": 104
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:make:config",
+      "executable": "php artisan",
+      "name": "make:config",
+      "namespace": "make",
+      "occurrences": [
+        {
+          "ownerId": "item:a6be0b5c1166ce9f",
+          "invocation": "make:config",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 95,
+            "endLine": 95
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:make:controller",
+      "executable": "php artisan",
+      "name": "make:controller",
+      "namespace": "make",
+      "occurrences": [
+        {
+          "ownerId": "item:a1d7160484e49cff",
+          "invocation": "make:controller",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 100,
+            "endLine": 100
+          }
+        },
+        {
+          "ownerId": "example:5809d10726645d4a",
+          "invocation": "php artisan make:controller PostController --resource --model=Post",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 151,
+            "endLine": 151
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:make:enum",
+      "executable": "php artisan",
+      "name": "make:enum",
+      "namespace": "make",
+      "occurrences": [
+        {
+          "ownerId": "item:cfaaf0ad0039c7da",
+          "invocation": "make:enum",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 93,
+            "endLine": 93
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:make:event",
+      "executable": "php artisan",
+      "name": "make:event",
+      "namespace": "make",
+      "occurrences": [
+        {
+          "ownerId": "item:e0d7a6b8dcb2b443",
+          "invocation": "make:event",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 119,
+            "endLine": 119
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:make:exception",
+      "executable": "php artisan",
+      "name": "make:exception",
+      "namespace": "make",
+      "occurrences": [
+        {
+          "ownerId": "item:54f1b3b85ad4a275",
+          "invocation": "make:exception",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 128,
+            "endLine": 128
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:make:factory",
+      "executable": "php artisan",
+      "name": "make:factory",
+      "namespace": "make",
+      "occurrences": [
+        {
+          "ownerId": "item:0770348f5619d279",
+          "invocation": "make:factory",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 111,
+            "endLine": 111
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:make:interface",
+      "executable": "php artisan",
+      "name": "make:interface",
+      "namespace": "make",
+      "occurrences": [
+        {
+          "ownerId": "item:13a747793db10a41",
+          "invocation": "make:interface",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 91,
+            "endLine": 91
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:make:job",
+      "executable": "php artisan",
+      "name": "make:job",
+      "namespace": "make",
+      "occurrences": [
+        {
+          "ownerId": "item:45dec3945bea6d16",
+          "invocation": "make:job",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 121,
+            "endLine": 121
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:make:job-middleware",
+      "executable": "php artisan",
+      "name": "make:job-middleware",
+      "namespace": "make",
+      "occurrences": [
+        {
+          "ownerId": "item:2d5ff28d8b518b4c",
+          "invocation": "make:job-middleware",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 122,
+            "endLine": 122
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:make:listener",
+      "executable": "php artisan",
+      "name": "make:listener",
+      "namespace": "make",
+      "occurrences": [
+        {
+          "ownerId": "item:2e17537480d4835c",
+          "invocation": "make:listener",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 120,
+            "endLine": 120
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:make:mail",
+      "executable": "php artisan",
+      "name": "make:mail",
+      "namespace": "make",
+      "occurrences": [
+        {
+          "ownerId": "item:323de6eb43357962",
+          "invocation": "make:mail",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 123,
+            "endLine": 123
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:make:middleware",
+      "executable": "php artisan",
+      "name": "make:middleware",
+      "namespace": "make",
+      "occurrences": [
+        {
+          "ownerId": "item:4ec8d5d75d6754be",
+          "invocation": "make:middleware",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 101,
+            "endLine": 101
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:make:migration",
+      "executable": "php artisan",
+      "name": "make:migration",
+      "namespace": "make",
+      "occurrences": [
+        {
+          "ownerId": "item:c8a2bf5bbda57bfc",
+          "invocation": "make:migration",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 110,
+            "endLine": 110
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:make:model",
+      "executable": "php artisan",
+      "name": "make:model",
+      "namespace": "make",
+      "occurrences": [
+        {
+          "ownerId": "item:6be6f423a4b3d3db",
+          "invocation": "make:model",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 109,
+            "endLine": 109
+          }
+        },
+        {
+          "ownerId": "example:b5a865a7e2f19af7",
+          "invocation": "php artisan make:model Post -mfs",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 145,
+            "endLine": 145
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:make:notification",
+      "executable": "php artisan",
+      "name": "make:notification",
+      "namespace": "make",
+      "occurrences": [
+        {
+          "ownerId": "item:7cb946c4c6625f67",
+          "invocation": "make:notification",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 124,
+            "endLine": 124
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:make:notifications-table",
+      "executable": "php artisan",
+      "name": "make:notifications-table",
+      "namespace": "make",
+      "occurrences": [
+        {
+          "ownerId": "item:c5ff7fa8e4af5936",
+          "invocation": "make:notifications-table",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 134,
+            "endLine": 134
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:make:observer",
+      "executable": "php artisan",
+      "name": "make:observer",
+      "namespace": "make",
+      "occurrences": [
+        {
+          "ownerId": "item:b3b822f1d7197604",
+          "invocation": "make:observer",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 115,
+            "endLine": 115
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:make:policy",
+      "executable": "php artisan",
+      "name": "make:policy",
+      "namespace": "make",
+      "occurrences": [
+        {
+          "ownerId": "item:2e3628a280a09b5d",
+          "invocation": "make:policy",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 126,
+            "endLine": 126
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:make:provider",
+      "executable": "php artisan",
+      "name": "make:provider",
+      "namespace": "make",
+      "occurrences": [
+        {
+          "ownerId": "item:d702150d7341457d",
+          "invocation": "make:provider",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 94,
+            "endLine": 94
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:make:queue-batches-table",
+      "executable": "php artisan",
+      "name": "make:queue-batches-table",
+      "namespace": "make",
+      "occurrences": [
+        {
+          "ownerId": "item:fa67d667eee824ee",
+          "invocation": "make:queue-batches-table",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 137,
+            "endLine": 137
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:make:queue-failed-table",
+      "executable": "php artisan",
+      "name": "make:queue-failed-table",
+      "namespace": "make",
+      "occurrences": [
+        {
+          "ownerId": "item:80c97dbb1b51bd01",
+          "invocation": "make:queue-failed-table",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 136,
+            "endLine": 136
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:make:queue-table",
+      "executable": "php artisan",
+      "name": "make:queue-table",
+      "namespace": "make",
+      "occurrences": [
+        {
+          "ownerId": "item:db1945c49c603472",
+          "invocation": "make:queue-table",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 135,
+            "endLine": 135
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:make:request",
+      "executable": "php artisan",
+      "name": "make:request",
+      "namespace": "make",
+      "occurrences": [
+        {
+          "ownerId": "item:73648782a6345304",
+          "invocation": "make:request",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 102,
+            "endLine": 102
+          }
+        },
+        {
+          "ownerId": "example:ad971408ef6cbd26",
+          "invocation": "php artisan make:request StorePostRequest",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 157,
+            "endLine": 157
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:make:resource",
+      "executable": "php artisan",
+      "name": "make:resource",
+      "namespace": "make",
+      "occurrences": [
+        {
+          "ownerId": "item:38c9e9803187641a",
+          "invocation": "make:resource",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 103,
+            "endLine": 103
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:make:rule",
+      "executable": "php artisan",
+      "name": "make:rule",
+      "namespace": "make",
+      "occurrences": [
+        {
+          "ownerId": "item:89af2147c9d270e6",
+          "invocation": "make:rule",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 127,
+            "endLine": 127
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:make:scope",
+      "executable": "php artisan",
+      "name": "make:scope",
+      "namespace": "make",
+      "occurrences": [
+        {
+          "ownerId": "item:ea0baccaddc8039a",
+          "invocation": "make:scope",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 114,
+            "endLine": 114
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:make:seeder",
+      "executable": "php artisan",
+      "name": "make:seeder",
+      "namespace": "make",
+      "occurrences": [
+        {
+          "ownerId": "item:c6ed4d107809aac3",
+          "invocation": "make:seeder",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 112,
+            "endLine": 112
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:make:session-table",
+      "executable": "php artisan",
+      "name": "make:session-table",
+      "namespace": "make",
+      "occurrences": [
+        {
+          "ownerId": "item:b79681846a2a68c0",
+          "invocation": "make:session-table",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 133,
+            "endLine": 133
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:make:test",
+      "executable": "php artisan",
+      "name": "make:test",
+      "namespace": "make",
+      "occurrences": [
+        {
+          "ownerId": "item:ac7f5bcc1a7a9412",
+          "invocation": "make:test",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 138,
+            "endLine": 138
+          }
+        },
+        {
+          "ownerId": "example:9b6486e6a677a60d",
+          "invocation": "php artisan make:test PostTest",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 163,
+            "endLine": 163
+          }
+        },
+        {
+          "ownerId": "example:f628510d874da692",
+          "invocation": "php artisan make:test PostTest --unit",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 169,
+            "endLine": 169
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:make:trait",
+      "executable": "php artisan",
+      "name": "make:trait",
+      "namespace": "make",
+      "occurrences": [
+        {
+          "ownerId": "item:6892a9c937a46b76",
+          "invocation": "make:trait",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 92,
+            "endLine": 92
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:make:view",
+      "executable": "php artisan",
+      "name": "make:view",
+      "namespace": "make",
+      "occurrences": [
+        {
+          "ownerId": "item:431f9c44edb35476",
+          "invocation": "make:view",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 105,
+            "endLine": 105
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:migrate",
+      "executable": "php artisan",
+      "name": "migrate",
+      "namespace": null,
+      "occurrences": [
+        {
+          "ownerId": "item:8a815613fb429e5c",
+          "invocation": "migrate",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 177,
+            "endLine": 177
+          }
+        },
+        {
+          "ownerId": "example:ce7e499c400be290",
+          "invocation": "./vendor/bin/sail artisan migrate",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 398,
+            "endLine": 398
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:migrate:check",
+      "executable": "php artisan",
+      "name": "migrate:check",
+      "namespace": "migrate",
+      "occurrences": [
+        {
+          "ownerId": "note:72b41c9a80e4685f",
+          "invocation": "migrate:check",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 36,
+            "endLine": 36
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:migrate:fresh",
+      "executable": "php artisan",
+      "name": "migrate:fresh",
+      "namespace": "migrate",
+      "occurrences": [
+        {
+          "ownerId": "item:29e04413d30ceeed",
+          "invocation": "migrate:fresh",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 182,
+            "endLine": 182
+          }
+        },
+        {
+          "ownerId": "note:4315278bbf761ee4",
+          "invocation": "migrate:fresh",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 189,
+            "endLine": 189
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:migrate:install",
+      "executable": "php artisan",
+      "name": "migrate:install",
+      "namespace": "migrate",
+      "occurrences": [
+        {
+          "ownerId": "item:218ca3cea85438a3",
+          "invocation": "migrate:install",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 183,
+            "endLine": 183
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:migrate:refresh",
+      "executable": "php artisan",
+      "name": "migrate:refresh",
+      "namespace": "migrate",
+      "occurrences": [
+        {
+          "ownerId": "item:c3cace7040cb6a4a",
+          "invocation": "migrate:refresh",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 181,
+            "endLine": 181
+          }
+        },
+        {
+          "ownerId": "note:4315278bbf761ee4",
+          "invocation": "migrate:refresh",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 189,
+            "endLine": 189
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:migrate:reset",
+      "executable": "php artisan",
+      "name": "migrate:reset",
+      "namespace": "migrate",
+      "occurrences": [
+        {
+          "ownerId": "item:9e2465de13b97e7f",
+          "invocation": "migrate:reset",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 180,
+            "endLine": 180
+          }
+        },
+        {
+          "ownerId": "note:4315278bbf761ee4",
+          "invocation": "migrate:reset",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 189,
+            "endLine": 189
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:migrate:rollback",
+      "executable": "php artisan",
+      "name": "migrate:rollback",
+      "namespace": "migrate",
+      "occurrences": [
+        {
+          "ownerId": "item:f064806ae3dd0f60",
+          "invocation": "migrate:rollback",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 179,
+            "endLine": 179
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:migrate:status",
+      "executable": "php artisan",
+      "name": "migrate:status",
+      "namespace": "migrate",
+      "occurrences": [
+        {
+          "ownerId": "item:a7350a199d2ab91e",
+          "invocation": "migrate:status",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 178,
+            "endLine": 178
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:migrate:uninstall",
+      "executable": "php artisan",
+      "name": "migrate:uninstall",
+      "namespace": "migrate",
+      "occurrences": [
+        {
+          "ownerId": "item:f4915c707e8c7d11",
+          "invocation": "migrate:uninstall",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 184,
+            "endLine": 184
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:model:prune",
+      "executable": "php artisan",
+      "name": "model:prune",
+      "namespace": "model",
+      "occurrences": [
+        {
+          "ownerId": "item:2c9da268301e36c3",
+          "invocation": "model:prune",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 198,
+            "endLine": 198
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:model:show",
+      "executable": "php artisan",
+      "name": "model:show",
+      "namespace": "model",
+      "occurrences": [
+        {
+          "ownerId": "item:1ea05cd9da618f37",
+          "invocation": "model:show",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 197,
+            "endLine": 197
+          }
+        },
+        {
+          "ownerId": "example:4564d3d7475c7612",
+          "invocation": "php artisan model:show User",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 204,
+            "endLine": 204
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:octane:start",
+      "executable": "php artisan",
+      "name": "octane:start",
+      "namespace": "octane",
+      "occurrences": [
+        {
+          "ownerId": "example:4aeafbbb4e3330c6",
+          "invocation": "php artisan octane:start",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 416,
+            "endLine": 416
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:optimize",
+      "executable": "php artisan",
+      "name": "optimize",
+      "namespace": null,
+      "occurrences": [
+        {
+          "ownerId": "item:ab8c075e1dd534d8",
+          "invocation": "optimize",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 253,
+            "endLine": 253
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:optimize:clear",
+      "executable": "php artisan",
+      "name": "optimize:clear",
+      "namespace": "optimize",
+      "occurrences": [
+        {
+          "ownerId": "item:2a68cac959fa58a5",
+          "invocation": "optimize:clear",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 254,
+            "endLine": 254
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:package:discover",
+      "executable": "php artisan",
+      "name": "package:discover",
+      "namespace": "package",
+      "occurrences": [
+        {
+          "ownerId": "item:f4a10da3896658c9",
+          "invocation": "package:discover",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 348,
+            "endLine": 348
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:pail",
+      "executable": "php artisan",
+      "name": "pail",
+      "namespace": null,
+      "occurrences": [
+        {
+          "ownerId": "item:0cbcf7314a0f15cf",
+          "invocation": "pail",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 77,
+            "endLine": 77
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:queue:clear",
+      "executable": "php artisan",
+      "name": "queue:clear",
+      "namespace": "queue",
+      "occurrences": [
+        {
+          "ownerId": "item:d3a1b4cc6b7590d1",
+          "invocation": "queue:clear",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 265,
+            "endLine": 265
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:queue:failed",
+      "executable": "php artisan",
+      "name": "queue:failed",
+      "namespace": "queue",
+      "occurrences": [
+        {
+          "ownerId": "item:0c2043e1861df00a",
+          "invocation": "queue:failed",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 266,
+            "endLine": 266
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:queue:flush",
+      "executable": "php artisan",
+      "name": "queue:flush",
+      "namespace": "queue",
+      "occurrences": [
+        {
+          "ownerId": "item:14c4459a8baa0653",
+          "invocation": "queue:flush",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 270,
+            "endLine": 270
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:queue:forget",
+      "executable": "php artisan",
+      "name": "queue:forget",
+      "namespace": "queue",
+      "occurrences": [
+        {
+          "ownerId": "item:918d0f58644d9f35",
+          "invocation": "queue:forget",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 269,
+            "endLine": 269
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:queue:listen",
+      "executable": "php artisan",
+      "name": "queue:listen",
+      "namespace": "queue",
+      "occurrences": [
+        {
+          "ownerId": "item:8761668c254a3bb9",
+          "invocation": "queue:listen",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 260,
+            "endLine": 260
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:queue:monitor",
+      "executable": "php artisan",
+      "name": "queue:monitor",
+      "namespace": "queue",
+      "occurrences": [
+        {
+          "ownerId": "item:f19b5e31ac171b66",
+          "invocation": "queue:monitor",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 264,
+            "endLine": 264
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:queue:pause",
+      "executable": "php artisan",
+      "name": "queue:pause",
+      "namespace": "queue",
+      "occurrences": [
+        {
+          "ownerId": "item:266316ce40d020a3",
+          "invocation": "queue:pause",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 262,
+            "endLine": 262
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:queue:prune-batches",
+      "executable": "php artisan",
+      "name": "queue:prune-batches",
+      "namespace": "queue",
+      "occurrences": [
+        {
+          "ownerId": "item:f25df58f99a48e08",
+          "invocation": "queue:prune-batches",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 272,
+            "endLine": 272
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:queue:prune-failed",
+      "executable": "php artisan",
+      "name": "queue:prune-failed",
+      "namespace": "queue",
+      "occurrences": [
+        {
+          "ownerId": "item:939059db77901e1e",
+          "invocation": "queue:prune-failed",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 271,
+            "endLine": 271
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:queue:restart",
+      "executable": "php artisan",
+      "name": "queue:restart",
+      "namespace": "queue",
+      "occurrences": [
+        {
+          "ownerId": "item:c422280c723e82f9",
+          "invocation": "queue:restart",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 261,
+            "endLine": 261
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:queue:resume",
+      "executable": "php artisan",
+      "name": "queue:resume",
+      "namespace": "queue",
+      "occurrences": [
+        {
+          "ownerId": "item:9ed11d9f729b1e6d",
+          "invocation": "queue:resume",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 263,
+            "endLine": 263
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:queue:retry",
+      "executable": "php artisan",
+      "name": "queue:retry",
+      "namespace": "queue",
+      "occurrences": [
+        {
+          "ownerId": "item:e949512aa6eda179",
+          "invocation": "queue:retry",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 267,
+            "endLine": 267
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:queue:retry-batch",
+      "executable": "php artisan",
+      "name": "queue:retry-batch",
+      "namespace": "queue",
+      "occurrences": [
+        {
+          "ownerId": "item:dd9830329fbd5699",
+          "invocation": "queue:retry-batch",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 268,
+            "endLine": 268
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:queue:work",
+      "executable": "php artisan",
+      "name": "queue:work",
+      "namespace": "queue",
+      "occurrences": [
+        {
+          "ownerId": "item:4326cecded7d2255",
+          "invocation": "queue:work",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 259,
+            "endLine": 259
+          }
+        },
+        {
+          "ownerId": "example:3a628e1479dcb51a",
+          "invocation": "php artisan queue:work --queue=high,default --tries=3 --timeout=90",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 276,
+            "endLine": 276
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:reload",
+      "executable": "php artisan",
+      "name": "reload",
+      "namespace": null,
+      "occurrences": [
+        {
+          "ownerId": "item:01a41a1bfa3ed567",
+          "invocation": "reload",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 337,
+            "endLine": 337
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:reverb:start",
+      "executable": "php artisan",
+      "name": "reverb:start",
+      "namespace": "reverb",
+      "occurrences": [
+        {
+          "ownerId": "example:1d5f8d676f32671e",
+          "invocation": "php artisan reverb:start",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 422,
+            "endLine": 422
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:route:cache",
+      "executable": "php artisan",
+      "name": "route:cache",
+      "namespace": "route",
+      "occurrences": [
+        {
+          "ownerId": "item:c39cd19380c38dde",
+          "invocation": "route:cache",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 210,
+            "endLine": 210
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:route:clear",
+      "executable": "php artisan",
+      "name": "route:clear",
+      "namespace": "route",
+      "occurrences": [
+        {
+          "ownerId": "item:359163eda67d6fb3",
+          "invocation": "route:clear",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 211,
+            "endLine": 211
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:route:list",
+      "executable": "php artisan",
+      "name": "route:list",
+      "namespace": "route",
+      "occurrences": [
+        {
+          "ownerId": "item:267bbd4666d6fec2",
+          "invocation": "route:list",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 209,
+            "endLine": 209
+          }
+        },
+        {
+          "ownerId": "example:14b005d688007d33",
+          "invocation": "php artisan route:list --path=api",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 215,
+            "endLine": 215
+          }
+        },
+        {
+          "ownerId": "example:6828d3aebd393598",
+          "invocation": "php artisan route:list -v",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 221,
+            "endLine": 221
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:schedule:clear-cache",
+      "executable": "php artisan",
+      "name": "schedule:clear-cache",
+      "namespace": "schedule",
+      "occurrences": [
+        {
+          "ownerId": "item:40193e8ea992b036",
+          "invocation": "schedule:clear-cache",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 288,
+            "endLine": 288
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:schedule:finish",
+      "executable": "php artisan",
+      "name": "schedule:finish",
+      "namespace": "schedule",
+      "occurrences": [
+        {
+          "ownerId": "item:f1c1162d1bed9333",
+          "invocation": "schedule:finish",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 291,
+            "endLine": 291
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:schedule:interrupt",
+      "executable": "php artisan",
+      "name": "schedule:interrupt",
+      "namespace": "schedule",
+      "occurrences": [
+        {
+          "ownerId": "item:b14d388af60b8212",
+          "invocation": "schedule:interrupt",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 287,
+            "endLine": 287
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:schedule:list",
+      "executable": "php artisan",
+      "name": "schedule:list",
+      "namespace": "schedule",
+      "occurrences": [
+        {
+          "ownerId": "item:0b98ce5da58298ed",
+          "invocation": "schedule:list",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 283,
+            "endLine": 283
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:schedule:pause",
+      "executable": "php artisan",
+      "name": "schedule:pause",
+      "namespace": "schedule",
+      "occurrences": [
+        {
+          "ownerId": "item:949dbe5cedb32fa6",
+          "invocation": "schedule:pause",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 289,
+            "endLine": 289
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:schedule:resume",
+      "executable": "php artisan",
+      "name": "schedule:resume",
+      "namespace": "schedule",
+      "occurrences": [
+        {
+          "ownerId": "item:4b90aeae9b305e34",
+          "invocation": "schedule:resume",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 290,
+            "endLine": 290
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:schedule:run",
+      "executable": "php artisan",
+      "name": "schedule:run",
+      "namespace": "schedule",
+      "occurrences": [
+        {
+          "ownerId": "item:800774b47e504511",
+          "invocation": "schedule:run",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 284,
+            "endLine": 284
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:schedule:test",
+      "executable": "php artisan",
+      "name": "schedule:test",
+      "namespace": "schedule",
+      "occurrences": [
+        {
+          "ownerId": "item:c5c68e40674b30f6",
+          "invocation": "schedule:test",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 286,
+            "endLine": 286
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:schedule:work",
+      "executable": "php artisan",
+      "name": "schedule:work",
+      "namespace": "schedule",
+      "occurrences": [
+        {
+          "ownerId": "item:c83d15eb83e26911",
+          "invocation": "schedule:work",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 285,
+            "endLine": 285
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:schema:dump",
+      "executable": "php artisan",
+      "name": "schema:dump",
+      "namespace": "schema",
+      "occurrences": [
+        {
+          "ownerId": "item:490e682650e3bd11",
+          "invocation": "schema:dump",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 185,
+            "endLine": 185
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:schema:sql",
+      "executable": "php artisan",
+      "name": "schema:sql",
+      "namespace": "schema",
+      "occurrences": [
+        {
+          "ownerId": "note:72b41c9a80e4685f",
+          "invocation": "schema:sql",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 36,
+            "endLine": 36
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:scout:import",
+      "executable": "php artisan",
+      "name": "scout:import",
+      "namespace": "scout",
+      "occurrences": [
+        {
+          "ownerId": "example:4b358724328232e7",
+          "invocation": "php artisan scout:import \"App\\Models\\Post\"",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 434,
+            "endLine": 434
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:serve",
+      "executable": "php artisan",
+      "name": "serve",
+      "namespace": null,
+      "occurrences": [
+        {
+          "ownerId": "item:ebaf80f41d527730",
+          "invocation": "serve",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 73,
+            "endLine": 73
+          }
+        },
+        {
+          "ownerId": "example:367d7af8c6bb0909",
+          "invocation": "php artisan serve --host=127.0.0.1 --port=8000",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 81,
+            "endLine": 81
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:storage:link",
+      "executable": "php artisan",
+      "name": "storage:link",
+      "namespace": "storage",
+      "occurrences": [
+        {
+          "ownerId": "item:08f3d27e01c3d510",
+          "invocation": "storage:link",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 339,
+            "endLine": 339
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:storage:unlink",
+      "executable": "php artisan",
+      "name": "storage:unlink",
+      "namespace": "storage",
+      "occurrences": [
+        {
+          "ownerId": "item:f52a689b36b662f0",
+          "invocation": "storage:unlink",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 340,
+            "endLine": 340
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:stub:publish",
+      "executable": "php artisan",
+      "name": "stub:publish",
+      "namespace": "stub",
+      "occurrences": [
+        {
+          "ownerId": "item:85cc55f43fe0a9a7",
+          "invocation": "stub:publish",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 173,
+            "endLine": 173
+          }
+        },
+        {
+          "ownerId": "item:01aaaed8b08b5e26",
+          "invocation": "stub:publish",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 350,
+            "endLine": 350
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:test",
+      "executable": "php artisan",
+      "name": "test",
+      "namespace": null,
+      "occurrences": [
+        {
+          "ownerId": "example:1220f5fe77c673ac",
+          "invocation": "php artisan test",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 298,
+            "endLine": 298
+          }
+        },
+        {
+          "ownerId": "example:c48ed8d342c37146",
+          "invocation": "php artisan test tests/Feature/ExampleTest.php",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 304,
+            "endLine": 304
+          }
+        },
+        {
+          "ownerId": "example:b98ea7ab03a92194",
+          "invocation": "php artisan test --filter=ExampleTest",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 310,
+            "endLine": 310
+          }
+        },
+        {
+          "ownerId": "example:a7bb3b4850c44a2c",
+          "invocation": "php artisan test --parallel",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 316,
+            "endLine": 316
+          }
+        },
+        {
+          "ownerId": "example:86318bac06521379",
+          "invocation": "php artisan test --coverage",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 322,
+            "endLine": 322
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:tinker",
+      "executable": "php artisan",
+      "name": "tinker",
+      "namespace": null,
+      "occurrences": [
+        {
+          "ownerId": "item:7e267621a023cdfc",
+          "invocation": "tinker",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 76,
+            "endLine": 76
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:up",
+      "executable": "php artisan",
+      "name": "up",
+      "namespace": null,
+      "occurrences": [
+        {
+          "ownerId": "item:909a2df28a8c6c0d",
+          "invocation": "up",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 336,
+            "endLine": 336
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:vendor:publish",
+      "executable": "php artisan",
+      "name": "vendor:publish",
+      "namespace": "vendor",
+      "occurrences": [
+        {
+          "ownerId": "item:7ea7d62a4f469484",
+          "invocation": "vendor:publish",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 347,
+            "endLine": 347
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:view:cache",
+      "executable": "php artisan",
+      "name": "view:cache",
+      "namespace": "view",
+      "occurrences": [
+        {
+          "ownerId": "item:538868e75d9d4e5b",
+          "invocation": "view:cache",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 241,
+            "endLine": 241
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:artisan:view:clear",
+      "executable": "php artisan",
+      "name": "view:clear",
+      "namespace": "view",
+      "occurrences": [
+        {
+          "ownerId": "item:845cb2eece0d984c",
+          "invocation": "view:clear",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 242,
+            "endLine": 242
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:installer:new",
+      "executable": "laravel",
+      "name": "new",
+      "namespace": null,
+      "occurrences": [
+        {
+          "ownerId": "example:f34c3d2297d52ada",
+          "invocation": "laravel new my-app",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 64,
+            "endLine": 64
+          }
+        }
+      ]
+    },
+    {
+      "id": "command:pint:pint",
+      "executable": "./vendor/bin/pint",
+      "name": "pint",
+      "namespace": null,
+      "occurrences": [
+        {
+          "ownerId": "example:cba94b6a872e108b",
+          "invocation": "./vendor/bin/pint",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 404,
+            "endLine": 404
+          }
+        }
+      ]
+    }
+  ]
+}

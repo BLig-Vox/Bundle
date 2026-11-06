@@ -1,0 +1,4167 @@
+{
+  "schemaVersion": 1,
+  "nodes": [
+    {
+      "id": "document:progress",
+      "type": "document",
+      "label": "Laravel CLI Features Checklist"
+    },
+    {
+      "id": "document:progress/section:bundle-orm-and-migration-status",
+      "type": "section",
+      "label": "Bundle ORM and migration status"
+    },
+    {
+      "id": "document:progress/section:bundle-orm-and-migration-status/section:implemented-with-real-sqlite-test-evidence",
+      "type": "section",
+      "label": "Implemented with real SQLite test evidence"
+    },
+    {
+      "id": "document:progress/section:bundle-orm-and-migration-status/section:postgresql-and-mariadb-implemented-paths-incomplete-live-verification",
+      "type": "section",
+      "label": "PostgreSQL and MariaDB: implemented paths, incomplete live verification"
+    },
+    {
+      "id": "document:progress/section:bundle-orm-and-migration-status/section:sql-preview-is-not-full-simulation",
+      "type": "section",
+      "label": "SQL preview is not full simulation"
+    },
+    {
+      "id": "document:progress/section:bundle-orm-and-migration-status/section:remaining-verification-and-compatibility-gaps",
+      "type": "section",
+      "label": "Remaining verification and compatibility gaps"
+    },
+    {
+      "id": "document:progress/section:1-command-discovery-and-help",
+      "type": "section",
+      "label": "1. Command discovery and help"
+    },
+    {
+      "id": "document:progress/section:2-project-creation",
+      "type": "section",
+      "label": "2. Project creation"
+    },
+    {
+      "id": "document:progress/section:3-local-development",
+      "type": "section",
+      "label": "3. Local development"
+    },
+    {
+      "id": "document:progress/section:4-code-generation",
+      "type": "section",
+      "label": "4. Code generation"
+    },
+    {
+      "id": "document:progress/section:4-code-generation/section:application-structure",
+      "type": "section",
+      "label": "Application structure"
+    },
+    {
+      "id": "document:progress/section:4-code-generation/section:http-and-presentation",
+      "type": "section",
+      "label": "HTTP and presentation"
+    },
+    {
+      "id": "document:progress/section:4-code-generation/section:database-and-eloquent",
+      "type": "section",
+      "label": "Database and Eloquent"
+    },
+    {
+      "id": "document:progress/section:4-code-generation/section:application-behavior",
+      "type": "section",
+      "label": "Application behavior"
+    },
+    {
+      "id": "document:progress/section:4-code-generation/section:infrastructure-and-testing",
+      "type": "section",
+      "label": "Infrastructure and testing"
+    },
+    {
+      "id": "document:progress/section:4-code-generation/section:generator-examples-and-customization",
+      "type": "section",
+      "label": "Generator examples and customization"
+    },
+    {
+      "id": "document:progress/section:5-database-migrations-and-schema-management",
+      "type": "section",
+      "label": "5. Database migrations and schema management"
+    },
+    {
+      "id": "document:progress/section:6-database-inspection-and-model-maintenance",
+      "type": "section",
+      "label": "6. Database inspection and model maintenance"
+    },
+    {
+      "id": "document:progress/section:7-routing",
+      "type": "section",
+      "label": "7. Routing"
+    },
+    {
+      "id": "document:progress/section:8-configuration-caching-and-optimization",
+      "type": "section",
+      "label": "8. Configuration, caching, and optimization"
+    },
+    {
+      "id": "document:progress/section:8-configuration-caching-and-optimization/section:configuration",
+      "type": "section",
+      "label": "Configuration"
+    },
+    {
+      "id": "document:progress/section:8-configuration-caching-and-optimization/section:application-cache",
+      "type": "section",
+      "label": "Application cache"
+    },
+    {
+      "id": "document:progress/section:8-configuration-caching-and-optimization/section:blade-views",
+      "type": "section",
+      "label": "Blade views"
+    },
+    {
+      "id": "document:progress/section:8-configuration-caching-and-optimization/section:events",
+      "type": "section",
+      "label": "Events"
+    },
+    {
+      "id": "document:progress/section:8-configuration-caching-and-optimization/section:combined-optimization-and-compiled-files",
+      "type": "section",
+      "label": "Combined optimization and compiled files"
+    },
+    {
+      "id": "document:progress/section:9-queue-and-background-job-management",
+      "type": "section",
+      "label": "9. Queue and background-job management"
+    },
+    {
+      "id": "document:progress/section:10-task-scheduling",
+      "type": "section",
+      "label": "10. Task scheduling"
+    },
+    {
+      "id": "document:progress/section:11-testing",
+      "type": "section",
+      "label": "11. Testing"
+    },
+    {
+      "id": "document:progress/section:12-application-operations-and-environment-management",
+      "type": "section",
+      "label": "12. Application operations and environment management"
+    },
+    {
+      "id": "document:progress/section:13-feature-installation-and-package-integration",
+      "type": "section",
+      "label": "13. Feature installation and package integration"
+    },
+    {
+      "id": "document:progress/section:14-building-your-own-cli-commands",
+      "type": "section",
+      "label": "14. Building your own CLI commands"
+    },
+    {
+      "id": "document:progress/section:15-optional-ecosystem-cli-tools",
+      "type": "section",
+      "label": "15. Optional ecosystem CLI tools"
+    },
+    {
+      "id": "document:progress/section:15-optional-ecosystem-cli-tools/section:ecosystem-command-examples",
+      "type": "section",
+      "label": "Ecosystem command examples"
+    },
+    {
+      "id": "document:progress/section:sources",
+      "type": "section",
+      "label": "Sources"
+    },
+    {
+      "id": "item:a473abf214a4fde1",
+      "type": "item",
+      "label": "`php artisan list` — List every registered command."
+    },
+    {
+      "id": "item:aeb924826cd86ec3",
+      "type": "item",
+      "label": "`php artisan list make` — List code-generation commands."
+    },
+    {
+      "id": "item:1d05459bdb1f91d9",
+      "type": "item",
+      "label": "`php artisan help migrate` — Show arguments and options."
+    },
+    {
+      "id": "item:369e48c67c415bbf",
+      "type": "item",
+      "label": "`php artisan --version` — Show the framework version."
+    },
+    {
+      "id": "item:2dfb6353e20e96db",
+      "type": "item",
+      "label": "`php artisan about` — Show application/environment information."
+    },
+    {
+      "id": "item:106109619319f64f",
+      "type": "item",
+      "label": "`php artisan docs` — Open Laravel documentation."
+    },
+    {
+      "id": "item:2d778bcb7b7ea836",
+      "type": "item",
+      "label": "Create and configure an application using the separate Laravel installer:"
+    },
+    {
+      "id": "item:6b96be38c5be38bb",
+      "type": "item",
+      "label": "Use the installer’s interactive setup to choose options such as starter kits, database, and testing framework. Available choices and flags depend on the installer version."
+    },
+    {
+      "id": "item:ebaf80f41d527730",
+      "type": "item",
+      "label": "`serve` — Start the PHP development server."
+    },
+    {
+      "id": "item:50786f6bb9f458c2",
+      "type": "item",
+      "label": "`dev` — Run the development server, queue listener, logs, and Vite together in supported versions."
+    },
+    {
+      "id": "item:8b6457bf63c1137d",
+      "type": "item",
+      "label": "`dev:list` — Display the processes configured for `dev`."
+    },
+    {
+      "id": "item:7e267621a023cdfc",
+      "type": "item",
+      "label": "`tinker` — Open an interactive PHP shell with the application bootstrapped."
+    },
+    {
+      "id": "item:0cbcf7314a0f15cf",
+      "type": "item",
+      "label": "`pail` — Tail application logs when Laravel Pail is installed."
+    },
+    {
+      "id": "item:02847b7328d7729f",
+      "type": "item",
+      "label": "Configure the development server host and port:"
+    },
+    {
+      "id": "item:603c05af5647956e",
+      "type": "item",
+      "label": "`make:class` — Generate a class."
+    },
+    {
+      "id": "item:13a747793db10a41",
+      "type": "item",
+      "label": "`make:interface` — Generate an interface."
+    },
+    {
+      "id": "item:6892a9c937a46b76",
+      "type": "item",
+      "label": "`make:trait` — Generate a trait."
+    },
+    {
+      "id": "item:cfaaf0ad0039c7da",
+      "type": "item",
+      "label": "`make:enum` — Generate an enum."
+    },
+    {
+      "id": "item:d702150d7341457d",
+      "type": "item",
+      "label": "`make:provider` — Generate a service provider."
+    },
+    {
+      "id": "item:a6be0b5c1166ce9f",
+      "type": "item",
+      "label": "`make:config` — Generate a configuration file."
+    },
+    {
+      "id": "item:5e61724ab2afcb50",
+      "type": "item",
+      "label": "`make:command` — Generate an Artisan command."
+    },
+    {
+      "id": "item:a1d7160484e49cff",
+      "type": "item",
+      "label": "`make:controller` — Generate a controller."
+    },
+    {
+      "id": "item:4ec8d5d75d6754be",
+      "type": "item",
+      "label": "`make:middleware` — Generate middleware."
+    },
+    {
+      "id": "item:73648782a6345304",
+      "type": "item",
+      "label": "`make:request` — Generate a form request."
+    },
+    {
+      "id": "item:38c9e9803187641a",
+      "type": "item",
+      "label": "`make:resource` — Generate an API resource."
+    },
+    {
+      "id": "item:369160dcd0abfa20",
+      "type": "item",
+      "label": "`make:component` — Generate a Blade component."
+    },
+    {
+      "id": "item:431f9c44edb35476",
+      "type": "item",
+      "label": "`make:view` — Generate a view."
+    },
+    {
+      "id": "item:6be6f423a4b3d3db",
+      "type": "item",
+      "label": "`make:model` — Generate an Eloquent model."
+    },
+    {
+      "id": "item:c8a2bf5bbda57bfc",
+      "type": "item",
+      "label": "`make:migration` — Generate a database migration."
+    },
+    {
+      "id": "item:0770348f5619d279",
+      "type": "item",
+      "label": "`make:factory` — Generate a model factory."
+    },
+    {
+      "id": "item:c6ed4d107809aac3",
+      "type": "item",
+      "label": "`make:seeder` — Generate a database seeder."
+    },
+    {
+      "id": "item:d54ad6e3e82cdd0b",
+      "type": "item",
+      "label": "`make:cast` — Generate a custom cast."
+    },
+    {
+      "id": "item:ea0baccaddc8039a",
+      "type": "item",
+      "label": "`make:scope` — Generate an Eloquent scope."
+    },
+    {
+      "id": "item:b3b822f1d7197604",
+      "type": "item",
+      "label": "`make:observer` — Generate a model observer."
+    },
+    {
+      "id": "item:e0d7a6b8dcb2b443",
+      "type": "item",
+      "label": "`make:event` — Generate an event."
+    },
+    {
+      "id": "item:2e17537480d4835c",
+      "type": "item",
+      "label": "`make:listener` — Generate an event listener."
+    },
+    {
+      "id": "item:45dec3945bea6d16",
+      "type": "item",
+      "label": "`make:job` — Generate a job."
+    },
+    {
+      "id": "item:2d5ff28d8b518b4c",
+      "type": "item",
+      "label": "`make:job-middleware` — Generate job middleware."
+    },
+    {
+      "id": "item:323de6eb43357962",
+      "type": "item",
+      "label": "`make:mail` — Generate a mailable."
+    },
+    {
+      "id": "item:7cb946c4c6625f67",
+      "type": "item",
+      "label": "`make:notification` — Generate a notification."
+    },
+    {
+      "id": "item:34c29d6584fab606",
+      "type": "item",
+      "label": "`make:channel` — Generate a broadcast channel class."
+    },
+    {
+      "id": "item:2e3628a280a09b5d",
+      "type": "item",
+      "label": "`make:policy` — Generate an authorization policy."
+    },
+    {
+      "id": "item:89af2147c9d270e6",
+      "type": "item",
+      "label": "`make:rule` — Generate a validation rule."
+    },
+    {
+      "id": "item:54f1b3b85ad4a275",
+      "type": "item",
+      "label": "`make:exception` — Generate an exception."
+    },
+    {
+      "id": "item:8eed2b736d492f6c",
+      "type": "item",
+      "label": "`make:cache-table` — Generate a cache table migration."
+    },
+    {
+      "id": "item:b79681846a2a68c0",
+      "type": "item",
+      "label": "`make:session-table` — Generate a session table migration."
+    },
+    {
+      "id": "item:c5ff7fa8e4af5936",
+      "type": "item",
+      "label": "`make:notifications-table` — Generate a notifications table migration."
+    },
+    {
+      "id": "item:db1945c49c603472",
+      "type": "item",
+      "label": "`make:queue-table` — Generate a queue jobs table migration."
+    },
+    {
+      "id": "item:80c97dbb1b51bd01",
+      "type": "item",
+      "label": "`make:queue-failed-table` — Generate a failed jobs table migration."
+    },
+    {
+      "id": "item:fa67d667eee824ee",
+      "type": "item",
+      "label": "`make:queue-batches-table` — Generate a job batches table migration."
+    },
+    {
+      "id": "item:ac7f5bcc1a7a9412",
+      "type": "item",
+      "label": "`make:test` — Generate a test."
+    },
+    {
+      "id": "item:46dcd17ede260cf0",
+      "type": "item",
+      "label": "Generate a model with a migration, factory, and seeder:"
+    },
+    {
+      "id": "item:0b538596666b3659",
+      "type": "item",
+      "label": "Generate a resource controller associated with a model:"
+    },
+    {
+      "id": "item:6711d378d0c69ba6",
+      "type": "item",
+      "label": "Generate a form request:"
+    },
+    {
+      "id": "item:6cdce95cb325b5c1",
+      "type": "item",
+      "label": "Generate a feature test:"
+    },
+    {
+      "id": "item:1668ba38cf2d85c1",
+      "type": "item",
+      "label": "Generate a unit test:"
+    },
+    {
+      "id": "item:03708989b38858be",
+      "type": "item",
+      "label": "Use generator options to create related files together."
+    },
+    {
+      "id": "item:85cc55f43fe0a9a7",
+      "type": "item",
+      "label": "Use `stub:publish` to customize the templates used by generators."
+    },
+    {
+      "id": "item:8a815613fb429e5c",
+      "type": "item",
+      "label": "`migrate` — Apply pending migrations."
+    },
+    {
+      "id": "item:a7350a199d2ab91e",
+      "type": "item",
+      "label": "`migrate:status` — Show migration status."
+    },
+    {
+      "id": "item:f064806ae3dd0f60",
+      "type": "item",
+      "label": "`migrate:rollback` — Roll back the latest migration batch."
+    },
+    {
+      "id": "item:9e2465de13b97e7f",
+      "type": "item",
+      "label": "`migrate:reset` — Roll back all migrations."
+    },
+    {
+      "id": "item:c3cace7040cb6a4a",
+      "type": "item",
+      "label": "`migrate:refresh` — Roll back and rerun migrations."
+    },
+    {
+      "id": "item:29e04413d30ceeed",
+      "type": "item",
+      "label": "`migrate:fresh` — Drop all tables and rerun migrations."
+    },
+    {
+      "id": "item:218ca3cea85438a3",
+      "type": "item",
+      "label": "`migrate:install` — Create the migration tracking table."
+    },
+    {
+      "id": "item:f4915c707e8c7d11",
+      "type": "item",
+      "label": "`migrate:uninstall` — Remove the migration tracking table."
+    },
+    {
+      "id": "item:490e682650e3bd11",
+      "type": "item",
+      "label": "`schema:dump` — Export the database schema."
+    },
+    {
+      "id": "item:0f332552d6bead4b",
+      "type": "item",
+      "label": "`db:seed` — Run database seeders."
+    },
+    {
+      "id": "item:d33d12a3082466ff",
+      "type": "item",
+      "label": "`db:wipe` — Drop database tables, with options for other objects."
+    },
+    {
+      "id": "item:a68cd46199ec706a",
+      "type": "item",
+      "label": "`db` — Open the database CLI."
+    },
+    {
+      "id": "item:0febc0b8cba0cfba",
+      "type": "item",
+      "label": "`db:show` — Inspect database information."
+    },
+    {
+      "id": "item:2257190b9288502c",
+      "type": "item",
+      "label": "`db:table` — Inspect a database table."
+    },
+    {
+      "id": "item:504aeedae0cc2a4d",
+      "type": "item",
+      "label": "`db:monitor` — Monitor database connection counts."
+    },
+    {
+      "id": "item:1ea05cd9da618f37",
+      "type": "item",
+      "label": "`model:show` — Inspect an Eloquent model."
+    },
+    {
+      "id": "item:2c9da268301e36c3",
+      "type": "item",
+      "label": "`model:prune` — Remove records matching model pruning rules."
+    },
+    {
+      "id": "item:26bf139464954a05",
+      "type": "item",
+      "label": "Inspect database information, a table, and a model:"
+    },
+    {
+      "id": "item:267bbd4666d6fec2",
+      "type": "item",
+      "label": "`route:list` — Display registered routes."
+    },
+    {
+      "id": "item:c39cd19380c38dde",
+      "type": "item",
+      "label": "`route:cache` — Cache route definitions."
+    },
+    {
+      "id": "item:359163eda67d6fb3",
+      "type": "item",
+      "label": "`route:clear` — Remove the route cache."
+    },
+    {
+      "id": "item:bc044922c4b21b3b",
+      "type": "item",
+      "label": "Filter routes by path:"
+    },
+    {
+      "id": "item:e4faf9bf6ec9af55",
+      "type": "item",
+      "label": "Display routes with verbose information:"
+    },
+    {
+      "id": "item:1ad0a3e1959f77f7",
+      "type": "item",
+      "label": "`config:show` — Display configuration values."
+    },
+    {
+      "id": "item:56fec6003059a5be",
+      "type": "item",
+      "label": "`config:cache` — Cache application configuration."
+    },
+    {
+      "id": "item:399dc0281abbc2f8",
+      "type": "item",
+      "label": "`config:clear` — Remove the configuration cache."
+    },
+    {
+      "id": "item:652400405ed48a95",
+      "type": "item",
+      "label": "`config:publish` — Publish configuration files."
+    },
+    {
+      "id": "item:56e4f19d42461512",
+      "type": "item",
+      "label": "`cache:clear` — Clear the application cache."
+    },
+    {
+      "id": "item:38c7d3371c976dd7",
+      "type": "item",
+      "label": "`cache:forget` — Remove a cache item."
+    },
+    {
+      "id": "item:a6c5af9e8ec69ebf",
+      "type": "item",
+      "label": "`cache:prune-stale-tags` — Prune stale cache tags."
+    },
+    {
+      "id": "item:538868e75d9d4e5b",
+      "type": "item",
+      "label": "`view:cache` — Compile and cache Blade views."
+    },
+    {
+      "id": "item:845cb2eece0d984c",
+      "type": "item",
+      "label": "`view:clear` — Clear compiled views."
+    },
+    {
+      "id": "item:44f6d66ea839a1d4",
+      "type": "item",
+      "label": "`event:list` — List events and listeners."
+    },
+    {
+      "id": "item:4edb7aaca057000c",
+      "type": "item",
+      "label": "`event:cache` — Cache discovered events and listeners."
+    },
+    {
+      "id": "item:1a47667180cc2d5b",
+      "type": "item",
+      "label": "`event:clear` — Clear the event cache."
+    },
+    {
+      "id": "item:644dd38be1ddd69f",
+      "type": "item",
+      "label": "`event:generate` — Generate missing events and listeners from registrations."
+    },
+    {
+      "id": "item:ab8c075e1dd534d8",
+      "type": "item",
+      "label": "`optimize` — Cache application bootstrap information."
+    },
+    {
+      "id": "item:2a68cac959fa58a5",
+      "type": "item",
+      "label": "`optimize:clear` — Remove optimization caches."
+    },
+    {
+      "id": "item:62156775a31f422b",
+      "type": "item",
+      "label": "`clear-compiled` — Remove compiled framework files."
+    },
+    {
+      "id": "item:4326cecded7d2255",
+      "type": "item",
+      "label": "`queue:work` — Process queued jobs."
+    },
+    {
+      "id": "item:8761668c254a3bb9",
+      "type": "item",
+      "label": "`queue:listen` — Listen for and process jobs."
+    },
+    {
+      "id": "item:c422280c723e82f9",
+      "type": "item",
+      "label": "`queue:restart` — Request graceful worker restarts."
+    },
+    {
+      "id": "item:266316ce40d020a3",
+      "type": "item",
+      "label": "`queue:pause` — Pause processing on a supported queue."
+    },
+    {
+      "id": "item:9ed11d9f729b1e6d",
+      "type": "item",
+      "label": "`queue:resume` — Resume processing."
+    },
+    {
+      "id": "item:f19b5e31ac171b66",
+      "type": "item",
+      "label": "`queue:monitor` — Monitor queue sizes."
+    },
+    {
+      "id": "item:d3a1b4cc6b7590d1",
+      "type": "item",
+      "label": "`queue:clear` — Delete queued jobs."
+    },
+    {
+      "id": "item:0c2043e1861df00a",
+      "type": "item",
+      "label": "`queue:failed` — List failed jobs."
+    },
+    {
+      "id": "item:e949512aa6eda179",
+      "type": "item",
+      "label": "`queue:retry` — Retry failed jobs."
+    },
+    {
+      "id": "item:dd9830329fbd5699",
+      "type": "item",
+      "label": "`queue:retry-batch` — Retry failed jobs in a batch."
+    },
+    {
+      "id": "item:918d0f58644d9f35",
+      "type": "item",
+      "label": "`queue:forget` — Delete a failed-job record."
+    },
+    {
+      "id": "item:14c4459a8baa0653",
+      "type": "item",
+      "label": "`queue:flush` — Delete all failed-job records."
+    },
+    {
+      "id": "item:939059db77901e1e",
+      "type": "item",
+      "label": "`queue:prune-failed` — Prune old failed-job records."
+    },
+    {
+      "id": "item:f25df58f99a48e08",
+      "type": "item",
+      "label": "`queue:prune-batches` — Prune old batch records."
+    },
+    {
+      "id": "item:9ec5b6ced2737586",
+      "type": "item",
+      "label": "Configure queue priority, retry attempts, and worker timeout:"
+    },
+    {
+      "id": "item:0b98ce5da58298ed",
+      "type": "item",
+      "label": "`schedule:list` — List scheduled tasks."
+    },
+    {
+      "id": "item:800774b47e504511",
+      "type": "item",
+      "label": "`schedule:run` — Execute tasks that are due."
+    },
+    {
+      "id": "item:c83d15eb83e26911",
+      "type": "item",
+      "label": "`schedule:work` — Run the scheduler in the foreground."
+    },
+    {
+      "id": "item:c5c68e40674b30f6",
+      "type": "item",
+      "label": "`schedule:test` — Interactively select a scheduled task to run."
+    },
+    {
+      "id": "item:b14d388af60b8212",
+      "type": "item",
+      "label": "`schedule:interrupt` — Interrupt an in-progress scheduler run."
+    },
+    {
+      "id": "item:40193e8ea992b036",
+      "type": "item",
+      "label": "`schedule:clear-cache` — Clear scheduler mutexes."
+    },
+    {
+      "id": "item:949dbe5cedb32fa6",
+      "type": "item",
+      "label": "`schedule:pause` — Pause scheduling in supported versions."
+    },
+    {
+      "id": "item:4b90aeae9b305e34",
+      "type": "item",
+      "label": "`schedule:resume` — Resume scheduling in supported versions."
+    },
+    {
+      "id": "item:f1c1162d1bed9333",
+      "type": "item",
+      "label": "`schedule:finish` — Internal helper for background scheduled tasks."
+    },
+    {
+      "id": "item:a85908af6ad23c33",
+      "type": "item",
+      "label": "Run the full test suite:"
+    },
+    {
+      "id": "item:b5ef9e65087131c2",
+      "type": "item",
+      "label": "Run a single test file:"
+    },
+    {
+      "id": "item:653a4b39f14cbd9f",
+      "type": "item",
+      "label": "Run matching tests:"
+    },
+    {
+      "id": "item:0cb10946a80226bf",
+      "type": "item",
+      "label": "Run tests in parallel:"
+    },
+    {
+      "id": "item:be51ab5821631bf5",
+      "type": "item",
+      "label": "Generate coverage reports:"
+    },
+    {
+      "id": "item:d448b6a69680c021",
+      "type": "item",
+      "label": "Use parallel test execution with the required dependencies."
+    },
+    {
+      "id": "item:82c7ed957b13dd9b",
+      "type": "item",
+      "label": "Use coverage reporting with a supported coverage driver."
+    },
+    {
+      "id": "item:195c11ba9263ff8a",
+      "type": "item",
+      "label": "Integrate with PHPUnit or Pest, depending on project setup."
+    },
+    {
+      "id": "item:4d74120fdb77ebfa",
+      "type": "item",
+      "label": "`key:generate` — Generate the application encryption key."
+    },
+    {
+      "id": "item:bb072c1e381a326b",
+      "type": "item",
+      "label": "`env` — Display the current environment."
+    },
+    {
+      "id": "item:8e8cd07161e9266e",
+      "type": "item",
+      "label": "`env:encrypt` — Encrypt an environment file."
+    },
+    {
+      "id": "item:f8e87ab010a68bc4",
+      "type": "item",
+      "label": "`env:decrypt` — Decrypt an environment file."
+    },
+    {
+      "id": "item:540fd87ef384edea",
+      "type": "item",
+      "label": "`down` — Enable maintenance mode."
+    },
+    {
+      "id": "item:909a2df28a8c6c0d",
+      "type": "item",
+      "label": "`up` — Disable maintenance mode."
+    },
+    {
+      "id": "item:01a41a1bfa3ed567",
+      "type": "item",
+      "label": "`reload` — Reload supported long-running services in supported versions."
+    },
+    {
+      "id": "item:1b0891d2902abed4",
+      "type": "item",
+      "label": "`auth:clear-resets` — Delete expired password-reset tokens."
+    },
+    {
+      "id": "item:08f3d27e01c3d510",
+      "type": "item",
+      "label": "`storage:link` — Create configured storage symbolic links."
+    },
+    {
+      "id": "item:f52a689b36b662f0",
+      "type": "item",
+      "label": "`storage:unlink` — Remove configured storage symbolic links."
+    },
+    {
+      "id": "item:a14a78f3eb98c326",
+      "type": "item",
+      "label": "`install:api` — Set up API routing and authentication support."
+    },
+    {
+      "id": "item:3878dd25a88a3bc4",
+      "type": "item",
+      "label": "`install:broadcasting` — Set up event broadcasting."
+    },
+    {
+      "id": "item:7b83ab52c716ff6f",
+      "type": "item",
+      "label": "`channel:list` — List registered broadcast channels."
+    },
+    {
+      "id": "item:7ea7d62a4f469484",
+      "type": "item",
+      "label": "`vendor:publish` — Publish package configuration, views, and other assets."
+    },
+    {
+      "id": "item:f4a10da3896658c9",
+      "type": "item",
+      "label": "`package:discover` — Rebuild discovered package metadata."
+    },
+    {
+      "id": "item:fef697176a0bc091",
+      "type": "item",
+      "label": "`lang:publish` — Publish language files."
+    },
+    {
+      "id": "item:01aaaed8b08b5e26",
+      "type": "item",
+      "label": "`stub:publish` — Publish customizable generator templates."
+    },
+    {
+      "id": "item:71d773777597bd95",
+      "type": "item",
+      "label": "Create class-based commands."
+    },
+    {
+      "id": "item:ea14d39a31fc1ef0",
+      "type": "item",
+      "label": "Create closure-based commands."
+    },
+    {
+      "id": "item:b75aae72f85fb3a7",
+      "type": "item",
+      "label": "Define required, optional, defaulted, and array arguments."
+    },
+    {
+      "id": "item:9129fd8dd3014b6c",
+      "type": "item",
+      "label": "Define boolean flags, valued options, shortcuts, and repeatable options."
+    },
+    {
+      "id": "item:ef412ff67b5d1cb0",
+      "type": "item",
+      "label": "Use dependency injection."
+    },
+    {
+      "id": "item:7b7d6525426c7400",
+      "type": "item",
+      "label": "Add interactive text and password prompts."
+    },
+    {
+      "id": "item:2bd99e0de5ef4b9c",
+      "type": "item",
+      "label": "Add confirmations, selection lists, search, and input validation."
+    },
+    {
+      "id": "item:4ab43fd2a18d92e3",
+      "type": "item",
+      "label": "Automatically prompt for missing required arguments."
+    },
+    {
+      "id": "item:53a5fc1ac93acf15",
+      "type": "item",
+      "label": "Display colored output, tables, progress bars, and spinners."
+    },
+    {
+      "id": "item:30978609ba9c3748",
+      "type": "item",
+      "label": "Handle exit codes and exceptions."
+    },
+    {
+      "id": "item:b5c0927ea95ece49",
+      "type": "item",
+      "label": "Use isolated execution with atomic locks."
+    },
+    {
+      "id": "item:242ad00e51e1ce98",
+      "type": "item",
+      "label": "Handle signals for graceful shutdown."
+    },
+    {
+      "id": "item:0f3acaf50eb7eb29",
+      "type": "item",
+      "label": "Call commands from other commands or application code."
+    },
+    {
+      "id": "item:5e2eadbb27202760",
+      "type": "item",
+      "label": "Dispatch commands to queues."
+    },
+    {
+      "id": "item:ef15c8fc870a6bd0",
+      "type": "item",
+      "label": "Respond to command lifecycle events."
+    },
+    {
+      "id": "item:ed1be0bbfb566674",
+      "type": "item",
+      "label": "Test console commands with input/output assertions."
+    },
+    {
+      "id": "item:700c819b0109ebde",
+      "type": "item",
+      "label": "Generate a custom command:"
+    },
+    {
+      "id": "item:65a693f0d19e56e6",
+      "type": "item",
+      "label": "**Sail** — Docker-based development; run Artisan, Composer, Node, and tests in containers."
+    },
+    {
+      "id": "item:9b4a470cd3684942",
+      "type": "item",
+      "label": "**Pint** — PHP code formatting and style checks."
+    },
+    {
+      "id": "item:291026f5bf8fce14",
+      "type": "item",
+      "label": "**Pail** — Live application-log inspection."
+    },
+    {
+      "id": "item:9045af31453cbde7",
+      "type": "item",
+      "label": "**Horizon** — Redis queue workers, monitoring, and management."
+    },
+    {
+      "id": "item:1dedc25ddaaa8863",
+      "type": "item",
+      "label": "**Octane** — Start and manage long-running application servers."
+    },
+    {
+      "id": "item:fc4e1880f37e98af",
+      "type": "item",
+      "label": "**Reverb** — Run a WebSocket server."
+    },
+    {
+      "id": "item:014e08003d742bab",
+      "type": "item",
+      "label": "**Dusk** — Browser automation and browser tests."
+    },
+    {
+      "id": "item:8288cf1061fce5d2",
+      "type": "item",
+      "label": "**Scout** — Import, flush, and manage searchable model indexes."
+    },
+    {
+      "id": "item:1c52b444c7ff8ca7",
+      "type": "item",
+      "label": "**Telescope** — Install and maintain application debugging tools."
+    },
+    {
+      "id": "item:542f0180a51711cf",
+      "type": "item",
+      "label": "**Pulse** — Install and manage application monitoring components."
+    },
+    {
+      "id": "item:14d3ee7c5af3b4d2",
+      "type": "item",
+      "label": "Run migrations through Sail:"
+    },
+    {
+      "id": "item:488774f532b93140",
+      "type": "item",
+      "label": "Format PHP code with Pint:"
+    },
+    {
+      "id": "item:c5289e196a9f31b8",
+      "type": "item",
+      "label": "Start Horizon:"
+    },
+    {
+      "id": "item:9e6edd78a7e4c82c",
+      "type": "item",
+      "label": "Start Octane:"
+    },
+    {
+      "id": "item:146fbf2568d87865",
+      "type": "item",
+      "label": "Start Reverb:"
+    },
+    {
+      "id": "item:47d7f3f7fa16abd8",
+      "type": "item",
+      "label": "Run Dusk browser tests:"
+    },
+    {
+      "id": "item:1fc60e522f6b00e3",
+      "type": "item",
+      "label": "Import models into a Scout search index:"
+    },
+    {
+      "id": "note:1137a64dfb0bccdf",
+      "type": "note",
+      "label": "Laravel’s main command-line interface is **Artisan**, invoked with:"
+    },
+    {
+      "id": "note:ac280c5ffe2f20be",
+      "type": "note",
+      "label": "Laravel also provides a project installer and optional CLI tools through its ecosystem."
+    },
+    {
+      "id": "note:c41a45785b52ec06",
+      "type": "note",
+      "label": "**The exact command list depends on your Laravel version, installed packages, and custom commands.** This checklist covers modern Laravel, including Laravel 13.x features. It is a capability reference, not a claim that Laravel is installed or these features are implemented in this repository. All items start unchecked."
+    },
+    {
+      "id": "note:63bc860b37259d5f",
+      "type": "note",
+      "label": "**Status as of 2026-11-06: implemented and locally tested, but not complete Artisan parity or full cross-database simulation.** The numbered checklist below remains a Laravel capability reference; its checkboxes are unchanged and do not measure Bundle implementation progress. Bundle uses Bun, TypeScript, and MikroORM's Data Mapper API, not PHP, Eloquent, or Laravel's Schema Builder."
+    },
+    {
+      "id": "note:209464914ae78f8e",
+      "type": "note",
+      "label": "- Model discovery from `src/models/*.ts`, code-first classes with `EntitySchema`, CRUD, relationships, constraints, timestamps, transactions, and explicit repeatable demo seeding run against disposable SQLite databases."
+    },
+    {
+      "id": "note:84f9d71bf1e68c68",
+      "type": "note",
+      "label": "- Migration installation/status/check, application, latest-batch rollback, reset, refresh, and conservative fresh rebuilds are implemented. Tests cover batch tracking, application steps, rollback count/batch selection, partial refresh, and legacy history upgrades."
+    },
+    {
+      "id": "note:1ad50eb2c969225e",
+      "type": "note",
+      "label": "- Model and seeder generators, schema-diff generation, and blank/create/table migration stubs are implemented with overwrite protection. A real Bun CLI-process test edits an existing model, generates and applies a column migration, then rolls it back while preserving existing rows. The CLI does not edit model source automatically."
+    },
+    {
+      "id": "note:56aa2793259e949e",
+      "type": "note",
+      "label": "- Named connections, custom migration directories, explicit external-path authorization, destructive/production force guards, and failure reporting have automated tests. Database-backed isolation is tested for contention across local connections and cleanup after ordinary failures; stale-lock removal is explicit."
+    },
+    {
+      "id": "note:3376496c893d73e7",
+      "type": "note",
+      "label": "- SQLite live-schema dumping, migration-history preservation, safe pruning, empty-target restoration/bootstrap, and subsequent migration application are tested against real SQLite fixtures. Dumps exclude application rows and are not data backups."
+    },
+    {
+      "id": "note:cf32f2fadf801ae3",
+      "type": "note",
+      "label": "- Official MikroORM drivers, connection/TLS validation, and initial dialect-specific migrations are present. Offline tests compare generated CREATE SQL with those migrations; this does not demonstrate successful execution on a server."
+    },
+    {
+      "id": "note:681db10a3eef5c93",
+      "type": "note",
+      "label": "- The latest implementation-validation run had **86 passing tests, 2 skipped tests, and 0 failures**. The skipped tests are the opt-in PostgreSQL and MariaDB live persistence contracts. This is a dated test-run snapshot, not a code-coverage percentage or a promise that every scenario is tested."
+    },
+    {
+      "id": "note:007c49ef083647d3",
+      "type": "note",
+      "label": "- PostgreSQL and MariaDB native dump/restore adapters have injected/mock-tool tests for command arguments, environment handling, fallback behavior, and safety guards. Real `pg_dump`/`psql` and MariaDB/MySQL dump/client round trips were not verified against live servers in that run."
+    },
+    {
+      "id": "note:e02dc171026efacf",
+      "type": "note",
+      "label": "- Live tests require explicitly supplied `BUNDLE_TEST_POSTGRESQL_URL` / `BUNDLE_TEST_MARIADB_URL`, `BUNDLE_TEST_ALLOW_RESET=1`, and empty disposable databases. Never use application or production databases. Skipped tests and passing SQLite/mock tests do not establish live server support."
+    },
+    {
+      "id": "note:b34c0278ffb7d517",
+      "type": "note",
+      "label": "- `--pretend` prints supported migrations' queued string SQL without executing it, running seeders, or installing/upgrading migration history. Tests cover preview in both directions, missing SQLite targets, and schema-bootstrap previews."
+    },
+    {
+      "id": "note:23c8c7f2a6b76010",
+      "type": "note",
+      "label": "- Preview does not run SQL against a disposable database, validate SQL execution, simulate arbitrary data migrations, or establish rollback correctness. Imperative driver/entity-manager access is rejected. Migration modules remain trusted project code; their top-level side effects are not sandboxed."
+    },
+    {
+      "id": "note:72b41c9a80e4685f",
+      "type": "note",
+      "label": "- `migrate:check` compares model metadata with the migration snapshot when available; it is not a comprehensive live-schema drift audit. `schema:sql` prints mapped CREATE SQL, distinct from a live schema dump."
+    },
+    {
+      "id": "note:26a8529e11cc8f64",
+      "type": "note",
+      "label": "- Run the live PostgreSQL and MariaDB persistence contracts, then separately exercise the expanded batch/rollback/refresh/fresh, lock, and schema dump/prune/bootstrap workflows on each engine. The opt-in persistence tests alone are not a complete migration-feature matrix."
+    },
+    {
+      "id": "note:c780148e119a0600",
+      "type": "note",
+      "label": "- Verify real native-client round trips, supported server/client versions, TLS/authentication configurations, restricted permissions, and engine-specific schema/data behavior. MariaDB DDL and restoration are not guaranteed atomic."
+    },
+    {
+      "id": "note:bef00087a64def26",
+      "type": "note",
+      "label": "- Validate concurrent deployment behavior across actual processes/hosts, abrupt termination and stale-lock recovery, and operational performance. Current local lock tests are not proof of multi-host deployment safety; non-isolated and native ORM commands can ignore the cooperative lock."
+    },
+    {
+      "id": "note:316d3c83af4a6470",
+      "type": "note",
+      "label": "- No claim of every Artisan command/flag or vendor-specific operation: migration-history uninstall, unrestricted database wiping, PHP Schema Builder compatibility, automatic model editing, interactive production confirmation, and automatic server provisioning are not implemented. Fresh rebuilds deliberately refuse unmapped tables/views rather than automatically dropping every object or type."
+    },
+    {
+      "id": "note:47d0dcf788427d8d",
+      "type": "note",
+      "label": "- Passing scenario tests do not prove exhaustive coverage, production readiness, or universal database portability. Review generated SQL and rollback behavior, maintain dialect-specific migrations/snapshots, and back up real data before destructive operations. Native ORM commands bypass Bundle's force guards and optional isolation/bootstrap orchestration."
+    },
+    {
+      "id": "note:5cff6823c01b7ef1",
+      "type": "note",
+      "label": "See [the migration guide](docs/migrations.md) for the command/option contract and [the database guide](docs/database.md) for configuration and opt-in live-test instructions. These Bundle status notes do not check off the Laravel reference items below."
+    },
+    {
+      "id": "note:a19f088211d04bb1",
+      "type": "note",
+      "label": "For an exhaustive list for a particular application, **`php artisan list` is the authoritative source**."
+    },
+    {
+      "id": "note:be69e4459d8ecb23",
+      "type": "note",
+      "label": "The commands below are invoked with `php artisan`."
+    },
+    {
+      "id": "note:774ba4dc2a136b89",
+      "type": "note",
+      "label": "Artisan generates application classes and supporting files. Commands below are invoked with `php artisan`."
+    },
+    {
+      "id": "note:4315278bbf761ee4",
+      "type": "note",
+      "label": "**Destructive:** `migrate:fresh`, `migrate:refresh`, `migrate:reset`, and `db:wipe` can remove data."
+    },
+    {
+      "id": "note:2e3c41d45c98f911",
+      "type": "note",
+      "label": "Pause/resume commands are version-dependent."
+    },
+    {
+      "id": "note:a7a79b2008eb4aac",
+      "type": "note",
+      "label": "Artisan is also a framework for creating application-specific command-line tools."
+    },
+    {
+      "id": "note:8072bedf0580f1dc",
+      "type": "note",
+      "label": "These require the corresponding packages or services; they are **not all built into a default Laravel installation**."
+    },
+    {
+      "id": "example:a5a1fbbae6666523",
+      "type": "example",
+      "label": "php artisan <command>"
+    },
+    {
+      "id": "example:f34c3d2297d52ada",
+      "type": "example",
+      "label": "laravel new my-app"
+    },
+    {
+      "id": "example:367d7af8c6bb0909",
+      "type": "example",
+      "label": "php artisan serve --host=127.0.0.1 --port=8000"
+    },
+    {
+      "id": "example:b5a865a7e2f19af7",
+      "type": "example",
+      "label": "php artisan make:model Post -mfs"
+    },
+    {
+      "id": "example:5809d10726645d4a",
+      "type": "example",
+      "label": "php artisan make:controller PostController --resource --model=Post"
+    },
+    {
+      "id": "example:ad971408ef6cbd26",
+      "type": "example",
+      "label": "php artisan make:request StorePostRequest"
+    },
+    {
+      "id": "example:9b6486e6a677a60d",
+      "type": "example",
+      "label": "php artisan make:test PostTest"
+    },
+    {
+      "id": "example:f628510d874da692",
+      "type": "example",
+      "label": "php artisan make:test PostTest --unit"
+    },
+    {
+      "id": "example:4564d3d7475c7612",
+      "type": "example",
+      "label": "php artisan db:show\nphp artisan db:table users\nphp artisan model:show User"
+    },
+    {
+      "id": "example:14b005d688007d33",
+      "type": "example",
+      "label": "php artisan route:list --path=api"
+    },
+    {
+      "id": "example:6828d3aebd393598",
+      "type": "example",
+      "label": "php artisan route:list -v"
+    },
+    {
+      "id": "example:3a628e1479dcb51a",
+      "type": "example",
+      "label": "php artisan queue:work --queue=high,default --tries=3 --timeout=90"
+    },
+    {
+      "id": "example:1220f5fe77c673ac",
+      "type": "example",
+      "label": "php artisan test"
+    },
+    {
+      "id": "example:c48ed8d342c37146",
+      "type": "example",
+      "label": "php artisan test tests/Feature/ExampleTest.php"
+    },
+    {
+      "id": "example:b98ea7ab03a92194",
+      "type": "example",
+      "label": "php artisan test --filter=ExampleTest"
+    },
+    {
+      "id": "example:a7bb3b4850c44a2c",
+      "type": "example",
+      "label": "php artisan test --parallel"
+    },
+    {
+      "id": "example:86318bac06521379",
+      "type": "example",
+      "label": "php artisan test --coverage"
+    },
+    {
+      "id": "example:51a554c394e44281",
+      "type": "example",
+      "label": "php artisan make:command ImportProducts"
+    },
+    {
+      "id": "example:ce7e499c400be290",
+      "type": "example",
+      "label": "./vendor/bin/sail artisan migrate"
+    },
+    {
+      "id": "example:cba94b6a872e108b",
+      "type": "example",
+      "label": "./vendor/bin/pint"
+    },
+    {
+      "id": "example:e2c12f767fa44fdf",
+      "type": "example",
+      "label": "php artisan horizon"
+    },
+    {
+      "id": "example:4aeafbbb4e3330c6",
+      "type": "example",
+      "label": "php artisan octane:start"
+    },
+    {
+      "id": "example:1d5f8d676f32671e",
+      "type": "example",
+      "label": "php artisan reverb:start"
+    },
+    {
+      "id": "example:c62803563436ca1b",
+      "type": "example",
+      "label": "php artisan dusk"
+    },
+    {
+      "id": "example:4b358724328232e7",
+      "type": "example",
+      "label": "php artisan scout:import \"App\\Models\\Post\""
+    },
+    {
+      "id": "source:251a061a0b8c4a39",
+      "type": "source",
+      "label": "Laravel Artisan documentation"
+    },
+    {
+      "id": "source:56a142a00b10f842",
+      "type": "source",
+      "label": "Laravel 13.x framework command registrations"
+    },
+    {
+      "id": "source:90b70de2c5fd68eb",
+      "type": "source",
+      "label": "Laravel task scheduling"
+    },
+    {
+      "id": "command:artisan:--version",
+      "type": "command",
+      "label": "php artisan --version"
+    },
+    {
+      "id": "command:artisan:about",
+      "type": "command",
+      "label": "php artisan about"
+    },
+    {
+      "id": "command:artisan:auth:clear-resets",
+      "type": "command",
+      "label": "php artisan auth:clear-resets"
+    },
+    {
+      "id": "command:artisan:cache:clear",
+      "type": "command",
+      "label": "php artisan cache:clear"
+    },
+    {
+      "id": "command:artisan:cache:forget",
+      "type": "command",
+      "label": "php artisan cache:forget"
+    },
+    {
+      "id": "command:artisan:cache:prune-stale-tags",
+      "type": "command",
+      "label": "php artisan cache:prune-stale-tags"
+    },
+    {
+      "id": "command:artisan:channel:list",
+      "type": "command",
+      "label": "php artisan channel:list"
+    },
+    {
+      "id": "command:artisan:clear-compiled",
+      "type": "command",
+      "label": "php artisan clear-compiled"
+    },
+    {
+      "id": "command:artisan:config:cache",
+      "type": "command",
+      "label": "php artisan config:cache"
+    },
+    {
+      "id": "command:artisan:config:clear",
+      "type": "command",
+      "label": "php artisan config:clear"
+    },
+    {
+      "id": "command:artisan:config:publish",
+      "type": "command",
+      "label": "php artisan config:publish"
+    },
+    {
+      "id": "command:artisan:config:show",
+      "type": "command",
+      "label": "php artisan config:show"
+    },
+    {
+      "id": "command:artisan:db",
+      "type": "command",
+      "label": "php artisan db"
+    },
+    {
+      "id": "command:artisan:db:monitor",
+      "type": "command",
+      "label": "php artisan db:monitor"
+    },
+    {
+      "id": "command:artisan:db:seed",
+      "type": "command",
+      "label": "php artisan db:seed"
+    },
+    {
+      "id": "command:artisan:db:show",
+      "type": "command",
+      "label": "php artisan db:show"
+    },
+    {
+      "id": "command:artisan:db:table",
+      "type": "command",
+      "label": "php artisan db:table"
+    },
+    {
+      "id": "command:artisan:db:wipe",
+      "type": "command",
+      "label": "php artisan db:wipe"
+    },
+    {
+      "id": "command:artisan:dev",
+      "type": "command",
+      "label": "php artisan dev"
+    },
+    {
+      "id": "command:artisan:dev:list",
+      "type": "command",
+      "label": "php artisan dev:list"
+    },
+    {
+      "id": "command:artisan:docs",
+      "type": "command",
+      "label": "php artisan docs"
+    },
+    {
+      "id": "command:artisan:down",
+      "type": "command",
+      "label": "php artisan down"
+    },
+    {
+      "id": "command:artisan:dusk",
+      "type": "command",
+      "label": "php artisan dusk"
+    },
+    {
+      "id": "command:artisan:env",
+      "type": "command",
+      "label": "php artisan env"
+    },
+    {
+      "id": "command:artisan:env:decrypt",
+      "type": "command",
+      "label": "php artisan env:decrypt"
+    },
+    {
+      "id": "command:artisan:env:encrypt",
+      "type": "command",
+      "label": "php artisan env:encrypt"
+    },
+    {
+      "id": "command:artisan:event:cache",
+      "type": "command",
+      "label": "php artisan event:cache"
+    },
+    {
+      "id": "command:artisan:event:clear",
+      "type": "command",
+      "label": "php artisan event:clear"
+    },
+    {
+      "id": "command:artisan:event:generate",
+      "type": "command",
+      "label": "php artisan event:generate"
+    },
+    {
+      "id": "command:artisan:event:list",
+      "type": "command",
+      "label": "php artisan event:list"
+    },
+    {
+      "id": "command:artisan:help",
+      "type": "command",
+      "label": "php artisan help"
+    },
+    {
+      "id": "command:artisan:horizon",
+      "type": "command",
+      "label": "php artisan horizon"
+    },
+    {
+      "id": "command:artisan:install:api",
+      "type": "command",
+      "label": "php artisan install:api"
+    },
+    {
+      "id": "command:artisan:install:broadcasting",
+      "type": "command",
+      "label": "php artisan install:broadcasting"
+    },
+    {
+      "id": "command:artisan:key:generate",
+      "type": "command",
+      "label": "php artisan key:generate"
+    },
+    {
+      "id": "command:artisan:lang:publish",
+      "type": "command",
+      "label": "php artisan lang:publish"
+    },
+    {
+      "id": "command:artisan:list",
+      "type": "command",
+      "label": "php artisan list"
+    },
+    {
+      "id": "command:artisan:make:cache-table",
+      "type": "command",
+      "label": "php artisan make:cache-table"
+    },
+    {
+      "id": "command:artisan:make:cast",
+      "type": "command",
+      "label": "php artisan make:cast"
+    },
+    {
+      "id": "command:artisan:make:channel",
+      "type": "command",
+      "label": "php artisan make:channel"
+    },
+    {
+      "id": "command:artisan:make:class",
+      "type": "command",
+      "label": "php artisan make:class"
+    },
+    {
+      "id": "command:artisan:make:command",
+      "type": "command",
+      "label": "php artisan make:command"
+    },
+    {
+      "id": "command:artisan:make:component",
+      "type": "command",
+      "label": "php artisan make:component"
+    },
+    {
+      "id": "command:artisan:make:config",
+      "type": "command",
+      "label": "php artisan make:config"
+    },
+    {
+      "id": "command:artisan:make:controller",
+      "type": "command",
+      "label": "php artisan make:controller"
+    },
+    {
+      "id": "command:artisan:make:enum",
+      "type": "command",
+      "label": "php artisan make:enum"
+    },
+    {
+      "id": "command:artisan:make:event",
+      "type": "command",
+      "label": "php artisan make:event"
+    },
+    {
+      "id": "command:artisan:make:exception",
+      "type": "command",
+      "label": "php artisan make:exception"
+    },
+    {
+      "id": "command:artisan:make:factory",
+      "type": "command",
+      "label": "php artisan make:factory"
+    },
+    {
+      "id": "command:artisan:make:interface",
+      "type": "command",
+      "label": "php artisan make:interface"
+    },
+    {
+      "id": "command:artisan:make:job",
+      "type": "command",
+      "label": "php artisan make:job"
+    },
+    {
+      "id": "command:artisan:make:job-middleware",
+      "type": "command",
+      "label": "php artisan make:job-middleware"
+    },
+    {
+      "id": "command:artisan:make:listener",
+      "type": "command",
+      "label": "php artisan make:listener"
+    },
+    {
+      "id": "command:artisan:make:mail",
+      "type": "command",
+      "label": "php artisan make:mail"
+    },
+    {
+      "id": "command:artisan:make:middleware",
+      "type": "command",
+      "label": "php artisan make:middleware"
+    },
+    {
+      "id": "command:artisan:make:migration",
+      "type": "command",
+      "label": "php artisan make:migration"
+    },
+    {
+      "id": "command:artisan:make:model",
+      "type": "command",
+      "label": "php artisan make:model"
+    },
+    {
+      "id": "command:artisan:make:notification",
+      "type": "command",
+      "label": "php artisan make:notification"
+    },
+    {
+      "id": "command:artisan:make:notifications-table",
+      "type": "command",
+      "label": "php artisan make:notifications-table"
+    },
+    {
+      "id": "command:artisan:make:observer",
+      "type": "command",
+      "label": "php artisan make:observer"
+    },
+    {
+      "id": "command:artisan:make:policy",
+      "type": "command",
+      "label": "php artisan make:policy"
+    },
+    {
+      "id": "command:artisan:make:provider",
+      "type": "command",
+      "label": "php artisan make:provider"
+    },
+    {
+      "id": "command:artisan:make:queue-batches-table",
+      "type": "command",
+      "label": "php artisan make:queue-batches-table"
+    },
+    {
+      "id": "command:artisan:make:queue-failed-table",
+      "type": "command",
+      "label": "php artisan make:queue-failed-table"
+    },
+    {
+      "id": "command:artisan:make:queue-table",
+      "type": "command",
+      "label": "php artisan make:queue-table"
+    },
+    {
+      "id": "command:artisan:make:request",
+      "type": "command",
+      "label": "php artisan make:request"
+    },
+    {
+      "id": "command:artisan:make:resource",
+      "type": "command",
+      "label": "php artisan make:resource"
+    },
+    {
+      "id": "command:artisan:make:rule",
+      "type": "command",
+      "label": "php artisan make:rule"
+    },
+    {
+      "id": "command:artisan:make:scope",
+      "type": "command",
+      "label": "php artisan make:scope"
+    },
+    {
+      "id": "command:artisan:make:seeder",
+      "type": "command",
+      "label": "php artisan make:seeder"
+    },
+    {
+      "id": "command:artisan:make:session-table",
+      "type": "command",
+      "label": "php artisan make:session-table"
+    },
+    {
+      "id": "command:artisan:make:test",
+      "type": "command",
+      "label": "php artisan make:test"
+    },
+    {
+      "id": "command:artisan:make:trait",
+      "type": "command",
+      "label": "php artisan make:trait"
+    },
+    {
+      "id": "command:artisan:make:view",
+      "type": "command",
+      "label": "php artisan make:view"
+    },
+    {
+      "id": "command:artisan:migrate",
+      "type": "command",
+      "label": "php artisan migrate"
+    },
+    {
+      "id": "command:artisan:migrate:check",
+      "type": "command",
+      "label": "php artisan migrate:check"
+    },
+    {
+      "id": "command:artisan:migrate:fresh",
+      "type": "command",
+      "label": "php artisan migrate:fresh"
+    },
+    {
+      "id": "command:artisan:migrate:install",
+      "type": "command",
+      "label": "php artisan migrate:install"
+    },
+    {
+      "id": "command:artisan:migrate:refresh",
+      "type": "command",
+      "label": "php artisan migrate:refresh"
+    },
+    {
+      "id": "command:artisan:migrate:reset",
+      "type": "command",
+      "label": "php artisan migrate:reset"
+    },
+    {
+      "id": "command:artisan:migrate:rollback",
+      "type": "command",
+      "label": "php artisan migrate:rollback"
+    },
+    {
+      "id": "command:artisan:migrate:status",
+      "type": "command",
+      "label": "php artisan migrate:status"
+    },
+    {
+      "id": "command:artisan:migrate:uninstall",
+      "type": "command",
+      "label": "php artisan migrate:uninstall"
+    },
+    {
+      "id": "command:artisan:model:prune",
+      "type": "command",
+      "label": "php artisan model:prune"
+    },
+    {
+      "id": "command:artisan:model:show",
+      "type": "command",
+      "label": "php artisan model:show"
+    },
+    {
+      "id": "command:artisan:octane:start",
+      "type": "command",
+      "label": "php artisan octane:start"
+    },
+    {
+      "id": "command:artisan:optimize",
+      "type": "command",
+      "label": "php artisan optimize"
+    },
+    {
+      "id": "command:artisan:optimize:clear",
+      "type": "command",
+      "label": "php artisan optimize:clear"
+    },
+    {
+      "id": "command:artisan:package:discover",
+      "type": "command",
+      "label": "php artisan package:discover"
+    },
+    {
+      "id": "command:artisan:pail",
+      "type": "command",
+      "label": "php artisan pail"
+    },
+    {
+      "id": "command:artisan:queue:clear",
+      "type": "command",
+      "label": "php artisan queue:clear"
+    },
+    {
+      "id": "command:artisan:queue:failed",
+      "type": "command",
+      "label": "php artisan queue:failed"
+    },
+    {
+      "id": "command:artisan:queue:flush",
+      "type": "command",
+      "label": "php artisan queue:flush"
+    },
+    {
+      "id": "command:artisan:queue:forget",
+      "type": "command",
+      "label": "php artisan queue:forget"
+    },
+    {
+      "id": "command:artisan:queue:listen",
+      "type": "command",
+      "label": "php artisan queue:listen"
+    },
+    {
+      "id": "command:artisan:queue:monitor",
+      "type": "command",
+      "label": "php artisan queue:monitor"
+    },
+    {
+      "id": "command:artisan:queue:pause",
+      "type": "command",
+      "label": "php artisan queue:pause"
+    },
+    {
+      "id": "command:artisan:queue:prune-batches",
+      "type": "command",
+      "label": "php artisan queue:prune-batches"
+    },
+    {
+      "id": "command:artisan:queue:prune-failed",
+      "type": "command",
+      "label": "php artisan queue:prune-failed"
+    },
+    {
+      "id": "command:artisan:queue:restart",
+      "type": "command",
+      "label": "php artisan queue:restart"
+    },
+    {
+      "id": "command:artisan:queue:resume",
+      "type": "command",
+      "label": "php artisan queue:resume"
+    },
+    {
+      "id": "command:artisan:queue:retry",
+      "type": "command",
+      "label": "php artisan queue:retry"
+    },
+    {
+      "id": "command:artisan:queue:retry-batch",
+      "type": "command",
+      "label": "php artisan queue:retry-batch"
+    },
+    {
+      "id": "command:artisan:queue:work",
+      "type": "command",
+      "label": "php artisan queue:work"
+    },
+    {
+      "id": "command:artisan:reload",
+      "type": "command",
+      "label": "php artisan reload"
+    },
+    {
+      "id": "command:artisan:reverb:start",
+      "type": "command",
+      "label": "php artisan reverb:start"
+    },
+    {
+      "id": "command:artisan:route:cache",
+      "type": "command",
+      "label": "php artisan route:cache"
+    },
+    {
+      "id": "command:artisan:route:clear",
+      "type": "command",
+      "label": "php artisan route:clear"
+    },
+    {
+      "id": "command:artisan:route:list",
+      "type": "command",
+      "label": "php artisan route:list"
+    },
+    {
+      "id": "command:artisan:schedule:clear-cache",
+      "type": "command",
+      "label": "php artisan schedule:clear-cache"
+    },
+    {
+      "id": "command:artisan:schedule:finish",
+      "type": "command",
+      "label": "php artisan schedule:finish"
+    },
+    {
+      "id": "command:artisan:schedule:interrupt",
+      "type": "command",
+      "label": "php artisan schedule:interrupt"
+    },
+    {
+      "id": "command:artisan:schedule:list",
+      "type": "command",
+      "label": "php artisan schedule:list"
+    },
+    {
+      "id": "command:artisan:schedule:pause",
+      "type": "command",
+      "label": "php artisan schedule:pause"
+    },
+    {
+      "id": "command:artisan:schedule:resume",
+      "type": "command",
+      "label": "php artisan schedule:resume"
+    },
+    {
+      "id": "command:artisan:schedule:run",
+      "type": "command",
+      "label": "php artisan schedule:run"
+    },
+    {
+      "id": "command:artisan:schedule:test",
+      "type": "command",
+      "label": "php artisan schedule:test"
+    },
+    {
+      "id": "command:artisan:schedule:work",
+      "type": "command",
+      "label": "php artisan schedule:work"
+    },
+    {
+      "id": "command:artisan:schema:dump",
+      "type": "command",
+      "label": "php artisan schema:dump"
+    },
+    {
+      "id": "command:artisan:schema:sql",
+      "type": "command",
+      "label": "php artisan schema:sql"
+    },
+    {
+      "id": "command:artisan:scout:import",
+      "type": "command",
+      "label": "php artisan scout:import"
+    },
+    {
+      "id": "command:artisan:serve",
+      "type": "command",
+      "label": "php artisan serve"
+    },
+    {
+      "id": "command:artisan:storage:link",
+      "type": "command",
+      "label": "php artisan storage:link"
+    },
+    {
+      "id": "command:artisan:storage:unlink",
+      "type": "command",
+      "label": "php artisan storage:unlink"
+    },
+    {
+      "id": "command:artisan:stub:publish",
+      "type": "command",
+      "label": "php artisan stub:publish"
+    },
+    {
+      "id": "command:artisan:test",
+      "type": "command",
+      "label": "php artisan test"
+    },
+    {
+      "id": "command:artisan:tinker",
+      "type": "command",
+      "label": "php artisan tinker"
+    },
+    {
+      "id": "command:artisan:up",
+      "type": "command",
+      "label": "php artisan up"
+    },
+    {
+      "id": "command:artisan:vendor:publish",
+      "type": "command",
+      "label": "php artisan vendor:publish"
+    },
+    {
+      "id": "command:artisan:view:cache",
+      "type": "command",
+      "label": "php artisan view:cache"
+    },
+    {
+      "id": "command:artisan:view:clear",
+      "type": "command",
+      "label": "php artisan view:clear"
+    },
+    {
+      "id": "command:installer:new",
+      "type": "command",
+      "label": "laravel new"
+    },
+    {
+      "id": "command:pint:pint",
+      "type": "command",
+      "label": "./vendor/bin/pint"
+    }
+  ],
+  "edges": [
+    {
+      "from": "document:progress",
+      "to": "document:progress/section:bundle-orm-and-migration-status",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:bundle-orm-and-migration-status",
+      "to": "document:progress/section:bundle-orm-and-migration-status/section:implemented-with-real-sqlite-test-evidence",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:bundle-orm-and-migration-status",
+      "to": "document:progress/section:bundle-orm-and-migration-status/section:postgresql-and-mariadb-implemented-paths-incomplete-live-verification",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:bundle-orm-and-migration-status",
+      "to": "document:progress/section:bundle-orm-and-migration-status/section:sql-preview-is-not-full-simulation",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:bundle-orm-and-migration-status",
+      "to": "document:progress/section:bundle-orm-and-migration-status/section:remaining-verification-and-compatibility-gaps",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress",
+      "to": "document:progress/section:1-command-discovery-and-help",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress",
+      "to": "document:progress/section:2-project-creation",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress",
+      "to": "document:progress/section:3-local-development",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress",
+      "to": "document:progress/section:4-code-generation",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:4-code-generation",
+      "to": "document:progress/section:4-code-generation/section:application-structure",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:4-code-generation",
+      "to": "document:progress/section:4-code-generation/section:http-and-presentation",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:4-code-generation",
+      "to": "document:progress/section:4-code-generation/section:database-and-eloquent",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:4-code-generation",
+      "to": "document:progress/section:4-code-generation/section:application-behavior",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:4-code-generation",
+      "to": "document:progress/section:4-code-generation/section:infrastructure-and-testing",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:4-code-generation",
+      "to": "document:progress/section:4-code-generation/section:generator-examples-and-customization",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress",
+      "to": "document:progress/section:5-database-migrations-and-schema-management",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress",
+      "to": "document:progress/section:6-database-inspection-and-model-maintenance",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress",
+      "to": "document:progress/section:7-routing",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress",
+      "to": "document:progress/section:8-configuration-caching-and-optimization",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:8-configuration-caching-and-optimization",
+      "to": "document:progress/section:8-configuration-caching-and-optimization/section:configuration",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:8-configuration-caching-and-optimization",
+      "to": "document:progress/section:8-configuration-caching-and-optimization/section:application-cache",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:8-configuration-caching-and-optimization",
+      "to": "document:progress/section:8-configuration-caching-and-optimization/section:blade-views",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:8-configuration-caching-and-optimization",
+      "to": "document:progress/section:8-configuration-caching-and-optimization/section:events",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:8-configuration-caching-and-optimization",
+      "to": "document:progress/section:8-configuration-caching-and-optimization/section:combined-optimization-and-compiled-files",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress",
+      "to": "document:progress/section:9-queue-and-background-job-management",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress",
+      "to": "document:progress/section:10-task-scheduling",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress",
+      "to": "document:progress/section:11-testing",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress",
+      "to": "document:progress/section:12-application-operations-and-environment-management",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress",
+      "to": "document:progress/section:13-feature-installation-and-package-integration",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress",
+      "to": "document:progress/section:14-building-your-own-cli-commands",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress",
+      "to": "document:progress/section:15-optional-ecosystem-cli-tools",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:15-optional-ecosystem-cli-tools",
+      "to": "document:progress/section:15-optional-ecosystem-cli-tools/section:ecosystem-command-examples",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress",
+      "to": "document:progress/section:sources",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:1-command-discovery-and-help",
+      "to": "item:a473abf214a4fde1",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:1-command-discovery-and-help",
+      "to": "item:aeb924826cd86ec3",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:1-command-discovery-and-help",
+      "to": "item:1d05459bdb1f91d9",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:1-command-discovery-and-help",
+      "to": "item:369e48c67c415bbf",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:1-command-discovery-and-help",
+      "to": "item:2dfb6353e20e96db",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:1-command-discovery-and-help",
+      "to": "item:106109619319f64f",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:2-project-creation",
+      "to": "item:2d778bcb7b7ea836",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:2-project-creation",
+      "to": "item:6b96be38c5be38bb",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:3-local-development",
+      "to": "item:ebaf80f41d527730",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:3-local-development",
+      "to": "item:50786f6bb9f458c2",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:3-local-development",
+      "to": "item:8b6457bf63c1137d",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:3-local-development",
+      "to": "item:7e267621a023cdfc",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:3-local-development",
+      "to": "item:0cbcf7314a0f15cf",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:3-local-development",
+      "to": "item:02847b7328d7729f",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:4-code-generation/section:application-structure",
+      "to": "item:603c05af5647956e",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:4-code-generation/section:application-structure",
+      "to": "item:13a747793db10a41",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:4-code-generation/section:application-structure",
+      "to": "item:6892a9c937a46b76",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:4-code-generation/section:application-structure",
+      "to": "item:cfaaf0ad0039c7da",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:4-code-generation/section:application-structure",
+      "to": "item:d702150d7341457d",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:4-code-generation/section:application-structure",
+      "to": "item:a6be0b5c1166ce9f",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:4-code-generation/section:application-structure",
+      "to": "item:5e61724ab2afcb50",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:4-code-generation/section:http-and-presentation",
+      "to": "item:a1d7160484e49cff",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:4-code-generation/section:http-and-presentation",
+      "to": "item:4ec8d5d75d6754be",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:4-code-generation/section:http-and-presentation",
+      "to": "item:73648782a6345304",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:4-code-generation/section:http-and-presentation",
+      "to": "item:38c9e9803187641a",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:4-code-generation/section:http-and-presentation",
+      "to": "item:369160dcd0abfa20",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:4-code-generation/section:http-and-presentation",
+      "to": "item:431f9c44edb35476",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:4-code-generation/section:database-and-eloquent",
+      "to": "item:6be6f423a4b3d3db",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:4-code-generation/section:database-and-eloquent",
+      "to": "item:c8a2bf5bbda57bfc",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:4-code-generation/section:database-and-eloquent",
+      "to": "item:0770348f5619d279",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:4-code-generation/section:database-and-eloquent",
+      "to": "item:c6ed4d107809aac3",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:4-code-generation/section:database-and-eloquent",
+      "to": "item:d54ad6e3e82cdd0b",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:4-code-generation/section:database-and-eloquent",
+      "to": "item:ea0baccaddc8039a",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:4-code-generation/section:database-and-eloquent",
+      "to": "item:b3b822f1d7197604",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:4-code-generation/section:application-behavior",
+      "to": "item:e0d7a6b8dcb2b443",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:4-code-generation/section:application-behavior",
+      "to": "item:2e17537480d4835c",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:4-code-generation/section:application-behavior",
+      "to": "item:45dec3945bea6d16",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:4-code-generation/section:application-behavior",
+      "to": "item:2d5ff28d8b518b4c",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:4-code-generation/section:application-behavior",
+      "to": "item:323de6eb43357962",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:4-code-generation/section:application-behavior",
+      "to": "item:7cb946c4c6625f67",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:4-code-generation/section:application-behavior",
+      "to": "item:34c29d6584fab606",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:4-code-generation/section:application-behavior",
+      "to": "item:2e3628a280a09b5d",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:4-code-generation/section:application-behavior",
+      "to": "item:89af2147c9d270e6",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:4-code-generation/section:application-behavior",
+      "to": "item:54f1b3b85ad4a275",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:4-code-generation/section:infrastructure-and-testing",
+      "to": "item:8eed2b736d492f6c",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:4-code-generation/section:infrastructure-and-testing",
+      "to": "item:b79681846a2a68c0",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:4-code-generation/section:infrastructure-and-testing",
+      "to": "item:c5ff7fa8e4af5936",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:4-code-generation/section:infrastructure-and-testing",
+      "to": "item:db1945c49c603472",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:4-code-generation/section:infrastructure-and-testing",
+      "to": "item:80c97dbb1b51bd01",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:4-code-generation/section:infrastructure-and-testing",
+      "to": "item:fa67d667eee824ee",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:4-code-generation/section:infrastructure-and-testing",
+      "to": "item:ac7f5bcc1a7a9412",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:4-code-generation/section:generator-examples-and-customization",
+      "to": "item:46dcd17ede260cf0",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:4-code-generation/section:generator-examples-and-customization",
+      "to": "item:0b538596666b3659",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:4-code-generation/section:generator-examples-and-customization",
+      "to": "item:6711d378d0c69ba6",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:4-code-generation/section:generator-examples-and-customization",
+      "to": "item:6cdce95cb325b5c1",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:4-code-generation/section:generator-examples-and-customization",
+      "to": "item:1668ba38cf2d85c1",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:4-code-generation/section:generator-examples-and-customization",
+      "to": "item:03708989b38858be",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:4-code-generation/section:generator-examples-and-customization",
+      "to": "item:85cc55f43fe0a9a7",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:5-database-migrations-and-schema-management",
+      "to": "item:8a815613fb429e5c",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:5-database-migrations-and-schema-management",
+      "to": "item:a7350a199d2ab91e",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:5-database-migrations-and-schema-management",
+      "to": "item:f064806ae3dd0f60",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:5-database-migrations-and-schema-management",
+      "to": "item:9e2465de13b97e7f",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:5-database-migrations-and-schema-management",
+      "to": "item:c3cace7040cb6a4a",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:5-database-migrations-and-schema-management",
+      "to": "item:29e04413d30ceeed",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:5-database-migrations-and-schema-management",
+      "to": "item:218ca3cea85438a3",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:5-database-migrations-and-schema-management",
+      "to": "item:f4915c707e8c7d11",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:5-database-migrations-and-schema-management",
+      "to": "item:490e682650e3bd11",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:5-database-migrations-and-schema-management",
+      "to": "item:0f332552d6bead4b",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:5-database-migrations-and-schema-management",
+      "to": "item:d33d12a3082466ff",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:6-database-inspection-and-model-maintenance",
+      "to": "item:a68cd46199ec706a",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:6-database-inspection-and-model-maintenance",
+      "to": "item:0febc0b8cba0cfba",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:6-database-inspection-and-model-maintenance",
+      "to": "item:2257190b9288502c",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:6-database-inspection-and-model-maintenance",
+      "to": "item:504aeedae0cc2a4d",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:6-database-inspection-and-model-maintenance",
+      "to": "item:1ea05cd9da618f37",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:6-database-inspection-and-model-maintenance",
+      "to": "item:2c9da268301e36c3",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:6-database-inspection-and-model-maintenance",
+      "to": "item:26bf139464954a05",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:7-routing",
+      "to": "item:267bbd4666d6fec2",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:7-routing",
+      "to": "item:c39cd19380c38dde",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:7-routing",
+      "to": "item:359163eda67d6fb3",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:7-routing",
+      "to": "item:bc044922c4b21b3b",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:7-routing",
+      "to": "item:e4faf9bf6ec9af55",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:8-configuration-caching-and-optimization/section:configuration",
+      "to": "item:1ad0a3e1959f77f7",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:8-configuration-caching-and-optimization/section:configuration",
+      "to": "item:56fec6003059a5be",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:8-configuration-caching-and-optimization/section:configuration",
+      "to": "item:399dc0281abbc2f8",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:8-configuration-caching-and-optimization/section:configuration",
+      "to": "item:652400405ed48a95",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:8-configuration-caching-and-optimization/section:application-cache",
+      "to": "item:56e4f19d42461512",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:8-configuration-caching-and-optimization/section:application-cache",
+      "to": "item:38c7d3371c976dd7",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:8-configuration-caching-and-optimization/section:application-cache",
+      "to": "item:a6c5af9e8ec69ebf",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:8-configuration-caching-and-optimization/section:blade-views",
+      "to": "item:538868e75d9d4e5b",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:8-configuration-caching-and-optimization/section:blade-views",
+      "to": "item:845cb2eece0d984c",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:8-configuration-caching-and-optimization/section:events",
+      "to": "item:44f6d66ea839a1d4",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:8-configuration-caching-and-optimization/section:events",
+      "to": "item:4edb7aaca057000c",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:8-configuration-caching-and-optimization/section:events",
+      "to": "item:1a47667180cc2d5b",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:8-configuration-caching-and-optimization/section:events",
+      "to": "item:644dd38be1ddd69f",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:8-configuration-caching-and-optimization/section:combined-optimization-and-compiled-files",
+      "to": "item:ab8c075e1dd534d8",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:8-configuration-caching-and-optimization/section:combined-optimization-and-compiled-files",
+      "to": "item:2a68cac959fa58a5",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:8-configuration-caching-and-optimization/section:combined-optimization-and-compiled-files",
+      "to": "item:62156775a31f422b",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:9-queue-and-background-job-management",
+      "to": "item:4326cecded7d2255",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:9-queue-and-background-job-management",
+      "to": "item:8761668c254a3bb9",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:9-queue-and-background-job-management",
+      "to": "item:c422280c723e82f9",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:9-queue-and-background-job-management",
+      "to": "item:266316ce40d020a3",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:9-queue-and-background-job-management",
+      "to": "item:9ed11d9f729b1e6d",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:9-queue-and-background-job-management",
+      "to": "item:f19b5e31ac171b66",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:9-queue-and-background-job-management",
+      "to": "item:d3a1b4cc6b7590d1",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:9-queue-and-background-job-management",
+      "to": "item:0c2043e1861df00a",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:9-queue-and-background-job-management",
+      "to": "item:e949512aa6eda179",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:9-queue-and-background-job-management",
+      "to": "item:dd9830329fbd5699",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:9-queue-and-background-job-management",
+      "to": "item:918d0f58644d9f35",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:9-queue-and-background-job-management",
+      "to": "item:14c4459a8baa0653",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:9-queue-and-background-job-management",
+      "to": "item:939059db77901e1e",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:9-queue-and-background-job-management",
+      "to": "item:f25df58f99a48e08",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:9-queue-and-background-job-management",
+      "to": "item:9ec5b6ced2737586",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:10-task-scheduling",
+      "to": "item:0b98ce5da58298ed",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:10-task-scheduling",
+      "to": "item:800774b47e504511",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:10-task-scheduling",
+      "to": "item:c83d15eb83e26911",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:10-task-scheduling",
+      "to": "item:c5c68e40674b30f6",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:10-task-scheduling",
+      "to": "item:b14d388af60b8212",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:10-task-scheduling",
+      "to": "item:40193e8ea992b036",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:10-task-scheduling",
+      "to": "item:949dbe5cedb32fa6",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:10-task-scheduling",
+      "to": "item:4b90aeae9b305e34",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:10-task-scheduling",
+      "to": "item:f1c1162d1bed9333",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:11-testing",
+      "to": "item:a85908af6ad23c33",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:11-testing",
+      "to": "item:b5ef9e65087131c2",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:11-testing",
+      "to": "item:653a4b39f14cbd9f",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:11-testing",
+      "to": "item:0cb10946a80226bf",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:11-testing",
+      "to": "item:be51ab5821631bf5",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:11-testing",
+      "to": "item:d448b6a69680c021",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:11-testing",
+      "to": "item:82c7ed957b13dd9b",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:11-testing",
+      "to": "item:195c11ba9263ff8a",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:12-application-operations-and-environment-management",
+      "to": "item:4d74120fdb77ebfa",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:12-application-operations-and-environment-management",
+      "to": "item:bb072c1e381a326b",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:12-application-operations-and-environment-management",
+      "to": "item:8e8cd07161e9266e",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:12-application-operations-and-environment-management",
+      "to": "item:f8e87ab010a68bc4",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:12-application-operations-and-environment-management",
+      "to": "item:540fd87ef384edea",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:12-application-operations-and-environment-management",
+      "to": "item:909a2df28a8c6c0d",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:12-application-operations-and-environment-management",
+      "to": "item:01a41a1bfa3ed567",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:12-application-operations-and-environment-management",
+      "to": "item:1b0891d2902abed4",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:12-application-operations-and-environment-management",
+      "to": "item:08f3d27e01c3d510",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:12-application-operations-and-environment-management",
+      "to": "item:f52a689b36b662f0",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:13-feature-installation-and-package-integration",
+      "to": "item:a14a78f3eb98c326",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:13-feature-installation-and-package-integration",
+      "to": "item:3878dd25a88a3bc4",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:13-feature-installation-and-package-integration",
+      "to": "item:7b83ab52c716ff6f",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:13-feature-installation-and-package-integration",
+      "to": "item:7ea7d62a4f469484",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:13-feature-installation-and-package-integration",
+      "to": "item:f4a10da3896658c9",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:13-feature-installation-and-package-integration",
+      "to": "item:fef697176a0bc091",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:13-feature-installation-and-package-integration",
+      "to": "item:01aaaed8b08b5e26",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:14-building-your-own-cli-commands",
+      "to": "item:71d773777597bd95",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:14-building-your-own-cli-commands",
+      "to": "item:ea14d39a31fc1ef0",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:14-building-your-own-cli-commands",
+      "to": "item:b75aae72f85fb3a7",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:14-building-your-own-cli-commands",
+      "to": "item:9129fd8dd3014b6c",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:14-building-your-own-cli-commands",
+      "to": "item:ef412ff67b5d1cb0",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:14-building-your-own-cli-commands",
+      "to": "item:7b7d6525426c7400",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:14-building-your-own-cli-commands",
+      "to": "item:2bd99e0de5ef4b9c",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:14-building-your-own-cli-commands",
+      "to": "item:4ab43fd2a18d92e3",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:14-building-your-own-cli-commands",
+      "to": "item:53a5fc1ac93acf15",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:14-building-your-own-cli-commands",
+      "to": "item:30978609ba9c3748",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:14-building-your-own-cli-commands",
+      "to": "item:b5c0927ea95ece49",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:14-building-your-own-cli-commands",
+      "to": "item:242ad00e51e1ce98",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:14-building-your-own-cli-commands",
+      "to": "item:0f3acaf50eb7eb29",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:14-building-your-own-cli-commands",
+      "to": "item:5e2eadbb27202760",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:14-building-your-own-cli-commands",
+      "to": "item:ef15c8fc870a6bd0",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:14-building-your-own-cli-commands",
+      "to": "item:ed1be0bbfb566674",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:14-building-your-own-cli-commands",
+      "to": "item:700c819b0109ebde",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:15-optional-ecosystem-cli-tools",
+      "to": "item:65a693f0d19e56e6",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:15-optional-ecosystem-cli-tools",
+      "to": "item:9b4a470cd3684942",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:15-optional-ecosystem-cli-tools",
+      "to": "item:291026f5bf8fce14",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:15-optional-ecosystem-cli-tools",
+      "to": "item:9045af31453cbde7",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:15-optional-ecosystem-cli-tools",
+      "to": "item:1dedc25ddaaa8863",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:15-optional-ecosystem-cli-tools",
+      "to": "item:fc4e1880f37e98af",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:15-optional-ecosystem-cli-tools",
+      "to": "item:014e08003d742bab",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:15-optional-ecosystem-cli-tools",
+      "to": "item:8288cf1061fce5d2",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:15-optional-ecosystem-cli-tools",
+      "to": "item:1c52b444c7ff8ca7",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:15-optional-ecosystem-cli-tools",
+      "to": "item:542f0180a51711cf",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:15-optional-ecosystem-cli-tools/section:ecosystem-command-examples",
+      "to": "item:14d3ee7c5af3b4d2",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:15-optional-ecosystem-cli-tools/section:ecosystem-command-examples",
+      "to": "item:488774f532b93140",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:15-optional-ecosystem-cli-tools/section:ecosystem-command-examples",
+      "to": "item:c5289e196a9f31b8",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:15-optional-ecosystem-cli-tools/section:ecosystem-command-examples",
+      "to": "item:9e6edd78a7e4c82c",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:15-optional-ecosystem-cli-tools/section:ecosystem-command-examples",
+      "to": "item:146fbf2568d87865",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:15-optional-ecosystem-cli-tools/section:ecosystem-command-examples",
+      "to": "item:47d7f3f7fa16abd8",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:15-optional-ecosystem-cli-tools/section:ecosystem-command-examples",
+      "to": "item:1fc60e522f6b00e3",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress",
+      "to": "note:1137a64dfb0bccdf",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress",
+      "to": "note:ac280c5ffe2f20be",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress",
+      "to": "note:c41a45785b52ec06",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-orm-and-migration-status",
+      "to": "note:63bc860b37259d5f",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-orm-and-migration-status/section:implemented-with-real-sqlite-test-evidence",
+      "to": "note:209464914ae78f8e",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-orm-and-migration-status/section:implemented-with-real-sqlite-test-evidence",
+      "to": "note:84f9d71bf1e68c68",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-orm-and-migration-status/section:implemented-with-real-sqlite-test-evidence",
+      "to": "note:1ad50eb2c969225e",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-orm-and-migration-status/section:implemented-with-real-sqlite-test-evidence",
+      "to": "note:56aa2793259e949e",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-orm-and-migration-status/section:implemented-with-real-sqlite-test-evidence",
+      "to": "note:3376496c893d73e7",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-orm-and-migration-status/section:postgresql-and-mariadb-implemented-paths-incomplete-live-verification",
+      "to": "note:cf32f2fadf801ae3",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-orm-and-migration-status/section:postgresql-and-mariadb-implemented-paths-incomplete-live-verification",
+      "to": "note:681db10a3eef5c93",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-orm-and-migration-status/section:postgresql-and-mariadb-implemented-paths-incomplete-live-verification",
+      "to": "note:007c49ef083647d3",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-orm-and-migration-status/section:postgresql-and-mariadb-implemented-paths-incomplete-live-verification",
+      "to": "note:e02dc171026efacf",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-orm-and-migration-status/section:sql-preview-is-not-full-simulation",
+      "to": "note:b34c0278ffb7d517",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-orm-and-migration-status/section:sql-preview-is-not-full-simulation",
+      "to": "note:23c8c7f2a6b76010",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-orm-and-migration-status/section:sql-preview-is-not-full-simulation",
+      "to": "note:72b41c9a80e4685f",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-orm-and-migration-status/section:remaining-verification-and-compatibility-gaps",
+      "to": "note:26a8529e11cc8f64",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-orm-and-migration-status/section:remaining-verification-and-compatibility-gaps",
+      "to": "note:c780148e119a0600",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-orm-and-migration-status/section:remaining-verification-and-compatibility-gaps",
+      "to": "note:bef00087a64def26",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-orm-and-migration-status/section:remaining-verification-and-compatibility-gaps",
+      "to": "note:316d3c83af4a6470",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-orm-and-migration-status/section:remaining-verification-and-compatibility-gaps",
+      "to": "note:47d0dcf788427d8d",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-orm-and-migration-status/section:remaining-verification-and-compatibility-gaps",
+      "to": "note:5cff6823c01b7ef1",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:1-command-discovery-and-help",
+      "to": "note:a19f088211d04bb1",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:3-local-development",
+      "to": "note:be69e4459d8ecb23",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:4-code-generation",
+      "to": "note:774ba4dc2a136b89",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:5-database-migrations-and-schema-management",
+      "to": "note:4315278bbf761ee4",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:9-queue-and-background-job-management",
+      "to": "note:2e3c41d45c98f911",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:14-building-your-own-cli-commands",
+      "to": "note:a7a79b2008eb4aac",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:15-optional-ecosystem-cli-tools",
+      "to": "note:8072bedf0580f1dc",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress",
+      "to": "example:a5a1fbbae6666523",
+      "relation": "has_example"
+    },
+    {
+      "from": "item:2d778bcb7b7ea836",
+      "to": "example:f34c3d2297d52ada",
+      "relation": "has_example"
+    },
+    {
+      "from": "item:02847b7328d7729f",
+      "to": "example:367d7af8c6bb0909",
+      "relation": "has_example"
+    },
+    {
+      "from": "item:46dcd17ede260cf0",
+      "to": "example:b5a865a7e2f19af7",
+      "relation": "has_example"
+    },
+    {
+      "from": "item:0b538596666b3659",
+      "to": "example:5809d10726645d4a",
+      "relation": "has_example"
+    },
+    {
+      "from": "item:6711d378d0c69ba6",
+      "to": "example:ad971408ef6cbd26",
+      "relation": "has_example"
+    },
+    {
+      "from": "item:6cdce95cb325b5c1",
+      "to": "example:9b6486e6a677a60d",
+      "relation": "has_example"
+    },
+    {
+      "from": "item:1668ba38cf2d85c1",
+      "to": "example:f628510d874da692",
+      "relation": "has_example"
+    },
+    {
+      "from": "item:26bf139464954a05",
+      "to": "example:4564d3d7475c7612",
+      "relation": "has_example"
+    },
+    {
+      "from": "item:bc044922c4b21b3b",
+      "to": "example:14b005d688007d33",
+      "relation": "has_example"
+    },
+    {
+      "from": "item:e4faf9bf6ec9af55",
+      "to": "example:6828d3aebd393598",
+      "relation": "has_example"
+    },
+    {
+      "from": "item:9ec5b6ced2737586",
+      "to": "example:3a628e1479dcb51a",
+      "relation": "has_example"
+    },
+    {
+      "from": "item:a85908af6ad23c33",
+      "to": "example:1220f5fe77c673ac",
+      "relation": "has_example"
+    },
+    {
+      "from": "item:b5ef9e65087131c2",
+      "to": "example:c48ed8d342c37146",
+      "relation": "has_example"
+    },
+    {
+      "from": "item:653a4b39f14cbd9f",
+      "to": "example:b98ea7ab03a92194",
+      "relation": "has_example"
+    },
+    {
+      "from": "item:0cb10946a80226bf",
+      "to": "example:a7bb3b4850c44a2c",
+      "relation": "has_example"
+    },
+    {
+      "from": "item:be51ab5821631bf5",
+      "to": "example:86318bac06521379",
+      "relation": "has_example"
+    },
+    {
+      "from": "item:700c819b0109ebde",
+      "to": "example:51a554c394e44281",
+      "relation": "has_example"
+    },
+    {
+      "from": "item:14d3ee7c5af3b4d2",
+      "to": "example:ce7e499c400be290",
+      "relation": "has_example"
+    },
+    {
+      "from": "item:488774f532b93140",
+      "to": "example:cba94b6a872e108b",
+      "relation": "has_example"
+    },
+    {
+      "from": "item:c5289e196a9f31b8",
+      "to": "example:e2c12f767fa44fdf",
+      "relation": "has_example"
+    },
+    {
+      "from": "item:9e6edd78a7e4c82c",
+      "to": "example:4aeafbbb4e3330c6",
+      "relation": "has_example"
+    },
+    {
+      "from": "item:146fbf2568d87865",
+      "to": "example:1d5f8d676f32671e",
+      "relation": "has_example"
+    },
+    {
+      "from": "item:47d7f3f7fa16abd8",
+      "to": "example:c62803563436ca1b",
+      "relation": "has_example"
+    },
+    {
+      "from": "item:1fc60e522f6b00e3",
+      "to": "example:4b358724328232e7",
+      "relation": "has_example"
+    },
+    {
+      "from": "document:progress/section:sources",
+      "to": "source:251a061a0b8c4a39",
+      "relation": "cites"
+    },
+    {
+      "from": "document:progress/section:sources",
+      "to": "source:56a142a00b10f842",
+      "relation": "cites"
+    },
+    {
+      "from": "document:progress/section:sources",
+      "to": "source:90b70de2c5fd68eb",
+      "relation": "cites"
+    },
+    {
+      "from": "item:369e48c67c415bbf",
+      "to": "command:artisan:--version",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:2dfb6353e20e96db",
+      "to": "command:artisan:about",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:1b0891d2902abed4",
+      "to": "command:artisan:auth:clear-resets",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:56e4f19d42461512",
+      "to": "command:artisan:cache:clear",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:38c7d3371c976dd7",
+      "to": "command:artisan:cache:forget",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:a6c5af9e8ec69ebf",
+      "to": "command:artisan:cache:prune-stale-tags",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:7b83ab52c716ff6f",
+      "to": "command:artisan:channel:list",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:62156775a31f422b",
+      "to": "command:artisan:clear-compiled",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:56fec6003059a5be",
+      "to": "command:artisan:config:cache",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:399dc0281abbc2f8",
+      "to": "command:artisan:config:clear",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:652400405ed48a95",
+      "to": "command:artisan:config:publish",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:1ad0a3e1959f77f7",
+      "to": "command:artisan:config:show",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:a68cd46199ec706a",
+      "to": "command:artisan:db",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:504aeedae0cc2a4d",
+      "to": "command:artisan:db:monitor",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:0f332552d6bead4b",
+      "to": "command:artisan:db:seed",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:0febc0b8cba0cfba",
+      "to": "command:artisan:db:show",
+      "relation": "references_command"
+    },
+    {
+      "from": "example:4564d3d7475c7612",
+      "to": "command:artisan:db:show",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:2257190b9288502c",
+      "to": "command:artisan:db:table",
+      "relation": "references_command"
+    },
+    {
+      "from": "example:4564d3d7475c7612",
+      "to": "command:artisan:db:table",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:d33d12a3082466ff",
+      "to": "command:artisan:db:wipe",
+      "relation": "references_command"
+    },
+    {
+      "from": "note:4315278bbf761ee4",
+      "to": "command:artisan:db:wipe",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:50786f6bb9f458c2",
+      "to": "command:artisan:dev",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:8b6457bf63c1137d",
+      "to": "command:artisan:dev:list",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:106109619319f64f",
+      "to": "command:artisan:docs",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:540fd87ef384edea",
+      "to": "command:artisan:down",
+      "relation": "references_command"
+    },
+    {
+      "from": "example:c62803563436ca1b",
+      "to": "command:artisan:dusk",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:bb072c1e381a326b",
+      "to": "command:artisan:env",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:f8e87ab010a68bc4",
+      "to": "command:artisan:env:decrypt",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:8e8cd07161e9266e",
+      "to": "command:artisan:env:encrypt",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:4edb7aaca057000c",
+      "to": "command:artisan:event:cache",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:1a47667180cc2d5b",
+      "to": "command:artisan:event:clear",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:644dd38be1ddd69f",
+      "to": "command:artisan:event:generate",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:44f6d66ea839a1d4",
+      "to": "command:artisan:event:list",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:1d05459bdb1f91d9",
+      "to": "command:artisan:help",
+      "relation": "references_command"
+    },
+    {
+      "from": "example:e2c12f767fa44fdf",
+      "to": "command:artisan:horizon",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:a14a78f3eb98c326",
+      "to": "command:artisan:install:api",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:3878dd25a88a3bc4",
+      "to": "command:artisan:install:broadcasting",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:4d74120fdb77ebfa",
+      "to": "command:artisan:key:generate",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:fef697176a0bc091",
+      "to": "command:artisan:lang:publish",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:a473abf214a4fde1",
+      "to": "command:artisan:list",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:aeb924826cd86ec3",
+      "to": "command:artisan:list",
+      "relation": "references_command"
+    },
+    {
+      "from": "note:a19f088211d04bb1",
+      "to": "command:artisan:list",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:8eed2b736d492f6c",
+      "to": "command:artisan:make:cache-table",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:d54ad6e3e82cdd0b",
+      "to": "command:artisan:make:cast",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:34c29d6584fab606",
+      "to": "command:artisan:make:channel",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:603c05af5647956e",
+      "to": "command:artisan:make:class",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:5e61724ab2afcb50",
+      "to": "command:artisan:make:command",
+      "relation": "references_command"
+    },
+    {
+      "from": "example:51a554c394e44281",
+      "to": "command:artisan:make:command",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:369160dcd0abfa20",
+      "to": "command:artisan:make:component",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:a6be0b5c1166ce9f",
+      "to": "command:artisan:make:config",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:a1d7160484e49cff",
+      "to": "command:artisan:make:controller",
+      "relation": "references_command"
+    },
+    {
+      "from": "example:5809d10726645d4a",
+      "to": "command:artisan:make:controller",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:cfaaf0ad0039c7da",
+      "to": "command:artisan:make:enum",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:e0d7a6b8dcb2b443",
+      "to": "command:artisan:make:event",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:54f1b3b85ad4a275",
+      "to": "command:artisan:make:exception",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:0770348f5619d279",
+      "to": "command:artisan:make:factory",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:13a747793db10a41",
+      "to": "command:artisan:make:interface",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:45dec3945bea6d16",
+      "to": "command:artisan:make:job",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:2d5ff28d8b518b4c",
+      "to": "command:artisan:make:job-middleware",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:2e17537480d4835c",
+      "to": "command:artisan:make:listener",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:323de6eb43357962",
+      "to": "command:artisan:make:mail",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:4ec8d5d75d6754be",
+      "to": "command:artisan:make:middleware",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:c8a2bf5bbda57bfc",
+      "to": "command:artisan:make:migration",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:6be6f423a4b3d3db",
+      "to": "command:artisan:make:model",
+      "relation": "references_command"
+    },
+    {
+      "from": "example:b5a865a7e2f19af7",
+      "to": "command:artisan:make:model",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:7cb946c4c6625f67",
+      "to": "command:artisan:make:notification",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:c5ff7fa8e4af5936",
+      "to": "command:artisan:make:notifications-table",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:b3b822f1d7197604",
+      "to": "command:artisan:make:observer",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:2e3628a280a09b5d",
+      "to": "command:artisan:make:policy",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:d702150d7341457d",
+      "to": "command:artisan:make:provider",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:fa67d667eee824ee",
+      "to": "command:artisan:make:queue-batches-table",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:80c97dbb1b51bd01",
+      "to": "command:artisan:make:queue-failed-table",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:db1945c49c603472",
+      "to": "command:artisan:make:queue-table",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:73648782a6345304",
+      "to": "command:artisan:make:request",
+      "relation": "references_command"
+    },
+    {
+      "from": "example:ad971408ef6cbd26",
+      "to": "command:artisan:make:request",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:38c9e9803187641a",
+      "to": "command:artisan:make:resource",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:89af2147c9d270e6",
+      "to": "command:artisan:make:rule",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:ea0baccaddc8039a",
+      "to": "command:artisan:make:scope",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:c6ed4d107809aac3",
+      "to": "command:artisan:make:seeder",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:b79681846a2a68c0",
+      "to": "command:artisan:make:session-table",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:ac7f5bcc1a7a9412",
+      "to": "command:artisan:make:test",
+      "relation": "references_command"
+    },
+    {
+      "from": "example:9b6486e6a677a60d",
+      "to": "command:artisan:make:test",
+      "relation": "references_command"
+    },
+    {
+      "from": "example:f628510d874da692",
+      "to": "command:artisan:make:test",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:6892a9c937a46b76",
+      "to": "command:artisan:make:trait",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:431f9c44edb35476",
+      "to": "command:artisan:make:view",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:8a815613fb429e5c",
+      "to": "command:artisan:migrate",
+      "relation": "references_command"
+    },
+    {
+      "from": "example:ce7e499c400be290",
+      "to": "command:artisan:migrate",
+      "relation": "references_command"
+    },
+    {
+      "from": "note:72b41c9a80e4685f",
+      "to": "command:artisan:migrate:check",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:29e04413d30ceeed",
+      "to": "command:artisan:migrate:fresh",
+      "relation": "references_command"
+    },
+    {
+      "from": "note:4315278bbf761ee4",
+      "to": "command:artisan:migrate:fresh",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:218ca3cea85438a3",
+      "to": "command:artisan:migrate:install",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:c3cace7040cb6a4a",
+      "to": "command:artisan:migrate:refresh",
+      "relation": "references_command"
+    },
+    {
+      "from": "note:4315278bbf761ee4",
+      "to": "command:artisan:migrate:refresh",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:9e2465de13b97e7f",
+      "to": "command:artisan:migrate:reset",
+      "relation": "references_command"
+    },
+    {
+      "from": "note:4315278bbf761ee4",
+      "to": "command:artisan:migrate:reset",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:f064806ae3dd0f60",
+      "to": "command:artisan:migrate:rollback",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:a7350a199d2ab91e",
+      "to": "command:artisan:migrate:status",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:f4915c707e8c7d11",
+      "to": "command:artisan:migrate:uninstall",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:2c9da268301e36c3",
+      "to": "command:artisan:model:prune",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:1ea05cd9da618f37",
+      "to": "command:artisan:model:show",
+      "relation": "references_command"
+    },
+    {
+      "from": "example:4564d3d7475c7612",
+      "to": "command:artisan:model:show",
+      "relation": "references_command"
+    },
+    {
+      "from": "example:4aeafbbb4e3330c6",
+      "to": "command:artisan:octane:start",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:ab8c075e1dd534d8",
+      "to": "command:artisan:optimize",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:2a68cac959fa58a5",
+      "to": "command:artisan:optimize:clear",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:f4a10da3896658c9",
+      "to": "command:artisan:package:discover",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:0cbcf7314a0f15cf",
+      "to": "command:artisan:pail",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:d3a1b4cc6b7590d1",
+      "to": "command:artisan:queue:clear",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:0c2043e1861df00a",
+      "to": "command:artisan:queue:failed",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:14c4459a8baa0653",
+      "to": "command:artisan:queue:flush",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:918d0f58644d9f35",
+      "to": "command:artisan:queue:forget",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:8761668c254a3bb9",
+      "to": "command:artisan:queue:listen",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:f19b5e31ac171b66",
+      "to": "command:artisan:queue:monitor",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:266316ce40d020a3",
+      "to": "command:artisan:queue:pause",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:f25df58f99a48e08",
+      "to": "command:artisan:queue:prune-batches",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:939059db77901e1e",
+      "to": "command:artisan:queue:prune-failed",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:c422280c723e82f9",
+      "to": "command:artisan:queue:restart",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:9ed11d9f729b1e6d",
+      "to": "command:artisan:queue:resume",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:e949512aa6eda179",
+      "to": "command:artisan:queue:retry",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:dd9830329fbd5699",
+      "to": "command:artisan:queue:retry-batch",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:4326cecded7d2255",
+      "to": "command:artisan:queue:work",
+      "relation": "references_command"
+    },
+    {
+      "from": "example:3a628e1479dcb51a",
+      "to": "command:artisan:queue:work",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:01a41a1bfa3ed567",
+      "to": "command:artisan:reload",
+      "relation": "references_command"
+    },
+    {
+      "from": "example:1d5f8d676f32671e",
+      "to": "command:artisan:reverb:start",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:c39cd19380c38dde",
+      "to": "command:artisan:route:cache",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:359163eda67d6fb3",
+      "to": "command:artisan:route:clear",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:267bbd4666d6fec2",
+      "to": "command:artisan:route:list",
+      "relation": "references_command"
+    },
+    {
+      "from": "example:14b005d688007d33",
+      "to": "command:artisan:route:list",
+      "relation": "references_command"
+    },
+    {
+      "from": "example:6828d3aebd393598",
+      "to": "command:artisan:route:list",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:40193e8ea992b036",
+      "to": "command:artisan:schedule:clear-cache",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:f1c1162d1bed9333",
+      "to": "command:artisan:schedule:finish",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:b14d388af60b8212",
+      "to": "command:artisan:schedule:interrupt",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:0b98ce5da58298ed",
+      "to": "command:artisan:schedule:list",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:949dbe5cedb32fa6",
+      "to": "command:artisan:schedule:pause",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:4b90aeae9b305e34",
+      "to": "command:artisan:schedule:resume",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:800774b47e504511",
+      "to": "command:artisan:schedule:run",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:c5c68e40674b30f6",
+      "to": "command:artisan:schedule:test",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:c83d15eb83e26911",
+      "to": "command:artisan:schedule:work",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:490e682650e3bd11",
+      "to": "command:artisan:schema:dump",
+      "relation": "references_command"
+    },
+    {
+      "from": "note:72b41c9a80e4685f",
+      "to": "command:artisan:schema:sql",
+      "relation": "references_command"
+    },
+    {
+      "from": "example:4b358724328232e7",
+      "to": "command:artisan:scout:import",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:ebaf80f41d527730",
+      "to": "command:artisan:serve",
+      "relation": "references_command"
+    },
+    {
+      "from": "example:367d7af8c6bb0909",
+      "to": "command:artisan:serve",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:08f3d27e01c3d510",
+      "to": "command:artisan:storage:link",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:f52a689b36b662f0",
+      "to": "command:artisan:storage:unlink",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:85cc55f43fe0a9a7",
+      "to": "command:artisan:stub:publish",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:01aaaed8b08b5e26",
+      "to": "command:artisan:stub:publish",
+      "relation": "references_command"
+    },
+    {
+      "from": "example:1220f5fe77c673ac",
+      "to": "command:artisan:test",
+      "relation": "references_command"
+    },
+    {
+      "from": "example:c48ed8d342c37146",
+      "to": "command:artisan:test",
+      "relation": "references_command"
+    },
+    {
+      "from": "example:b98ea7ab03a92194",
+      "to": "command:artisan:test",
+      "relation": "references_command"
+    },
+    {
+      "from": "example:a7bb3b4850c44a2c",
+      "to": "command:artisan:test",
+      "relation": "references_command"
+    },
+    {
+      "from": "example:86318bac06521379",
+      "to": "command:artisan:test",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:7e267621a023cdfc",
+      "to": "command:artisan:tinker",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:909a2df28a8c6c0d",
+      "to": "command:artisan:up",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:7ea7d62a4f469484",
+      "to": "command:artisan:vendor:publish",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:538868e75d9d4e5b",
+      "to": "command:artisan:view:cache",
+      "relation": "references_command"
+    },
+    {
+      "from": "item:845cb2eece0d984c",
+      "to": "command:artisan:view:clear",
+      "relation": "references_command"
+    },
+    {
+      "from": "example:f34c3d2297d52ada",
+      "to": "command:installer:new",
+      "relation": "references_command"
+    },
+    {
+      "from": "example:cba94b6a872e108b",
+      "to": "command:pint:pint",
+      "relation": "references_command"
+    }
+  ]
+}

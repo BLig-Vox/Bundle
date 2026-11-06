@@ -1,0 +1,2926 @@
+{
+  "schemaVersion": 1,
+  "document": {
+    "id": "document:progress",
+    "title": "Laravel CLI Features Checklist",
+    "path": "PROGRESS.md",
+    "sha256": "46a11b6a0e42068320094942e83e8c4e3372c10ac6fea721f62fa7567d65675b",
+    "markdown": "# Laravel CLI Features Checklist\n\nLaravel’s main command-line interface is **Artisan**, invoked with:\n\n```bash\nphp artisan <command>\n```\n\nLaravel also provides a project installer and optional CLI tools through its ecosystem.\n\n**The exact command list depends on your Laravel version, installed packages, and custom commands.** This checklist covers modern Laravel, including Laravel 13.x features. It is a capability reference, not a claim that Laravel is installed or these features are implemented in this repository. All items start unchecked.\n\n## Bundle ORM and migration status\n\n**Status as of 2026-11-06: implemented and locally tested, but not complete Artisan parity or full cross-database simulation.** The numbered checklist below remains a Laravel capability reference; its checkboxes are unchanged and do not measure Bundle implementation progress. Bundle uses Bun, TypeScript, and MikroORM's Data Mapper API, not PHP, Eloquent, or Laravel's Schema Builder.\n\n### Implemented with real SQLite test evidence\n\n- Model discovery from `src/models/*.ts`, code-first classes with `EntitySchema`, CRUD, relationships, constraints, timestamps, transactions, and explicit repeatable demo seeding run against disposable SQLite databases.\n- Migration installation/status/check, application, latest-batch rollback, reset, refresh, and conservative fresh rebuilds are implemented. Tests cover batch tracking, application steps, rollback count/batch selection, partial refresh, and legacy history upgrades.\n- Model and seeder generators, schema-diff generation, and blank/create/table migration stubs are implemented with overwrite protection. A real Bun CLI-process test edits an existing model, generates and applies a column migration, then rolls it back while preserving existing rows. The CLI does not edit model source automatically.\n- Named connections, custom migration directories, explicit external-path authorization, destructive/production force guards, and failure reporting have automated tests. Database-backed isolation is tested for contention across local connections and cleanup after ordinary failures; stale-lock removal is explicit.\n- SQLite live-schema dumping, migration-history preservation, safe pruning, empty-target restoration/bootstrap, and subsequent migration application are tested against real SQLite fixtures. Dumps exclude application rows and are not data backups.\n\n### PostgreSQL and MariaDB: implemented paths, incomplete live verification\n\n- Official MikroORM drivers, connection/TLS validation, and initial dialect-specific migrations are present. Offline tests compare generated CREATE SQL with those migrations; this does not demonstrate successful execution on a server.\n- The latest implementation-validation run had **86 passing tests, 2 skipped tests, and 0 failures**. The skipped tests are the opt-in PostgreSQL and MariaDB live persistence contracts. This is a dated test-run snapshot, not a code-coverage percentage or a promise that every scenario is tested.\n- PostgreSQL and MariaDB native dump/restore adapters have injected/mock-tool tests for command arguments, environment handling, fallback behavior, and safety guards. Real `pg_dump`/`psql` and MariaDB/MySQL dump/client round trips were not verified against live servers in that run.\n- Live tests require explicitly supplied `BUNDLE_TEST_POSTGRESQL_URL` / `BUNDLE_TEST_MARIADB_URL`, `BUNDLE_TEST_ALLOW_RESET=1`, and empty disposable databases. Never use application or production databases. Skipped tests and passing SQLite/mock tests do not establish live server support.\n\n### SQL preview is not full simulation\n\n- `--pretend` prints supported migrations' queued string SQL without executing it, running seeders, or installing/upgrading migration history. Tests cover preview in both directions, missing SQLite targets, and schema-bootstrap previews.\n- Preview does not run SQL against a disposable database, validate SQL execution, simulate arbitrary data migrations, or establish rollback correctness. Imperative driver/entity-manager access is rejected. Migration modules remain trusted project code; their top-level side effects are not sandboxed.\n- `migrate:check` compares model metadata with the migration snapshot when available; it is not a comprehensive live-schema drift audit. `schema:sql` prints mapped CREATE SQL, distinct from a live schema dump.\n\n### Remaining verification and compatibility gaps\n\n- Run the live PostgreSQL and MariaDB persistence contracts, then separately exercise the expanded batch/rollback/refresh/fresh, lock, and schema dump/prune/bootstrap workflows on each engine. The opt-in persistence tests alone are not a complete migration-feature matrix.\n- Verify real native-client round trips, supported server/client versions, TLS/authentication configurations, restricted permissions, and engine-specific schema/data behavior. MariaDB DDL and restoration are not guaranteed atomic.\n- Validate concurrent deployment behavior across actual processes/hosts, abrupt termination and stale-lock recovery, and operational performance. Current local lock tests are not proof of multi-host deployment safety; non-isolated and native ORM commands can ignore the cooperative lock.\n- No claim of every Artisan command/flag or vendor-specific operation: migration-history uninstall, unrestricted database wiping, PHP Schema Builder compatibility, automatic model editing, interactive production confirmation, and automatic server provisioning are not implemented. Fresh rebuilds deliberately refuse unmapped tables/views rather than automatically dropping every object or type.\n- Passing scenario tests do not prove exhaustive coverage, production readiness, or universal database portability. Review generated SQL and rollback behavior, maintain dialect-specific migrations/snapshots, and back up real data before destructive operations. Native ORM commands bypass Bundle's force guards and optional isolation/bootstrap orchestration.\n\nSee [the migration guide](docs/migrations.md) for the command/option contract and [the database guide](docs/database.md) for configuration and opt-in live-test instructions. These Bundle status notes do not check off the Laravel reference items below.\n\n## 1. Command discovery and help\n\n- [ ] `php artisan list` — List every registered command.\n- [ ] `php artisan list make` — List code-generation commands.\n- [ ] `php artisan help migrate` — Show arguments and options.\n- [ ] `php artisan --version` — Show the framework version.\n- [ ] `php artisan about` — Show application/environment information.\n- [ ] `php artisan docs` — Open Laravel documentation.\n\nFor an exhaustive list for a particular application, **`php artisan list` is the authoritative source**.\n\n## 2. Project creation\n\n- [ ] Create and configure an application using the separate Laravel installer:\n\n  ```bash\n  laravel new my-app\n  ```\n\n- [ ] Use the installer’s interactive setup to choose options such as starter kits, database, and testing framework. Available choices and flags depend on the installer version.\n\n## 3. Local development\n\nThe commands below are invoked with `php artisan`.\n\n- [ ] `serve` — Start the PHP development server.\n- [ ] `dev` — Run the development server, queue listener, logs, and Vite together in supported versions.\n- [ ] `dev:list` — Display the processes configured for `dev`.\n- [ ] `tinker` — Open an interactive PHP shell with the application bootstrapped.\n- [ ] `pail` — Tail application logs when Laravel Pail is installed.\n- [ ] Configure the development server host and port:\n\n  ```bash\n  php artisan serve --host=127.0.0.1 --port=8000\n  ```\n\n## 4. Code generation\n\nArtisan generates application classes and supporting files. Commands below are invoked with `php artisan`.\n\n### Application structure\n\n- [ ] `make:class` — Generate a class.\n- [ ] `make:interface` — Generate an interface.\n- [ ] `make:trait` — Generate a trait.\n- [ ] `make:enum` — Generate an enum.\n- [ ] `make:provider` — Generate a service provider.\n- [ ] `make:config` — Generate a configuration file.\n- [ ] `make:command` — Generate an Artisan command.\n\n### HTTP and presentation\n\n- [ ] `make:controller` — Generate a controller.\n- [ ] `make:middleware` — Generate middleware.\n- [ ] `make:request` — Generate a form request.\n- [ ] `make:resource` — Generate an API resource.\n- [ ] `make:component` — Generate a Blade component.\n- [ ] `make:view` — Generate a view.\n\n### Database and Eloquent\n\n- [ ] `make:model` — Generate an Eloquent model.\n- [ ] `make:migration` — Generate a database migration.\n- [ ] `make:factory` — Generate a model factory.\n- [ ] `make:seeder` — Generate a database seeder.\n- [ ] `make:cast` — Generate a custom cast.\n- [ ] `make:scope` — Generate an Eloquent scope.\n- [ ] `make:observer` — Generate a model observer.\n\n### Application behavior\n\n- [ ] `make:event` — Generate an event.\n- [ ] `make:listener` — Generate an event listener.\n- [ ] `make:job` — Generate a job.\n- [ ] `make:job-middleware` — Generate job middleware.\n- [ ] `make:mail` — Generate a mailable.\n- [ ] `make:notification` — Generate a notification.\n- [ ] `make:channel` — Generate a broadcast channel class.\n- [ ] `make:policy` — Generate an authorization policy.\n- [ ] `make:rule` — Generate a validation rule.\n- [ ] `make:exception` — Generate an exception.\n\n### Infrastructure and testing\n\n- [ ] `make:cache-table` — Generate a cache table migration.\n- [ ] `make:session-table` — Generate a session table migration.\n- [ ] `make:notifications-table` — Generate a notifications table migration.\n- [ ] `make:queue-table` — Generate a queue jobs table migration.\n- [ ] `make:queue-failed-table` — Generate a failed jobs table migration.\n- [ ] `make:queue-batches-table` — Generate a job batches table migration.\n- [ ] `make:test` — Generate a test.\n\n### Generator examples and customization\n\n- [ ] Generate a model with a migration, factory, and seeder:\n\n  ```bash\n  php artisan make:model Post -mfs\n  ```\n\n- [ ] Generate a resource controller associated with a model:\n\n  ```bash\n  php artisan make:controller PostController --resource --model=Post\n  ```\n\n- [ ] Generate a form request:\n\n  ```bash\n  php artisan make:request StorePostRequest\n  ```\n\n- [ ] Generate a feature test:\n\n  ```bash\n  php artisan make:test PostTest\n  ```\n\n- [ ] Generate a unit test:\n\n  ```bash\n  php artisan make:test PostTest --unit\n  ```\n\n- [ ] Use generator options to create related files together.\n- [ ] Use `stub:publish` to customize the templates used by generators.\n\n## 5. Database migrations and schema management\n\n- [ ] `migrate` — Apply pending migrations.\n- [ ] `migrate:status` — Show migration status.\n- [ ] `migrate:rollback` — Roll back the latest migration batch.\n- [ ] `migrate:reset` — Roll back all migrations.\n- [ ] `migrate:refresh` — Roll back and rerun migrations.\n- [ ] `migrate:fresh` — Drop all tables and rerun migrations.\n- [ ] `migrate:install` — Create the migration tracking table.\n- [ ] `migrate:uninstall` — Remove the migration tracking table.\n- [ ] `schema:dump` — Export the database schema.\n- [ ] `db:seed` — Run database seeders.\n- [ ] `db:wipe` — Drop database tables, with options for other objects.\n\n**Destructive:** `migrate:fresh`, `migrate:refresh`, `migrate:reset`, and `db:wipe` can remove data.\n\n## 6. Database inspection and model maintenance\n\n- [ ] `db` — Open the database CLI.\n- [ ] `db:show` — Inspect database information.\n- [ ] `db:table` — Inspect a database table.\n- [ ] `db:monitor` — Monitor database connection counts.\n- [ ] `model:show` — Inspect an Eloquent model.\n- [ ] `model:prune` — Remove records matching model pruning rules.\n- [ ] Inspect database information, a table, and a model:\n\n  ```bash\n  php artisan db:show\n  php artisan db:table users\n  php artisan model:show User\n  ```\n\n## 7. Routing\n\n- [ ] `route:list` — Display registered routes.\n- [ ] `route:cache` — Cache route definitions.\n- [ ] `route:clear` — Remove the route cache.\n- [ ] Filter routes by path:\n\n  ```bash\n  php artisan route:list --path=api\n  ```\n\n- [ ] Display routes with verbose information:\n\n  ```bash\n  php artisan route:list -v\n  ```\n\n## 8. Configuration, caching, and optimization\n\n### Configuration\n\n- [ ] `config:show` — Display configuration values.\n- [ ] `config:cache` — Cache application configuration.\n- [ ] `config:clear` — Remove the configuration cache.\n- [ ] `config:publish` — Publish configuration files.\n\n### Application cache\n\n- [ ] `cache:clear` — Clear the application cache.\n- [ ] `cache:forget` — Remove a cache item.\n- [ ] `cache:prune-stale-tags` — Prune stale cache tags.\n\n### Blade views\n\n- [ ] `view:cache` — Compile and cache Blade views.\n- [ ] `view:clear` — Clear compiled views.\n\n### Events\n\n- [ ] `event:list` — List events and listeners.\n- [ ] `event:cache` — Cache discovered events and listeners.\n- [ ] `event:clear` — Clear the event cache.\n- [ ] `event:generate` — Generate missing events and listeners from registrations.\n\n### Combined optimization and compiled files\n\n- [ ] `optimize` — Cache application bootstrap information.\n- [ ] `optimize:clear` — Remove optimization caches.\n- [ ] `clear-compiled` — Remove compiled framework files.\n\n## 9. Queue and background-job management\n\n- [ ] `queue:work` — Process queued jobs.\n- [ ] `queue:listen` — Listen for and process jobs.\n- [ ] `queue:restart` — Request graceful worker restarts.\n- [ ] `queue:pause` — Pause processing on a supported queue.\n- [ ] `queue:resume` — Resume processing.\n- [ ] `queue:monitor` — Monitor queue sizes.\n- [ ] `queue:clear` — Delete queued jobs.\n- [ ] `queue:failed` — List failed jobs.\n- [ ] `queue:retry` — Retry failed jobs.\n- [ ] `queue:retry-batch` — Retry failed jobs in a batch.\n- [ ] `queue:forget` — Delete a failed-job record.\n- [ ] `queue:flush` — Delete all failed-job records.\n- [ ] `queue:prune-failed` — Prune old failed-job records.\n- [ ] `queue:prune-batches` — Prune old batch records.\n- [ ] Configure queue priority, retry attempts, and worker timeout:\n\n  ```bash\n  php artisan queue:work --queue=high,default --tries=3 --timeout=90\n  ```\n\nPause/resume commands are version-dependent.\n\n## 10. Task scheduling\n\n- [ ] `schedule:list` — List scheduled tasks.\n- [ ] `schedule:run` — Execute tasks that are due.\n- [ ] `schedule:work` — Run the scheduler in the foreground.\n- [ ] `schedule:test` — Interactively select a scheduled task to run.\n- [ ] `schedule:interrupt` — Interrupt an in-progress scheduler run.\n- [ ] `schedule:clear-cache` — Clear scheduler mutexes.\n- [ ] `schedule:pause` — Pause scheduling in supported versions.\n- [ ] `schedule:resume` — Resume scheduling in supported versions.\n- [ ] `schedule:finish` — Internal helper for background scheduled tasks.\n\n## 11. Testing\n\n- [ ] Run the full test suite:\n\n  ```bash\n  php artisan test\n  ```\n\n- [ ] Run a single test file:\n\n  ```bash\n  php artisan test tests/Feature/ExampleTest.php\n  ```\n\n- [ ] Run matching tests:\n\n  ```bash\n  php artisan test --filter=ExampleTest\n  ```\n\n- [ ] Run tests in parallel:\n\n  ```bash\n  php artisan test --parallel\n  ```\n\n- [ ] Generate coverage reports:\n\n  ```bash\n  php artisan test --coverage\n  ```\n\n- [ ] Use parallel test execution with the required dependencies.\n- [ ] Use coverage reporting with a supported coverage driver.\n- [ ] Integrate with PHPUnit or Pest, depending on project setup.\n\n## 12. Application operations and environment management\n\n- [ ] `key:generate` — Generate the application encryption key.\n- [ ] `env` — Display the current environment.\n- [ ] `env:encrypt` — Encrypt an environment file.\n- [ ] `env:decrypt` — Decrypt an environment file.\n- [ ] `down` — Enable maintenance mode.\n- [ ] `up` — Disable maintenance mode.\n- [ ] `reload` — Reload supported long-running services in supported versions.\n- [ ] `auth:clear-resets` — Delete expired password-reset tokens.\n- [ ] `storage:link` — Create configured storage symbolic links.\n- [ ] `storage:unlink` — Remove configured storage symbolic links.\n\n## 13. Feature installation and package integration\n\n- [ ] `install:api` — Set up API routing and authentication support.\n- [ ] `install:broadcasting` — Set up event broadcasting.\n- [ ] `channel:list` — List registered broadcast channels.\n- [ ] `vendor:publish` — Publish package configuration, views, and other assets.\n- [ ] `package:discover` — Rebuild discovered package metadata.\n- [ ] `lang:publish` — Publish language files.\n- [ ] `stub:publish` — Publish customizable generator templates.\n\n## 14. Building your own CLI commands\n\nArtisan is also a framework for creating application-specific command-line tools.\n\n- [ ] Create class-based commands.\n- [ ] Create closure-based commands.\n- [ ] Define required, optional, defaulted, and array arguments.\n- [ ] Define boolean flags, valued options, shortcuts, and repeatable options.\n- [ ] Use dependency injection.\n- [ ] Add interactive text and password prompts.\n- [ ] Add confirmations, selection lists, search, and input validation.\n- [ ] Automatically prompt for missing required arguments.\n- [ ] Display colored output, tables, progress bars, and spinners.\n- [ ] Handle exit codes and exceptions.\n- [ ] Use isolated execution with atomic locks.\n- [ ] Handle signals for graceful shutdown.\n- [ ] Call commands from other commands or application code.\n- [ ] Dispatch commands to queues.\n- [ ] Respond to command lifecycle events.\n- [ ] Test console commands with input/output assertions.\n- [ ] Generate a custom command:\n\n  ```bash\n  php artisan make:command ImportProducts\n  ```\n\n## 15. Optional ecosystem CLI tools\n\nThese require the corresponding packages or services; they are **not all built into a default Laravel installation**.\n\n- [ ] **Sail** — Docker-based development; run Artisan, Composer, Node, and tests in containers.\n- [ ] **Pint** — PHP code formatting and style checks.\n- [ ] **Pail** — Live application-log inspection.\n- [ ] **Horizon** — Redis queue workers, monitoring, and management.\n- [ ] **Octane** — Start and manage long-running application servers.\n- [ ] **Reverb** — Run a WebSocket server.\n- [ ] **Dusk** — Browser automation and browser tests.\n- [ ] **Scout** — Import, flush, and manage searchable model indexes.\n- [ ] **Telescope** — Install and maintain application debugging tools.\n- [ ] **Pulse** — Install and manage application monitoring components.\n\n### Ecosystem command examples\n\n- [ ] Run migrations through Sail:\n\n  ```bash\n  ./vendor/bin/sail artisan migrate\n  ```\n\n- [ ] Format PHP code with Pint:\n\n  ```bash\n  ./vendor/bin/pint\n  ```\n\n- [ ] Start Horizon:\n\n  ```bash\n  php artisan horizon\n  ```\n\n- [ ] Start Octane:\n\n  ```bash\n  php artisan octane:start\n  ```\n\n- [ ] Start Reverb:\n\n  ```bash\n  php artisan reverb:start\n  ```\n\n- [ ] Run Dusk browser tests:\n\n  ```bash\n  php artisan dusk\n  ```\n\n- [ ] Import models into a Scout search index:\n\n  ```bash\n  php artisan scout:import \"App\\Models\\Post\"\n  ```\n\n## Sources\n\n- [Laravel Artisan documentation](https://laravel.com/framework/docs/artisan/commands)\n- [Laravel 13.x framework command registrations](https://github.com/laravel/framework/blob/13.x/src/Illuminate/Foundation/Providers/ArtisanServiceProvider.php)\n- [Laravel task scheduling](https://laravel.com/framework/docs/scheduling)\n"
+  },
+  "sections": [
+    {
+      "id": "document:progress/section:bundle-orm-and-migration-status",
+      "parentId": "document:progress",
+      "level": 2,
+      "title": "Bundle ORM and migration status",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 13,
+        "endLine": 13
+      }
+    },
+    {
+      "id": "document:progress/section:bundle-orm-and-migration-status/section:implemented-with-real-sqlite-test-evidence",
+      "parentId": "document:progress/section:bundle-orm-and-migration-status",
+      "level": 3,
+      "title": "Implemented with real SQLite test evidence",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 17,
+        "endLine": 17
+      }
+    },
+    {
+      "id": "document:progress/section:bundle-orm-and-migration-status/section:postgresql-and-mariadb-implemented-paths-incomplete-live-verification",
+      "parentId": "document:progress/section:bundle-orm-and-migration-status",
+      "level": 3,
+      "title": "PostgreSQL and MariaDB: implemented paths, incomplete live verification",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 25,
+        "endLine": 25
+      }
+    },
+    {
+      "id": "document:progress/section:bundle-orm-and-migration-status/section:sql-preview-is-not-full-simulation",
+      "parentId": "document:progress/section:bundle-orm-and-migration-status",
+      "level": 3,
+      "title": "SQL preview is not full simulation",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 32,
+        "endLine": 32
+      }
+    },
+    {
+      "id": "document:progress/section:bundle-orm-and-migration-status/section:remaining-verification-and-compatibility-gaps",
+      "parentId": "document:progress/section:bundle-orm-and-migration-status",
+      "level": 3,
+      "title": "Remaining verification and compatibility gaps",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 38,
+        "endLine": 38
+      }
+    },
+    {
+      "id": "document:progress/section:1-command-discovery-and-help",
+      "parentId": "document:progress",
+      "level": 2,
+      "title": "1. Command discovery and help",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 48,
+        "endLine": 48
+      }
+    },
+    {
+      "id": "document:progress/section:2-project-creation",
+      "parentId": "document:progress",
+      "level": 2,
+      "title": "2. Project creation",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 59,
+        "endLine": 59
+      }
+    },
+    {
+      "id": "document:progress/section:3-local-development",
+      "parentId": "document:progress",
+      "level": 2,
+      "title": "3. Local development",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 69,
+        "endLine": 69
+      }
+    },
+    {
+      "id": "document:progress/section:4-code-generation",
+      "parentId": "document:progress",
+      "level": 2,
+      "title": "4. Code generation",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 84,
+        "endLine": 84
+      }
+    },
+    {
+      "id": "document:progress/section:4-code-generation/section:application-structure",
+      "parentId": "document:progress/section:4-code-generation",
+      "level": 3,
+      "title": "Application structure",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 88,
+        "endLine": 88
+      }
+    },
+    {
+      "id": "document:progress/section:4-code-generation/section:http-and-presentation",
+      "parentId": "document:progress/section:4-code-generation",
+      "level": 3,
+      "title": "HTTP and presentation",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 98,
+        "endLine": 98
+      }
+    },
+    {
+      "id": "document:progress/section:4-code-generation/section:database-and-eloquent",
+      "parentId": "document:progress/section:4-code-generation",
+      "level": 3,
+      "title": "Database and Eloquent",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 107,
+        "endLine": 107
+      }
+    },
+    {
+      "id": "document:progress/section:4-code-generation/section:application-behavior",
+      "parentId": "document:progress/section:4-code-generation",
+      "level": 3,
+      "title": "Application behavior",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 117,
+        "endLine": 117
+      }
+    },
+    {
+      "id": "document:progress/section:4-code-generation/section:infrastructure-and-testing",
+      "parentId": "document:progress/section:4-code-generation",
+      "level": 3,
+      "title": "Infrastructure and testing",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 130,
+        "endLine": 130
+      }
+    },
+    {
+      "id": "document:progress/section:4-code-generation/section:generator-examples-and-customization",
+      "parentId": "document:progress/section:4-code-generation",
+      "level": 3,
+      "title": "Generator examples and customization",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 140,
+        "endLine": 140
+      }
+    },
+    {
+      "id": "document:progress/section:5-database-migrations-and-schema-management",
+      "parentId": "document:progress",
+      "level": 2,
+      "title": "5. Database migrations and schema management",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 175,
+        "endLine": 175
+      }
+    },
+    {
+      "id": "document:progress/section:6-database-inspection-and-model-maintenance",
+      "parentId": "document:progress",
+      "level": 2,
+      "title": "6. Database inspection and model maintenance",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 191,
+        "endLine": 191
+      }
+    },
+    {
+      "id": "document:progress/section:7-routing",
+      "parentId": "document:progress",
+      "level": 2,
+      "title": "7. Routing",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 207,
+        "endLine": 207
+      }
+    },
+    {
+      "id": "document:progress/section:8-configuration-caching-and-optimization",
+      "parentId": "document:progress",
+      "level": 2,
+      "title": "8. Configuration, caching, and optimization",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 224,
+        "endLine": 224
+      }
+    },
+    {
+      "id": "document:progress/section:8-configuration-caching-and-optimization/section:configuration",
+      "parentId": "document:progress/section:8-configuration-caching-and-optimization",
+      "level": 3,
+      "title": "Configuration",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 226,
+        "endLine": 226
+      }
+    },
+    {
+      "id": "document:progress/section:8-configuration-caching-and-optimization/section:application-cache",
+      "parentId": "document:progress/section:8-configuration-caching-and-optimization",
+      "level": 3,
+      "title": "Application cache",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 233,
+        "endLine": 233
+      }
+    },
+    {
+      "id": "document:progress/section:8-configuration-caching-and-optimization/section:blade-views",
+      "parentId": "document:progress/section:8-configuration-caching-and-optimization",
+      "level": 3,
+      "title": "Blade views",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 239,
+        "endLine": 239
+      }
+    },
+    {
+      "id": "document:progress/section:8-configuration-caching-and-optimization/section:events",
+      "parentId": "document:progress/section:8-configuration-caching-and-optimization",
+      "level": 3,
+      "title": "Events",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 244,
+        "endLine": 244
+      }
+    },
+    {
+      "id": "document:progress/section:8-configuration-caching-and-optimization/section:combined-optimization-and-compiled-files",
+      "parentId": "document:progress/section:8-configuration-caching-and-optimization",
+      "level": 3,
+      "title": "Combined optimization and compiled files",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 251,
+        "endLine": 251
+      }
+    },
+    {
+      "id": "document:progress/section:9-queue-and-background-job-management",
+      "parentId": "document:progress",
+      "level": 2,
+      "title": "9. Queue and background-job management",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 257,
+        "endLine": 257
+      }
+    },
+    {
+      "id": "document:progress/section:10-task-scheduling",
+      "parentId": "document:progress",
+      "level": 2,
+      "title": "10. Task scheduling",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 281,
+        "endLine": 281
+      }
+    },
+    {
+      "id": "document:progress/section:11-testing",
+      "parentId": "document:progress",
+      "level": 2,
+      "title": "11. Testing",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 293,
+        "endLine": 293
+      }
+    },
+    {
+      "id": "document:progress/section:12-application-operations-and-environment-management",
+      "parentId": "document:progress",
+      "level": 2,
+      "title": "12. Application operations and environment management",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 329,
+        "endLine": 329
+      }
+    },
+    {
+      "id": "document:progress/section:13-feature-installation-and-package-integration",
+      "parentId": "document:progress",
+      "level": 2,
+      "title": "13. Feature installation and package integration",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 342,
+        "endLine": 342
+      }
+    },
+    {
+      "id": "document:progress/section:14-building-your-own-cli-commands",
+      "parentId": "document:progress",
+      "level": 2,
+      "title": "14. Building your own CLI commands",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 352,
+        "endLine": 352
+      }
+    },
+    {
+      "id": "document:progress/section:15-optional-ecosystem-cli-tools",
+      "parentId": "document:progress",
+      "level": 2,
+      "title": "15. Optional ecosystem CLI tools",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 378,
+        "endLine": 378
+      }
+    },
+    {
+      "id": "document:progress/section:15-optional-ecosystem-cli-tools/section:ecosystem-command-examples",
+      "parentId": "document:progress/section:15-optional-ecosystem-cli-tools",
+      "level": 3,
+      "title": "Ecosystem command examples",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 393,
+        "endLine": 393
+      }
+    },
+    {
+      "id": "document:progress/section:sources",
+      "parentId": "document:progress",
+      "level": 2,
+      "title": "Sources",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 437,
+        "endLine": 437
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "item:a473abf214a4fde1",
+      "sectionId": "document:progress/section:1-command-discovery-and-help",
+      "title": "`php artisan list` — List every registered command.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 50,
+        "endLine": 50
+      }
+    },
+    {
+      "id": "item:aeb924826cd86ec3",
+      "sectionId": "document:progress/section:1-command-discovery-and-help",
+      "title": "`php artisan list make` — List code-generation commands.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 51,
+        "endLine": 51
+      }
+    },
+    {
+      "id": "item:1d05459bdb1f91d9",
+      "sectionId": "document:progress/section:1-command-discovery-and-help",
+      "title": "`php artisan help migrate` — Show arguments and options.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 52,
+        "endLine": 52
+      }
+    },
+    {
+      "id": "item:369e48c67c415bbf",
+      "sectionId": "document:progress/section:1-command-discovery-and-help",
+      "title": "`php artisan --version` — Show the framework version.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 53,
+        "endLine": 53
+      }
+    },
+    {
+      "id": "item:2dfb6353e20e96db",
+      "sectionId": "document:progress/section:1-command-discovery-and-help",
+      "title": "`php artisan about` — Show application/environment information.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 54,
+        "endLine": 54
+      }
+    },
+    {
+      "id": "item:106109619319f64f",
+      "sectionId": "document:progress/section:1-command-discovery-and-help",
+      "title": "`php artisan docs` — Open Laravel documentation.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 55,
+        "endLine": 55
+      }
+    },
+    {
+      "id": "item:2d778bcb7b7ea836",
+      "sectionId": "document:progress/section:2-project-creation",
+      "title": "Create and configure an application using the separate Laravel installer:",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 61,
+        "endLine": 61
+      }
+    },
+    {
+      "id": "item:6b96be38c5be38bb",
+      "sectionId": "document:progress/section:2-project-creation",
+      "title": "Use the installer’s interactive setup to choose options such as starter kits, database, and testing framework. Available choices and flags depend on the installer version.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 67,
+        "endLine": 67
+      }
+    },
+    {
+      "id": "item:ebaf80f41d527730",
+      "sectionId": "document:progress/section:3-local-development",
+      "title": "`serve` — Start the PHP development server.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 73,
+        "endLine": 73
+      }
+    },
+    {
+      "id": "item:50786f6bb9f458c2",
+      "sectionId": "document:progress/section:3-local-development",
+      "title": "`dev` — Run the development server, queue listener, logs, and Vite together in supported versions.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 74,
+        "endLine": 74
+      }
+    },
+    {
+      "id": "item:8b6457bf63c1137d",
+      "sectionId": "document:progress/section:3-local-development",
+      "title": "`dev:list` — Display the processes configured for `dev`.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 75,
+        "endLine": 75
+      }
+    },
+    {
+      "id": "item:7e267621a023cdfc",
+      "sectionId": "document:progress/section:3-local-development",
+      "title": "`tinker` — Open an interactive PHP shell with the application bootstrapped.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 76,
+        "endLine": 76
+      }
+    },
+    {
+      "id": "item:0cbcf7314a0f15cf",
+      "sectionId": "document:progress/section:3-local-development",
+      "title": "`pail` — Tail application logs when Laravel Pail is installed.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 77,
+        "endLine": 77
+      }
+    },
+    {
+      "id": "item:02847b7328d7729f",
+      "sectionId": "document:progress/section:3-local-development",
+      "title": "Configure the development server host and port:",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 78,
+        "endLine": 78
+      }
+    },
+    {
+      "id": "item:603c05af5647956e",
+      "sectionId": "document:progress/section:4-code-generation/section:application-structure",
+      "title": "`make:class` — Generate a class.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 90,
+        "endLine": 90
+      }
+    },
+    {
+      "id": "item:13a747793db10a41",
+      "sectionId": "document:progress/section:4-code-generation/section:application-structure",
+      "title": "`make:interface` — Generate an interface.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 91,
+        "endLine": 91
+      }
+    },
+    {
+      "id": "item:6892a9c937a46b76",
+      "sectionId": "document:progress/section:4-code-generation/section:application-structure",
+      "title": "`make:trait` — Generate a trait.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 92,
+        "endLine": 92
+      }
+    },
+    {
+      "id": "item:cfaaf0ad0039c7da",
+      "sectionId": "document:progress/section:4-code-generation/section:application-structure",
+      "title": "`make:enum` — Generate an enum.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 93,
+        "endLine": 93
+      }
+    },
+    {
+      "id": "item:d702150d7341457d",
+      "sectionId": "document:progress/section:4-code-generation/section:application-structure",
+      "title": "`make:provider` — Generate a service provider.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 94,
+        "endLine": 94
+      }
+    },
+    {
+      "id": "item:a6be0b5c1166ce9f",
+      "sectionId": "document:progress/section:4-code-generation/section:application-structure",
+      "title": "`make:config` — Generate a configuration file.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 95,
+        "endLine": 95
+      }
+    },
+    {
+      "id": "item:5e61724ab2afcb50",
+      "sectionId": "document:progress/section:4-code-generation/section:application-structure",
+      "title": "`make:command` — Generate an Artisan command.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 96,
+        "endLine": 96
+      }
+    },
+    {
+      "id": "item:a1d7160484e49cff",
+      "sectionId": "document:progress/section:4-code-generation/section:http-and-presentation",
+      "title": "`make:controller` — Generate a controller.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 100,
+        "endLine": 100
+      }
+    },
+    {
+      "id": "item:4ec8d5d75d6754be",
+      "sectionId": "document:progress/section:4-code-generation/section:http-and-presentation",
+      "title": "`make:middleware` — Generate middleware.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 101,
+        "endLine": 101
+      }
+    },
+    {
+      "id": "item:73648782a6345304",
+      "sectionId": "document:progress/section:4-code-generation/section:http-and-presentation",
+      "title": "`make:request` — Generate a form request.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 102,
+        "endLine": 102
+      }
+    },
+    {
+      "id": "item:38c9e9803187641a",
+      "sectionId": "document:progress/section:4-code-generation/section:http-and-presentation",
+      "title": "`make:resource` — Generate an API resource.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 103,
+        "endLine": 103
+      }
+    },
+    {
+      "id": "item:369160dcd0abfa20",
+      "sectionId": "document:progress/section:4-code-generation/section:http-and-presentation",
+      "title": "`make:component` — Generate a Blade component.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 104,
+        "endLine": 104
+      }
+    },
+    {
+      "id": "item:431f9c44edb35476",
+      "sectionId": "document:progress/section:4-code-generation/section:http-and-presentation",
+      "title": "`make:view` — Generate a view.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 105,
+        "endLine": 105
+      }
+    },
+    {
+      "id": "item:6be6f423a4b3d3db",
+      "sectionId": "document:progress/section:4-code-generation/section:database-and-eloquent",
+      "title": "`make:model` — Generate an Eloquent model.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 109,
+        "endLine": 109
+      }
+    },
+    {
+      "id": "item:c8a2bf5bbda57bfc",
+      "sectionId": "document:progress/section:4-code-generation/section:database-and-eloquent",
+      "title": "`make:migration` — Generate a database migration.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 110,
+        "endLine": 110
+      }
+    },
+    {
+      "id": "item:0770348f5619d279",
+      "sectionId": "document:progress/section:4-code-generation/section:database-and-eloquent",
+      "title": "`make:factory` — Generate a model factory.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 111,
+        "endLine": 111
+      }
+    },
+    {
+      "id": "item:c6ed4d107809aac3",
+      "sectionId": "document:progress/section:4-code-generation/section:database-and-eloquent",
+      "title": "`make:seeder` — Generate a database seeder.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 112,
+        "endLine": 112
+      }
+    },
+    {
+      "id": "item:d54ad6e3e82cdd0b",
+      "sectionId": "document:progress/section:4-code-generation/section:database-and-eloquent",
+      "title": "`make:cast` — Generate a custom cast.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 113,
+        "endLine": 113
+      }
+    },
+    {
+      "id": "item:ea0baccaddc8039a",
+      "sectionId": "document:progress/section:4-code-generation/section:database-and-eloquent",
+      "title": "`make:scope` — Generate an Eloquent scope.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 114,
+        "endLine": 114
+      }
+    },
+    {
+      "id": "item:b3b822f1d7197604",
+      "sectionId": "document:progress/section:4-code-generation/section:database-and-eloquent",
+      "title": "`make:observer` — Generate a model observer.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 115,
+        "endLine": 115
+      }
+    },
+    {
+      "id": "item:e0d7a6b8dcb2b443",
+      "sectionId": "document:progress/section:4-code-generation/section:application-behavior",
+      "title": "`make:event` — Generate an event.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 119,
+        "endLine": 119
+      }
+    },
+    {
+      "id": "item:2e17537480d4835c",
+      "sectionId": "document:progress/section:4-code-generation/section:application-behavior",
+      "title": "`make:listener` — Generate an event listener.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 120,
+        "endLine": 120
+      }
+    },
+    {
+      "id": "item:45dec3945bea6d16",
+      "sectionId": "document:progress/section:4-code-generation/section:application-behavior",
+      "title": "`make:job` — Generate a job.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 121,
+        "endLine": 121
+      }
+    },
+    {
+      "id": "item:2d5ff28d8b518b4c",
+      "sectionId": "document:progress/section:4-code-generation/section:application-behavior",
+      "title": "`make:job-middleware` — Generate job middleware.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 122,
+        "endLine": 122
+      }
+    },
+    {
+      "id": "item:323de6eb43357962",
+      "sectionId": "document:progress/section:4-code-generation/section:application-behavior",
+      "title": "`make:mail` — Generate a mailable.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 123,
+        "endLine": 123
+      }
+    },
+    {
+      "id": "item:7cb946c4c6625f67",
+      "sectionId": "document:progress/section:4-code-generation/section:application-behavior",
+      "title": "`make:notification` — Generate a notification.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 124,
+        "endLine": 124
+      }
+    },
+    {
+      "id": "item:34c29d6584fab606",
+      "sectionId": "document:progress/section:4-code-generation/section:application-behavior",
+      "title": "`make:channel` — Generate a broadcast channel class.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 125,
+        "endLine": 125
+      }
+    },
+    {
+      "id": "item:2e3628a280a09b5d",
+      "sectionId": "document:progress/section:4-code-generation/section:application-behavior",
+      "title": "`make:policy` — Generate an authorization policy.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 126,
+        "endLine": 126
+      }
+    },
+    {
+      "id": "item:89af2147c9d270e6",
+      "sectionId": "document:progress/section:4-code-generation/section:application-behavior",
+      "title": "`make:rule` — Generate a validation rule.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 127,
+        "endLine": 127
+      }
+    },
+    {
+      "id": "item:54f1b3b85ad4a275",
+      "sectionId": "document:progress/section:4-code-generation/section:application-behavior",
+      "title": "`make:exception` — Generate an exception.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 128,
+        "endLine": 128
+      }
+    },
+    {
+      "id": "item:8eed2b736d492f6c",
+      "sectionId": "document:progress/section:4-code-generation/section:infrastructure-and-testing",
+      "title": "`make:cache-table` — Generate a cache table migration.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 132,
+        "endLine": 132
+      }
+    },
+    {
+      "id": "item:b79681846a2a68c0",
+      "sectionId": "document:progress/section:4-code-generation/section:infrastructure-and-testing",
+      "title": "`make:session-table` — Generate a session table migration.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 133,
+        "endLine": 133
+      }
+    },
+    {
+      "id": "item:c5ff7fa8e4af5936",
+      "sectionId": "document:progress/section:4-code-generation/section:infrastructure-and-testing",
+      "title": "`make:notifications-table` — Generate a notifications table migration.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 134,
+        "endLine": 134
+      }
+    },
+    {
+      "id": "item:db1945c49c603472",
+      "sectionId": "document:progress/section:4-code-generation/section:infrastructure-and-testing",
+      "title": "`make:queue-table` — Generate a queue jobs table migration.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 135,
+        "endLine": 135
+      }
+    },
+    {
+      "id": "item:80c97dbb1b51bd01",
+      "sectionId": "document:progress/section:4-code-generation/section:infrastructure-and-testing",
+      "title": "`make:queue-failed-table` — Generate a failed jobs table migration.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 136,
+        "endLine": 136
+      }
+    },
+    {
+      "id": "item:fa67d667eee824ee",
+      "sectionId": "document:progress/section:4-code-generation/section:infrastructure-and-testing",
+      "title": "`make:queue-batches-table` — Generate a job batches table migration.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 137,
+        "endLine": 137
+      }
+    },
+    {
+      "id": "item:ac7f5bcc1a7a9412",
+      "sectionId": "document:progress/section:4-code-generation/section:infrastructure-and-testing",
+      "title": "`make:test` — Generate a test.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 138,
+        "endLine": 138
+      }
+    },
+    {
+      "id": "item:46dcd17ede260cf0",
+      "sectionId": "document:progress/section:4-code-generation/section:generator-examples-and-customization",
+      "title": "Generate a model with a migration, factory, and seeder:",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 142,
+        "endLine": 142
+      }
+    },
+    {
+      "id": "item:0b538596666b3659",
+      "sectionId": "document:progress/section:4-code-generation/section:generator-examples-and-customization",
+      "title": "Generate a resource controller associated with a model:",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 148,
+        "endLine": 148
+      }
+    },
+    {
+      "id": "item:6711d378d0c69ba6",
+      "sectionId": "document:progress/section:4-code-generation/section:generator-examples-and-customization",
+      "title": "Generate a form request:",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 154,
+        "endLine": 154
+      }
+    },
+    {
+      "id": "item:6cdce95cb325b5c1",
+      "sectionId": "document:progress/section:4-code-generation/section:generator-examples-and-customization",
+      "title": "Generate a feature test:",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 160,
+        "endLine": 160
+      }
+    },
+    {
+      "id": "item:1668ba38cf2d85c1",
+      "sectionId": "document:progress/section:4-code-generation/section:generator-examples-and-customization",
+      "title": "Generate a unit test:",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 166,
+        "endLine": 166
+      }
+    },
+    {
+      "id": "item:03708989b38858be",
+      "sectionId": "document:progress/section:4-code-generation/section:generator-examples-and-customization",
+      "title": "Use generator options to create related files together.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 172,
+        "endLine": 172
+      }
+    },
+    {
+      "id": "item:85cc55f43fe0a9a7",
+      "sectionId": "document:progress/section:4-code-generation/section:generator-examples-and-customization",
+      "title": "Use `stub:publish` to customize the templates used by generators.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 173,
+        "endLine": 173
+      }
+    },
+    {
+      "id": "item:8a815613fb429e5c",
+      "sectionId": "document:progress/section:5-database-migrations-and-schema-management",
+      "title": "`migrate` — Apply pending migrations.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 177,
+        "endLine": 177
+      }
+    },
+    {
+      "id": "item:a7350a199d2ab91e",
+      "sectionId": "document:progress/section:5-database-migrations-and-schema-management",
+      "title": "`migrate:status` — Show migration status.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 178,
+        "endLine": 178
+      }
+    },
+    {
+      "id": "item:f064806ae3dd0f60",
+      "sectionId": "document:progress/section:5-database-migrations-and-schema-management",
+      "title": "`migrate:rollback` — Roll back the latest migration batch.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 179,
+        "endLine": 179
+      }
+    },
+    {
+      "id": "item:9e2465de13b97e7f",
+      "sectionId": "document:progress/section:5-database-migrations-and-schema-management",
+      "title": "`migrate:reset` — Roll back all migrations.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 180,
+        "endLine": 180
+      }
+    },
+    {
+      "id": "item:c3cace7040cb6a4a",
+      "sectionId": "document:progress/section:5-database-migrations-and-schema-management",
+      "title": "`migrate:refresh` — Roll back and rerun migrations.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 181,
+        "endLine": 181
+      }
+    },
+    {
+      "id": "item:29e04413d30ceeed",
+      "sectionId": "document:progress/section:5-database-migrations-and-schema-management",
+      "title": "`migrate:fresh` — Drop all tables and rerun migrations.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 182,
+        "endLine": 182
+      }
+    },
+    {
+      "id": "item:218ca3cea85438a3",
+      "sectionId": "document:progress/section:5-database-migrations-and-schema-management",
+      "title": "`migrate:install` — Create the migration tracking table.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 183,
+        "endLine": 183
+      }
+    },
+    {
+      "id": "item:f4915c707e8c7d11",
+      "sectionId": "document:progress/section:5-database-migrations-and-schema-management",
+      "title": "`migrate:uninstall` — Remove the migration tracking table.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 184,
+        "endLine": 184
+      }
+    },
+    {
+      "id": "item:490e682650e3bd11",
+      "sectionId": "document:progress/section:5-database-migrations-and-schema-management",
+      "title": "`schema:dump` — Export the database schema.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 185,
+        "endLine": 185
+      }
+    },
+    {
+      "id": "item:0f332552d6bead4b",
+      "sectionId": "document:progress/section:5-database-migrations-and-schema-management",
+      "title": "`db:seed` — Run database seeders.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 186,
+        "endLine": 186
+      }
+    },
+    {
+      "id": "item:d33d12a3082466ff",
+      "sectionId": "document:progress/section:5-database-migrations-and-schema-management",
+      "title": "`db:wipe` — Drop database tables, with options for other objects.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 187,
+        "endLine": 187
+      }
+    },
+    {
+      "id": "item:a68cd46199ec706a",
+      "sectionId": "document:progress/section:6-database-inspection-and-model-maintenance",
+      "title": "`db` — Open the database CLI.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 193,
+        "endLine": 193
+      }
+    },
+    {
+      "id": "item:0febc0b8cba0cfba",
+      "sectionId": "document:progress/section:6-database-inspection-and-model-maintenance",
+      "title": "`db:show` — Inspect database information.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 194,
+        "endLine": 194
+      }
+    },
+    {
+      "id": "item:2257190b9288502c",
+      "sectionId": "document:progress/section:6-database-inspection-and-model-maintenance",
+      "title": "`db:table` — Inspect a database table.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 195,
+        "endLine": 195
+      }
+    },
+    {
+      "id": "item:504aeedae0cc2a4d",
+      "sectionId": "document:progress/section:6-database-inspection-and-model-maintenance",
+      "title": "`db:monitor` — Monitor database connection counts.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 196,
+        "endLine": 196
+      }
+    },
+    {
+      "id": "item:1ea05cd9da618f37",
+      "sectionId": "document:progress/section:6-database-inspection-and-model-maintenance",
+      "title": "`model:show` — Inspect an Eloquent model.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 197,
+        "endLine": 197
+      }
+    },
+    {
+      "id": "item:2c9da268301e36c3",
+      "sectionId": "document:progress/section:6-database-inspection-and-model-maintenance",
+      "title": "`model:prune` — Remove records matching model pruning rules.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 198,
+        "endLine": 198
+      }
+    },
+    {
+      "id": "item:26bf139464954a05",
+      "sectionId": "document:progress/section:6-database-inspection-and-model-maintenance",
+      "title": "Inspect database information, a table, and a model:",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 199,
+        "endLine": 199
+      }
+    },
+    {
+      "id": "item:267bbd4666d6fec2",
+      "sectionId": "document:progress/section:7-routing",
+      "title": "`route:list` — Display registered routes.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 209,
+        "endLine": 209
+      }
+    },
+    {
+      "id": "item:c39cd19380c38dde",
+      "sectionId": "document:progress/section:7-routing",
+      "title": "`route:cache` — Cache route definitions.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 210,
+        "endLine": 210
+      }
+    },
+    {
+      "id": "item:359163eda67d6fb3",
+      "sectionId": "document:progress/section:7-routing",
+      "title": "`route:clear` — Remove the route cache.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 211,
+        "endLine": 211
+      }
+    },
+    {
+      "id": "item:bc044922c4b21b3b",
+      "sectionId": "document:progress/section:7-routing",
+      "title": "Filter routes by path:",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 212,
+        "endLine": 212
+      }
+    },
+    {
+      "id": "item:e4faf9bf6ec9af55",
+      "sectionId": "document:progress/section:7-routing",
+      "title": "Display routes with verbose information:",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 218,
+        "endLine": 218
+      }
+    },
+    {
+      "id": "item:1ad0a3e1959f77f7",
+      "sectionId": "document:progress/section:8-configuration-caching-and-optimization/section:configuration",
+      "title": "`config:show` — Display configuration values.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 228,
+        "endLine": 228
+      }
+    },
+    {
+      "id": "item:56fec6003059a5be",
+      "sectionId": "document:progress/section:8-configuration-caching-and-optimization/section:configuration",
+      "title": "`config:cache` — Cache application configuration.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 229,
+        "endLine": 229
+      }
+    },
+    {
+      "id": "item:399dc0281abbc2f8",
+      "sectionId": "document:progress/section:8-configuration-caching-and-optimization/section:configuration",
+      "title": "`config:clear` — Remove the configuration cache.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 230,
+        "endLine": 230
+      }
+    },
+    {
+      "id": "item:652400405ed48a95",
+      "sectionId": "document:progress/section:8-configuration-caching-and-optimization/section:configuration",
+      "title": "`config:publish` — Publish configuration files.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 231,
+        "endLine": 231
+      }
+    },
+    {
+      "id": "item:56e4f19d42461512",
+      "sectionId": "document:progress/section:8-configuration-caching-and-optimization/section:application-cache",
+      "title": "`cache:clear` — Clear the application cache.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 235,
+        "endLine": 235
+      }
+    },
+    {
+      "id": "item:38c7d3371c976dd7",
+      "sectionId": "document:progress/section:8-configuration-caching-and-optimization/section:application-cache",
+      "title": "`cache:forget` — Remove a cache item.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 236,
+        "endLine": 236
+      }
+    },
+    {
+      "id": "item:a6c5af9e8ec69ebf",
+      "sectionId": "document:progress/section:8-configuration-caching-and-optimization/section:application-cache",
+      "title": "`cache:prune-stale-tags` — Prune stale cache tags.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 237,
+        "endLine": 237
+      }
+    },
+    {
+      "id": "item:538868e75d9d4e5b",
+      "sectionId": "document:progress/section:8-configuration-caching-and-optimization/section:blade-views",
+      "title": "`view:cache` — Compile and cache Blade views.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 241,
+        "endLine": 241
+      }
+    },
+    {
+      "id": "item:845cb2eece0d984c",
+      "sectionId": "document:progress/section:8-configuration-caching-and-optimization/section:blade-views",
+      "title": "`view:clear` — Clear compiled views.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 242,
+        "endLine": 242
+      }
+    },
+    {
+      "id": "item:44f6d66ea839a1d4",
+      "sectionId": "document:progress/section:8-configuration-caching-and-optimization/section:events",
+      "title": "`event:list` — List events and listeners.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 246,
+        "endLine": 246
+      }
+    },
+    {
+      "id": "item:4edb7aaca057000c",
+      "sectionId": "document:progress/section:8-configuration-caching-and-optimization/section:events",
+      "title": "`event:cache` — Cache discovered events and listeners.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 247,
+        "endLine": 247
+      }
+    },
+    {
+      "id": "item:1a47667180cc2d5b",
+      "sectionId": "document:progress/section:8-configuration-caching-and-optimization/section:events",
+      "title": "`event:clear` — Clear the event cache.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 248,
+        "endLine": 248
+      }
+    },
+    {
+      "id": "item:644dd38be1ddd69f",
+      "sectionId": "document:progress/section:8-configuration-caching-and-optimization/section:events",
+      "title": "`event:generate` — Generate missing events and listeners from registrations.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 249,
+        "endLine": 249
+      }
+    },
+    {
+      "id": "item:ab8c075e1dd534d8",
+      "sectionId": "document:progress/section:8-configuration-caching-and-optimization/section:combined-optimization-and-compiled-files",
+      "title": "`optimize` — Cache application bootstrap information.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 253,
+        "endLine": 253
+      }
+    },
+    {
+      "id": "item:2a68cac959fa58a5",
+      "sectionId": "document:progress/section:8-configuration-caching-and-optimization/section:combined-optimization-and-compiled-files",
+      "title": "`optimize:clear` — Remove optimization caches.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 254,
+        "endLine": 254
+      }
+    },
+    {
+      "id": "item:62156775a31f422b",
+      "sectionId": "document:progress/section:8-configuration-caching-and-optimization/section:combined-optimization-and-compiled-files",
+      "title": "`clear-compiled` — Remove compiled framework files.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 255,
+        "endLine": 255
+      }
+    },
+    {
+      "id": "item:4326cecded7d2255",
+      "sectionId": "document:progress/section:9-queue-and-background-job-management",
+      "title": "`queue:work` — Process queued jobs.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 259,
+        "endLine": 259
+      }
+    },
+    {
+      "id": "item:8761668c254a3bb9",
+      "sectionId": "document:progress/section:9-queue-and-background-job-management",
+      "title": "`queue:listen` — Listen for and process jobs.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 260,
+        "endLine": 260
+      }
+    },
+    {
+      "id": "item:c422280c723e82f9",
+      "sectionId": "document:progress/section:9-queue-and-background-job-management",
+      "title": "`queue:restart` — Request graceful worker restarts.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 261,
+        "endLine": 261
+      }
+    },
+    {
+      "id": "item:266316ce40d020a3",
+      "sectionId": "document:progress/section:9-queue-and-background-job-management",
+      "title": "`queue:pause` — Pause processing on a supported queue.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 262,
+        "endLine": 262
+      }
+    },
+    {
+      "id": "item:9ed11d9f729b1e6d",
+      "sectionId": "document:progress/section:9-queue-and-background-job-management",
+      "title": "`queue:resume` — Resume processing.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 263,
+        "endLine": 263
+      }
+    },
+    {
+      "id": "item:f19b5e31ac171b66",
+      "sectionId": "document:progress/section:9-queue-and-background-job-management",
+      "title": "`queue:monitor` — Monitor queue sizes.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 264,
+        "endLine": 264
+      }
+    },
+    {
+      "id": "item:d3a1b4cc6b7590d1",
+      "sectionId": "document:progress/section:9-queue-and-background-job-management",
+      "title": "`queue:clear` — Delete queued jobs.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 265,
+        "endLine": 265
+      }
+    },
+    {
+      "id": "item:0c2043e1861df00a",
+      "sectionId": "document:progress/section:9-queue-and-background-job-management",
+      "title": "`queue:failed` — List failed jobs.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 266,
+        "endLine": 266
+      }
+    },
+    {
+      "id": "item:e949512aa6eda179",
+      "sectionId": "document:progress/section:9-queue-and-background-job-management",
+      "title": "`queue:retry` — Retry failed jobs.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 267,
+        "endLine": 267
+      }
+    },
+    {
+      "id": "item:dd9830329fbd5699",
+      "sectionId": "document:progress/section:9-queue-and-background-job-management",
+      "title": "`queue:retry-batch` — Retry failed jobs in a batch.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 268,
+        "endLine": 268
+      }
+    },
+    {
+      "id": "item:918d0f58644d9f35",
+      "sectionId": "document:progress/section:9-queue-and-background-job-management",
+      "title": "`queue:forget` — Delete a failed-job record.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 269,
+        "endLine": 269
+      }
+    },
+    {
+      "id": "item:14c4459a8baa0653",
+      "sectionId": "document:progress/section:9-queue-and-background-job-management",
+      "title": "`queue:flush` — Delete all failed-job records.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 270,
+        "endLine": 270
+      }
+    },
+    {
+      "id": "item:939059db77901e1e",
+      "sectionId": "document:progress/section:9-queue-and-background-job-management",
+      "title": "`queue:prune-failed` — Prune old failed-job records.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 271,
+        "endLine": 271
+      }
+    },
+    {
+      "id": "item:f25df58f99a48e08",
+      "sectionId": "document:progress/section:9-queue-and-background-job-management",
+      "title": "`queue:prune-batches` — Prune old batch records.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 272,
+        "endLine": 272
+      }
+    },
+    {
+      "id": "item:9ec5b6ced2737586",
+      "sectionId": "document:progress/section:9-queue-and-background-job-management",
+      "title": "Configure queue priority, retry attempts, and worker timeout:",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 273,
+        "endLine": 273
+      }
+    },
+    {
+      "id": "item:0b98ce5da58298ed",
+      "sectionId": "document:progress/section:10-task-scheduling",
+      "title": "`schedule:list` — List scheduled tasks.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 283,
+        "endLine": 283
+      }
+    },
+    {
+      "id": "item:800774b47e504511",
+      "sectionId": "document:progress/section:10-task-scheduling",
+      "title": "`schedule:run` — Execute tasks that are due.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 284,
+        "endLine": 284
+      }
+    },
+    {
+      "id": "item:c83d15eb83e26911",
+      "sectionId": "document:progress/section:10-task-scheduling",
+      "title": "`schedule:work` — Run the scheduler in the foreground.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 285,
+        "endLine": 285
+      }
+    },
+    {
+      "id": "item:c5c68e40674b30f6",
+      "sectionId": "document:progress/section:10-task-scheduling",
+      "title": "`schedule:test` — Interactively select a scheduled task to run.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 286,
+        "endLine": 286
+      }
+    },
+    {
+      "id": "item:b14d388af60b8212",
+      "sectionId": "document:progress/section:10-task-scheduling",
+      "title": "`schedule:interrupt` — Interrupt an in-progress scheduler run.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 287,
+        "endLine": 287
+      }
+    },
+    {
+      "id": "item:40193e8ea992b036",
+      "sectionId": "document:progress/section:10-task-scheduling",
+      "title": "`schedule:clear-cache` — Clear scheduler mutexes.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 288,
+        "endLine": 288
+      }
+    },
+    {
+      "id": "item:949dbe5cedb32fa6",
+      "sectionId": "document:progress/section:10-task-scheduling",
+      "title": "`schedule:pause` — Pause scheduling in supported versions.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 289,
+        "endLine": 289
+      }
+    },
+    {
+      "id": "item:4b90aeae9b305e34",
+      "sectionId": "document:progress/section:10-task-scheduling",
+      "title": "`schedule:resume` — Resume scheduling in supported versions.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 290,
+        "endLine": 290
+      }
+    },
+    {
+      "id": "item:f1c1162d1bed9333",
+      "sectionId": "document:progress/section:10-task-scheduling",
+      "title": "`schedule:finish` — Internal helper for background scheduled tasks.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 291,
+        "endLine": 291
+      }
+    },
+    {
+      "id": "item:a85908af6ad23c33",
+      "sectionId": "document:progress/section:11-testing",
+      "title": "Run the full test suite:",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 295,
+        "endLine": 295
+      }
+    },
+    {
+      "id": "item:b5ef9e65087131c2",
+      "sectionId": "document:progress/section:11-testing",
+      "title": "Run a single test file:",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 301,
+        "endLine": 301
+      }
+    },
+    {
+      "id": "item:653a4b39f14cbd9f",
+      "sectionId": "document:progress/section:11-testing",
+      "title": "Run matching tests:",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 307,
+        "endLine": 307
+      }
+    },
+    {
+      "id": "item:0cb10946a80226bf",
+      "sectionId": "document:progress/section:11-testing",
+      "title": "Run tests in parallel:",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 313,
+        "endLine": 313
+      }
+    },
+    {
+      "id": "item:be51ab5821631bf5",
+      "sectionId": "document:progress/section:11-testing",
+      "title": "Generate coverage reports:",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 319,
+        "endLine": 319
+      }
+    },
+    {
+      "id": "item:d448b6a69680c021",
+      "sectionId": "document:progress/section:11-testing",
+      "title": "Use parallel test execution with the required dependencies.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 325,
+        "endLine": 325
+      }
+    },
+    {
+      "id": "item:82c7ed957b13dd9b",
+      "sectionId": "document:progress/section:11-testing",
+      "title": "Use coverage reporting with a supported coverage driver.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 326,
+        "endLine": 326
+      }
+    },
+    {
+      "id": "item:195c11ba9263ff8a",
+      "sectionId": "document:progress/section:11-testing",
+      "title": "Integrate with PHPUnit or Pest, depending on project setup.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 327,
+        "endLine": 327
+      }
+    },
+    {
+      "id": "item:4d74120fdb77ebfa",
+      "sectionId": "document:progress/section:12-application-operations-and-environment-management",
+      "title": "`key:generate` — Generate the application encryption key.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 331,
+        "endLine": 331
+      }
+    },
+    {
+      "id": "item:bb072c1e381a326b",
+      "sectionId": "document:progress/section:12-application-operations-and-environment-management",
+      "title": "`env` — Display the current environment.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 332,
+        "endLine": 332
+      }
+    },
+    {
+      "id": "item:8e8cd07161e9266e",
+      "sectionId": "document:progress/section:12-application-operations-and-environment-management",
+      "title": "`env:encrypt` — Encrypt an environment file.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 333,
+        "endLine": 333
+      }
+    },
+    {
+      "id": "item:f8e87ab010a68bc4",
+      "sectionId": "document:progress/section:12-application-operations-and-environment-management",
+      "title": "`env:decrypt` — Decrypt an environment file.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 334,
+        "endLine": 334
+      }
+    },
+    {
+      "id": "item:540fd87ef384edea",
+      "sectionId": "document:progress/section:12-application-operations-and-environment-management",
+      "title": "`down` — Enable maintenance mode.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 335,
+        "endLine": 335
+      }
+    },
+    {
+      "id": "item:909a2df28a8c6c0d",
+      "sectionId": "document:progress/section:12-application-operations-and-environment-management",
+      "title": "`up` — Disable maintenance mode.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 336,
+        "endLine": 336
+      }
+    },
+    {
+      "id": "item:01a41a1bfa3ed567",
+      "sectionId": "document:progress/section:12-application-operations-and-environment-management",
+      "title": "`reload` — Reload supported long-running services in supported versions.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 337,
+        "endLine": 337
+      }
+    },
+    {
+      "id": "item:1b0891d2902abed4",
+      "sectionId": "document:progress/section:12-application-operations-and-environment-management",
+      "title": "`auth:clear-resets` — Delete expired password-reset tokens.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 338,
+        "endLine": 338
+      }
+    },
+    {
+      "id": "item:08f3d27e01c3d510",
+      "sectionId": "document:progress/section:12-application-operations-and-environment-management",
+      "title": "`storage:link` — Create configured storage symbolic links.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 339,
+        "endLine": 339
+      }
+    },
+    {
+      "id": "item:f52a689b36b662f0",
+      "sectionId": "document:progress/section:12-application-operations-and-environment-management",
+      "title": "`storage:unlink` — Remove configured storage symbolic links.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 340,
+        "endLine": 340
+      }
+    },
+    {
+      "id": "item:a14a78f3eb98c326",
+      "sectionId": "document:progress/section:13-feature-installation-and-package-integration",
+      "title": "`install:api` — Set up API routing and authentication support.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 344,
+        "endLine": 344
+      }
+    },
+    {
+      "id": "item:3878dd25a88a3bc4",
+      "sectionId": "document:progress/section:13-feature-installation-and-package-integration",
+      "title": "`install:broadcasting` — Set up event broadcasting.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 345,
+        "endLine": 345
+      }
+    },
+    {
+      "id": "item:7b83ab52c716ff6f",
+      "sectionId": "document:progress/section:13-feature-installation-and-package-integration",
+      "title": "`channel:list` — List registered broadcast channels.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 346,
+        "endLine": 346
+      }
+    },
+    {
+      "id": "item:7ea7d62a4f469484",
+      "sectionId": "document:progress/section:13-feature-installation-and-package-integration",
+      "title": "`vendor:publish` — Publish package configuration, views, and other assets.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 347,
+        "endLine": 347
+      }
+    },
+    {
+      "id": "item:f4a10da3896658c9",
+      "sectionId": "document:progress/section:13-feature-installation-and-package-integration",
+      "title": "`package:discover` — Rebuild discovered package metadata.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 348,
+        "endLine": 348
+      }
+    },
+    {
+      "id": "item:fef697176a0bc091",
+      "sectionId": "document:progress/section:13-feature-installation-and-package-integration",
+      "title": "`lang:publish` — Publish language files.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 349,
+        "endLine": 349
+      }
+    },
+    {
+      "id": "item:01aaaed8b08b5e26",
+      "sectionId": "document:progress/section:13-feature-installation-and-package-integration",
+      "title": "`stub:publish` — Publish customizable generator templates.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 350,
+        "endLine": 350
+      }
+    },
+    {
+      "id": "item:71d773777597bd95",
+      "sectionId": "document:progress/section:14-building-your-own-cli-commands",
+      "title": "Create class-based commands.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 356,
+        "endLine": 356
+      }
+    },
+    {
+      "id": "item:ea14d39a31fc1ef0",
+      "sectionId": "document:progress/section:14-building-your-own-cli-commands",
+      "title": "Create closure-based commands.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 357,
+        "endLine": 357
+      }
+    },
+    {
+      "id": "item:b75aae72f85fb3a7",
+      "sectionId": "document:progress/section:14-building-your-own-cli-commands",
+      "title": "Define required, optional, defaulted, and array arguments.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 358,
+        "endLine": 358
+      }
+    },
+    {
+      "id": "item:9129fd8dd3014b6c",
+      "sectionId": "document:progress/section:14-building-your-own-cli-commands",
+      "title": "Define boolean flags, valued options, shortcuts, and repeatable options.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 359,
+        "endLine": 359
+      }
+    },
+    {
+      "id": "item:ef412ff67b5d1cb0",
+      "sectionId": "document:progress/section:14-building-your-own-cli-commands",
+      "title": "Use dependency injection.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 360,
+        "endLine": 360
+      }
+    },
+    {
+      "id": "item:7b7d6525426c7400",
+      "sectionId": "document:progress/section:14-building-your-own-cli-commands",
+      "title": "Add interactive text and password prompts.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 361,
+        "endLine": 361
+      }
+    },
+    {
+      "id": "item:2bd99e0de5ef4b9c",
+      "sectionId": "document:progress/section:14-building-your-own-cli-commands",
+      "title": "Add confirmations, selection lists, search, and input validation.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 362,
+        "endLine": 362
+      }
+    },
+    {
+      "id": "item:4ab43fd2a18d92e3",
+      "sectionId": "document:progress/section:14-building-your-own-cli-commands",
+      "title": "Automatically prompt for missing required arguments.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 363,
+        "endLine": 363
+      }
+    },
+    {
+      "id": "item:53a5fc1ac93acf15",
+      "sectionId": "document:progress/section:14-building-your-own-cli-commands",
+      "title": "Display colored output, tables, progress bars, and spinners.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 364,
+        "endLine": 364
+      }
+    },
+    {
+      "id": "item:30978609ba9c3748",
+      "sectionId": "document:progress/section:14-building-your-own-cli-commands",
+      "title": "Handle exit codes and exceptions.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 365,
+        "endLine": 365
+      }
+    },
+    {
+      "id": "item:b5c0927ea95ece49",
+      "sectionId": "document:progress/section:14-building-your-own-cli-commands",
+      "title": "Use isolated execution with atomic locks.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 366,
+        "endLine": 366
+      }
+    },
+    {
+      "id": "item:242ad00e51e1ce98",
+      "sectionId": "document:progress/section:14-building-your-own-cli-commands",
+      "title": "Handle signals for graceful shutdown.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 367,
+        "endLine": 367
+      }
+    },
+    {
+      "id": "item:0f3acaf50eb7eb29",
+      "sectionId": "document:progress/section:14-building-your-own-cli-commands",
+      "title": "Call commands from other commands or application code.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 368,
+        "endLine": 368
+      }
+    },
+    {
+      "id": "item:5e2eadbb27202760",
+      "sectionId": "document:progress/section:14-building-your-own-cli-commands",
+      "title": "Dispatch commands to queues.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 369,
+        "endLine": 369
+      }
+    },
+    {
+      "id": "item:ef15c8fc870a6bd0",
+      "sectionId": "document:progress/section:14-building-your-own-cli-commands",
+      "title": "Respond to command lifecycle events.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 370,
+        "endLine": 370
+      }
+    },
+    {
+      "id": "item:ed1be0bbfb566674",
+      "sectionId": "document:progress/section:14-building-your-own-cli-commands",
+      "title": "Test console commands with input/output assertions.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 371,
+        "endLine": 371
+      }
+    },
+    {
+      "id": "item:700c819b0109ebde",
+      "sectionId": "document:progress/section:14-building-your-own-cli-commands",
+      "title": "Generate a custom command:",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 372,
+        "endLine": 372
+      }
+    },
+    {
+      "id": "item:65a693f0d19e56e6",
+      "sectionId": "document:progress/section:15-optional-ecosystem-cli-tools",
+      "title": "**Sail** — Docker-based development; run Artisan, Composer, Node, and tests in containers.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 382,
+        "endLine": 382
+      }
+    },
+    {
+      "id": "item:9b4a470cd3684942",
+      "sectionId": "document:progress/section:15-optional-ecosystem-cli-tools",
+      "title": "**Pint** — PHP code formatting and style checks.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 383,
+        "endLine": 383
+      }
+    },
+    {
+      "id": "item:291026f5bf8fce14",
+      "sectionId": "document:progress/section:15-optional-ecosystem-cli-tools",
+      "title": "**Pail** — Live application-log inspection.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 384,
+        "endLine": 384
+      }
+    },
+    {
+      "id": "item:9045af31453cbde7",
+      "sectionId": "document:progress/section:15-optional-ecosystem-cli-tools",
+      "title": "**Horizon** — Redis queue workers, monitoring, and management.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 385,
+        "endLine": 385
+      }
+    },
+    {
+      "id": "item:1dedc25ddaaa8863",
+      "sectionId": "document:progress/section:15-optional-ecosystem-cli-tools",
+      "title": "**Octane** — Start and manage long-running application servers.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 386,
+        "endLine": 386
+      }
+    },
+    {
+      "id": "item:fc4e1880f37e98af",
+      "sectionId": "document:progress/section:15-optional-ecosystem-cli-tools",
+      "title": "**Reverb** — Run a WebSocket server.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 387,
+        "endLine": 387
+      }
+    },
+    {
+      "id": "item:014e08003d742bab",
+      "sectionId": "document:progress/section:15-optional-ecosystem-cli-tools",
+      "title": "**Dusk** — Browser automation and browser tests.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 388,
+        "endLine": 388
+      }
+    },
+    {
+      "id": "item:8288cf1061fce5d2",
+      "sectionId": "document:progress/section:15-optional-ecosystem-cli-tools",
+      "title": "**Scout** — Import, flush, and manage searchable model indexes.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 389,
+        "endLine": 389
+      }
+    },
+    {
+      "id": "item:1c52b444c7ff8ca7",
+      "sectionId": "document:progress/section:15-optional-ecosystem-cli-tools",
+      "title": "**Telescope** — Install and maintain application debugging tools.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 390,
+        "endLine": 390
+      }
+    },
+    {
+      "id": "item:542f0180a51711cf",
+      "sectionId": "document:progress/section:15-optional-ecosystem-cli-tools",
+      "title": "**Pulse** — Install and manage application monitoring components.",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 391,
+        "endLine": 391
+      }
+    },
+    {
+      "id": "item:14d3ee7c5af3b4d2",
+      "sectionId": "document:progress/section:15-optional-ecosystem-cli-tools/section:ecosystem-command-examples",
+      "title": "Run migrations through Sail:",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 395,
+        "endLine": 395
+      }
+    },
+    {
+      "id": "item:488774f532b93140",
+      "sectionId": "document:progress/section:15-optional-ecosystem-cli-tools/section:ecosystem-command-examples",
+      "title": "Format PHP code with Pint:",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 401,
+        "endLine": 401
+      }
+    },
+    {
+      "id": "item:c5289e196a9f31b8",
+      "sectionId": "document:progress/section:15-optional-ecosystem-cli-tools/section:ecosystem-command-examples",
+      "title": "Start Horizon:",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 407,
+        "endLine": 407
+      }
+    },
+    {
+      "id": "item:9e6edd78a7e4c82c",
+      "sectionId": "document:progress/section:15-optional-ecosystem-cli-tools/section:ecosystem-command-examples",
+      "title": "Start Octane:",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 413,
+        "endLine": 413
+      }
+    },
+    {
+      "id": "item:146fbf2568d87865",
+      "sectionId": "document:progress/section:15-optional-ecosystem-cli-tools/section:ecosystem-command-examples",
+      "title": "Start Reverb:",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 419,
+        "endLine": 419
+      }
+    },
+    {
+      "id": "item:47d7f3f7fa16abd8",
+      "sectionId": "document:progress/section:15-optional-ecosystem-cli-tools/section:ecosystem-command-examples",
+      "title": "Run Dusk browser tests:",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 425,
+        "endLine": 425
+      }
+    },
+    {
+      "id": "item:1fc60e522f6b00e3",
+      "sectionId": "document:progress/section:15-optional-ecosystem-cli-tools/section:ecosystem-command-examples",
+      "title": "Import models into a Scout search index:",
+      "completed": false,
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 431,
+        "endLine": 431
+      }
+    }
+  ],
+  "notes": [
+    {
+      "id": "note:1137a64dfb0bccdf",
+      "parentId": "document:progress",
+      "text": "Laravel’s main command-line interface is **Artisan**, invoked with:",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 3,
+        "endLine": 3
+      }
+    },
+    {
+      "id": "note:ac280c5ffe2f20be",
+      "parentId": "document:progress",
+      "text": "Laravel also provides a project installer and optional CLI tools through its ecosystem.",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 9,
+        "endLine": 9
+      }
+    },
+    {
+      "id": "note:c41a45785b52ec06",
+      "parentId": "document:progress",
+      "text": "**The exact command list depends on your Laravel version, installed packages, and custom commands.** This checklist covers modern Laravel, including Laravel 13.x features. It is a capability reference, not a claim that Laravel is installed or these features are implemented in this repository. All items start unchecked.",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 11,
+        "endLine": 11
+      }
+    },
+    {
+      "id": "note:63bc860b37259d5f",
+      "parentId": "document:progress/section:bundle-orm-and-migration-status",
+      "text": "**Status as of 2026-11-06: implemented and locally tested, but not complete Artisan parity or full cross-database simulation.** The numbered checklist below remains a Laravel capability reference; its checkboxes are unchanged and do not measure Bundle implementation progress. Bundle uses Bun, TypeScript, and MikroORM's Data Mapper API, not PHP, Eloquent, or Laravel's Schema Builder.",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 15,
+        "endLine": 15
+      }
+    },
+    {
+      "id": "note:209464914ae78f8e",
+      "parentId": "document:progress/section:bundle-orm-and-migration-status/section:implemented-with-real-sqlite-test-evidence",
+      "text": "- Model discovery from `src/models/*.ts`, code-first classes with `EntitySchema`, CRUD, relationships, constraints, timestamps, transactions, and explicit repeatable demo seeding run against disposable SQLite databases.",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 19,
+        "endLine": 19
+      }
+    },
+    {
+      "id": "note:84f9d71bf1e68c68",
+      "parentId": "document:progress/section:bundle-orm-and-migration-status/section:implemented-with-real-sqlite-test-evidence",
+      "text": "- Migration installation/status/check, application, latest-batch rollback, reset, refresh, and conservative fresh rebuilds are implemented. Tests cover batch tracking, application steps, rollback count/batch selection, partial refresh, and legacy history upgrades.",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 20,
+        "endLine": 20
+      }
+    },
+    {
+      "id": "note:1ad50eb2c969225e",
+      "parentId": "document:progress/section:bundle-orm-and-migration-status/section:implemented-with-real-sqlite-test-evidence",
+      "text": "- Model and seeder generators, schema-diff generation, and blank/create/table migration stubs are implemented with overwrite protection. A real Bun CLI-process test edits an existing model, generates and applies a column migration, then rolls it back while preserving existing rows. The CLI does not edit model source automatically.",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 21,
+        "endLine": 21
+      }
+    },
+    {
+      "id": "note:56aa2793259e949e",
+      "parentId": "document:progress/section:bundle-orm-and-migration-status/section:implemented-with-real-sqlite-test-evidence",
+      "text": "- Named connections, custom migration directories, explicit external-path authorization, destructive/production force guards, and failure reporting have automated tests. Database-backed isolation is tested for contention across local connections and cleanup after ordinary failures; stale-lock removal is explicit.",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 22,
+        "endLine": 22
+      }
+    },
+    {
+      "id": "note:3376496c893d73e7",
+      "parentId": "document:progress/section:bundle-orm-and-migration-status/section:implemented-with-real-sqlite-test-evidence",
+      "text": "- SQLite live-schema dumping, migration-history preservation, safe pruning, empty-target restoration/bootstrap, and subsequent migration application are tested against real SQLite fixtures. Dumps exclude application rows and are not data backups.",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 23,
+        "endLine": 23
+      }
+    },
+    {
+      "id": "note:cf32f2fadf801ae3",
+      "parentId": "document:progress/section:bundle-orm-and-migration-status/section:postgresql-and-mariadb-implemented-paths-incomplete-live-verification",
+      "text": "- Official MikroORM drivers, connection/TLS validation, and initial dialect-specific migrations are present. Offline tests compare generated CREATE SQL with those migrations; this does not demonstrate successful execution on a server.",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 27,
+        "endLine": 27
+      }
+    },
+    {
+      "id": "note:681db10a3eef5c93",
+      "parentId": "document:progress/section:bundle-orm-and-migration-status/section:postgresql-and-mariadb-implemented-paths-incomplete-live-verification",
+      "text": "- The latest implementation-validation run had **86 passing tests, 2 skipped tests, and 0 failures**. The skipped tests are the opt-in PostgreSQL and MariaDB live persistence contracts. This is a dated test-run snapshot, not a code-coverage percentage or a promise that every scenario is tested.",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 28,
+        "endLine": 28
+      }
+    },
+    {
+      "id": "note:007c49ef083647d3",
+      "parentId": "document:progress/section:bundle-orm-and-migration-status/section:postgresql-and-mariadb-implemented-paths-incomplete-live-verification",
+      "text": "- PostgreSQL and MariaDB native dump/restore adapters have injected/mock-tool tests for command arguments, environment handling, fallback behavior, and safety guards. Real `pg_dump`/`psql` and MariaDB/MySQL dump/client round trips were not verified against live servers in that run.",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 29,
+        "endLine": 29
+      }
+    },
+    {
+      "id": "note:e02dc171026efacf",
+      "parentId": "document:progress/section:bundle-orm-and-migration-status/section:postgresql-and-mariadb-implemented-paths-incomplete-live-verification",
+      "text": "- Live tests require explicitly supplied `BUNDLE_TEST_POSTGRESQL_URL` / `BUNDLE_TEST_MARIADB_URL`, `BUNDLE_TEST_ALLOW_RESET=1`, and empty disposable databases. Never use application or production databases. Skipped tests and passing SQLite/mock tests do not establish live server support.",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 30,
+        "endLine": 30
+      }
+    },
+    {
+      "id": "note:b34c0278ffb7d517",
+      "parentId": "document:progress/section:bundle-orm-and-migration-status/section:sql-preview-is-not-full-simulation",
+      "text": "- `--pretend` prints supported migrations' queued string SQL without executing it, running seeders, or installing/upgrading migration history. Tests cover preview in both directions, missing SQLite targets, and schema-bootstrap previews.",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 34,
+        "endLine": 34
+      }
+    },
+    {
+      "id": "note:23c8c7f2a6b76010",
+      "parentId": "document:progress/section:bundle-orm-and-migration-status/section:sql-preview-is-not-full-simulation",
+      "text": "- Preview does not run SQL against a disposable database, validate SQL execution, simulate arbitrary data migrations, or establish rollback correctness. Imperative driver/entity-manager access is rejected. Migration modules remain trusted project code; their top-level side effects are not sandboxed.",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 35,
+        "endLine": 35
+      }
+    },
+    {
+      "id": "note:72b41c9a80e4685f",
+      "parentId": "document:progress/section:bundle-orm-and-migration-status/section:sql-preview-is-not-full-simulation",
+      "text": "- `migrate:check` compares model metadata with the migration snapshot when available; it is not a comprehensive live-schema drift audit. `schema:sql` prints mapped CREATE SQL, distinct from a live schema dump.",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 36,
+        "endLine": 36
+      }
+    },
+    {
+      "id": "note:26a8529e11cc8f64",
+      "parentId": "document:progress/section:bundle-orm-and-migration-status/section:remaining-verification-and-compatibility-gaps",
+      "text": "- Run the live PostgreSQL and MariaDB persistence contracts, then separately exercise the expanded batch/rollback/refresh/fresh, lock, and schema dump/prune/bootstrap workflows on each engine. The opt-in persistence tests alone are not a complete migration-feature matrix.",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 40,
+        "endLine": 40
+      }
+    },
+    {
+      "id": "note:c780148e119a0600",
+      "parentId": "document:progress/section:bundle-orm-and-migration-status/section:remaining-verification-and-compatibility-gaps",
+      "text": "- Verify real native-client round trips, supported server/client versions, TLS/authentication configurations, restricted permissions, and engine-specific schema/data behavior. MariaDB DDL and restoration are not guaranteed atomic.",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 41,
+        "endLine": 41
+      }
+    },
+    {
+      "id": "note:bef00087a64def26",
+      "parentId": "document:progress/section:bundle-orm-and-migration-status/section:remaining-verification-and-compatibility-gaps",
+      "text": "- Validate concurrent deployment behavior across actual processes/hosts, abrupt termination and stale-lock recovery, and operational performance. Current local lock tests are not proof of multi-host deployment safety; non-isolated and native ORM commands can ignore the cooperative lock.",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 42,
+        "endLine": 42
+      }
+    },
+    {
+      "id": "note:316d3c83af4a6470",
+      "parentId": "document:progress/section:bundle-orm-and-migration-status/section:remaining-verification-and-compatibility-gaps",
+      "text": "- No claim of every Artisan command/flag or vendor-specific operation: migration-history uninstall, unrestricted database wiping, PHP Schema Builder compatibility, automatic model editing, interactive production confirmation, and automatic server provisioning are not implemented. Fresh rebuilds deliberately refuse unmapped tables/views rather than automatically dropping every object or type.",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 43,
+        "endLine": 43
+      }
+    },
+    {
+      "id": "note:47d0dcf788427d8d",
+      "parentId": "document:progress/section:bundle-orm-and-migration-status/section:remaining-verification-and-compatibility-gaps",
+      "text": "- Passing scenario tests do not prove exhaustive coverage, production readiness, or universal database portability. Review generated SQL and rollback behavior, maintain dialect-specific migrations/snapshots, and back up real data before destructive operations. Native ORM commands bypass Bundle's force guards and optional isolation/bootstrap orchestration.",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 44,
+        "endLine": 44
+      }
+    },
+    {
+      "id": "note:5cff6823c01b7ef1",
+      "parentId": "document:progress/section:bundle-orm-and-migration-status/section:remaining-verification-and-compatibility-gaps",
+      "text": "See [the migration guide](docs/migrations.md) for the command/option contract and [the database guide](docs/database.md) for configuration and opt-in live-test instructions. These Bundle status notes do not check off the Laravel reference items below.",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 46,
+        "endLine": 46
+      }
+    },
+    {
+      "id": "note:a19f088211d04bb1",
+      "parentId": "document:progress/section:1-command-discovery-and-help",
+      "text": "For an exhaustive list for a particular application, **`php artisan list` is the authoritative source**.",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 57,
+        "endLine": 57
+      }
+    },
+    {
+      "id": "note:be69e4459d8ecb23",
+      "parentId": "document:progress/section:3-local-development",
+      "text": "The commands below are invoked with `php artisan`.",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 71,
+        "endLine": 71
+      }
+    },
+    {
+      "id": "note:774ba4dc2a136b89",
+      "parentId": "document:progress/section:4-code-generation",
+      "text": "Artisan generates application classes and supporting files. Commands below are invoked with `php artisan`.",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 86,
+        "endLine": 86
+      }
+    },
+    {
+      "id": "note:4315278bbf761ee4",
+      "parentId": "document:progress/section:5-database-migrations-and-schema-management",
+      "text": "**Destructive:** `migrate:fresh`, `migrate:refresh`, `migrate:reset`, and `db:wipe` can remove data.",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 189,
+        "endLine": 189
+      }
+    },
+    {
+      "id": "note:2e3c41d45c98f911",
+      "parentId": "document:progress/section:9-queue-and-background-job-management",
+      "text": "Pause/resume commands are version-dependent.",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 279,
+        "endLine": 279
+      }
+    },
+    {
+      "id": "note:a7a79b2008eb4aac",
+      "parentId": "document:progress/section:14-building-your-own-cli-commands",
+      "text": "Artisan is also a framework for creating application-specific command-line tools.",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 354,
+        "endLine": 354
+      }
+    },
+    {
+      "id": "note:8072bedf0580f1dc",
+      "parentId": "document:progress/section:15-optional-ecosystem-cli-tools",
+      "text": "These require the corresponding packages or services; they are **not all built into a default Laravel installation**.",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 380,
+        "endLine": 380
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "example:a5a1fbbae6666523",
+      "parentId": "document:progress",
+      "language": "bash",
+      "text": "php artisan <command>",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 5,
+        "endLine": 7
+      }
+    },
+    {
+      "id": "example:f34c3d2297d52ada",
+      "parentId": "item:2d778bcb7b7ea836",
+      "language": "bash",
+      "text": "laravel new my-app",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 63,
+        "endLine": 65
+      }
+    },
+    {
+      "id": "example:367d7af8c6bb0909",
+      "parentId": "item:02847b7328d7729f",
+      "language": "bash",
+      "text": "php artisan serve --host=127.0.0.1 --port=8000",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 80,
+        "endLine": 82
+      }
+    },
+    {
+      "id": "example:b5a865a7e2f19af7",
+      "parentId": "item:46dcd17ede260cf0",
+      "language": "bash",
+      "text": "php artisan make:model Post -mfs",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 144,
+        "endLine": 146
+      }
+    },
+    {
+      "id": "example:5809d10726645d4a",
+      "parentId": "item:0b538596666b3659",
+      "language": "bash",
+      "text": "php artisan make:controller PostController --resource --model=Post",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 150,
+        "endLine": 152
+      }
+    },
+    {
+      "id": "example:ad971408ef6cbd26",
+      "parentId": "item:6711d378d0c69ba6",
+      "language": "bash",
+      "text": "php artisan make:request StorePostRequest",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 156,
+        "endLine": 158
+      }
+    },
+    {
+      "id": "example:9b6486e6a677a60d",
+      "parentId": "item:6cdce95cb325b5c1",
+      "language": "bash",
+      "text": "php artisan make:test PostTest",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 162,
+        "endLine": 164
+      }
+    },
+    {
+      "id": "example:f628510d874da692",
+      "parentId": "item:1668ba38cf2d85c1",
+      "language": "bash",
+      "text": "php artisan make:test PostTest --unit",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 168,
+        "endLine": 170
+      }
+    },
+    {
+      "id": "example:4564d3d7475c7612",
+      "parentId": "item:26bf139464954a05",
+      "language": "bash",
+      "text": "php artisan db:show\nphp artisan db:table users\nphp artisan model:show User",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 201,
+        "endLine": 205
+      }
+    },
+    {
+      "id": "example:14b005d688007d33",
+      "parentId": "item:bc044922c4b21b3b",
+      "language": "bash",
+      "text": "php artisan route:list --path=api",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 214,
+        "endLine": 216
+      }
+    },
+    {
+      "id": "example:6828d3aebd393598",
+      "parentId": "item:e4faf9bf6ec9af55",
+      "language": "bash",
+      "text": "php artisan route:list -v",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 220,
+        "endLine": 222
+      }
+    },
+    {
+      "id": "example:3a628e1479dcb51a",
+      "parentId": "item:9ec5b6ced2737586",
+      "language": "bash",
+      "text": "php artisan queue:work --queue=high,default --tries=3 --timeout=90",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 275,
+        "endLine": 277
+      }
+    },
+    {
+      "id": "example:1220f5fe77c673ac",
+      "parentId": "item:a85908af6ad23c33",
+      "language": "bash",
+      "text": "php artisan test",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 297,
+        "endLine": 299
+      }
+    },
+    {
+      "id": "example:c48ed8d342c37146",
+      "parentId": "item:b5ef9e65087131c2",
+      "language": "bash",
+      "text": "php artisan test tests/Feature/ExampleTest.php",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 303,
+        "endLine": 305
+      }
+    },
+    {
+      "id": "example:b98ea7ab03a92194",
+      "parentId": "item:653a4b39f14cbd9f",
+      "language": "bash",
+      "text": "php artisan test --filter=ExampleTest",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 309,
+        "endLine": 311
+      }
+    },
+    {
+      "id": "example:a7bb3b4850c44a2c",
+      "parentId": "item:0cb10946a80226bf",
+      "language": "bash",
+      "text": "php artisan test --parallel",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 315,
+        "endLine": 317
+      }
+    },
+    {
+      "id": "example:86318bac06521379",
+      "parentId": "item:be51ab5821631bf5",
+      "language": "bash",
+      "text": "php artisan test --coverage",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 321,
+        "endLine": 323
+      }
+    },
+    {
+      "id": "example:51a554c394e44281",
+      "parentId": "item:700c819b0109ebde",
+      "language": "bash",
+      "text": "php artisan make:command ImportProducts",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 374,
+        "endLine": 376
+      }
+    },
+    {
+      "id": "example:ce7e499c400be290",
+      "parentId": "item:14d3ee7c5af3b4d2",
+      "language": "bash",
+      "text": "./vendor/bin/sail artisan migrate",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 397,
+        "endLine": 399
+      }
+    },
+    {
+      "id": "example:cba94b6a872e108b",
+      "parentId": "item:488774f532b93140",
+      "language": "bash",
+      "text": "./vendor/bin/pint",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 403,
+        "endLine": 405
+      }
+    },
+    {
+      "id": "example:e2c12f767fa44fdf",
+      "parentId": "item:c5289e196a9f31b8",
+      "language": "bash",
+      "text": "php artisan horizon",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 409,
+        "endLine": 411
+      }
+    },
+    {
+      "id": "example:4aeafbbb4e3330c6",
+      "parentId": "item:9e6edd78a7e4c82c",
+      "language": "bash",
+      "text": "php artisan octane:start",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 415,
+        "endLine": 417
+      }
+    },
+    {
+      "id": "example:1d5f8d676f32671e",
+      "parentId": "item:146fbf2568d87865",
+      "language": "bash",
+      "text": "php artisan reverb:start",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 421,
+        "endLine": 423
+      }
+    },
+    {
+      "id": "example:c62803563436ca1b",
+      "parentId": "item:47d7f3f7fa16abd8",
+      "language": "bash",
+      "text": "php artisan dusk",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 427,
+        "endLine": 429
+      }
+    },
+    {
+      "id": "example:4b358724328232e7",
+      "parentId": "item:1fc60e522f6b00e3",
+      "language": "bash",
+      "text": "php artisan scout:import \"App\\Models\\Post\"",
+      "location": {
+        "path": "PROGRESS.md",
+        "startLine": 433,
+        "endLine": 435
+      }
+    }
+  ]
+}

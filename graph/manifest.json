@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "path": "PROGRESS.md",
+    "sha256": "46a11b6a0e42068320094942e83e8c4e3372c10ac6fea721f62fa7567d65675b"
+  },
+  "generatedBy": "bun run graph:build",
+  "files": [
+    "corpus.json",
+    "commands.json",
+    "sources.json",
+    "graph.json",
+    "manifest.json"
+  ],
+  "counts": {
+    "categories": 15,
+    "sections": 33,
+    "items": 180,
+    "completedItems": 0,
+    "notes": 29,
+    "examples": 25,
+    "sources": 3,
+    "commands": 133,
+    "nodes": 404,
+    "edges": 428
+  }
+}

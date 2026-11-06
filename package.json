@@ -1,0 +1,41 @@
+{
+  "name": "bundle",
+  "version": "0.1.0",
+  "module": "index.ts",
+  "bin": {
+    "bundle": "./index.ts"
+  },
+  "mikro-orm": {
+    "preferTs": true,
+    "configPaths": ["./mikro-orm.config.ts"]
+  },
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "bun run index.ts",
+    "dev": "bun --watch index.ts",
+    "bundle": "bun run index.ts",
+    "orm": "bun --bun mikro-orm",
+    "typecheck": "bun check",
+    "test": "bun test",
+    "graph:build": "bun run scripts/build-graph.ts",
+    "graph:check": "bun run scripts/build-graph.ts --check"
+  },
+  "devDependencies": {
+    "@mikro-orm/cli": "7.2.7",
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^7"
+  },
+  "dependencies": {
+    "@mikro-orm/core": "7.2.7",
+    "@mikro-orm/mariadb": "7.2.7",
+    "@mikro-orm/migrations": "7.2.7",
+    "@mikro-orm/postgresql": "7.2.7",
+    "@mikro-orm/seeder": "7.2.7",
+    "@mikro-orm/sqlite": "7.2.7",
+    "commander": "15.0.0",
+    "tinyglobby": "0.2.17"
+  }
+}
