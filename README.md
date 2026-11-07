@@ -1,6 +1,6 @@
 # Bundle
 
-Bundle's generated-application direction is full MVC: MikroORM models and Bun-native HTTP controllers/routes on the backend, with Vite + React TSX views, Fast Refresh/HMR and preconfigured shadcn/ui components on the frontend. The frontend integration is in progress and its runtime/HMR gates are not yet verified. The Laravel-inspired CLI coordinates the backend and development workflow. Backend mappings remain code-first TypeScript classes plus `EntitySchema`.
+Bundle's generated-application direction is full MVC: MikroORM models and Bun-native HTTP controllers/routes on the backend, with Vite + React TSX views, Fast Refresh/HMR and preconfigured shadcn/ui components on the frontend. Runtime tests verify generated-app Vite startup, React Fast Refresh/HMR, typecheck, production build, combined API+web startup, `/api` proxying, and serving the build through the production worker on Linux. Non-Linux static serving remains unavailable. The Laravel-inspired CLI coordinates the backend and development workflow. Backend mappings remain code-first TypeScript classes plus `EntitySchema`.
 
 ## Database quick start
 
@@ -48,7 +48,7 @@ bun run bundle schema:dump --isolated
 
 `migrate:uninstall --pretend` inspects verified existing SQLite tracking; actual removal requires global `--force` and preserves application tables, migration files and lock state. It loses applied-history knowledge, so later migration application needs care. See [tracking uninstall](docs/history-uninstall.md) for conservative refusal and fresh-process reinstall rules.
 
-`dev:list` inspects an explicit trusted `dev.ts` registry, and `dev` consumes it as a foreground owned Bun command group. Generated applications configure the API and Vite frontend as separate children; run `bun install` explicitly in the generated app before using them. The group stops owned peers on first exit and on signals, but does not manage arbitrary descendants or background services. The generated Vite lifecycle/HMR integration is still being verified. See [development processes](docs/development.md).
+`dev:list` inspects an explicit trusted `dev.ts` registry, and `dev` consumes it as a foreground owned Bun command group. Generated applications configure the API and Vite frontend as separate children; run `bun install` explicitly in the generated app before using them. Runtime tests verify generated-app Vite readiness/HMR, build, combined API+web startup, `/api` proxy and coordinated listener shutdown. The group stops owned peers on first exit and on signals, but does not manage arbitrary descendants or background services. See [development processes](docs/development.md).
 
 ## Artisan-style console foundations
 
@@ -148,7 +148,7 @@ Check TypeScript types:
 bun run typecheck
 ```
 
-The entry point is `index.ts`, which runs the Bundle CLI. `bun run start` shows its command list; pass a command to execute it. Backend HTTP uses the code-first Bun-native router/server. Its worker now serves descriptor-opened `dist/` assets on Linux; non-Linux static serving is unavailable. Generated Vite HMR, combined API startup/proxy and the `ui:build`→production-serving flow are still undergoing verification. No linter is configured.
+The entry point is `index.ts`, which runs the Bundle CLI. `bun run start` shows its command list; pass a command to execute it. Backend HTTP uses the code-first Bun-native router/server. Its worker serves descriptor-opened `dist/` assets on Linux; non-Linux static serving is unavailable. Runtime tests verify generated Vite Fast Refresh/HMR, `ui:build`, combined API startup/proxy and serving a generated build through the production worker on Linux; non-Linux static serving is unavailable. No linter is configured.
 
 Run the Bun tests:
 

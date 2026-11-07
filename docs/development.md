@@ -1,6 +1,6 @@
 # Explicit foreground development processes
 
-Bundle's `dev:list` and `dev` share a trusted root `dev.ts` registry. Nothing is installed during project creation or started implicitly by ordinary CLI startup. Generated applications configure a Bun API child and a Vite frontend child; dependencies must be installed explicitly in that generated app first. The Vite HMR and end-to-end development workflow remain in verification. This is a bounded local Bun command group, not a process-group sandbox, readiness monitor or system service manager.
+Bundle's `dev:list` and `dev` share a trusted root `dev.ts` registry. Nothing is installed during project creation or started implicitly by ordinary CLI startup. Generated applications configure a Bun API child and a Vite frontend child; dependencies must be installed explicitly in that generated app first. Runtime tests pass for generated-app typechecking, Vite readiness, React Fast Refresh/HMR updates, `ui:build`, combined API+web startup, `/api` proxying, serving generated output through the production worker on Linux, and stopping both listeners. Non-Linux production static serving remains unavailable. This is a bounded local Bun command group, not a process-group sandbox, readiness monitor or system service manager.
 
 ```ts
 import { defineDevelopment } from './src/development/processes.ts';

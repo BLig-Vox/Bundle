@@ -16,6 +16,10 @@ export interface RouteMetadata {
 type Segment = { kind: 'literal'; value: string } | { kind: 'parameter'; value: string };
 type Route = { methods: string[]; path: string; segments: Segment[]; handler: HttpHandler; name?: string; middleware: HttpMiddleware[] };
 
+const unmatchedRouteResponses = new WeakSet<Response>();
+const routerResponseKinds = new WeakMap<Response, "handled" | "unmatched">();
+export function routerResponseKind(response: Response): "handled" | "unmatched" | undefined { return routerResponseKinds.get(response); }
+
 function parsePath(path: string): Segment[] {
   if (typeof path !== 'string' || !path.startsWith('/') || (path !== '/' && path.endsWith('/'))) throw new Error('Invalid route path');
   const names = new Set<string>();
@@ -80,11 +84,15 @@ export class Router {
     } catch {
       response = new Response('Internal Server Error', { status: 500, headers: { 'Cache-Control': 'no-store' } });
     }
+    const kind = unmatchedRouteResponses.has(response) ? "unmatched" : "handled";
+    routerResponseKinds.set(response, kind);
     if (!head) return response;
     // HEAD discards the handler's body. Signal its source without letting a slow
     // or rejected cleanup delay or break the response.
     try { if (response.body) void response.body.cancel().catch(() => {}); } catch { /* Cleanup is best-effort. */ }
-    return new Response(null, { status: response.status, statusText: response.statusText, headers: response.headers });
+    const headResponse = new Response(null, { status: response.status, statusText: response.statusText, headers: response.headers });
+    routerResponseKinds.set(headResponse, kind);
+    return headResponse;
   }
 
   private async dispatch(request: Request): Promise<Response> {
@@ -93,7 +101,11 @@ export class Router {
     try { parts = pathname === '/' ? [] : pathname.slice(1).split('/').map(decodeURIComponent); }
     catch { return new Response('Bad Request', { status: 400 }); }
     const matches = this.routes.filter(route => route.segments.length === parts.length && route.segments.every((segment, index) => segment.kind === 'parameter' ? parts[index] !== '' : segment.value === parts[index]));
-    if (matches.length === 0) return new Response('Not Found', { status: 404 });
+    if (matches.length === 0) {
+      const response = new Response('Not Found', { status: 404 });
+      unmatchedRouteResponses.add(response);
+      return response;
+    }
     const best = matches.reduce((current, candidate) => compare(candidate.segments, current.segments) === 1 ? candidate : current);
     const same = matches.filter(route => compare(route.segments, best.segments) === 0);
     const allowed = new Set(same.flatMap(route => route.methods));

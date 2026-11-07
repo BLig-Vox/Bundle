@@ -1,6 +1,6 @@
 # Offline code-first application creation
 
-> **Superseding direction (2026-11-07):** A later explicit user request changes the generated frontend from no-markup/code-only to Vite + React TSX with Fast Refresh/HMR and preconfigured shadcn/ui-compatible components, while retaining the Bun/TypeScript/MikroORM backend and native HTTP controllers/routes. This supersedes only the frontend exclusions below. Project creation remains offline: dependencies are declared but never installed during `new`; generated-app HMR and production integration require separate verification.
+> **Superseding direction (2026-11-07):** A later explicit user request changes the generated frontend from no-markup/code-only to Vite + React TSX with Fast Refresh/HMR and preconfigured shadcn/ui-compatible components, while retaining the Bun/TypeScript/MikroORM backend and native HTTP controllers/routes. This supersedes only the frontend exclusions below. Project creation remains offline: dependencies are declared but never installed during `new`; generated-app HMR/build, combined API+web `/api` proxy, and production build serving are runtime-verified on Linux. Non-Linux production static serving remains unavailable.
 
 ## Binding scope
 

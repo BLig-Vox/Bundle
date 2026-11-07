@@ -1467,14 +1467,14 @@
       "label": "- `bundle test [files...]` invokes the current Bun executable directly, streams stdout/stderr without inserting chunk-boundary newlines, preserves failure status and forwards SIGINT/SIGTERM. `--filter` maps to native regular-expression test-name filtering; `--coverage` uses native text coverage."
     },
     {
-      "id": "note:85785d913281cb92",
+      "id": "note:471e97d0ce094f7e",
       "type": "note",
-      "label": "- `--parallel --processes <count>` uses isolated native worker processes, two by default. Tests prove overlapping execution in two distinct PIDs and isolated globals. Individual tests still own database/port/service fixtures; this is not Laravel automatic per-worker database provisioning or PHPUnit/Pest compatibility. Additional report formats and Laravel coverage thresholds are unsupported."
+      "label": "- `--parallel --processes <count>` uses isolated native worker processes, two by default. Tests prove overlapping execution in two distinct PIDs and isolated globals. The explicit `--parallel --isolated-databases` mode provisions a new SQLite database per worker and runs the existing SQLite migrations without changing the configured application database or migration snapshots. This opt-in setup is Linux-only; PostgreSQL/MariaDB fixtures are not provisioned, tests still own external ports/files/services, and test code is trusted rather than sandboxed. This is not PHPUnit/Pest compatibility. Additional report formats and Laravel coverage thresholds are unsupported."
     },
     {
-      "id": "note:02a1d3820f1ac7af",
+      "id": "note:97925a5af6dce7ec",
       "type": "note",
-      "label": "- Evidence: `src/cli/testing.test.ts` runs real filtered/failing/coverage/worker fixtures; `src/cli/compatibility.test.ts` verifies real CLI execution, raw Unicode output, exact failure status and termination of a running test child. The full repository suite is also exercised through `bundle test`; opt-in PostgreSQL/MariaDB live tests remain separately gated."
+      "label": "- Evidence: `src/cli/testing.test.ts` runs real filtered/failing/coverage/worker fixtures; `src/cli/compatibility.test.ts` verifies real CLI execution, raw Unicode output, exact failure status and termination of a running test child. `src/testing/test-databases.test.ts` and `docs/isolated-test-databases.md` cover isolated SQLite setup, distinct worker databases, application DB/migration-source preservation, failure/cancellation and cleanup limits. The full repository suite is also exercised through `bundle test`; opt-in PostgreSQL/MariaDB live tests remain separately gated."
     },
     {
       "id": "note:1a3d51e7c74b4c07",
@@ -4305,12 +4305,12 @@
     },
     {
       "from": "document:progress/section:bundle-cli-feature-ledger/section:native-testing-integrated-bounded-bun-adapter",
-      "to": "note:85785d913281cb92",
+      "to": "note:471e97d0ce094f7e",
       "relation": "has_note"
     },
     {
       "from": "document:progress/section:bundle-cli-feature-ledger/section:native-testing-integrated-bounded-bun-adapter",
-      "to": "note:02a1d3820f1ac7af",
+      "to": "note:97925a5af6dce7ec",
       "relation": "has_note"
     },
     {

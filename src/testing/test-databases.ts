@@ -63,6 +63,28 @@ function signalProcessGroup(group: number, signal: NodeJS.Signals): void {
   try { process.kill(-group, signal); }
   catch (error) { if ((error as NodeJS.ErrnoException).code !== "ESRCH") throw error; }
 }
+async function signalOwnedProcessGroup(group: number, start: string | undefined, signal: NodeJS.Signals): Promise<boolean> {
+  if (!start) return false;
+  const leader = await identity(group);
+  if (!leader || leader.state === "Z" || leader.group !== group || leader.parent !== process.pid || leader.start !== start) return false;
+  signalProcessGroup(group, signal);
+  return true;
+}
+async function observeProcessDescendants(rootPid: number, observed: Map<number, string>): Promise<void> {
+  const current = new Map<number, NonNullable<Awaited<ReturnType<typeof identity>>>>();
+  for (const entry of await readdir("/proc")) {
+    if (!/^[1-9]\d*$/.test(entry)) continue;
+    const pid = Number(entry); const value = await identity(pid);
+    if (value && value.state !== "Z") current.set(pid, value);
+  }
+  const parents = new Set([rootPid, ...observed.keys()]); let changed = true;
+  while (changed) {
+    changed = false;
+    for (const [pid, value] of current) if (!parents.has(pid) && parents.has(value.parent)) {
+      observed.set(pid, value.start); parents.add(pid); changed = true;
+    }
+  }
+}
 
 async function privateDirectory(path: string) {
   const info = await lstat(path);
@@ -161,17 +183,26 @@ export async function runIsolatedDatabaseTests(options: IsolatedDatabaseTestOpti
   await privateDirectory(parent);
   const run = await mkdtemp(join(parent, "run-")); const owned = await privateDirectory(run); const token = randomUUID();
   let child: ReturnType<typeof Bun.spawn<"inherit", "pipe", "pipe">> | undefined;
+  let childGroupStart: string | undefined;
+  let monitorDescendants = false;
+  const observedDescendants = new Map<number, string>();
+  let descendantTrackingFailure: unknown;
+  let descendantWatcher: Promise<void> | undefined;
   let stopPromise: Promise<void> | undefined;
   const stop = () => stopPromise ??= (async () => {
     if (!child) return;
     const group = child.pid;
-    signalProcessGroup(group, "SIGTERM");
-    const timer = setTimeout(() => { try { signalProcessGroup(group, "SIGKILL"); } catch { /* Preserve fixture state if process ownership cannot be revalidated. */ } }, 1000);
-    try { await child.exited; } finally { clearTimeout(timer); }
-    if (!(await waitForProcessGroupExit(group, 1000))) {
-      signalProcessGroup(group, "SIGKILL");
-      if (!(await waitForProcessGroupExit(group, 1000))) throw new Error("Owned test process group did not quiesce; fixture preserved.");
+    if (child.exitCode === null) {
+      if (!(await signalOwnedProcessGroup(group, childGroupStart, "SIGTERM"))) { try { child.kill("SIGTERM"); } catch { /* The direct owned child is already exiting. */ } }
+      const timer = setTimeout(() => {
+        if (child?.exitCode !== null) return;
+        void (async () => {
+          if (!(await signalOwnedProcessGroup(group, childGroupStart, "SIGKILL"))) { try { child?.kill("SIGKILL"); } catch { /* The direct owned child is already exiting. */ } }
+        })().catch(() => {});
+      }, 1000);
+      try { await child.exited; } finally { clearTimeout(timer); }
     }
+    if (!(await waitForProcessGroupExit(group, 1000))) throw new Error("Owned test process group did not quiesce; fixture preserved.");
   })();
   const abort = () => { void stop(); };
   const io = new AbortController(); let failure: unknown; let status = 1;
@@ -182,6 +213,16 @@ export async function runIsolatedDatabaseTests(options: IsolatedDatabaseTestOpti
     if (filter !== undefined) args.push("--test-name-pattern", filter);
     if (coverage) args.push("--coverage"); args.push(...files);
     child = Bun.spawn(args, { cwd: canonical, env: { ...env, APP_ENV: "test", NODE_ENV: "test", [RUN_VARIABLE]: run }, stdin: "inherit", stdout: "pipe", stderr: "pipe", detached: true });
+    const leader = await identity(child.pid);
+    if (leader && leader.group === child.pid && leader.parent === process.pid && leader.state !== "Z") childGroupStart = leader.start;
+    monitorDescendants = true;
+    descendantWatcher = (async () => {
+      while (monitorDescendants) {
+        try { await observeProcessDescendants(child!.pid, observedDescendants); }
+        catch (error) { descendantTrackingFailure ??= error; return; }
+        await Bun.sleep(10);
+      }
+    })();
     signal?.addEventListener("abort", abort, { once: true }); if (signal?.aborted) abort();
     forwarding = Promise.all([forward(child.stdout, output, io.signal), forward(child.stderr, error, io.signal)]).catch(async () => { failure ??= new Error("Native test output failed."); await stop(); });
     status = await child.exited;
@@ -190,6 +231,7 @@ export async function runIsolatedDatabaseTests(options: IsolatedDatabaseTestOpti
   } catch (error) { failure ??= error; }
   finally {
     await stop(); io.abort(); await forwarding;
+    monitorDescendants = false; await descendantWatcher;
     try {
       const current = await privateDirectory(run);
       if (current.dev !== owned.dev || current.ino !== owned.ino) throw new Error("Test fixture identity changed.");
@@ -227,6 +269,11 @@ export async function runIsolatedDatabaseTests(options: IsolatedDatabaseTestOpti
           if (Date.now() >= deadline) throw new Error("Test worker still active; fixture preserved.");
           await Bun.sleep(10);
         }
+      }
+      if (descendantTrackingFailure) throw new Error("Unable to verify test process descendants.");
+      for (const [pid, start] of observedDescendants) {
+        const current = await identity(pid);
+        if (current && current.start === start && current.state !== "Z") throw new Error("A test descendant remains active; fixture preserved.");
       }
       await rm(run, { recursive: true });
     } catch { failure ??= new Error("Test database fixture preserved for inspection: " + run); }

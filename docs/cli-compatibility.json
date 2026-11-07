@@ -6,7 +6,7 @@
     "branch": "version/A000",
     "source": {
       "path": "PROGRESS.md",
-      "sha256": "2e5ceafbeb56c8a50ba9c3d6bc66d7669a54429061f46f773459674d7d23185e"
+      "sha256": "3942383089e07c1df94a0f3389f0bf092f932bf53c95e9b19997e4b814dd9726"
     },
     "corpusPath": "graph/corpus.json",
     "originalItemCount": 180,
@@ -30,7 +30,7 @@
   "blockers": [
     {
       "id": "B1",
-      "description": "Backend HTTP uses the code-first Bun-native router/server with live maintenance. Generated apps select Vite + React TSX views, but HMR/readiness/production integration remains unverified. Auth/reload and further integrations remain unfinished.",
+      "description": "Backend HTTP uses the code-first Bun-native router/server with live maintenance. Generated-app typecheck, Vite readiness/HMR, `ui:build`, combined API+web `/api` proxy/lifecycle and production serving pass runtime tests on Linux; non-Linux static serving remains unavailable. Auth/reload and further integrations remain unfinished.",
       "affects": [
         "M4",
         "M7",
@@ -8301,7 +8301,7 @@
       ],
       "reason": "bundle test executes the real Bun suite via a native subprocess, preserves output/failure status and forwards termination; the repository suite itself is exercised through this command.",
       "remainingWork": [
-        "These are native Bun contracts, not PHP execution; additional Laravel flags/reporters and automatic test-database setup remain unsupported."
+        "A separate explicit `--parallel --isolated-databases` mode provisions per-worker SQLite databases on Linux. It does not change ordinary test runs, provision server databases or external services, or imply PHP execution; additional Laravel flags/reporters remain unsupported."
       ]
     },
     {
@@ -8358,7 +8358,7 @@
       ],
       "reason": "bundle test accepts file patterns rooted at the selected application, with actual process fixture selection and native error propagation.",
       "remainingWork": [
-        "These are native Bun contracts, not PHP execution; additional Laravel flags/reporters and automatic test-database setup remain unsupported."
+        "A separate explicit `--parallel --isolated-databases` mode provisions per-worker SQLite databases on Linux. It does not change ordinary test runs, provision server databases or external services, or imply PHP execution; additional Laravel flags/reporters remain unsupported."
       ]
     },
     {
@@ -8415,7 +8415,7 @@
       ],
       "reason": "bundle test --filter maps regular-expression test-name matching to Bun, with real selected/unselected/failing test evidence.",
       "remainingWork": [
-        "These are native Bun contracts, not PHP execution; additional Laravel flags/reporters and automatic test-database setup remain unsupported."
+        "A separate explicit `--parallel --isolated-databases` mode provisions per-worker SQLite databases on Linux. It does not change ordinary test runs, provision server databases or external services, or imply PHP execution; additional Laravel flags/reporters remain unsupported."
       ]
     },
     {
@@ -8460,19 +8460,34 @@
           "detail": "Integrated bounded Bun equivalent; supported semantics and limitations are stated in reason/remainingWork."
         },
         {
+          "kind": "implementation",
+          "path": "src/testing/test-databases.ts",
+          "detail": "Explicit opt-in per-worker SQLite migration/setup with Linux ownership checks; limitations remain in reason/remainingWork."
+        },
+        {
           "kind": "automated-test",
           "path": "src/cli/testing.test.ts",
           "detail": "Executable focused or real-process regression evidence; not live external-service evidence."
         },
         {
+          "kind": "automated-test",
+          "path": "src/testing/test-databases.test.ts",
+          "detail": "Real disposable-root per-worker DB, preservation, setup-failure and cleanup regressions."
+        },
+        {
           "kind": "documentation",
           "path": "docs/console.md",
-          "detail": "Current public options, deliberate differences and safety contract."
+          "detail": "Current CLI options and test command safety contract."
+        },
+        {
+          "kind": "documentation",
+          "path": "docs/isolated-test-databases.md",
+          "detail": "Exact opt-in behavior, Linux/SQLite scope and cleanup limitations."
         }
       ],
-      "reason": "bundle test --parallel --processes N invokes native isolated worker processes; deterministic fixtures prove overlapping tests in two distinct worker PIDs and isolated globals.",
+      "reason": "bundle test --parallel --processes N invokes native isolated worker processes; deterministic fixtures prove overlapping tests in two distinct worker PIDs and isolated globals. The explicit --isolated-databases option provisions a distinct SQLite database per worker using existing migrations without changing application database or migration-source state.",
       "remainingWork": [
-        "Tests must isolate their own databases/ports/files/services; automatic Laravel-style per-worker database provisioning and broad integration-worker lifecycle support remain absent."
+        "Per-worker database provisioning is an explicit Linux-only SQLite mode, not the default; PostgreSQL/MariaDB and external services/ports/files remain caller-owned. Test code is trusted rather than sandboxed, and broader Laravel/PHP worker-lifecycle parity remains unsupported."
       ]
     },
     {
@@ -8574,19 +8589,34 @@
           "detail": "Integrated bounded Bun equivalent; supported semantics and limitations are stated in reason/remainingWork."
         },
         {
+          "kind": "implementation",
+          "path": "src/testing/test-databases.ts",
+          "detail": "Explicit opt-in per-worker SQLite migration/setup with Linux ownership checks; limitations remain in reason/remainingWork."
+        },
+        {
           "kind": "automated-test",
           "path": "src/cli/testing.test.ts",
           "detail": "Executable focused or real-process regression evidence; not live external-service evidence."
         },
         {
+          "kind": "automated-test",
+          "path": "src/testing/test-databases.test.ts",
+          "detail": "Real disposable-root per-worker DB, preservation, setup-failure and cleanup regressions."
+        },
+        {
           "kind": "documentation",
           "path": "docs/console.md",
-          "detail": "Current public options, deliberate differences and safety contract."
+          "detail": "Current CLI options and test command safety contract."
+        },
+        {
+          "kind": "documentation",
+          "path": "docs/isolated-test-databases.md",
+          "detail": "Exact opt-in behavior, Linux/SQLite scope and cleanup limitations."
         }
       ],
-      "reason": "bundle test --parallel --processes N invokes native isolated worker processes; deterministic fixtures prove overlapping tests in two distinct worker PIDs and isolated globals.",
+      "reason": "bundle test --parallel --processes N invokes native isolated worker processes; deterministic fixtures prove overlapping tests in two distinct worker PIDs and isolated globals. The explicit --isolated-databases option provisions a distinct SQLite database per worker using existing migrations without changing application database or migration-source state.",
       "remainingWork": [
-        "Tests must isolate their own databases/ports/files/services; automatic Laravel-style per-worker database provisioning and broad integration-worker lifecycle support remain absent."
+        "Per-worker database provisioning is an explicit Linux-only SQLite mode, not the default; PostgreSQL/MariaDB and external services/ports/files remain caller-owned. Test code is trusted rather than sandboxed, and broader Laravel/PHP worker-lifecycle parity remains unsupported."
       ]
     },
     {

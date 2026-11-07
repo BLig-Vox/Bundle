@@ -1,6 +1,7 @@
 import { constants } from "node:fs";
 import { open, realpath, type FileHandle } from "node:fs/promises";
 import { loadApplicationRouter } from "./application.ts";
+import { routerResponseKind } from "./router.ts";
 import { publicAssetResponse } from "./static-assets.ts";
 import { maintenanceResponse } from "../maintenance/maintenance.ts";
 
@@ -33,7 +34,7 @@ self.addEventListener("message", async (event: MessageEvent) => {
         catch { return new Response(request.method === "HEAD" ? null : JSON.stringify({ error: "Service unavailable" }), { status: 503, headers: { "content-type": "application/json", "cache-control": "no-store" } }); }
         if (maintenance) return maintenance;
         const response = await router.fetch(request);
-        if (response.status !== 404 || new URL(request.url).pathname === "/api" || new URL(request.url).pathname.startsWith("/api/")) return response;
+        if (response.status !== 404 || routerResponseKind(response) === "handled" || new URL(request.url).pathname === "/api" || new URL(request.url).pathname.startsWith("/api/")) return response;
         return await publicAssetResponse(rootDirectory!, request) ?? response;
       },
       error: () => Response.json({ error: "Internal server error" }, { status: 500 }),

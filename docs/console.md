@@ -4,7 +4,7 @@ Bundle provides Bun/TypeScript equivalents for selected Artisan workflows. It do
 
 ## Explicit development processes
 
-`dev:list` lists trusted root `dev.ts` names/argv without invoking configured commands; importing the source itself remains executable application code. `dev` consumes the same registry in an owned foreground Bun group with streamed output, first-exit status and bounded signal cleanup. It does not use a shell, install packages, or manage process groups/descendants. Generated applications explicitly configure API and Vite children; their HMR/readiness integration is still under verification. Listing intentionally reveals argv, so do not place secrets there. See [development processes](development.md) for source validation, lifecycle and fixture evidence.
+`dev:list` lists trusted root `dev.ts` names/argv without invoking configured commands; importing the source itself remains executable application code. `dev` consumes the same registry in an owned foreground Bun group with streamed output, first-exit status and bounded signal cleanup. It does not use a shell, install packages, or manage process groups/descendants. Generated applications explicitly configure API and Vite children; runtime tests verify generated-app typechecking, Vite readiness, Fast Refresh/HMR updates, `ui:build`, combined API+web startup, `/api` proxying and graceful stop of both listeners. See [development processes](development.md) for source validation and lifecycle limits. Listing intentionally reveals argv, so do not place secrets there. See [development processes](development.md) for source validation, lifecycle and fixture evidence.
 
 ## Native console test harness
 

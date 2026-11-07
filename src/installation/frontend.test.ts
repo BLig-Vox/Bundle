@@ -15,6 +15,8 @@ async function install(root: string) {
 
 test("generated React/shadcn frontend installs from cache, typechecks, serves Vite Fast Refresh HMR and builds", async () => {
   const { root } = await fixture(); const project = await createProject({ parent: root, name: "mvc-workshop" });
+  const health = '{module:"src/http/controllers/HealthController.ts",export:"HealthController",method:"show"}';
+  await writeFile(join(project.directory, "routes.ts"), `import {defineRoutes} from "./src/http/route-definitions.ts"; export default defineRoutes([{method:"GET",path:"/health",name:"health",handler:${health}},{method:"GET",path:"/api/health",name:"api.health",handler:${health}}]);`);
   const packageJson = await Bun.file(join(project.directory, "package.json")).json();
   expect(packageJson.devDependencies.react).toBeString(); expect(packageJson.devDependencies.vite).toBeString();
   expect(packageJson.scripts.dev).toBe("bun run index.ts dev");
@@ -70,4 +72,50 @@ test("generated React/shadcn frontend installs from cache, typechecks, serves Vi
   const build = Bun.spawn([process.execPath, "run", "index.ts", "ui:build"], { cwd: project.directory, env: { ...process.env, BUN_OPTIONS: "" }, stdout: "pipe", stderr: "pipe" });
   const [buildOut, buildErr, buildStatus] = await Promise.all([new Response(build.stdout).text(), new Response(build.stderr).text(), build.exited]);
   expect(buildStatus, buildOut + buildErr).toBe(0); expect(await Bun.file(join(project.directory, "dist/index.html")).exists()).toBe(true);
-}, 45000);
+  const production = Bun.spawn([process.execPath, "run", "index.ts", "serve", "--port", "0"], { cwd: project.directory, env: { ...process.env, BUN_OPTIONS: "" }, stdout: "pipe", stderr: "pipe" });
+  const productionReader = production.stdout.getReader(); const productionError = new Response(production.stderr).text();
+  const productionDecoder = new TextDecoder(); let productionOutput = ""; let productionUrl = ""; let pendingProductionRead: ReturnType<typeof productionReader.read> | undefined;
+  try {
+    const deadline = Date.now() + 10000;
+    while (!productionUrl && Date.now() < deadline && production.exitCode === null) {
+      pendingProductionRead ??= productionReader.read();
+      const chunk = await Promise.race([pendingProductionRead, Bun.sleep(50).then(() => undefined)]);
+      if (chunk === undefined) continue;
+      pendingProductionRead = undefined;
+      if (chunk.done) break;
+      productionOutput += productionDecoder.decode(chunk.value, { stream: true });
+      productionUrl = productionOutput.match(/"listening":"(http:\/\/127\.0\.0\.1:\d+\/)"/)?.[1] ?? "";
+    }
+    expect(productionUrl, `stdout=${productionOutput}`).not.toBe("");
+    const page = await fetch(productionUrl, { headers: { accept: "text/html" } }); const html = await page.text();
+    expect(page.status).toBe(200); expect(html).toContain("/assets/");
+    const script = html.match(/src="([^"]+\.js)"/)?.[1]; expect(script).toBeDefined();
+    const assetUrl = new URL(script!, productionUrl); const asset = await fetch(assetUrl); expect(asset.status).toBe(200); expect(asset.headers.get("content-type")).toContain("javascript"); expect((await asset.text()).length).toBeGreaterThan(0);
+    const assetHead = await fetch(assetUrl, { method: "HEAD" }); expect(assetHead.status).toBe(200); expect(await assetHead.text()).toBe("");
+    expect(await (await fetch(new URL("/api/health", productionUrl))).json()).toEqual({ status: "ok" });
+  } finally {
+    if (production.exitCode === null) production.kill("SIGTERM");
+    await production.exited; await productionReader.cancel();
+  }
+  const productionErr = await productionError;
+  expect(productionUrl, `stdout=${productionOutput} stderr=${productionErr}`).not.toBe("");
+  const development = Bun.spawn([process.execPath, "run", "index.ts", "dev"], { cwd: project.directory, env: { ...process.env, BUN_OPTIONS: "" }, stdout: "pipe", stderr: "pipe" });
+  const developmentOut = new Response(development.stdout).text(); const developmentErr = new Response(development.stderr).text();
+  let proxyStatus: number | undefined; let proxyBody = "";
+  try {
+    const deadline = Date.now() + 15000;
+    while (Date.now() < deadline && development.exitCode === null) {
+      const response = await fetch("http://127.0.0.1:5173/api/health", { headers: { accept: "application/json" }, signal: AbortSignal.timeout(1000) }).catch(() => undefined);
+      if (response) { proxyStatus = response.status; proxyBody = await response.text(); if (response.ok && proxyBody.includes('"status":"ok"')) break; }
+      await Bun.sleep(50);
+    }
+  } finally {
+    if (development.exitCode === null) development.kill("SIGTERM");
+    await development.exited;
+  }
+  const [devOut, devErr] = await Promise.all([developmentOut, developmentErr]);
+  expect(proxyStatus, `dev stdout=${devOut} stderr=${devErr} response=${proxyBody}`).toBe(200);
+  expect(JSON.parse(proxyBody)).toEqual({ status: "ok" });
+  await expect(fetch("http://127.0.0.1:5173/", { signal: AbortSignal.timeout(1000) })).rejects.toThrow();
+  await expect(fetch("http://127.0.0.1:8000/api/health", { signal: AbortSignal.timeout(1000) })).rejects.toThrow();
+}, 90000);

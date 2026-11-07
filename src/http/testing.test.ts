@@ -49,12 +49,16 @@ test("client refuses external/ambiguous request targets without following redire
 
 test("actual worker consumes cached routes and live maintenance without source fallback", async () => {
   const root = await fixture();
-  await writeFile(join(root, "Health.ts"), 'export function health(){return Response.json({cached:true})}');
-  await writeFile(join(root, "routes.ts"), `import {defineRoutes} from ${JSON.stringify(new URL("./route-definitions.ts", import.meta.url).href)}; export default defineRoutes([{method:"GET",path:"/health",handler:{module:"Health.ts",export:"health"}}]);`);
+  await mkdir(join(root, "dist")); await writeFile(join(root, "dist/index.html"), "<main>cached frontend</main>");
+  await writeFile(join(root, "Health.ts"), 'export function health(){return Response.json({cached:true})} export function gone(){return new Response("cached application 404",{status:404})}');
+  await writeFile(join(root, "routes.ts"), `import {defineRoutes} from ${JSON.stringify(new URL("./route-definitions.ts", import.meta.url).href)}; export default defineRoutes([{method:"GET",path:"/health",handler:{module:"Health.ts",export:"health"}},{method:"GET",path:"/gone",handler:{module:"Health.ts",export:"gone"}}]);`);
   await cacheRoutes(root);
   await writeFile(join(root, "routes.ts"), 'throw new Error("cache must win");');
   await withHttpApplication({ root }, async client => {
     expect(await (await client.request("/health")).json()).toEqual({ cached: true });
+    const page = await client.request("/dashboard", { headers: { accept: "text/html" } }); expect(page.status).toBe(200); expect(await page.text()).toBe("<main>cached frontend</main>");
+    const missing = await client.request("/gone", { headers: { accept: "text/html" } }); expect(missing.status).toBe(404); expect(await missing.text()).toBe("cached application 404");
+    const missingHead = await client.request("/gone", { method: "HEAD", headers: { accept: "text/html" } }); expect(missingHead.status).toBe(404); expect(await missingHead.text()).toBe("");
     await enableMaintenance(root);
     const down = await client.request("/health"); expect(down.status).toBe(503); expect(down.headers.get("cache-control")).toContain("no-store"); await down.body?.cancel();
     await disableMaintenance(root);
@@ -67,11 +71,26 @@ test("production worker serves descriptor-opened dist assets for GET and HEAD", 
   const root = await fixture(); await mkdir(join(root, "dist"));
   await writeFile(join(root, "dist/index.html"), "<main>frontend</main>");
   await writeFile(join(root, "dist/app.js"), "export const ready = true;");
-  await writeFile(join(root, "routes.ts"), 'export default {describe(){return []},fetch(){return new Response("not found",{status:404})}};');
+  await writeFile(join(root, "routes.ts"), `import {createRouter} from ${JSON.stringify(new URL("./router.ts", import.meta.url).href)}; export default createRouter().add("GET","/gone",()=>new Response("application not found",{status:404}));`);
   await withHttpApplication({ root }, async client => {
-    const page = await client.request("/"); expect(page.status).toBe(200); expect(await page.text()).toBe("<main>frontend</main>");
+    const page = await client.request("/", { headers: { accept: "text/html" } }); expect(page.status).toBe(200); expect(await page.text()).toBe("<main>frontend</main>");
     const asset = await client.request("/app.js"); expect(asset.status).toBe(200); expect(asset.headers.get("content-type")).toContain("javascript"); expect(await asset.text()).toContain("ready");
     const head = await client.request("/app.js", { method: "HEAD" }); expect(head.status).toBe(200); expect(head.headers.get("content-length")).toBe(String(Buffer.byteLength("export const ready = true;"))); expect(await head.text()).toBe("");
+    const missing = await client.request("/gone", { headers: { accept: "text/html" } }); expect(missing.status).toBe(404); expect(await missing.text()).toBe("application not found");
+    const missingHead = await client.request("/gone", { method: "HEAD", headers: { accept: "text/html" } }); expect(missingHead.status).toBe(404); expect(await missingHead.text()).toBe("");
+    const clientRoute = await client.request("/client/page", { headers: { accept: "text/html" } }); expect(clientRoute.status).toBe(200); expect(await clientRoute.text()).toBe("<main>frontend</main>");
+    const clientRouteHead = await client.request("/client/page", { method: "HEAD", headers: { accept: "text/html" } }); expect(clientRouteHead.status).toBe(200); expect(await clientRouteHead.text()).toBe("");
+  });
+});
+
+test("production worker retains SPA fallback for accepted custom routers", async () => {
+  if (process.platform !== "linux") return;
+  const root = await fixture(); await mkdir(join(root, "dist"));
+  await writeFile(join(root, "dist/index.html"), "<main>custom frontend</main>");
+  await writeFile(join(root, "routes.ts"), 'export default {describe(){return []},fetch(){return new Response("Not Found",{status:404})}};');
+  await withHttpApplication({ root }, async client => {
+    const page = await client.request("/client/page", { headers: { accept: "text/html" } });
+    expect(page.status).toBe(200); expect(await page.text()).toBe("<main>custom frontend</main>");
   });
 });
 

@@ -49,18 +49,21 @@ test("isolated cancellation settles owned parallel workers and cleans only its n
   expect(await readdir(join(root, ".bundle-test-databases"))).toEqual([]);
 }, 12000);
 
-test("isolated run does not delete its database while an unregistered descendant can remain alive", async () => {
+test("isolated run preserves its fixture while a detached descendant remains active", async () => {
   const { root, env } = await fixture(); const pidFile = join(root, "descendant.pid"); await mkdir(join(root, "tests"));
-  await writeFile(join(root, "tests/Descendant.test.ts"), `import {test} from "bun:test";import {writeFile} from "node:fs/promises";test("leave an unregistered child",async()=>{const child=Bun.spawn([process.execPath,"-e","setInterval(()=>{},1000000)"],{stdin:"ignore",stdout:"ignore",stderr:"ignore"});child.unref();await writeFile(${JSON.stringify(pidFile)},String(child.pid))});`);
+  await writeFile(join(root, "tests/Descendant.test.ts"), `import {test} from "bun:test";import {writeFile} from "node:fs/promises";test("leave a detached child",async()=>{const child=Bun.spawn([process.execPath,"-e","setTimeout(()=>process.exit(0),1000);setInterval(()=>{},1000000)"],{stdin:"ignore",stdout:"ignore",stderr:"ignore",detached:true});child.unref();await writeFile(${JSON.stringify(pidFile)},String(child.pid));await Bun.sleep(200)});`);
   let pid: number | undefined;
   const alive = async (target: number) => { try { const stat = await readFile(`/proc/${target}/stat`, "utf8"); return stat.slice(stat.lastIndexOf(")") + 2).trim().split(/\\s+/)[0] !== "Z"; } catch { return false; } };
   try {
-    expect(await runIsolatedDatabaseTests({ root, env, files: ["tests/Descendant.test.ts"], output() {}, error() {} })).toBe(0);
-    pid = Number(await readFile(pidFile, "utf8"));
-    const deadline = Date.now() + 500;
-    while (await alive(pid) && Date.now() < deadline) await Bun.sleep(10);
-    expect(await alive(pid)).toBe(false);
-  } finally { if (pid && await alive(pid)) process.kill(pid, "SIGKILL"); }
+    await expect(runIsolatedDatabaseTests({ root, env, files: ["tests/Descendant.test.ts"], output() {}, error() {} })).rejects.toThrow("fixture preserved");
+    pid = Number(await readFile(pidFile, "utf8")); expect(await alive(pid)).toBe(true);
+    const runs = await readdir(join(root, ".bundle-test-databases")); expect(runs).toHaveLength(1);
+    const run = join(root, ".bundle-test-databases", runs[0]!);
+    const databaseDirectory = (await readdir(run)).find(name => /^db-[1-9]\d*$/.test(name))!;
+    expect(await Bun.file(join(run, databaseDirectory, "database.sqlite")).exists()).toBe(true);
+  } finally {
+    if (pid) { const deadline = Date.now() + 2000; while (await alive(pid) && Date.now() < deadline) await Bun.sleep(10); }
+  }
 }, 20000);
 
 test("unsupported driver, preabort and invalid worker choices fail before creating state", async () => {
