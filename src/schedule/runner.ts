@@ -1,7 +1,7 @@
 import { realpath } from 'node:fs/promises';
 import { isAbsolute } from 'node:path';
 import { Readable, Writable } from 'node:stream';
-import { acquireCommandLock } from '../console/isolation.ts';
+import { acquireScheduleLock } from './locks.ts';
 import { createPrompts } from '../console/prompts.ts';
 import { compileCron, isCronDue } from './cron.ts';
 import { defineSchedules, loadSchedules, type ScheduleDefinition } from './definitions.ts';
@@ -66,7 +66,7 @@ async function runSlot(root: string, definitions: readonly ScheduleDefinition[],
     let release: null | (() => Promise<void>) = null;
     try {
       if (task.overlap !== 'allow') {
-        release = await acquireCommandLock(root, `schedule:${task.id}`);
+        release = await acquireScheduleLock(root, task.id);
         if (!release) { result.results.push({id:task.id,outcome:'skipped-overlap'}); continue; }
       }
       checkSignal(options.signal);

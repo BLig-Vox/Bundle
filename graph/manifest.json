@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "source": {
     "path": "PROGRESS.md",
-    "sha256": "3942383089e07c1df94a0f3389f0bf092f932bf53c95e9b19997e4b814dd9726"
+    "sha256": "715aced09a42fc156b947d6c2a3a7fb3eb0aeac1aa5740e0aeafd91fa5d3b526"
   },
   "generatedBy": "bun run graph:build",
   "files": [
@@ -14,14 +14,14 @@
   ],
   "counts": {
     "categories": 15,
-    "sections": 71,
+    "sections": 75,
     "items": 180,
     "completedItems": 0,
-    "notes": 154,
+    "notes": 163,
     "examples": 25,
     "sources": 3,
     "commands": 134,
-    "nodes": 568,
-    "edges": 645
+    "nodes": 581,
+    "edges": 664
   }
 }

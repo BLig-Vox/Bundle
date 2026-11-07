@@ -1,6 +1,7 @@
 import { CommanderError, InvalidArgumentError, type Command } from 'commander';
 import { loadSchedules } from '../schedule/definitions.ts';
 import { listSchedules, runDueSchedules, runScheduledTask, workSchedules } from '../schedule/runner.ts';
+import { clearStaleScheduleLocks } from '../schedule/locks.ts';
 import { createPrompts } from '../console/prompts.ts';
 
 function utcDate(value: string): Date {
@@ -22,6 +23,7 @@ interface ScheduleCliContext {
   signal?: AbortSignal;
   handleSignals?: boolean;
   prompts?: ReturnType<typeof createPrompts>;
+  force?: () => boolean;
 }
 async function withSignals<T>(signal: AbortSignal | undefined, handleSignals: boolean | undefined, work: (signal: AbortSignal) => Promise<T>): Promise<T> {
   const controller = new AbortController();
@@ -90,5 +92,13 @@ export function registerSchedule(program: Command, context: ScheduleCliContext):
       const result = await withSignals(context.signal, context.handleSignals, signal => workSchedules({root:context.root,env:context.env,signal,sleepMs:flags.sleep,maxCycles:flags.maxCycles,onResult:row=>context.output(JSON.stringify(row))}));
       context.output(JSON.stringify(result));
       if (result.failedRuns) throw new CommanderError(1,'bundle.scheduleFailed','Scheduled work reported failures.');
+    });
+  program.command('schedule:clear-cache').description('Remove only verified stale scheduler overlap locks')
+    .action(async () => {
+      if (!context.force?.()) throw new Error('Scheduler lock cleanup requires --force.');
+      context.signal?.throwIfAborted();
+      const result = await clearStaleScheduleLocks(context.root);
+      context.signal?.throwIfAborted();
+      context.output(JSON.stringify(result));
     });
 }

@@ -12,8 +12,8 @@
           "invocation": "php artisan --version",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 293,
-            "endLine": 293
+            "startLine": 314,
+            "endLine": 314
           }
         }
       ]
@@ -29,8 +29,8 @@
           "invocation": "php artisan about",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 294,
-            "endLine": 294
+            "startLine": 315,
+            "endLine": 315
           }
         }
       ]
@@ -46,8 +46,8 @@
           "invocation": "auth:clear-resets",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 578,
-            "endLine": 578
+            "startLine": 599,
+            "endLine": 599
           }
         }
       ]
@@ -63,8 +63,8 @@
           "invocation": "cache:clear",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 475,
-            "endLine": 475
+            "startLine": 496,
+            "endLine": 496
           }
         },
         {
@@ -89,8 +89,8 @@
           "invocation": "cache:forget",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 476,
-            "endLine": 476
+            "startLine": 497,
+            "endLine": 497
           }
         },
         {
@@ -115,8 +115,8 @@
           "invocation": "cache:prune-stale-tags",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 477,
-            "endLine": 477
+            "startLine": 498,
+            "endLine": 498
           }
         },
         {
@@ -141,8 +141,17 @@
           "invocation": "channel:list",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 586,
-            "endLine": 586
+            "startLine": 607,
+            "endLine": 607
+          }
+        },
+        {
+          "ownerId": "note:39000e13115c63f1",
+          "invocation": "channel:list",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 304,
+            "endLine": 304
           }
         }
       ]
@@ -158,8 +167,8 @@
           "invocation": "clear-compiled",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 495,
-            "endLine": 495
+            "startLine": 516,
+            "endLine": 516
           }
         }
       ]
@@ -175,8 +184,8 @@
           "invocation": "config:cache",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 469,
-            "endLine": 469
+            "startLine": 490,
+            "endLine": 490
           }
         },
         {
@@ -201,8 +210,8 @@
           "invocation": "config:clear",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 470,
-            "endLine": 470
+            "startLine": 491,
+            "endLine": 491
           }
         },
         {
@@ -227,8 +236,8 @@
           "invocation": "config:publish",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 471,
-            "endLine": 471
+            "startLine": 492,
+            "endLine": 492
           }
         },
         {
@@ -253,8 +262,8 @@
           "invocation": "config:show",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 468,
-            "endLine": 468
+            "startLine": 489,
+            "endLine": 489
           }
         }
       ]
@@ -270,8 +279,8 @@
           "invocation": "db",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 433,
-            "endLine": 433
+            "startLine": 454,
+            "endLine": 454
           }
         }
       ]
@@ -287,8 +296,8 @@
           "invocation": "db:monitor",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 436,
-            "endLine": 436
+            "startLine": 457,
+            "endLine": 457
           }
         }
       ]
@@ -304,8 +313,8 @@
           "invocation": "db:seed",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 426,
-            "endLine": 426
+            "startLine": 447,
+            "endLine": 447
           }
         }
       ]
@@ -321,8 +330,8 @@
           "invocation": "db:show",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 434,
-            "endLine": 434
+            "startLine": 455,
+            "endLine": 455
           }
         },
         {
@@ -330,8 +339,8 @@
           "invocation": "php artisan db:show",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 442,
-            "endLine": 442
+            "startLine": 463,
+            "endLine": 463
           }
         }
       ]
@@ -347,8 +356,8 @@
           "invocation": "db:table",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 435,
-            "endLine": 435
+            "startLine": 456,
+            "endLine": 456
           }
         },
         {
@@ -356,8 +365,8 @@
           "invocation": "php artisan db:table users",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 443,
-            "endLine": 443
+            "startLine": 464,
+            "endLine": 464
           }
         }
       ]
@@ -373,8 +382,8 @@
           "invocation": "db:wipe",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 427,
-            "endLine": 427
+            "startLine": 448,
+            "endLine": 448
           }
         },
         {
@@ -382,8 +391,8 @@
           "invocation": "db:wipe",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 429,
-            "endLine": 429
+            "startLine": 450,
+            "endLine": 450
           }
         }
       ]
@@ -399,8 +408,8 @@
           "invocation": "dev",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 314,
-            "endLine": 314
+            "startLine": 335,
+            "endLine": 335
           }
         }
       ]
@@ -416,8 +425,8 @@
           "invocation": "dev:list",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 315,
-            "endLine": 315
+            "startLine": 336,
+            "endLine": 336
           }
         }
       ]
@@ -433,8 +442,8 @@
           "invocation": "php artisan docs",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 295,
-            "endLine": 295
+            "startLine": 316,
+            "endLine": 316
           }
         }
       ]
@@ -450,8 +459,8 @@
           "invocation": "down",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 575,
-            "endLine": 575
+            "startLine": 596,
+            "endLine": 596
           }
         }
       ]
@@ -467,8 +476,8 @@
           "invocation": "php artisan dusk",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 668,
-            "endLine": 668
+            "startLine": 689,
+            "endLine": 689
           }
         }
       ]
@@ -484,8 +493,8 @@
           "invocation": "env",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 572,
-            "endLine": 572
+            "startLine": 593,
+            "endLine": 593
           }
         }
       ]
@@ -501,8 +510,8 @@
           "invocation": "env:decrypt",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 574,
-            "endLine": 574
+            "startLine": 595,
+            "endLine": 595
           }
         },
         {
@@ -527,8 +536,8 @@
           "invocation": "env:encrypt",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 573,
-            "endLine": 573
+            "startLine": 594,
+            "endLine": 594
           }
         },
         {
@@ -553,8 +562,8 @@
           "invocation": "event:cache",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 487,
-            "endLine": 487
+            "startLine": 508,
+            "endLine": 508
           }
         },
         {
@@ -579,8 +588,8 @@
           "invocation": "event:clear",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 488,
-            "endLine": 488
+            "startLine": 509,
+            "endLine": 509
           }
         },
         {
@@ -605,8 +614,8 @@
           "invocation": "event:generate",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 489,
-            "endLine": 489
+            "startLine": 510,
+            "endLine": 510
           }
         },
         {
@@ -614,8 +623,8 @@
           "invocation": "event:generate",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 198,
-            "endLine": 198
+            "startLine": 208,
+            "endLine": 208
           }
         }
       ]
@@ -631,8 +640,8 @@
           "invocation": "event:list",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 486,
-            "endLine": 486
+            "startLine": 507,
+            "endLine": 507
           }
         },
         {
@@ -657,8 +666,8 @@
           "invocation": "php artisan help migrate",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 292,
-            "endLine": 292
+            "startLine": 313,
+            "endLine": 313
           }
         }
       ]
@@ -674,8 +683,8 @@
           "invocation": "php artisan horizon",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 650,
-            "endLine": 650
+            "startLine": 671,
+            "endLine": 671
           }
         }
       ]
@@ -691,8 +700,8 @@
           "invocation": "install:api",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 584,
-            "endLine": 584
+            "startLine": 605,
+            "endLine": 605
           }
         }
       ]
@@ -708,8 +717,17 @@
           "invocation": "install:broadcasting",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 585,
-            "endLine": 585
+            "startLine": 606,
+            "endLine": 606
+          }
+        },
+        {
+          "ownerId": "note:7a6dc6d1ceb4e86e",
+          "invocation": "install:broadcasting",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 305,
+            "endLine": 305
           }
         }
       ]
@@ -725,8 +743,8 @@
           "invocation": "key:generate",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 571,
-            "endLine": 571
+            "startLine": 592,
+            "endLine": 592
           }
         },
         {
@@ -751,8 +769,8 @@
           "invocation": "lang:publish",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 589,
-            "endLine": 589
+            "startLine": 610,
+            "endLine": 610
           }
         },
         {
@@ -760,8 +778,8 @@
           "invocation": "lang:publish",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 210,
-            "endLine": 210
+            "startLine": 220,
+            "endLine": 220
           }
         }
       ]
@@ -777,8 +795,8 @@
           "invocation": "php artisan list",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 290,
-            "endLine": 290
+            "startLine": 311,
+            "endLine": 311
           }
         },
         {
@@ -786,8 +804,8 @@
           "invocation": "php artisan list make",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 291,
-            "endLine": 291
+            "startLine": 312,
+            "endLine": 312
           }
         },
         {
@@ -795,8 +813,8 @@
           "invocation": "php artisan list",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 297,
-            "endLine": 297
+            "startLine": 318,
+            "endLine": 318
           }
         }
       ]
@@ -812,8 +830,17 @@
           "invocation": "make:cache-table",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 372,
-            "endLine": 372
+            "startLine": 393,
+            "endLine": 393
+          }
+        },
+        {
+          "ownerId": "note:1bd03f9d1c8e9ff1",
+          "invocation": "make:cache-table",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 186,
+            "endLine": 186
           }
         }
       ]
@@ -829,8 +856,8 @@
           "invocation": "make:cast",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 353,
-            "endLine": 353
+            "startLine": 374,
+            "endLine": 374
           }
         },
         {
@@ -855,8 +882,17 @@
           "invocation": "make:channel",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 365,
-            "endLine": 365
+            "startLine": 386,
+            "endLine": 386
+          }
+        },
+        {
+          "ownerId": "note:7a6dc6d1ceb4e86e",
+          "invocation": "make:channel",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 305,
+            "endLine": 305
           }
         }
       ]
@@ -872,8 +908,8 @@
           "invocation": "make:class",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 330,
-            "endLine": 330
+            "startLine": 351,
+            "endLine": 351
           }
         },
         {
@@ -898,8 +934,8 @@
           "invocation": "make:command",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 336,
-            "endLine": 336
+            "startLine": 357,
+            "endLine": 357
           }
         },
         {
@@ -916,8 +952,8 @@
           "invocation": "php artisan make:command ImportProducts",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 615,
-            "endLine": 615
+            "startLine": 636,
+            "endLine": 636
           }
         }
       ]
@@ -933,8 +969,8 @@
           "invocation": "make:component",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 344,
-            "endLine": 344
+            "startLine": 365,
+            "endLine": 365
           }
         }
       ]
@@ -950,8 +986,8 @@
           "invocation": "make:config",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 335,
-            "endLine": 335
+            "startLine": 356,
+            "endLine": 356
           }
         },
         {
@@ -976,8 +1012,8 @@
           "invocation": "make:controller",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 340,
-            "endLine": 340
+            "startLine": 361,
+            "endLine": 361
           }
         },
         {
@@ -985,8 +1021,8 @@
           "invocation": "php artisan make:controller PostController --resource --model=Post",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 391,
-            "endLine": 391
+            "startLine": 412,
+            "endLine": 412
           }
         }
       ]
@@ -1002,8 +1038,8 @@
           "invocation": "make:enum",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 333,
-            "endLine": 333
+            "startLine": 354,
+            "endLine": 354
           }
         },
         {
@@ -1028,8 +1064,8 @@
           "invocation": "make:event",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 359,
-            "endLine": 359
+            "startLine": 380,
+            "endLine": 380
           }
         },
         {
@@ -1054,8 +1090,8 @@
           "invocation": "make:exception",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 368,
-            "endLine": 368
+            "startLine": 389,
+            "endLine": 389
           }
         },
         {
@@ -1080,8 +1116,8 @@
           "invocation": "make:factory",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 351,
-            "endLine": 351
+            "startLine": 372,
+            "endLine": 372
           }
         }
       ]
@@ -1097,8 +1133,8 @@
           "invocation": "make:interface",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 331,
-            "endLine": 331
+            "startLine": 352,
+            "endLine": 352
           }
         },
         {
@@ -1123,8 +1159,8 @@
           "invocation": "make:job",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 361,
-            "endLine": 361
+            "startLine": 382,
+            "endLine": 382
           }
         },
         {
@@ -1149,8 +1185,8 @@
           "invocation": "make:job-middleware",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 362,
-            "endLine": 362
+            "startLine": 383,
+            "endLine": 383
           }
         },
         {
@@ -1175,8 +1211,8 @@
           "invocation": "make:listener",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 360,
-            "endLine": 360
+            "startLine": 381,
+            "endLine": 381
           }
         },
         {
@@ -1201,8 +1237,8 @@
           "invocation": "make:mail",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 363,
-            "endLine": 363
+            "startLine": 384,
+            "endLine": 384
           }
         },
         {
@@ -1227,8 +1263,8 @@
           "invocation": "make:middleware",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 341,
-            "endLine": 341
+            "startLine": 362,
+            "endLine": 362
           }
         }
       ]
@@ -1244,8 +1280,8 @@
           "invocation": "make:migration",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 350,
-            "endLine": 350
+            "startLine": 371,
+            "endLine": 371
           }
         }
       ]
@@ -1261,8 +1297,8 @@
           "invocation": "make:model",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 349,
-            "endLine": 349
+            "startLine": 370,
+            "endLine": 370
           }
         },
         {
@@ -1270,8 +1306,8 @@
           "invocation": "php artisan make:model Post -mfs",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 385,
-            "endLine": 385
+            "startLine": 406,
+            "endLine": 406
           }
         }
       ]
@@ -1287,8 +1323,8 @@
           "invocation": "make:notification",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 364,
-            "endLine": 364
+            "startLine": 385,
+            "endLine": 385
           }
         },
         {
@@ -1313,8 +1349,8 @@
           "invocation": "make:notifications-table",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 374,
-            "endLine": 374
+            "startLine": 395,
+            "endLine": 395
           }
         }
       ]
@@ -1330,8 +1366,8 @@
           "invocation": "make:observer",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 355,
-            "endLine": 355
+            "startLine": 376,
+            "endLine": 376
           }
         },
         {
@@ -1356,8 +1392,8 @@
           "invocation": "make:policy",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 366,
-            "endLine": 366
+            "startLine": 387,
+            "endLine": 387
           }
         },
         {
@@ -1382,8 +1418,8 @@
           "invocation": "make:provider",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 334,
-            "endLine": 334
+            "startLine": 355,
+            "endLine": 355
           }
         },
         {
@@ -1391,8 +1427,8 @@
           "invocation": "make:provider",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 192,
-            "endLine": 192
+            "startLine": 202,
+            "endLine": 202
           }
         }
       ]
@@ -1408,8 +1444,8 @@
           "invocation": "make:queue-batches-table",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 377,
-            "endLine": 377
+            "startLine": 398,
+            "endLine": 398
           }
         }
       ]
@@ -1425,8 +1461,8 @@
           "invocation": "make:queue-failed-table",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 376,
-            "endLine": 376
+            "startLine": 397,
+            "endLine": 397
           }
         }
       ]
@@ -1442,8 +1478,8 @@
           "invocation": "make:queue-table",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 375,
-            "endLine": 375
+            "startLine": 396,
+            "endLine": 396
           }
         }
       ]
@@ -1459,8 +1495,8 @@
           "invocation": "make:request",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 342,
-            "endLine": 342
+            "startLine": 363,
+            "endLine": 363
           }
         },
         {
@@ -1468,8 +1504,8 @@
           "invocation": "php artisan make:request StorePostRequest",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 397,
-            "endLine": 397
+            "startLine": 418,
+            "endLine": 418
           }
         }
       ]
@@ -1485,8 +1521,8 @@
           "invocation": "make:resource",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 343,
-            "endLine": 343
+            "startLine": 364,
+            "endLine": 364
           }
         }
       ]
@@ -1502,8 +1538,8 @@
           "invocation": "make:rule",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 367,
-            "endLine": 367
+            "startLine": 388,
+            "endLine": 388
           }
         }
       ]
@@ -1519,8 +1555,8 @@
           "invocation": "make:scope",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 354,
-            "endLine": 354
+            "startLine": 375,
+            "endLine": 375
           }
         },
         {
@@ -1545,8 +1581,8 @@
           "invocation": "make:seeder",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 352,
-            "endLine": 352
+            "startLine": 373,
+            "endLine": 373
           }
         }
       ]
@@ -1562,8 +1598,17 @@
           "invocation": "make:session-table",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 373,
-            "endLine": 373
+            "startLine": 394,
+            "endLine": 394
+          }
+        },
+        {
+          "ownerId": "note:e725c8b32f28f6bb",
+          "invocation": "make:session-table",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 191,
+            "endLine": 191
           }
         }
       ]
@@ -1579,8 +1624,8 @@
           "invocation": "make:test",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 378,
-            "endLine": 378
+            "startLine": 399,
+            "endLine": 399
           }
         },
         {
@@ -1597,8 +1642,8 @@
           "invocation": "php artisan make:test PostTest",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 403,
-            "endLine": 403
+            "startLine": 424,
+            "endLine": 424
           }
         },
         {
@@ -1606,8 +1651,8 @@
           "invocation": "php artisan make:test PostTest --unit",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 409,
-            "endLine": 409
+            "startLine": 430,
+            "endLine": 430
           }
         }
       ]
@@ -1623,8 +1668,8 @@
           "invocation": "make:trait",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 332,
-            "endLine": 332
+            "startLine": 353,
+            "endLine": 353
           }
         },
         {
@@ -1649,8 +1694,8 @@
           "invocation": "make:view",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 345,
-            "endLine": 345
+            "startLine": 366,
+            "endLine": 366
           }
         }
       ]
@@ -1666,8 +1711,8 @@
           "invocation": "migrate",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 417,
-            "endLine": 417
+            "startLine": 438,
+            "endLine": 438
           }
         },
         {
@@ -1675,8 +1720,8 @@
           "invocation": "./vendor/bin/sail artisan migrate",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 638,
-            "endLine": 638
+            "startLine": 659,
+            "endLine": 659
           }
         }
       ]
@@ -1709,8 +1754,17 @@
           "invocation": "migrate:fresh",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 422,
-            "endLine": 422
+            "startLine": 443,
+            "endLine": 443
+          }
+        },
+        {
+          "ownerId": "note:1bd03f9d1c8e9ff1",
+          "invocation": "migrate:fresh",
+          "location": {
+            "path": "PROGRESS.md",
+            "startLine": 186,
+            "endLine": 186
           }
         },
         {
@@ -1718,8 +1772,8 @@
           "invocation": "migrate:fresh",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 429,
-            "endLine": 429
+            "startLine": 450,
+            "endLine": 450
           }
         }
       ]
@@ -1735,8 +1789,8 @@
           "invocation": "migrate:install",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 423,
-            "endLine": 423
+            "startLine": 444,
+            "endLine": 444
           }
         }
       ]
@@ -1752,8 +1806,8 @@
           "invocation": "migrate:refresh",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 421,
-            "endLine": 421
+            "startLine": 442,
+            "endLine": 442
           }
         },
         {
@@ -1761,8 +1815,8 @@
           "invocation": "migrate:refresh",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 429,
-            "endLine": 429
+            "startLine": 450,
+            "endLine": 450
           }
         }
       ]
@@ -1778,8 +1832,8 @@
           "invocation": "migrate:reset",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 420,
-            "endLine": 420
+            "startLine": 441,
+            "endLine": 441
           }
         },
         {
@@ -1787,8 +1841,8 @@
           "invocation": "migrate:reset",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 429,
-            "endLine": 429
+            "startLine": 450,
+            "endLine": 450
           }
         }
       ]
@@ -1804,8 +1858,8 @@
           "invocation": "migrate:rollback",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 419,
-            "endLine": 419
+            "startLine": 440,
+            "endLine": 440
           }
         }
       ]
@@ -1821,8 +1875,8 @@
           "invocation": "migrate:status",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 418,
-            "endLine": 418
+            "startLine": 439,
+            "endLine": 439
           }
         }
       ]
@@ -1838,8 +1892,8 @@
           "invocation": "migrate:uninstall",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 424,
-            "endLine": 424
+            "startLine": 445,
+            "endLine": 445
           }
         }
       ]
@@ -1855,8 +1909,8 @@
           "invocation": "model:prune",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 438,
-            "endLine": 438
+            "startLine": 459,
+            "endLine": 459
           }
         },
         {
@@ -1864,8 +1918,8 @@
           "invocation": "model:prune",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 234,
-            "endLine": 234
+            "startLine": 244,
+            "endLine": 244
           }
         }
       ]
@@ -1881,8 +1935,8 @@
           "invocation": "model:show",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 437,
-            "endLine": 437
+            "startLine": 458,
+            "endLine": 458
           }
         },
         {
@@ -1890,8 +1944,8 @@
           "invocation": "php artisan model:show User",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 444,
-            "endLine": 444
+            "startLine": 465,
+            "endLine": 465
           }
         }
       ]
@@ -1907,8 +1961,8 @@
           "invocation": "php artisan octane:start",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 656,
-            "endLine": 656
+            "startLine": 677,
+            "endLine": 677
           }
         }
       ]
@@ -1924,8 +1978,8 @@
           "invocation": "optimize",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 493,
-            "endLine": 493
+            "startLine": 514,
+            "endLine": 514
           }
         }
       ]
@@ -1941,8 +1995,8 @@
           "invocation": "optimize:clear",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 494,
-            "endLine": 494
+            "startLine": 515,
+            "endLine": 515
           }
         },
         {
@@ -1967,8 +2021,8 @@
           "invocation": "package:discover",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 588,
-            "endLine": 588
+            "startLine": 609,
+            "endLine": 609
           }
         },
         {
@@ -1976,8 +2030,8 @@
           "invocation": "package:discover",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 203,
-            "endLine": 203
+            "startLine": 213,
+            "endLine": 213
           }
         }
       ]
@@ -1993,8 +2047,8 @@
           "invocation": "pail",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 317,
-            "endLine": 317
+            "startLine": 338,
+            "endLine": 338
           }
         }
       ]
@@ -2010,8 +2064,8 @@
           "invocation": "queue:batch",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 229,
-            "endLine": 229
+            "startLine": 239,
+            "endLine": 239
           }
         }
       ]
@@ -2027,8 +2081,8 @@
           "invocation": "queue:clear",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 505,
-            "endLine": 505
+            "startLine": 526,
+            "endLine": 526
           }
         }
       ]
@@ -2044,8 +2098,8 @@
           "invocation": "queue:failed",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 506,
-            "endLine": 506
+            "startLine": 527,
+            "endLine": 527
           }
         }
       ]
@@ -2061,8 +2115,8 @@
           "invocation": "queue:flush",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 510,
-            "endLine": 510
+            "startLine": 531,
+            "endLine": 531
           }
         },
         {
@@ -2087,8 +2141,8 @@
           "invocation": "queue:forget",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 509,
-            "endLine": 509
+            "startLine": 530,
+            "endLine": 530
           }
         }
       ]
@@ -2104,8 +2158,8 @@
           "invocation": "queue:listen",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 500,
-            "endLine": 500
+            "startLine": 521,
+            "endLine": 521
           }
         },
         {
@@ -2130,8 +2184,8 @@
           "invocation": "queue:monitor",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 504,
-            "endLine": 504
+            "startLine": 525,
+            "endLine": 525
           }
         }
       ]
@@ -2147,8 +2201,8 @@
           "invocation": "queue:pause",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 502,
-            "endLine": 502
+            "startLine": 523,
+            "endLine": 523
           }
         },
         {
@@ -2173,8 +2227,8 @@
           "invocation": "queue:prune-batches",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 512,
-            "endLine": 512
+            "startLine": 533,
+            "endLine": 533
           }
         }
       ]
@@ -2190,8 +2244,8 @@
           "invocation": "queue:prune-failed",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 511,
-            "endLine": 511
+            "startLine": 532,
+            "endLine": 532
           }
         },
         {
@@ -2216,8 +2270,8 @@
           "invocation": "queue:restart",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 501,
-            "endLine": 501
+            "startLine": 522,
+            "endLine": 522
           }
         },
         {
@@ -2242,8 +2296,8 @@
           "invocation": "queue:resume",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 503,
-            "endLine": 503
+            "startLine": 524,
+            "endLine": 524
           }
         },
         {
@@ -2268,8 +2322,8 @@
           "invocation": "queue:retry",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 507,
-            "endLine": 507
+            "startLine": 528,
+            "endLine": 528
           }
         }
       ]
@@ -2285,8 +2339,8 @@
           "invocation": "queue:retry-batch",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 508,
-            "endLine": 508
+            "startLine": 529,
+            "endLine": 529
           }
         }
       ]
@@ -2302,8 +2356,8 @@
           "invocation": "queue:work",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 499,
-            "endLine": 499
+            "startLine": 520,
+            "endLine": 520
           }
         },
         {
@@ -2320,8 +2374,8 @@
           "invocation": "php artisan queue:work --queue=high,default --tries=3 --timeout=90",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 516,
-            "endLine": 516
+            "startLine": 537,
+            "endLine": 537
           }
         }
       ]
@@ -2337,8 +2391,8 @@
           "invocation": "reload",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 577,
-            "endLine": 577
+            "startLine": 598,
+            "endLine": 598
           }
         }
       ]
@@ -2354,8 +2408,8 @@
           "invocation": "php artisan reverb:start",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 662,
-            "endLine": 662
+            "startLine": 683,
+            "endLine": 683
           }
         }
       ]
@@ -2371,8 +2425,8 @@
           "invocation": "route:cache",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 450,
-            "endLine": 450
+            "startLine": 471,
+            "endLine": 471
           }
         },
         {
@@ -2397,8 +2451,8 @@
           "invocation": "route:clear",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 451,
-            "endLine": 451
+            "startLine": 472,
+            "endLine": 472
           }
         },
         {
@@ -2423,8 +2477,8 @@
           "invocation": "route:list",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 449,
-            "endLine": 449
+            "startLine": 470,
+            "endLine": 470
           }
         },
         {
@@ -2441,8 +2495,8 @@
           "invocation": "php artisan route:list --path=api",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 455,
-            "endLine": 455
+            "startLine": 476,
+            "endLine": 476
           }
         },
         {
@@ -2450,8 +2504,8 @@
           "invocation": "php artisan route:list -v",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 461,
-            "endLine": 461
+            "startLine": 482,
+            "endLine": 482
           }
         }
       ]
@@ -2467,8 +2521,8 @@
           "invocation": "schedule:clear-cache",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 528,
-            "endLine": 528
+            "startLine": 549,
+            "endLine": 549
           }
         }
       ]
@@ -2484,8 +2538,8 @@
           "invocation": "schedule:finish",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 531,
-            "endLine": 531
+            "startLine": 552,
+            "endLine": 552
           }
         }
       ]
@@ -2501,8 +2555,8 @@
           "invocation": "schedule:interrupt",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 527,
-            "endLine": 527
+            "startLine": 548,
+            "endLine": 548
           }
         },
         {
@@ -2527,8 +2581,8 @@
           "invocation": "schedule:list",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 523,
-            "endLine": 523
+            "startLine": 544,
+            "endLine": 544
           }
         }
       ]
@@ -2544,8 +2598,8 @@
           "invocation": "schedule:pause",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 529,
-            "endLine": 529
+            "startLine": 550,
+            "endLine": 550
           }
         },
         {
@@ -2570,8 +2624,8 @@
           "invocation": "schedule:resume",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 530,
-            "endLine": 530
+            "startLine": 551,
+            "endLine": 551
           }
         },
         {
@@ -2596,8 +2650,8 @@
           "invocation": "schedule:run",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 524,
-            "endLine": 524
+            "startLine": 545,
+            "endLine": 545
           }
         }
       ]
@@ -2613,8 +2667,8 @@
           "invocation": "schedule:test",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 526,
-            "endLine": 526
+            "startLine": 547,
+            "endLine": 547
           }
         }
       ]
@@ -2630,8 +2684,8 @@
           "invocation": "schedule:work",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 525,
-            "endLine": 525
+            "startLine": 546,
+            "endLine": 546
           }
         }
       ]
@@ -2647,8 +2701,8 @@
           "invocation": "schema:dump",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 425,
-            "endLine": 425
+            "startLine": 446,
+            "endLine": 446
           }
         }
       ]
@@ -2681,8 +2735,8 @@
           "invocation": "php artisan scout:import \"App\\Models\\Post\"",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 674,
-            "endLine": 674
+            "startLine": 695,
+            "endLine": 695
           }
         }
       ]
@@ -2698,8 +2752,8 @@
           "invocation": "serve",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 313,
-            "endLine": 313
+            "startLine": 334,
+            "endLine": 334
           }
         },
         {
@@ -2707,8 +2761,8 @@
           "invocation": "php artisan serve --host=127.0.0.1 --port=8000",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 321,
-            "endLine": 321
+            "startLine": 342,
+            "endLine": 342
           }
         }
       ]
@@ -2724,8 +2778,8 @@
           "invocation": "storage:link",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 579,
-            "endLine": 579
+            "startLine": 600,
+            "endLine": 600
           }
         },
         {
@@ -2750,8 +2804,8 @@
           "invocation": "storage:unlink",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 580,
-            "endLine": 580
+            "startLine": 601,
+            "endLine": 601
           }
         },
         {
@@ -2776,8 +2830,8 @@
           "invocation": "stub:publish",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 413,
-            "endLine": 413
+            "startLine": 434,
+            "endLine": 434
           }
         },
         {
@@ -2785,8 +2839,8 @@
           "invocation": "stub:publish",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 590,
-            "endLine": 590
+            "startLine": 611,
+            "endLine": 611
           }
         },
         {
@@ -2811,8 +2865,8 @@
           "invocation": "php artisan test",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 538,
-            "endLine": 538
+            "startLine": 559,
+            "endLine": 559
           }
         },
         {
@@ -2820,8 +2874,8 @@
           "invocation": "php artisan test tests/Feature/ExampleTest.php",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 544,
-            "endLine": 544
+            "startLine": 565,
+            "endLine": 565
           }
         },
         {
@@ -2829,8 +2883,8 @@
           "invocation": "php artisan test --filter=ExampleTest",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 550,
-            "endLine": 550
+            "startLine": 571,
+            "endLine": 571
           }
         },
         {
@@ -2838,8 +2892,8 @@
           "invocation": "php artisan test --parallel",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 556,
-            "endLine": 556
+            "startLine": 577,
+            "endLine": 577
           }
         },
         {
@@ -2847,8 +2901,8 @@
           "invocation": "php artisan test --coverage",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 562,
-            "endLine": 562
+            "startLine": 583,
+            "endLine": 583
           }
         }
       ]
@@ -2864,8 +2918,8 @@
           "invocation": "tinker",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 316,
-            "endLine": 316
+            "startLine": 337,
+            "endLine": 337
           }
         }
       ]
@@ -2881,8 +2935,8 @@
           "invocation": "up",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 576,
-            "endLine": 576
+            "startLine": 597,
+            "endLine": 597
           }
         }
       ]
@@ -2898,8 +2952,8 @@
           "invocation": "vendor:publish",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 587,
-            "endLine": 587
+            "startLine": 608,
+            "endLine": 608
           }
         },
         {
@@ -2907,8 +2961,8 @@
           "invocation": "vendor:publish",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 216,
-            "endLine": 216
+            "startLine": 226,
+            "endLine": 226
           }
         }
       ]
@@ -2924,8 +2978,8 @@
           "invocation": "view:cache",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 481,
-            "endLine": 481
+            "startLine": 502,
+            "endLine": 502
           }
         }
       ]
@@ -2941,8 +2995,8 @@
           "invocation": "view:clear",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 482,
-            "endLine": 482
+            "startLine": 503,
+            "endLine": 503
           }
         }
       ]
@@ -2958,8 +3012,8 @@
           "invocation": "laravel new my-app",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 304,
-            "endLine": 304
+            "startLine": 325,
+            "endLine": 325
           }
         }
       ]
@@ -2975,8 +3029,8 @@
           "invocation": "./vendor/bin/pint",
           "location": {
             "path": "PROGRESS.md",
-            "startLine": 644,
-            "endLine": 644
+            "startLine": 665,
+            "endLine": 665
           }
         }
       ]

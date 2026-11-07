@@ -34,6 +34,17 @@ function projectCreationInvocation(args: readonly string[]): boolean {
   return false;
 }
 
+function interactiveDatabaseInvocation(args: readonly string[]): boolean {
+  for (let index = 0; index < args.length; index++) {
+    const value = args[index]!;
+    if (value === "--database" || value === "--path") { index++; continue; }
+    if (value === "--") return args[index + 1] === "db";
+    if (value.startsWith("-")) continue;
+    return value === "db";
+  }
+  return false;
+}
+
 /** Run user arguments without changing process.exitCode or exiting the process. */
 export async function runCli(args: readonly string[], context: ApplicationCommandContext = {}): Promise<number> {
   const invocationArgs = Object.freeze([...args]);
@@ -45,7 +56,14 @@ export async function runCli(args: readonly string[], context: ApplicationComman
   if (context.signal?.aborted) abort();
   else context.signal?.addEventListener("abort", abort, { once: true });
   let signalStatus = 0;
-  const interrupt = () => { signalStatus ||= 130; controller.abort(new Error("SIGINT")); };
+  // This native foreground shell shares the terminal process group; let sqlite3
+  // interrupt its current query and remain interactive on terminal Ctrl+C.
+  const deferTerminalInterrupt = interactiveDatabaseInvocation(invocationArgs);
+  const interrupt = () => {
+    if (deferTerminalInterrupt) return;
+    signalStatus ||= 130;
+    controller.abort(new Error("SIGINT"));
+  };
   const terminate = () => { signalStatus ||= 143; controller.abort(new Error("SIGTERM")); };
   const lifecycle = async (event: Parameters<NonNullable<ApplicationCommandContext["onLifecycle"]>>[0]) => {
     const errors: unknown[] = [];

@@ -20,6 +20,8 @@ The database is created at `.data/bundle.sqlite`; local database files are gitig
 
 Seeding is **explicit**, not automatic. `DatabaseSeeder` upserts one demo author and post using stable unique keys, so rerunning it does not duplicate rows. It may update the demo rows; it is not production application data.
 
+`bundle db` is an explicit interactive launch, not a migration or provisioning command. It requires an existing regular single-link SQLite file and a discoverable `sqlite3` executable. The client receives a fixed argv (URI `mode=rw` and `nofollow=1`) and a minimal shell environment that omits Bundle database credentials. Terminal Ctrl+C is left to the interactive client so it can interrupt a query without necessarily closing the shell; embedding abort and SIGTERM remain cancellation paths. Database files must not be concurrently replaced while the client is starting or running; an external executable cannot bind its path lookup atomically to Bundle's preflight. No client is installed automatically. PostgreSQL and MariaDB shells remain unsupported until separate credential-safe adapters are implemented.
+
 ## Database selection
 
 Bun automatically loads `.env`. Copy `.env.example` to `.env` if you want local overrides. Paths are resolved against the repository root, not the shell's working directory.
@@ -73,6 +75,7 @@ Prefix each command with `bun run bundle`. `bun run start` invokes the same CLI;
 | --- | --- |
 | `list` | Show commands and help |
 | `about` | Show selected configuration without connecting or printing credentials |
+| `db` | Open an existing SQLite file with `sqlite3`; does not create missing files, and PostgreSQL/MariaDB clients are unsupported |
 | `db:check` | Check the selected database connection |
 | `db:show` | Inspect tables and their columns |
 | `db:table <name>` | Inspect a table; use `schema.name` when ambiguous |
@@ -87,6 +90,8 @@ Prefix each command with `bun run bundle`. `bun run start` invokes the same CLI;
 | `migrate:refresh [--seed] --force` | Roll back all migrations and apply them again |
 | `migrate:fresh [--seed] --force` | Rebuild mapped tables and migration history; refuses unmapped tables/views or unreconciled migration/entity changes |
 | `make:migration [name] [--blank]` | Generate a schema-diff migration or an empty migration |
+| `make:cache-table` | Generate migration SQL for cache entries and locks; this is schema only, not a database-backed cache runtime |
+| `make:session-table` | Generate a session schema migration; no HTTP session or authentication runtime is included |
 | `db:seed [class]` | Run a named seeder, defaulting to `DatabaseSeeder` |
 | `make:seeder <name>` | Generate a seeder class; the name must end with `Seeder` |
 | `make:model <name> [-mfs]` | Generate a model/schema; optionally compose native migration, factory and seeder with selected code-output preflight |
@@ -94,6 +99,10 @@ Prefix each command with `bun run bundle`. `bun run start` invokes the same CLI;
 | `model:prune [--pretend]` | Count explicit `pruning.ts` rules or require `--force` for bounded native bulk deletion against an existing target; see [model pruning](model-pruning.md) |
 | `schema:sql` | Print CREATE SQL for mapped entities; **not** a live schema/data backup |
 | `schema:dump [--prune]` | Save the live schema plus migration history, without application rows; pruning requires `--force` |
+
+`make:cache-table` generates a reviewable migration for `bundle_cache_entries` and `bundle_cache_locks`, including composite namespace/key primary keys and expiration indexes. It renders SQLite, PostgreSQL, or MariaDB SQL and uses the selected migration target without connecting to or creating the database during generation. SQLite migration application and key uniqueness are tested; the other dialects have renderer tests only. This is a schema foundation, not a runtime: the existing `LocalCache` still stores data in its separate `.bundle-cache/cache.sqlite` file and does not read or write these tables. Bundle model-diff generation skips these explicitly generated infrastructure tables so later `make:migration` runs cannot drop them; `migrate:fresh` continues to refuse them as unmapped tables rather than risk deleting their data.
+
+`make:session-table` generates a `sessions` table with a primary-key id, optional user id, IP address/user-agent fields, payload and last-activity timestamp plus lookup indexes. It renders SQLite, PostgreSQL, or MariaDB SQL, uses the selected migration target, and does not connect or create a database during generation. SQLite application, model-diff exclusion, rollback preservation and conservative fresh refusal are tested; other dialects have renderer-only coverage. This is schema only: no session cookie, expiration, authentication or HTTP session-store behavior is implemented.
 
 See [native ORM generators](native-orm-generators.md) for consumed `make:factory --model`, `make:cast`, `make:scope` and `make:observer` examples with explicit attributes/mappings/helper calls/subscriber registration; generation never connects to a database. See [the migration guide](migrations.md) for the full option matrix, batch semantics, SQL previews, isolation, named connections, path selection, and schema-dump requirements. `make:model Product -mfs` composes model, migration, `ProductFactory` and `ProductSeeder`; `-f/--factory` and `-s/--seed` also work independently without opening the DB. All selected code sources, custom factory tokens/syntax, destinations and existing ancestor types are preflighted before creating code outputs; predictable conflicts or unsafe parents preserve the other outputs. Native migration baseline/production guards still apply with `-m`. Later I/O or migration failure may leave earlier new code files; this is not a whole-operation transaction. It never edits an existing model.
 

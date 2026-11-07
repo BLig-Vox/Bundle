@@ -6,7 +6,7 @@
     "branch": "version/A000",
     "source": {
       "path": "PROGRESS.md",
-      "sha256": "3942383089e07c1df94a0f3389f0bf092f932bf53c95e9b19997e4b814dd9726"
+      "sha256": "715aced09a42fc156b947d6c2a3a7fb3eb0aeac1aa5740e0aeafd91fa5d3b526"
     },
     "corpusPath": "graph/corpus.json",
     "originalItemCount": 180,
@@ -22,9 +22,9 @@
   "evidencePolicy": "Reference/docs pointers establish scope/contracts only. Implementation and test pointers identify inspected baseline evidence, not proof every scenario passed in this task. SQLite/process/mock evidence never substitutes for live server or service evidence. An optional adapter remains pending rather than silently excluded just because a service is unavailable.",
   "updatePolicy": "Match items by corpus ID, not array position/line number. Keep original titles/categories and duplicate examples. Reconcile sourceLocation and baseline source hash after approved progress edits/graph regeneration. Add new Bundle ledger items separately, not to the original 180-item coverage denominator. Renaming/moving reference items can change corpus IDs and requires explicit migration mapping.",
   "counts": {
-    "pending": 30,
-    "partial": 25,
-    "implemented": 116,
+    "pending": 25,
+    "partial": 29,
+    "implemented": 117,
     "excluded": 9
   },
   "blockers": [
@@ -163,8 +163,8 @@
         "title": "1. Command discovery and help",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 288,
-          "endLine": 288
+          "startLine": 309,
+          "endLine": 309
         }
       },
       "section": {
@@ -173,8 +173,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 290,
-        "endLine": 290
+        "startLine": 311,
+        "endLine": 311
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle list",
@@ -187,8 +187,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 290,
-          "endLine": 290,
+          "startLine": 311,
+          "endLine": 311,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -215,8 +215,8 @@
         "title": "1. Command discovery and help",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 288,
-          "endLine": 288
+          "startLine": 309,
+          "endLine": 309
         }
       },
       "section": {
@@ -225,8 +225,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 291,
-        "endLine": 291
+        "startLine": 312,
+        "endLine": 312
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle list make",
@@ -239,8 +239,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 291,
-          "endLine": 291,
+          "startLine": 312,
+          "endLine": 312,
           "detail": "Scope/provenance only; reference checkbox remains unchanged."
         },
         {
@@ -272,8 +272,8 @@
         "title": "1. Command discovery and help",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 288,
-          "endLine": 288
+          "startLine": 309,
+          "endLine": 309
         }
       },
       "section": {
@@ -282,8 +282,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 292,
-        "endLine": 292
+        "startLine": 313,
+        "endLine": 313
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle help migrate / bundle migrate --help",
@@ -296,8 +296,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 292,
-          "endLine": 292,
+          "startLine": 313,
+          "endLine": 313,
           "detail": "Scope/provenance only; reference checkbox remains unchanged."
         },
         {
@@ -329,8 +329,8 @@
         "title": "1. Command discovery and help",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 288,
-          "endLine": 288
+          "startLine": 309,
+          "endLine": 309
         }
       },
       "section": {
@@ -339,8 +339,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 293,
-        "endLine": 293
+        "startLine": 314,
+        "endLine": 314
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle --version",
@@ -353,8 +353,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 293,
-          "endLine": 293,
+          "startLine": 314,
+          "endLine": 314,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -381,8 +381,8 @@
         "title": "1. Command discovery and help",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 288,
-          "endLine": 288
+          "startLine": 309,
+          "endLine": 309
         }
       },
       "section": {
@@ -391,8 +391,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 294,
-        "endLine": 294
+        "startLine": 315,
+        "endLine": 315
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle about",
@@ -405,8 +405,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 294,
-          "endLine": 294,
+          "startLine": 315,
+          "endLine": 315,
           "detail": "Reference provenance only; original checkbox unchanged."
         },
         {
@@ -438,8 +438,8 @@
         "title": "1. Command discovery and help",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 288,
-          "endLine": 288
+          "startLine": 309,
+          "endLine": 309
         }
       },
       "section": {
@@ -448,8 +448,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 295,
-        "endLine": 295
+        "startLine": 316,
+        "endLine": 316
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle docs",
@@ -462,8 +462,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 295,
-          "endLine": 295,
+          "startLine": 316,
+          "endLine": 316,
           "detail": "Reference provenance only; original checkbox unchanged."
         },
         {
@@ -495,8 +495,8 @@
         "title": "2. Project creation",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 299,
-          "endLine": 299
+          "startLine": 320,
+          "endLine": 320
         }
       },
       "section": {
@@ -505,8 +505,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 301,
-        "endLine": 301
+        "startLine": 322,
+        "endLine": 322
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle new my-app",
@@ -520,8 +520,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 301,
-          "endLine": 301,
+          "startLine": 322,
+          "endLine": 322,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -573,8 +573,8 @@
         "title": "2. Project creation",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 299,
-          "endLine": 299
+          "startLine": 320,
+          "endLine": 320
         }
       },
       "section": {
@@ -583,8 +583,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 307,
-        "endLine": 307
+        "startLine": 328,
+        "endLine": 328
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle new --interactive",
@@ -598,8 +598,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 307,
-          "endLine": 307,
+          "startLine": 328,
+          "endLine": 328,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -651,8 +651,8 @@
         "title": "3. Local development",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 309,
-          "endLine": 309
+          "startLine": 330,
+          "endLine": 330
         }
       },
       "section": {
@@ -661,8 +661,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 313,
-        "endLine": 313
+        "startLine": 334,
+        "endLine": 334
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle serve",
@@ -676,8 +676,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 313,
-          "endLine": 313,
+          "startLine": 334,
+          "endLine": 334,
           "detail": "Reference provenance only; original checkbox unchanged."
         },
         {
@@ -719,8 +719,8 @@
         "title": "3. Local development",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 309,
-          "endLine": 309
+          "startLine": 330,
+          "endLine": 330
         }
       },
       "section": {
@@ -729,8 +729,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 314,
-        "endLine": 314
+        "startLine": 335,
+        "endLine": 335
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle dev process supervisor",
@@ -744,8 +744,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 314,
-          "endLine": 314,
+          "startLine": 335,
+          "endLine": 335,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -802,8 +802,8 @@
         "title": "3. Local development",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 309,
-          "endLine": 309
+          "startLine": 330,
+          "endLine": 330
         }
       },
       "section": {
@@ -812,8 +812,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 315,
-        "endLine": 315
+        "startLine": 336,
+        "endLine": 336
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle dev:list",
@@ -827,8 +827,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 315,
-          "endLine": 315,
+          "startLine": 336,
+          "endLine": 336,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -875,8 +875,8 @@
         "title": "3. Local development",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 309,
-          "endLine": 309
+          "startLine": 330,
+          "endLine": 330
         }
       },
       "section": {
@@ -885,8 +885,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 316,
-        "endLine": 316
+        "startLine": 337,
+        "endLine": 337
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle tinker [--execute <JavaScript>] [--allow-database]",
@@ -899,8 +899,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 316,
-          "endLine": 316,
+          "startLine": 337,
+          "endLine": 337,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -947,8 +947,8 @@
         "title": "3. Local development",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 309,
-          "endLine": 309
+          "startLine": 330,
+          "endLine": 330
         }
       },
       "section": {
@@ -957,8 +957,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 317,
-        "endLine": 317
+        "startLine": 338,
+        "endLine": 338
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle logs:tail (possible pail alias)",
@@ -971,8 +971,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 317,
-          "endLine": 317,
+          "startLine": 338,
+          "endLine": 338,
           "detail": "Reference provenance only; original checkbox unchanged."
         },
         {
@@ -1004,8 +1004,8 @@
         "title": "3. Local development",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 309,
-          "endLine": 309
+          "startLine": 330,
+          "endLine": 330
         }
       },
       "section": {
@@ -1014,8 +1014,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 318,
-        "endLine": 318
+        "startLine": 339,
+        "endLine": 339
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle serve --host --port",
@@ -1029,8 +1029,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 318,
-          "endLine": 318,
+          "startLine": 339,
+          "endLine": 339,
           "detail": "Reference provenance only; original checkbox unchanged."
         },
         {
@@ -1067,8 +1067,8 @@
         "title": "4. Code generation",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 324,
-          "endLine": 324
+          "startLine": 345,
+          "endLine": 345
         }
       },
       "section": {
@@ -1077,8 +1077,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 330,
-        "endLine": 330
+        "startLine": 351,
+        "endLine": 351
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle make:class",
@@ -1091,8 +1091,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 330,
-          "endLine": 330,
+          "startLine": 351,
+          "endLine": 351,
           "detail": "Reference provenance only; original checkbox unchanged."
         },
         {
@@ -1124,8 +1124,8 @@
         "title": "4. Code generation",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 324,
-          "endLine": 324
+          "startLine": 345,
+          "endLine": 345
         }
       },
       "section": {
@@ -1134,8 +1134,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 331,
-        "endLine": 331
+        "startLine": 352,
+        "endLine": 352
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle make:interface",
@@ -1148,8 +1148,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 331,
-          "endLine": 331,
+          "startLine": 352,
+          "endLine": 352,
           "detail": "Reference provenance only; original checkbox unchanged."
         },
         {
@@ -1181,8 +1181,8 @@
         "title": "4. Code generation",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 324,
-          "endLine": 324
+          "startLine": 345,
+          "endLine": 345
         }
       },
       "section": {
@@ -1191,8 +1191,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 332,
-        "endLine": 332
+        "startLine": 353,
+        "endLine": 353
       },
       "referenceCompleted": false,
       "proposedEquivalent": "No PHP trait; consider a separately named TypeScript mixin helper",
@@ -1205,8 +1205,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 332,
-          "endLine": 332,
+          "startLine": 353,
+          "endLine": 353,
           "detail": "Scope/provenance only; reference checkbox remains unchanged."
         },
         {
@@ -1238,8 +1238,8 @@
         "title": "4. Code generation",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 324,
-          "endLine": 324
+          "startLine": 345,
+          "endLine": 345
         }
       },
       "section": {
@@ -1248,8 +1248,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 333,
-        "endLine": 333
+        "startLine": 354,
+        "endLine": 354
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle make:enum",
@@ -1262,8 +1262,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 333,
-          "endLine": 333,
+          "startLine": 354,
+          "endLine": 354,
           "detail": "Reference provenance only; original checkbox unchanged."
         },
         {
@@ -1295,8 +1295,8 @@
         "title": "4. Code generation",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 324,
-          "endLine": 324
+          "startLine": 345,
+          "endLine": 345
         }
       },
       "section": {
@@ -1305,8 +1305,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 334,
-        "endLine": 334
+        "startLine": 355,
+        "endLine": 355
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle make:provider",
@@ -1320,8 +1320,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 334,
-          "endLine": 334,
+          "startLine": 355,
+          "endLine": 355,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -1378,8 +1378,8 @@
         "title": "4. Code generation",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 324,
-          "endLine": 324
+          "startLine": 345,
+          "endLine": 345
         }
       },
       "section": {
@@ -1388,8 +1388,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 335,
-        "endLine": 335
+        "startLine": 356,
+        "endLine": 356
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle make:config",
@@ -1402,8 +1402,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 335,
-          "endLine": 335,
+          "startLine": 356,
+          "endLine": 356,
           "detail": "Reference provenance only; original checkbox unchanged."
         },
         {
@@ -1435,8 +1435,8 @@
         "title": "4. Code generation",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 324,
-          "endLine": 324
+          "startLine": 345,
+          "endLine": 345
         }
       },
       "section": {
@@ -1445,8 +1445,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 336,
-        "endLine": 336
+        "startLine": 357,
+        "endLine": 357
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle make:command",
@@ -1459,8 +1459,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 336,
-          "endLine": 336,
+          "startLine": 357,
+          "endLine": 357,
           "detail": "Reference provenance only; original checkbox unchanged."
         },
         {
@@ -1492,8 +1492,8 @@
         "title": "4. Code generation",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 324,
-          "endLine": 324
+          "startLine": 345,
+          "endLine": 345
         }
       },
       "section": {
@@ -1502,8 +1502,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 340,
-        "endLine": 340
+        "startLine": 361,
+        "endLine": 361
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle make:controller",
@@ -1517,8 +1517,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 340,
-          "endLine": 340,
+          "startLine": 361,
+          "endLine": 361,
           "detail": "Reference provenance only; original checkbox unchanged."
         },
         {
@@ -1555,8 +1555,8 @@
         "title": "4. Code generation",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 324,
-          "endLine": 324
+          "startLine": 345,
+          "endLine": 345
         }
       },
       "section": {
@@ -1565,8 +1565,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 341,
-        "endLine": 341
+        "startLine": 362,
+        "endLine": 362
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle make:middleware",
@@ -1580,8 +1580,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 341,
-          "endLine": 341,
+          "startLine": 362,
+          "endLine": 362,
           "detail": "Reference provenance only; original checkbox unchanged."
         },
         {
@@ -1623,8 +1623,8 @@
         "title": "4. Code generation",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 324,
-          "endLine": 324
+          "startLine": 345,
+          "endLine": 345
         }
       },
       "section": {
@@ -1633,8 +1633,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 342,
-        "endLine": 342
+        "startLine": 363,
+        "endLine": 363
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle make:request",
@@ -1648,8 +1648,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 342,
-          "endLine": 342,
+          "startLine": 363,
+          "endLine": 363,
           "detail": "Reference provenance only; original checkbox unchanged."
         },
         {
@@ -1696,8 +1696,8 @@
         "title": "4. Code generation",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 324,
-          "endLine": 324
+          "startLine": 345,
+          "endLine": 345
         }
       },
       "section": {
@@ -1706,8 +1706,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 343,
-        "endLine": 343
+        "startLine": 364,
+        "endLine": 364
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle make:resource",
@@ -1721,8 +1721,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 343,
-          "endLine": 343,
+          "startLine": 364,
+          "endLine": 364,
           "detail": "Reference provenance only; original checkbox unchanged."
         },
         {
@@ -1764,8 +1764,8 @@
         "title": "4. Code generation",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 324,
-          "endLine": 324
+          "startLine": 345,
+          "endLine": 345
         }
       },
       "section": {
@@ -1774,8 +1774,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 344,
-        "endLine": 344
+        "startLine": 365,
+        "endLine": 365
       },
       "referenceCompleted": false,
       "proposedEquivalent": "No Blade component generation",
@@ -1789,8 +1789,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 344,
-          "endLine": 344,
+          "startLine": 365,
+          "endLine": 365,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -1812,8 +1812,8 @@
         "title": "4. Code generation",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 324,
-          "endLine": 324
+          "startLine": 345,
+          "endLine": 345
         }
       },
       "section": {
@@ -1822,8 +1822,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 345,
-        "endLine": 345
+        "startLine": 366,
+        "endLine": 366
       },
       "referenceCompleted": false,
       "proposedEquivalent": "No Blade view generation",
@@ -1837,8 +1837,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 345,
-          "endLine": 345,
+          "startLine": 366,
+          "endLine": 366,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -1860,8 +1860,8 @@
         "title": "4. Code generation",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 324,
-          "endLine": 324
+          "startLine": 345,
+          "endLine": 345
         }
       },
       "section": {
@@ -1870,8 +1870,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 349,
-        "endLine": 349
+        "startLine": 370,
+        "endLine": 370
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle make:model <name>",
@@ -1884,8 +1884,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 349,
-          "endLine": 349,
+          "startLine": 370,
+          "endLine": 370,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -1927,8 +1927,8 @@
         "title": "4. Code generation",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 324,
-          "endLine": 324
+          "startLine": 345,
+          "endLine": 345
         }
       },
       "section": {
@@ -1937,8 +1937,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 350,
-        "endLine": 350
+        "startLine": 371,
+        "endLine": 371
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle make:migration [name]",
@@ -1951,8 +1951,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 350,
-          "endLine": 350,
+          "startLine": 371,
+          "endLine": 371,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -1999,8 +1999,8 @@
         "title": "4. Code generation",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 324,
-          "endLine": 324
+          "startLine": 345,
+          "endLine": 345
         }
       },
       "section": {
@@ -2009,8 +2009,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 351,
-        "endLine": 351
+        "startLine": 372,
+        "endLine": 372
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle make:factory",
@@ -2023,8 +2023,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 351,
-          "endLine": 351,
+          "startLine": 372,
+          "endLine": 372,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -2071,8 +2071,8 @@
         "title": "4. Code generation",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 324,
-          "endLine": 324
+          "startLine": 345,
+          "endLine": 345
         }
       },
       "section": {
@@ -2081,8 +2081,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 352,
-        "endLine": 352
+        "startLine": 373,
+        "endLine": 373
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle make:seeder <NameSeeder>",
@@ -2095,8 +2095,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 352,
-          "endLine": 352,
+          "startLine": 373,
+          "endLine": 373,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -2138,8 +2138,8 @@
         "title": "4. Code generation",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 324,
-          "endLine": 324
+          "startLine": 345,
+          "endLine": 345
         }
       },
       "section": {
@@ -2148,8 +2148,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 353,
-        "endLine": 353
+        "startLine": 374,
+        "endLine": 374
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle make:type (proposed make:cast alternative)",
@@ -2162,8 +2162,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 353,
-          "endLine": 353,
+          "startLine": 374,
+          "endLine": 374,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -2205,8 +2205,8 @@
         "title": "4. Code generation",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 324,
-          "endLine": 324
+          "startLine": 345,
+          "endLine": 345
         }
       },
       "section": {
@@ -2215,8 +2215,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 354,
-        "endLine": 354
+        "startLine": 375,
+        "endLine": 375
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle make:query (proposed make:scope alternative)",
@@ -2229,8 +2229,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 354,
-          "endLine": 354,
+          "startLine": 375,
+          "endLine": 375,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -2272,8 +2272,8 @@
         "title": "4. Code generation",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 324,
-          "endLine": 324
+          "startLine": 345,
+          "endLine": 345
         }
       },
       "section": {
@@ -2282,8 +2282,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 355,
-        "endLine": 355
+        "startLine": 376,
+        "endLine": 376
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle make:subscriber (proposed make:observer alternative)",
@@ -2296,8 +2296,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 355,
-          "endLine": 355,
+          "startLine": 376,
+          "endLine": 376,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -2339,8 +2339,8 @@
         "title": "4. Code generation",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 324,
-          "endLine": 324
+          "startLine": 345,
+          "endLine": 345
         }
       },
       "section": {
@@ -2349,8 +2349,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 359,
-        "endLine": 359
+        "startLine": 380,
+        "endLine": 380
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle make:event",
@@ -2364,8 +2364,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 359,
-          "endLine": 359,
+          "startLine": 380,
+          "endLine": 380,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -2407,8 +2407,8 @@
         "title": "4. Code generation",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 324,
-          "endLine": 324
+          "startLine": 345,
+          "endLine": 345
         }
       },
       "section": {
@@ -2417,8 +2417,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 360,
-        "endLine": 360
+        "startLine": 381,
+        "endLine": 381
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle make:listener",
@@ -2432,8 +2432,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 360,
-          "endLine": 360,
+          "startLine": 381,
+          "endLine": 381,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -2475,8 +2475,8 @@
         "title": "4. Code generation",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 324,
-          "endLine": 324
+          "startLine": 345,
+          "endLine": 345
         }
       },
       "section": {
@@ -2485,8 +2485,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 361,
-        "endLine": 361
+        "startLine": 382,
+        "endLine": 382
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle make:job",
@@ -2500,8 +2500,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 361,
-          "endLine": 361,
+          "startLine": 382,
+          "endLine": 382,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -2543,8 +2543,8 @@
         "title": "4. Code generation",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 324,
-          "endLine": 324
+          "startLine": 345,
+          "endLine": 345
         }
       },
       "section": {
@@ -2553,8 +2553,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 362,
-        "endLine": 362
+        "startLine": 383,
+        "endLine": 383
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle make:job-middleware",
@@ -2568,8 +2568,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 362,
-          "endLine": 362,
+          "startLine": 383,
+          "endLine": 383,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -2621,8 +2621,8 @@
         "title": "4. Code generation",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 324,
-          "endLine": 324
+          "startLine": 345,
+          "endLine": 345
         }
       },
       "section": {
@@ -2631,8 +2631,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 363,
-        "endLine": 363
+        "startLine": 384,
+        "endLine": 384
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle make:mail",
@@ -2646,8 +2646,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 363,
-          "endLine": 363,
+          "startLine": 384,
+          "endLine": 384,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -2704,8 +2704,8 @@
         "title": "4. Code generation",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 324,
-          "endLine": 324
+          "startLine": 345,
+          "endLine": 345
         }
       },
       "section": {
@@ -2714,8 +2714,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 364,
-        "endLine": 364
+        "startLine": 385,
+        "endLine": 385
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle make:notification",
@@ -2729,8 +2729,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 364,
-          "endLine": 364,
+          "startLine": 385,
+          "endLine": 385,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -2797,8 +2797,8 @@
         "title": "4. Code generation",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 324,
-          "endLine": 324
+          "startLine": 345,
+          "endLine": 345
         }
       },
       "section": {
@@ -2807,8 +2807,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 365,
-        "endLine": 365
+        "startLine": 386,
+        "endLine": 386
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle make:channel",
@@ -2822,8 +2822,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 365,
-          "endLine": 365,
+          "startLine": 386,
+          "endLine": 386,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         }
       ],
@@ -2840,8 +2840,8 @@
         "title": "4. Code generation",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 324,
-          "endLine": 324
+          "startLine": 345,
+          "endLine": 345
         }
       },
       "section": {
@@ -2850,8 +2850,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 366,
-        "endLine": 366
+        "startLine": 387,
+        "endLine": 387
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle make:policy",
@@ -2865,8 +2865,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 366,
-          "endLine": 366,
+          "startLine": 387,
+          "endLine": 387,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -2918,8 +2918,8 @@
         "title": "4. Code generation",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 324,
-          "endLine": 324
+          "startLine": 345,
+          "endLine": 345
         }
       },
       "section": {
@@ -2928,8 +2928,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 367,
-        "endLine": 367
+        "startLine": 388,
+        "endLine": 388
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle make:rule",
@@ -2943,8 +2943,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 367,
-          "endLine": 367,
+          "startLine": 388,
+          "endLine": 388,
           "detail": "Reference provenance only; original checkbox unchanged."
         },
         {
@@ -2986,8 +2986,8 @@
         "title": "4. Code generation",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 324,
-          "endLine": 324
+          "startLine": 345,
+          "endLine": 345
         }
       },
       "section": {
@@ -2996,8 +2996,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 368,
-        "endLine": 368
+        "startLine": 389,
+        "endLine": 389
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle make:exception",
@@ -3010,8 +3010,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 368,
-          "endLine": 368,
+          "startLine": 389,
+          "endLine": 389,
           "detail": "Reference provenance only; original checkbox unchanged."
         },
         {
@@ -3043,8 +3043,8 @@
         "title": "4. Code generation",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 324,
-          "endLine": 324
+          "startLine": 345,
+          "endLine": 345
         }
       },
       "section": {
@@ -3053,28 +3053,47 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 372,
-        "endLine": 372
+        "startLine": 393,
+        "endLine": 393
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle make:cache-table",
-      "status": "pending",
+      "status": "partial",
       "milestone": "M3",
       "dependsOn": [
         "M1"
       ],
       "evidence": [
         {
-          "kind": "reference-only",
-          "path": "PROGRESS.md",
-          "startLine": 372,
-          "endLine": 372,
-          "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
+          "kind": "implementation",
+          "path": "src/cli/migrations.ts",
+          "detail": "make:cache-table generates a selected-target migration for cache entries and locks without connecting during generation."
+        },
+        {
+          "kind": "implementation",
+          "path": "src/database/cache-table.ts",
+          "detail": "Dialect-specific SQLite, PostgreSQL, and MariaDB entry/lock schema with composite keys and expiration indexes."
+        },
+        {
+          "kind": "automated-test",
+          "path": "src/database/cache-table.test.ts",
+          "detail": "Offline rendering coverage for all three dialects and invalid identifiers/dialects."
+        },
+        {
+          "kind": "automated-test",
+          "path": "src/cli/program.test.ts",
+          "detail": "Disposable SQLite generation/application, table/column and key-uniqueness checks, no database creation during generation, production force guard, follow-up model-diff exclusion, data-preserving rollback, and fail-closed fresh-reset refusal."
+        },
+        {
+          "kind": "documentation",
+          "path": "docs/database.md",
+          "detail": "Documents the schema-only contract and separate LocalCache runtime."
         }
       ],
-      "reason": "No database-backed application cache contract/schema exists.",
+      "reason": "The schema generator and SQLite migration consumer exist, but no database-backed cache runtime consumes these tables; PostgreSQL and MariaDB have renderer-only coverage.",
       "remainingWork": [
-        "Design expiration/locking schema before generating migrations; test real cache behavior separately from scaffolding."
+        "Implement and test an actual cache adapter/runtime that consumes this schema, including expiration and lock semantics.",
+        "Run the migration against disposable PostgreSQL and MariaDB databases before claiming live cross-dialect support."
       ]
     },
     {
@@ -3085,8 +3104,8 @@
         "title": "4. Code generation",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 324,
-          "endLine": 324
+          "startLine": 345,
+          "endLine": 345
         }
       },
       "section": {
@@ -3095,12 +3114,12 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 373,
-        "endLine": 373
+        "startLine": 394,
+        "endLine": 394
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle make:session-table",
-      "status": "pending",
+      "status": "partial",
       "milestone": "M4",
       "dependsOn": [
         "M1",
@@ -3108,16 +3127,35 @@
       ],
       "evidence": [
         {
-          "kind": "reference-only",
-          "path": "PROGRESS.md",
-          "startLine": 373,
-          "endLine": 373,
-          "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
+          "kind": "implementation",
+          "path": "src/cli/migrations.ts",
+          "detail": "make:session-table generates a selected-target migration without connecting during generation."
+        },
+        {
+          "kind": "implementation",
+          "path": "src/database/session-table.ts",
+          "detail": "Dialect-specific SQLite, PostgreSQL and MariaDB session-table schema and lookup indexes."
+        },
+        {
+          "kind": "automated-test",
+          "path": "src/database/session-table.test.ts",
+          "detail": "Offline dialect rendering and unsafe dialect/identifier refusal."
+        },
+        {
+          "kind": "automated-test",
+          "path": "src/cli/program.test.ts",
+          "detail": "Disposable SQLite schema application, model-diff exclusion, rollback data preservation and fail-closed fresh-reset refusal."
+        },
+        {
+          "kind": "documentation",
+          "path": "docs/database.md",
+          "detail": "Documents the schema-only contract and absence of an HTTP session runtime."
         }
       ],
-      "reason": "No HTTP session store or authentication subsystem exists.",
+      "reason": "The migration generator and SQLite consumer exist, but no HTTP session store, secure cookie lifecycle or authentication runtime consumes the table; other dialects have renderer-only coverage.",
       "remainingWork": [
-        "Define session expiry/security and generate dialect-aware migrations; test session persistence separately."
+        "Implement a secure HTTP session store and test expiry, rotation, concurrency and authorization boundaries.",
+        "Run the migration against disposable PostgreSQL and MariaDB databases before claiming live cross-dialect support."
       ]
     },
     {
@@ -3128,8 +3166,8 @@
         "title": "4. Code generation",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 324,
-          "endLine": 324
+          "startLine": 345,
+          "endLine": 345
         }
       },
       "section": {
@@ -3138,8 +3176,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 374,
-        "endLine": 374
+        "startLine": 395,
+        "endLine": 395
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle make:notifications-table",
@@ -3153,8 +3191,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 374,
-          "endLine": 374,
+          "startLine": 395,
+          "endLine": 395,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         }
       ],
@@ -3171,8 +3209,8 @@
         "title": "4. Code generation",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 324,
-          "endLine": 324
+          "startLine": 345,
+          "endLine": 345
         }
       },
       "section": {
@@ -3181,8 +3219,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 375,
-        "endLine": 375
+        "startLine": 396,
+        "endLine": 396
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle make:queue-table",
@@ -3196,8 +3234,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 375,
-          "endLine": 375,
+          "startLine": 396,
+          "endLine": 396,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         }
       ],
@@ -3214,8 +3252,8 @@
         "title": "4. Code generation",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 324,
-          "endLine": 324
+          "startLine": 345,
+          "endLine": 345
         }
       },
       "section": {
@@ -3224,8 +3262,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 376,
-        "endLine": 376
+        "startLine": 397,
+        "endLine": 397
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle make:queue-failed-table",
@@ -3239,8 +3277,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 376,
-          "endLine": 376,
+          "startLine": 397,
+          "endLine": 397,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -3292,8 +3330,8 @@
         "title": "4. Code generation",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 324,
-          "endLine": 324
+          "startLine": 345,
+          "endLine": 345
         }
       },
       "section": {
@@ -3302,8 +3340,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 377,
-        "endLine": 377
+        "startLine": 398,
+        "endLine": 398
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle make:queue-batches-table",
@@ -3317,8 +3355,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 377,
-          "endLine": 377,
+          "startLine": 398,
+          "endLine": 398,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         }
       ],
@@ -3335,8 +3373,8 @@
         "title": "4. Code generation",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 324,
-          "endLine": 324
+          "startLine": 345,
+          "endLine": 345
         }
       },
       "section": {
@@ -3345,8 +3383,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 378,
-        "endLine": 378
+        "startLine": 399,
+        "endLine": 399
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle make:test",
@@ -3359,8 +3397,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 378,
-          "endLine": 378,
+          "startLine": 399,
+          "endLine": 399,
           "detail": "Reference provenance only; original checkbox unchanged."
         },
         {
@@ -3392,8 +3430,8 @@
         "title": "4. Code generation",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 324,
-          "endLine": 324
+          "startLine": 345,
+          "endLine": 345
         }
       },
       "section": {
@@ -3402,8 +3440,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 382,
-        "endLine": 382
+        "startLine": 403,
+        "endLine": 403
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle make:model Post -mfs",
@@ -3416,8 +3454,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 382,
-          "endLine": 382,
+          "startLine": 403,
+          "endLine": 403,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -3494,8 +3532,8 @@
         "title": "4. Code generation",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 324,
-          "endLine": 324
+          "startLine": 345,
+          "endLine": 345
         }
       },
       "section": {
@@ -3504,8 +3542,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 388,
-        "endLine": 388
+        "startLine": 409,
+        "endLine": 409
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle make:controller PostController --resource --model Post",
@@ -3519,8 +3557,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 388,
-          "endLine": 388,
+          "startLine": 409,
+          "endLine": 409,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -3582,8 +3620,8 @@
         "title": "4. Code generation",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 324,
-          "endLine": 324
+          "startLine": 345,
+          "endLine": 345
         }
       },
       "section": {
@@ -3592,8 +3630,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 394,
-        "endLine": 394
+        "startLine": 415,
+        "endLine": 415
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle make:request StorePostRequest",
@@ -3607,8 +3645,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 394,
-          "endLine": 394,
+          "startLine": 415,
+          "endLine": 415,
           "detail": "Reference provenance only; original checkbox unchanged."
         },
         {
@@ -3645,8 +3683,8 @@
         "title": "4. Code generation",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 324,
-          "endLine": 324
+          "startLine": 345,
+          "endLine": 345
         }
       },
       "section": {
@@ -3655,8 +3693,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 400,
-        "endLine": 400
+        "startLine": 421,
+        "endLine": 421
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle make:test HealthTest --http /health",
@@ -3669,8 +3707,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 400,
-          "endLine": 400,
+          "startLine": 421,
+          "endLine": 421,
           "detail": "Scope/provenance only; reference checkbox remains unchanged."
         },
         {
@@ -3732,8 +3770,8 @@
         "title": "4. Code generation",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 324,
-          "endLine": 324
+          "startLine": 345,
+          "endLine": 345
         }
       },
       "section": {
@@ -3742,8 +3780,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 406,
-        "endLine": 406
+        "startLine": 427,
+        "endLine": 427
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle make:test PostTest --unit",
@@ -3756,8 +3794,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 406,
-          "endLine": 406,
+          "startLine": 427,
+          "endLine": 427,
           "detail": "Reference provenance only; original checkbox unchanged."
         },
         {
@@ -3789,8 +3827,8 @@
         "title": "4. Code generation",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 324,
-          "endLine": 324
+          "startLine": 345,
+          "endLine": 345
         }
       },
       "section": {
@@ -3799,8 +3837,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 412,
-        "endLine": 412
+        "startLine": 433,
+        "endLine": 433
       },
       "referenceCompleted": false,
       "proposedEquivalent": "Related-file generation via make:model -m -s",
@@ -3813,8 +3851,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 412,
-          "endLine": 412,
+          "startLine": 433,
+          "endLine": 433,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -3871,8 +3909,8 @@
         "title": "4. Code generation",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 324,
-          "endLine": 324
+          "startLine": 345,
+          "endLine": 345
         }
       },
       "section": {
@@ -3881,8 +3919,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 413,
-        "endLine": 413
+        "startLine": 434,
+        "endLine": 434
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle stub:publish for code-only generator templates",
@@ -3895,8 +3933,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 413,
-          "endLine": 413,
+          "startLine": 434,
+          "endLine": 434,
           "detail": "Reference provenance only; original checkbox unchanged."
         },
         {
@@ -3928,8 +3966,8 @@
         "title": "5. Database migrations and schema management",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 415,
-          "endLine": 415
+          "startLine": 436,
+          "endLine": 436
         }
       },
       "section": {
@@ -3938,8 +3976,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 417,
-        "endLine": 417
+        "startLine": 438,
+        "endLine": 438
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle migrate",
@@ -3952,8 +3990,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 417,
-          "endLine": 417,
+          "startLine": 438,
+          "endLine": 438,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -3990,8 +4028,8 @@
         "title": "5. Database migrations and schema management",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 415,
-          "endLine": 415
+          "startLine": 436,
+          "endLine": 436
         }
       },
       "section": {
@@ -4000,8 +4038,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 418,
-        "endLine": 418
+        "startLine": 439,
+        "endLine": 439
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle migrate:status",
@@ -4014,8 +4052,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 418,
-          "endLine": 418,
+          "startLine": 439,
+          "endLine": 439,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -4052,8 +4090,8 @@
         "title": "5. Database migrations and schema management",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 415,
-          "endLine": 415
+          "startLine": 436,
+          "endLine": 436
         }
       },
       "section": {
@@ -4062,8 +4100,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 419,
-        "endLine": 419
+        "startLine": 440,
+        "endLine": 440
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle migrate:rollback --force",
@@ -4076,8 +4114,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 419,
-          "endLine": 419,
+          "startLine": 440,
+          "endLine": 440,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -4114,8 +4152,8 @@
         "title": "5. Database migrations and schema management",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 415,
-          "endLine": 415
+          "startLine": 436,
+          "endLine": 436
         }
       },
       "section": {
@@ -4124,8 +4162,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 420,
-        "endLine": 420
+        "startLine": 441,
+        "endLine": 441
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle migrate:reset --force",
@@ -4138,8 +4176,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 420,
-          "endLine": 420,
+          "startLine": 441,
+          "endLine": 441,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -4176,8 +4214,8 @@
         "title": "5. Database migrations and schema management",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 415,
-          "endLine": 415
+          "startLine": 436,
+          "endLine": 436
         }
       },
       "section": {
@@ -4186,8 +4224,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 421,
-        "endLine": 421
+        "startLine": 442,
+        "endLine": 442
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle migrate:refresh --force",
@@ -4200,8 +4238,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 421,
-          "endLine": 421,
+          "startLine": 442,
+          "endLine": 442,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -4238,8 +4276,8 @@
         "title": "5. Database migrations and schema management",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 415,
-          "endLine": 415
+          "startLine": 436,
+          "endLine": 436
         }
       },
       "section": {
@@ -4248,8 +4286,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 422,
-        "endLine": 422
+        "startLine": 443,
+        "endLine": 443
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle migrate:fresh --force",
@@ -4262,8 +4300,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 422,
-          "endLine": 422,
+          "startLine": 443,
+          "endLine": 443,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -4300,8 +4338,8 @@
         "title": "5. Database migrations and schema management",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 415,
-          "endLine": 415
+          "startLine": 436,
+          "endLine": 436
         }
       },
       "section": {
@@ -4310,8 +4348,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 423,
-        "endLine": 423
+        "startLine": 444,
+        "endLine": 444
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle migrate:install",
@@ -4324,8 +4362,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 423,
-          "endLine": 423,
+          "startLine": 444,
+          "endLine": 444,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -4362,8 +4400,8 @@
         "title": "5. Database migrations and schema management",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 415,
-          "endLine": 415
+          "startLine": 436,
+          "endLine": 436
         }
       },
       "section": {
@@ -4372,8 +4410,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 424,
-        "endLine": 424
+        "startLine": 445,
+        "endLine": 445
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle migrate:uninstall --force",
@@ -4386,8 +4424,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 424,
-          "endLine": 424,
+          "startLine": 445,
+          "endLine": 445,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -4439,8 +4477,8 @@
         "title": "5. Database migrations and schema management",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 415,
-          "endLine": 415
+          "startLine": 436,
+          "endLine": 436
         }
       },
       "section": {
@@ -4449,8 +4487,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 425,
-        "endLine": 425
+        "startLine": 446,
+        "endLine": 446
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle schema:dump [--prune]",
@@ -4463,8 +4501,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 425,
-          "endLine": 425,
+          "startLine": 446,
+          "endLine": 446,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -4511,8 +4549,8 @@
         "title": "5. Database migrations and schema management",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 415,
-          "endLine": 415
+          "startLine": 436,
+          "endLine": 436
         }
       },
       "section": {
@@ -4521,8 +4559,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 426,
-        "endLine": 426
+        "startLine": 447,
+        "endLine": 447
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle db:seed [class] / --class",
@@ -4535,8 +4573,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 426,
-          "endLine": 426,
+          "startLine": 447,
+          "endLine": 447,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -4583,8 +4621,8 @@
         "title": "5. Database migrations and schema management",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 415,
-          "endLine": 415
+          "startLine": 436,
+          "endLine": 436
         }
       },
       "section": {
@@ -4593,8 +4631,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 427,
-        "endLine": 427
+        "startLine": 448,
+        "endLine": 448
       },
       "referenceCompleted": false,
       "proposedEquivalent": "Explicitly scoped bundle db:wipe --force",
@@ -4607,8 +4645,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 427,
-          "endLine": 427,
+          "startLine": 448,
+          "endLine": 448,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         }
       ],
@@ -4625,8 +4663,8 @@
         "title": "6. Database inspection and model maintenance",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 431,
-          "endLine": 431
+          "startLine": 452,
+          "endLine": 452
         }
       },
       "section": {
@@ -4635,12 +4673,12 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 433,
-        "endLine": 433
+        "startLine": 454,
+        "endLine": 454
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle db client launcher",
-      "status": "pending",
+      "status": "partial",
       "milestone": "D1",
       "dependsOn": [
         "M0"
@@ -4649,14 +4687,35 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 433,
-          "endLine": 433,
+          "startLine": 454,
+          "endLine": 454,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
+        },
+        {
+          "kind": "implementation",
+          "path": "src/cli/database-client.ts",
+          "startLine": 18,
+          "endLine": 93,
+          "detail": "SQLite-only native launcher with fixed argv, existing-file identity preflight, mode=rw/nofollow URI, minimal noncredential environment and bounded signal handling."
+        },
+        {
+          "kind": "automated-test",
+          "path": "src/cli/program.test.ts",
+          "startLine": 40,
+          "endLine": 177,
+          "detail": "Real CLI parser tests use a fake sqlite3 executable to verify argv, secret omission, missing target/client, path replacement refusal, server-driver refusal, SIGTERM cancellation and terminal-style SIGINT ownership."
+        },
+        {
+          "kind": "documentation",
+          "path": "docs/database.md",
+          "startLine": 23,
+          "endLine": 23,
+          "detail": "Documents SQLite-only support, existing-file/no-install behavior, minimal environment and concurrent replacement limits."
         }
       ],
-      "reason": "There is no native database-shell launcher.",
+      "reason": "The bounded launcher supports only existing SQLite files; server clients and real native interactive-client verification are unavailable, so no broader database-shell parity is claimed.",
       "remainingWork": [
-        "Detect supported clients, use argument arrays/credential-safe environment, and test absence, signals, and opt-in native interaction."
+        "Add credential-safe PostgreSQL/MariaDB native clients and verify actual sqlite3 interactive behavior on a supported host. External concurrent path replacement after preflight remains unsupported; clients are never installed automatically."
       ]
     },
     {
@@ -4667,8 +4726,8 @@
         "title": "6. Database inspection and model maintenance",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 431,
-          "endLine": 431
+          "startLine": 452,
+          "endLine": 452
         }
       },
       "section": {
@@ -4677,8 +4736,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 434,
-        "endLine": 434
+        "startLine": 455,
+        "endLine": 455
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle db:show",
@@ -4691,8 +4750,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 434,
-          "endLine": 434,
+          "startLine": 455,
+          "endLine": 455,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -4724,8 +4783,8 @@
         "title": "6. Database inspection and model maintenance",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 431,
-          "endLine": 431
+          "startLine": 452,
+          "endLine": 452
         }
       },
       "section": {
@@ -4734,8 +4793,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 435,
-        "endLine": 435
+        "startLine": 456,
+        "endLine": 456
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle db:table <name>",
@@ -4748,8 +4807,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 435,
-          "endLine": 435,
+          "startLine": 456,
+          "endLine": 456,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -4781,8 +4840,8 @@
         "title": "6. Database inspection and model maintenance",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 431,
-          "endLine": 431
+          "startLine": 452,
+          "endLine": 452
         }
       },
       "section": {
@@ -4791,8 +4850,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 436,
-        "endLine": 436
+        "startLine": 457,
+        "endLine": 457
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle db:monitor",
@@ -4805,8 +4864,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 436,
-          "endLine": 436,
+          "startLine": 457,
+          "endLine": 457,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         }
       ],
@@ -4823,8 +4882,8 @@
         "title": "6. Database inspection and model maintenance",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 431,
-          "endLine": 431
+          "startLine": 452,
+          "endLine": 452
         }
       },
       "section": {
@@ -4833,8 +4892,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 437,
-        "endLine": 437
+        "startLine": 458,
+        "endLine": 458
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle model:show [name]",
@@ -4847,8 +4906,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 437,
-          "endLine": 437,
+          "startLine": 458,
+          "endLine": 458,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -4880,8 +4939,8 @@
         "title": "6. Database inspection and model maintenance",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 431,
-          "endLine": 431
+          "startLine": 452,
+          "endLine": 452
         }
       },
       "section": {
@@ -4890,8 +4949,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 438,
-        "endLine": 438
+        "startLine": 459,
+        "endLine": 459
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle model:prune --pretend / --force model:prune",
@@ -4904,8 +4963,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 438,
-          "endLine": 438,
+          "startLine": 459,
+          "endLine": 459,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -4962,8 +5021,8 @@
         "title": "6. Database inspection and model maintenance",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 431,
-          "endLine": 431
+          "startLine": 452,
+          "endLine": 452
         }
       },
       "section": {
@@ -4972,8 +5031,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 439,
-        "endLine": 439
+        "startLine": 460,
+        "endLine": 460
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle db:show; bundle db:table users; bundle model:show User",
@@ -4986,8 +5045,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 439,
-          "endLine": 439,
+          "startLine": 460,
+          "endLine": 460,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -5019,8 +5078,8 @@
         "title": "7. Routing",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 447,
-          "endLine": 447
+          "startLine": 468,
+          "endLine": 468
         }
       },
       "section": {
@@ -5029,8 +5088,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 449,
-        "endLine": 449
+        "startLine": 470,
+        "endLine": 470
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle route:list",
@@ -5044,8 +5103,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 449,
-          "endLine": 449,
+          "startLine": 470,
+          "endLine": 470,
           "detail": "Reference provenance only; original checkbox unchanged."
         },
         {
@@ -5092,8 +5151,8 @@
         "title": "7. Routing",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 447,
-          "endLine": 447
+          "startLine": 468,
+          "endLine": 468
         }
       },
       "section": {
@@ -5102,8 +5161,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 450,
-        "endLine": 450
+        "startLine": 471,
+        "endLine": 471
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle route:cache",
@@ -5117,8 +5176,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 450,
-          "endLine": 450,
+          "startLine": 471,
+          "endLine": 471,
           "detail": "Reference provenance only; original checkbox unchanged."
         },
         {
@@ -5165,8 +5224,8 @@
         "title": "7. Routing",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 447,
-          "endLine": 447
+          "startLine": 468,
+          "endLine": 468
         }
       },
       "section": {
@@ -5175,8 +5234,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 451,
-        "endLine": 451
+        "startLine": 472,
+        "endLine": 472
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle route:clear",
@@ -5190,8 +5249,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 451,
-          "endLine": 451,
+          "startLine": 472,
+          "endLine": 472,
           "detail": "Reference provenance only; original checkbox unchanged."
         },
         {
@@ -5228,8 +5287,8 @@
         "title": "7. Routing",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 447,
-          "endLine": 447
+          "startLine": 468,
+          "endLine": 468
         }
       },
       "section": {
@@ -5238,8 +5297,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 452,
-        "endLine": 452
+        "startLine": 473,
+        "endLine": 473
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle route:list --path api",
@@ -5253,8 +5312,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 452,
-          "endLine": 452,
+          "startLine": 473,
+          "endLine": 473,
           "detail": "Reference provenance only; original checkbox unchanged."
         },
         {
@@ -5291,8 +5350,8 @@
         "title": "7. Routing",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 447,
-          "endLine": 447
+          "startLine": 468,
+          "endLine": 468
         }
       },
       "section": {
@@ -5301,8 +5360,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 458,
-        "endLine": 458
+        "startLine": 479,
+        "endLine": 479
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle route:list -v",
@@ -5316,8 +5375,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 458,
-          "endLine": 458,
+          "startLine": 479,
+          "endLine": 479,
           "detail": "Reference provenance only; original checkbox unchanged."
         },
         {
@@ -5349,8 +5408,8 @@
         "title": "8. Configuration, caching, and optimization",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 464,
-          "endLine": 464
+          "startLine": 485,
+          "endLine": 485
         }
       },
       "section": {
@@ -5359,8 +5418,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 468,
-        "endLine": 468
+        "startLine": 489,
+        "endLine": 489
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle config:show [key]",
@@ -5373,8 +5432,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 468,
-          "endLine": 468,
+          "startLine": 489,
+          "endLine": 489,
           "detail": "Scope/provenance only; reference checkbox remains unchanged."
         },
         {
@@ -5406,8 +5465,8 @@
         "title": "8. Configuration, caching, and optimization",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 464,
-          "endLine": 464
+          "startLine": 485,
+          "endLine": 485
         }
       },
       "section": {
@@ -5416,8 +5475,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 469,
-        "endLine": 469
+        "startLine": 490,
+        "endLine": 490
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle config:cache",
@@ -5430,8 +5489,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 469,
-          "endLine": 469,
+          "startLine": 490,
+          "endLine": 490,
           "detail": "Scope/provenance only; reference checkbox remains unchanged."
         },
         {
@@ -5463,8 +5522,8 @@
         "title": "8. Configuration, caching, and optimization",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 464,
-          "endLine": 464
+          "startLine": 485,
+          "endLine": 485
         }
       },
       "section": {
@@ -5473,8 +5532,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 470,
-        "endLine": 470
+        "startLine": 491,
+        "endLine": 491
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle config:clear",
@@ -5487,8 +5546,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 470,
-          "endLine": 470,
+          "startLine": 491,
+          "endLine": 491,
           "detail": "Scope/provenance only; reference checkbox remains unchanged."
         },
         {
@@ -5520,8 +5579,8 @@
         "title": "8. Configuration, caching, and optimization",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 464,
-          "endLine": 464
+          "startLine": 485,
+          "endLine": 485
         }
       },
       "section": {
@@ -5530,8 +5589,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 471,
-        "endLine": 471
+        "startLine": 492,
+        "endLine": 492
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle config:publish",
@@ -5545,8 +5604,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 471,
-          "endLine": 471,
+          "startLine": 492,
+          "endLine": 492,
           "detail": "Scope/provenance only; reference checkbox remains unchanged."
         },
         {
@@ -5608,8 +5667,8 @@
         "title": "8. Configuration, caching, and optimization",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 464,
-          "endLine": 464
+          "startLine": 485,
+          "endLine": 485
         }
       },
       "section": {
@@ -5618,8 +5677,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 475,
-        "endLine": 475
+        "startLine": 496,
+        "endLine": 496
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle cache:clear",
@@ -5632,8 +5691,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 475,
-          "endLine": 475,
+          "startLine": 496,
+          "endLine": 496,
           "detail": "Reference provenance only; original checkbox unchanged."
         },
         {
@@ -5665,8 +5724,8 @@
         "title": "8. Configuration, caching, and optimization",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 464,
-          "endLine": 464
+          "startLine": 485,
+          "endLine": 485
         }
       },
       "section": {
@@ -5675,8 +5734,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 476,
-        "endLine": 476
+        "startLine": 497,
+        "endLine": 497
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle cache:forget <key>",
@@ -5689,8 +5748,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 476,
-          "endLine": 476,
+          "startLine": 497,
+          "endLine": 497,
           "detail": "Reference provenance only; original checkbox unchanged."
         },
         {
@@ -5722,8 +5781,8 @@
         "title": "8. Configuration, caching, and optimization",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 464,
-          "endLine": 464
+          "startLine": 485,
+          "endLine": 485
         }
       },
       "section": {
@@ -5732,8 +5791,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 477,
-        "endLine": 477
+        "startLine": 498,
+        "endLine": 498
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle cache:prune-stale-tags",
@@ -5746,8 +5805,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 477,
-          "endLine": 477,
+          "startLine": 498,
+          "endLine": 498,
           "detail": "Reference provenance only; original checkbox unchanged."
         },
         {
@@ -5779,8 +5838,8 @@
         "title": "8. Configuration, caching, and optimization",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 464,
-          "endLine": 464
+          "startLine": 485,
+          "endLine": 485
         }
       },
       "section": {
@@ -5789,8 +5848,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 481,
-        "endLine": 481
+        "startLine": 502,
+        "endLine": 502
       },
       "referenceCompleted": false,
       "proposedEquivalent": "No Blade view compilation/cache",
@@ -5804,8 +5863,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 481,
-          "endLine": 481,
+          "startLine": 502,
+          "endLine": 502,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -5827,8 +5886,8 @@
         "title": "8. Configuration, caching, and optimization",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 464,
-          "endLine": 464
+          "startLine": 485,
+          "endLine": 485
         }
       },
       "section": {
@@ -5837,8 +5896,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 482,
-        "endLine": 482
+        "startLine": 503,
+        "endLine": 503
       },
       "referenceCompleted": false,
       "proposedEquivalent": "No Blade compiled-view clearing",
@@ -5852,8 +5911,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 482,
-          "endLine": 482,
+          "startLine": 503,
+          "endLine": 503,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -5875,8 +5934,8 @@
         "title": "8. Configuration, caching, and optimization",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 464,
-          "endLine": 464
+          "startLine": 485,
+          "endLine": 485
         }
       },
       "section": {
@@ -5885,8 +5944,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 486,
-        "endLine": 486
+        "startLine": 507,
+        "endLine": 507
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle event:list",
@@ -5901,8 +5960,8 @@
           "kind": "reference-only",
           "path": "PROGRESS.md",
           "detail": "Reference provenance only; original checkbox unchanged.",
-          "startLine": 486,
-          "endLine": 486
+          "startLine": 507,
+          "endLine": 507
         },
         {
           "kind": "implementation",
@@ -5948,8 +6007,8 @@
         "title": "8. Configuration, caching, and optimization",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 464,
-          "endLine": 464
+          "startLine": 485,
+          "endLine": 485
         }
       },
       "section": {
@@ -5958,8 +6017,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 487,
-        "endLine": 487
+        "startLine": 508,
+        "endLine": 508
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle event:cache",
@@ -5974,8 +6033,8 @@
           "kind": "reference-only",
           "path": "PROGRESS.md",
           "detail": "Reference provenance only; original checkbox unchanged.",
-          "startLine": 487,
-          "endLine": 487
+          "startLine": 508,
+          "endLine": 508
         },
         {
           "kind": "implementation",
@@ -6016,8 +6075,8 @@
         "title": "8. Configuration, caching, and optimization",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 464,
-          "endLine": 464
+          "startLine": 485,
+          "endLine": 485
         }
       },
       "section": {
@@ -6026,8 +6085,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 488,
-        "endLine": 488
+        "startLine": 509,
+        "endLine": 509
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle event:clear",
@@ -6042,8 +6101,8 @@
           "kind": "reference-only",
           "path": "PROGRESS.md",
           "detail": "Reference provenance only; original checkbox unchanged.",
-          "startLine": 488,
-          "endLine": 488
+          "startLine": 509,
+          "endLine": 509
         },
         {
           "kind": "implementation",
@@ -6079,8 +6138,8 @@
         "title": "8. Configuration, caching, and optimization",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 464,
-          "endLine": 464
+          "startLine": 485,
+          "endLine": 485
         }
       },
       "section": {
@@ -6089,8 +6148,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 489,
-        "endLine": 489
+        "startLine": 510,
+        "endLine": 510
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle event:generate",
@@ -6104,8 +6163,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 489,
-          "endLine": 489,
+          "startLine": 510,
+          "endLine": 510,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -6157,8 +6216,8 @@
         "title": "8. Configuration, caching, and optimization",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 464,
-          "endLine": 464
+          "startLine": 485,
+          "endLine": 485
         }
       },
       "section": {
@@ -6167,8 +6226,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 493,
-        "endLine": 493
+        "startLine": 514,
+        "endLine": 514
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle optimize",
@@ -6182,8 +6241,8 @@
           "kind": "reference-only",
           "path": "PROGRESS.md",
           "detail": "Reference provenance only; original checkbox unchanged.",
-          "startLine": 493,
-          "endLine": 493
+          "startLine": 514,
+          "endLine": 514
         },
         {
           "kind": "implementation",
@@ -6219,8 +6278,8 @@
         "title": "8. Configuration, caching, and optimization",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 464,
-          "endLine": 464
+          "startLine": 485,
+          "endLine": 485
         }
       },
       "section": {
@@ -6229,8 +6288,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 494,
-        "endLine": 494
+        "startLine": 515,
+        "endLine": 515
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle optimize:clear",
@@ -6244,8 +6303,8 @@
           "kind": "reference-only",
           "path": "PROGRESS.md",
           "detail": "Reference provenance only; original checkbox unchanged.",
-          "startLine": 494,
-          "endLine": 494
+          "startLine": 515,
+          "endLine": 515
         },
         {
           "kind": "implementation",
@@ -6276,8 +6335,8 @@
         "title": "8. Configuration, caching, and optimization",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 464,
-          "endLine": 464
+          "startLine": 485,
+          "endLine": 485
         }
       },
       "section": {
@@ -6286,8 +6345,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 495,
-        "endLine": 495
+        "startLine": 516,
+        "endLine": 516
       },
       "referenceCompleted": false,
       "proposedEquivalent": "No PHP compiled-framework files; Bundle caches use explicit clear commands",
@@ -6300,8 +6359,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 495,
-          "endLine": 495,
+          "startLine": 516,
+          "endLine": 516,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -6323,8 +6382,8 @@
         "title": "9. Queue and background-job management",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 497,
-          "endLine": 497
+          "startLine": 518,
+          "endLine": 518
         }
       },
       "section": {
@@ -6333,8 +6392,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 499,
-        "endLine": 499
+        "startLine": 520,
+        "endLine": 520
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle queue:work",
@@ -6348,8 +6407,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 499,
-          "endLine": 499,
+          "startLine": 520,
+          "endLine": 520,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -6411,8 +6470,8 @@
         "title": "9. Queue and background-job management",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 497,
-          "endLine": 497
+          "startLine": 518,
+          "endLine": 518
         }
       },
       "section": {
@@ -6421,8 +6480,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 500,
-        "endLine": 500
+        "startLine": 521,
+        "endLine": 521
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle queue:listen",
@@ -6436,8 +6495,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 500,
-          "endLine": 500,
+          "startLine": 521,
+          "endLine": 521,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -6479,8 +6538,8 @@
         "title": "9. Queue and background-job management",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 497,
-          "endLine": 497
+          "startLine": 518,
+          "endLine": 518
         }
       },
       "section": {
@@ -6489,8 +6548,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 501,
-        "endLine": 501
+        "startLine": 522,
+        "endLine": 522
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle queue:restart",
@@ -6504,8 +6563,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 501,
-          "endLine": 501,
+          "startLine": 522,
+          "endLine": 522,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -6567,8 +6626,8 @@
         "title": "9. Queue and background-job management",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 497,
-          "endLine": 497
+          "startLine": 518,
+          "endLine": 518
         }
       },
       "section": {
@@ -6577,8 +6636,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 502,
-        "endLine": 502
+        "startLine": 523,
+        "endLine": 523
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle queue:pause",
@@ -6592,8 +6651,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 502,
-          "endLine": 502,
+          "startLine": 523,
+          "endLine": 523,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -6655,8 +6714,8 @@
         "title": "9. Queue and background-job management",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 497,
-          "endLine": 497
+          "startLine": 518,
+          "endLine": 518
         }
       },
       "section": {
@@ -6665,8 +6724,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 503,
-        "endLine": 503
+        "startLine": 524,
+        "endLine": 524
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle queue:resume",
@@ -6680,8 +6739,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 503,
-          "endLine": 503,
+          "startLine": 524,
+          "endLine": 524,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -6743,8 +6802,8 @@
         "title": "9. Queue and background-job management",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 497,
-          "endLine": 497
+          "startLine": 518,
+          "endLine": 518
         }
       },
       "section": {
@@ -6753,8 +6812,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 504,
-        "endLine": 504
+        "startLine": 525,
+        "endLine": 525
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle queue:monitor",
@@ -6768,8 +6827,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 504,
-          "endLine": 504,
+          "startLine": 525,
+          "endLine": 525,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -6821,8 +6880,8 @@
         "title": "9. Queue and background-job management",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 497,
-          "endLine": 497
+          "startLine": 518,
+          "endLine": 518
         }
       },
       "section": {
@@ -6831,8 +6890,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 505,
-        "endLine": 505
+        "startLine": 526,
+        "endLine": 526
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle queue:clear --force",
@@ -6846,8 +6905,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 505,
-          "endLine": 505,
+          "startLine": 526,
+          "endLine": 526,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -6899,8 +6958,8 @@
         "title": "9. Queue and background-job management",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 497,
-          "endLine": 497
+          "startLine": 518,
+          "endLine": 518
         }
       },
       "section": {
@@ -6909,8 +6968,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 506,
-        "endLine": 506
+        "startLine": 527,
+        "endLine": 527
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle queue:failed",
@@ -6924,8 +6983,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 506,
-          "endLine": 506,
+          "startLine": 527,
+          "endLine": 527,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -6977,8 +7036,8 @@
         "title": "9. Queue and background-job management",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 497,
-          "endLine": 497
+          "startLine": 518,
+          "endLine": 518
         }
       },
       "section": {
@@ -6987,8 +7046,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 507,
-        "endLine": 507
+        "startLine": 528,
+        "endLine": 528
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle queue:retry <id>",
@@ -7002,8 +7061,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 507,
-          "endLine": 507,
+          "startLine": 528,
+          "endLine": 528,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -7055,8 +7114,8 @@
         "title": "9. Queue and background-job management",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 497,
-          "endLine": 497
+          "startLine": 518,
+          "endLine": 518
         }
       },
       "section": {
@@ -7065,8 +7124,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 508,
-        "endLine": 508
+        "startLine": 529,
+        "endLine": 529
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle queue:retry-batch <id>",
@@ -7080,8 +7139,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 508,
-          "endLine": 508,
+          "startLine": 529,
+          "endLine": 529,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -7163,8 +7222,8 @@
         "title": "9. Queue and background-job management",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 497,
-          "endLine": 497
+          "startLine": 518,
+          "endLine": 518
         }
       },
       "section": {
@@ -7173,8 +7232,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 509,
-        "endLine": 509
+        "startLine": 530,
+        "endLine": 530
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle queue:forget <id>",
@@ -7188,8 +7247,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 509,
-          "endLine": 509,
+          "startLine": 530,
+          "endLine": 530,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -7241,8 +7300,8 @@
         "title": "9. Queue and background-job management",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 497,
-          "endLine": 497
+          "startLine": 518,
+          "endLine": 518
         }
       },
       "section": {
@@ -7251,8 +7310,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 510,
-        "endLine": 510
+        "startLine": 531,
+        "endLine": 531
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle queue:flush --force",
@@ -7266,8 +7325,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 510,
-          "endLine": 510,
+          "startLine": 531,
+          "endLine": 531,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -7319,8 +7378,8 @@
         "title": "9. Queue and background-job management",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 497,
-          "endLine": 497
+          "startLine": 518,
+          "endLine": 518
         }
       },
       "section": {
@@ -7329,8 +7388,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 511,
-        "endLine": 511
+        "startLine": 532,
+        "endLine": 532
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle queue:prune-failed",
@@ -7344,8 +7403,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 511,
-          "endLine": 511,
+          "startLine": 532,
+          "endLine": 532,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -7397,8 +7456,8 @@
         "title": "9. Queue and background-job management",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 497,
-          "endLine": 497
+          "startLine": 518,
+          "endLine": 518
         }
       },
       "section": {
@@ -7407,8 +7466,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 512,
-        "endLine": 512
+        "startLine": 533,
+        "endLine": 533
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle queue:prune-batches",
@@ -7422,8 +7481,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 512,
-          "endLine": 512,
+          "startLine": 533,
+          "endLine": 533,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -7505,8 +7564,8 @@
         "title": "9. Queue and background-job management",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 497,
-          "endLine": 497
+          "startLine": 518,
+          "endLine": 518
         }
       },
       "section": {
@@ -7515,8 +7574,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 513,
-        "endLine": 513
+        "startLine": 534,
+        "endLine": 534
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle queue:work --queue high,default --tries 3 --timeout 90000",
@@ -7530,8 +7589,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 513,
-          "endLine": 513,
+          "startLine": 534,
+          "endLine": 534,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -7593,8 +7652,8 @@
         "title": "10. Task scheduling",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 521,
-          "endLine": 521
+          "startLine": 542,
+          "endLine": 542
         }
       },
       "section": {
@@ -7603,8 +7662,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 523,
-        "endLine": 523
+        "startLine": 544,
+        "endLine": 544
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle schedule:list",
@@ -7618,8 +7677,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 523,
-          "endLine": 523,
+          "startLine": 544,
+          "endLine": 544,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -7681,8 +7740,8 @@
         "title": "10. Task scheduling",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 521,
-          "endLine": 521
+          "startLine": 542,
+          "endLine": 542
         }
       },
       "section": {
@@ -7691,8 +7750,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 524,
-        "endLine": 524
+        "startLine": 545,
+        "endLine": 545
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle schedule:run",
@@ -7706,8 +7765,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 524,
-          "endLine": 524,
+          "startLine": 545,
+          "endLine": 545,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -7769,8 +7828,8 @@
         "title": "10. Task scheduling",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 521,
-          "endLine": 521
+          "startLine": 542,
+          "endLine": 542
         }
       },
       "section": {
@@ -7779,8 +7838,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 525,
-        "endLine": 525
+        "startLine": 546,
+        "endLine": 546
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle schedule:work",
@@ -7794,8 +7853,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 525,
-          "endLine": 525,
+          "startLine": 546,
+          "endLine": 546,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -7857,8 +7916,8 @@
         "title": "10. Task scheduling",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 521,
-          "endLine": 521
+          "startLine": 542,
+          "endLine": 542
         }
       },
       "section": {
@@ -7867,8 +7926,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 526,
-        "endLine": 526
+        "startLine": 547,
+        "endLine": 547
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle schedule:test",
@@ -7882,8 +7941,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 526,
-          "endLine": 526,
+          "startLine": 547,
+          "endLine": 547,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -7935,8 +7994,8 @@
         "title": "10. Task scheduling",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 521,
-          "endLine": 521
+          "startLine": 542,
+          "endLine": 542
         }
       },
       "section": {
@@ -7945,8 +8004,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 527,
-        "endLine": 527
+        "startLine": 548,
+        "endLine": 548
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle schedule:interrupt",
@@ -7960,8 +8019,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 527,
-          "endLine": 527,
+          "startLine": 548,
+          "endLine": 548,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -8013,8 +8072,8 @@
         "title": "10. Task scheduling",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 521,
-          "endLine": 521
+          "startLine": 542,
+          "endLine": 542
         }
       },
       "section": {
@@ -8023,12 +8082,12 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 528,
-        "endLine": 528
+        "startLine": 549,
+        "endLine": 549
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle schedule:clear-cache",
-      "status": "pending",
+      "status": "partial",
       "milestone": "M6",
       "dependsOn": [
         "M1",
@@ -8038,14 +8097,42 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 528,
-          "endLine": 528,
+          "startLine": 549,
+          "endLine": 549,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
+        },
+        {
+          "kind": "implementation",
+          "path": "src/schedule/locks.ts",
+          "startLine": 141,
+          "endLine": 240,
+          "detail": "Owned versioned per-task records; Linux stale cleanup requires same PID namespace and verified absent/zombie or mismatched PID/start identity; signal-0 checks fail closed when procfs identity is hidden, while generic/legacy token-only locks are skipped and preserved."
+        },
+        {
+          "kind": "automated-test",
+          "path": "src/schedule/locks.test.ts",
+          "startLine": 15,
+          "endLine": 104,
+          "detail": "Tests live-owner retention, stale identity cleanup, namespace mismatch, generic/legacy token-only lock preservation, corrupt-state preservation, owner metadata, gate refusal, concurrent release contention and non-Linux refusal."
+        },
+        {
+          "kind": "automated-test",
+          "path": "src/cli/schedule.test.ts",
+          "startLine": 91,
+          "endLine": 101,
+          "detail": "Actual CLI runner verifies global --force and stale-lock removal/result."
+        },
+        {
+          "kind": "documentation",
+          "path": "docs/scheduling.md",
+          "startLine": 42,
+          "endLine": 42,
+          "detail": "Documents Linux/current-PID-namespace scope, active-lock retention, skipped generic/legacy token-only records and fail-closed corrupt/unsafe behavior."
         }
       ],
-      "reason": "No scheduler mutex backend exists.",
+      "reason": "The command clears only verified stale versioned scheduler locks under a private mutation gate; hidden or ambiguous owner identity and corrupt, unsafe or different-PID-namespace records fail closed instead of guessing ownership. Generic/legacy token-only locks are skipped because their owner/type cannot be verified.",
       "remainingWork": [
-        "Implement scoped stale-lock handling and safe refusal for live tasks; never reuse destructive migration unlock implicitly."
+        "Broader Laravel mutex formats/semantics and non-Linux process identity handling are not implemented; legacy scheduler locks require manual inspection. This local PID/start check is not multi-host coordination."
       ]
     },
     {
@@ -8056,8 +8143,8 @@
         "title": "10. Task scheduling",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 521,
-          "endLine": 521
+          "startLine": 542,
+          "endLine": 542
         }
       },
       "section": {
@@ -8066,8 +8153,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 529,
-        "endLine": 529
+        "startLine": 550,
+        "endLine": 550
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle schedule:pause",
@@ -8081,8 +8168,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 529,
-          "endLine": 529,
+          "startLine": 550,
+          "endLine": 550,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -8134,8 +8221,8 @@
         "title": "10. Task scheduling",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 521,
-          "endLine": 521
+          "startLine": 542,
+          "endLine": 542
         }
       },
       "section": {
@@ -8144,8 +8231,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 530,
-        "endLine": 530
+        "startLine": 551,
+        "endLine": 551
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle schedule:resume",
@@ -8159,8 +8246,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 530,
-          "endLine": 530,
+          "startLine": 551,
+          "endLine": 551,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -8212,8 +8299,8 @@
         "title": "10. Task scheduling",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 521,
-          "endLine": 521
+          "startLine": 542,
+          "endLine": 542
         }
       },
       "section": {
@@ -8222,8 +8309,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 531,
-        "endLine": 531
+        "startLine": 552,
+        "endLine": 552
       },
       "referenceCompleted": false,
       "proposedEquivalent": "Internal schedule completion API; expose schedule:finish only if required",
@@ -8237,8 +8324,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 531,
-          "endLine": 531,
+          "startLine": 552,
+          "endLine": 552,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         }
       ],
@@ -8255,8 +8342,8 @@
         "title": "11. Testing",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 533,
-          "endLine": 533
+          "startLine": 554,
+          "endLine": 554
         }
       },
       "section": {
@@ -8265,8 +8352,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 535,
-        "endLine": 535
+        "startLine": 556,
+        "endLine": 556
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bun test now; proposed bundle test wrapper",
@@ -8279,8 +8366,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 535,
-          "endLine": 535,
+          "startLine": 556,
+          "endLine": 556,
           "detail": "Scope/provenance only; reference checkbox remains unchanged."
         },
         {
@@ -8312,8 +8399,8 @@
         "title": "11. Testing",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 533,
-          "endLine": 533
+          "startLine": 554,
+          "endLine": 554
         }
       },
       "section": {
@@ -8322,8 +8409,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 541,
-        "endLine": 541
+        "startLine": 562,
+        "endLine": 562
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bun test <file> now; proposed bundle test <file>",
@@ -8336,8 +8423,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 541,
-          "endLine": 541,
+          "startLine": 562,
+          "endLine": 562,
           "detail": "Scope/provenance only; reference checkbox remains unchanged."
         },
         {
@@ -8369,8 +8456,8 @@
         "title": "11. Testing",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 533,
-          "endLine": 533
+          "startLine": 554,
+          "endLine": 554
         }
       },
       "section": {
@@ -8379,8 +8466,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 547,
-        "endLine": 547
+        "startLine": 568,
+        "endLine": 568
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bun test --test-name-pattern now; proposed bundle test --filter",
@@ -8393,8 +8480,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 547,
-          "endLine": 547,
+          "startLine": 568,
+          "endLine": 568,
           "detail": "Scope/provenance only; reference checkbox remains unchanged."
         },
         {
@@ -8426,8 +8513,8 @@
         "title": "11. Testing",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 533,
-          "endLine": 533
+          "startLine": 554,
+          "endLine": 554
         }
       },
       "section": {
@@ -8436,8 +8523,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 553,
-        "endLine": 553
+        "startLine": 574,
+        "endLine": 574
       },
       "referenceCompleted": false,
       "proposedEquivalent": "Explicit Bun-compatible parallel test strategy",
@@ -8450,8 +8537,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 553,
-          "endLine": 553,
+          "startLine": 574,
+          "endLine": 574,
           "detail": "Scope/provenance only; reference checkbox remains unchanged."
         },
         {
@@ -8498,8 +8585,8 @@
         "title": "11. Testing",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 533,
-          "endLine": 533
+          "startLine": 554,
+          "endLine": 554
         }
       },
       "section": {
@@ -8508,8 +8595,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 559,
-        "endLine": 559
+        "startLine": 580,
+        "endLine": 580
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle test --coverage via Bun coverage",
@@ -8522,8 +8609,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 559,
-          "endLine": 559,
+          "startLine": 580,
+          "endLine": 580,
           "detail": "Scope/provenance only; reference checkbox remains unchanged."
         },
         {
@@ -8555,8 +8642,8 @@
         "title": "11. Testing",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 533,
-          "endLine": 533
+          "startLine": 554,
+          "endLine": 554
         }
       },
       "section": {
@@ -8565,8 +8652,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 565,
-        "endLine": 565
+        "startLine": 586,
+        "endLine": 586
       },
       "referenceCompleted": false,
       "proposedEquivalent": "Isolated Bun parallel test execution",
@@ -8579,8 +8666,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 565,
-          "endLine": 565,
+          "startLine": 586,
+          "endLine": 586,
           "detail": "Scope/provenance only; reference checkbox remains unchanged."
         },
         {
@@ -8627,8 +8714,8 @@
         "title": "11. Testing",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 533,
-          "endLine": 533
+          "startLine": 554,
+          "endLine": 554
         }
       },
       "section": {
@@ -8637,8 +8724,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 566,
-        "endLine": 566
+        "startLine": 587,
+        "endLine": 587
       },
       "referenceCompleted": false,
       "proposedEquivalent": "Bun-native coverage driver",
@@ -8651,8 +8738,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 566,
-          "endLine": 566,
+          "startLine": 587,
+          "endLine": 587,
           "detail": "Scope/provenance only; reference checkbox remains unchanged."
         },
         {
@@ -8684,8 +8771,8 @@
         "title": "11. Testing",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 533,
-          "endLine": 533
+          "startLine": 554,
+          "endLine": 554
         }
       },
       "section": {
@@ -8694,8 +8781,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 567,
-        "endLine": 567
+        "startLine": 588,
+        "endLine": 588
       },
       "referenceCompleted": false,
       "proposedEquivalent": "Use bun:test rather than PHPUnit or Pest",
@@ -8708,8 +8795,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 567,
-          "endLine": 567,
+          "startLine": 588,
+          "endLine": 588,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -8731,8 +8818,8 @@
         "title": "12. Application operations and environment management",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 569,
-          "endLine": 569
+          "startLine": 590,
+          "endLine": 590
         }
       },
       "section": {
@@ -8741,8 +8828,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 571,
-        "endLine": 571
+        "startLine": 592,
+        "endLine": 592
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle key:generate",
@@ -8755,8 +8842,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 571,
-          "endLine": 571,
+          "startLine": 592,
+          "endLine": 592,
           "detail": "Scope/provenance only; reference checkbox remains unchanged."
         },
         {
@@ -8788,8 +8875,8 @@
         "title": "12. Application operations and environment management",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 569,
-          "endLine": 569
+          "startLine": 590,
+          "endLine": 590
         }
       },
       "section": {
@@ -8798,8 +8885,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 572,
-        "endLine": 572
+        "startLine": 593,
+        "endLine": 593
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle env",
@@ -8812,8 +8899,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 572,
-          "endLine": 572,
+          "startLine": 593,
+          "endLine": 593,
           "detail": "Scope/provenance only; reference checkbox remains unchanged."
         },
         {
@@ -8845,8 +8932,8 @@
         "title": "12. Application operations and environment management",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 569,
-          "endLine": 569
+          "startLine": 590,
+          "endLine": 590
         }
       },
       "section": {
@@ -8855,8 +8942,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 573,
-        "endLine": 573
+        "startLine": 594,
+        "endLine": 594
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle env:encrypt",
@@ -8869,8 +8956,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 573,
-          "endLine": 573,
+          "startLine": 594,
+          "endLine": 594,
           "detail": "Scope/provenance only; reference checkbox remains unchanged."
         },
         {
@@ -8902,8 +8989,8 @@
         "title": "12. Application operations and environment management",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 569,
-          "endLine": 569
+          "startLine": 590,
+          "endLine": 590
         }
       },
       "section": {
@@ -8912,8 +8999,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 574,
-        "endLine": 574
+        "startLine": 595,
+        "endLine": 595
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle env:decrypt",
@@ -8926,8 +9013,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 574,
-          "endLine": 574,
+          "startLine": 595,
+          "endLine": 595,
           "detail": "Scope/provenance only; reference checkbox remains unchanged."
         },
         {
@@ -8959,8 +9046,8 @@
         "title": "12. Application operations and environment management",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 569,
-          "endLine": 569
+          "startLine": 590,
+          "endLine": 590
         }
       },
       "section": {
@@ -8969,8 +9056,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 575,
-        "endLine": 575
+        "startLine": 596,
+        "endLine": 596
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle down",
@@ -8985,8 +9072,8 @@
           "kind": "reference-only",
           "path": "PROGRESS.md",
           "detail": "Reference provenance only; original checkbox unchanged.",
-          "startLine": 575,
-          "endLine": 575
+          "startLine": 596,
+          "endLine": 596
         },
         {
           "kind": "implementation",
@@ -9042,8 +9129,8 @@
         "title": "12. Application operations and environment management",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 569,
-          "endLine": 569
+          "startLine": 590,
+          "endLine": 590
         }
       },
       "section": {
@@ -9052,8 +9139,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 576,
-        "endLine": 576
+        "startLine": 597,
+        "endLine": 597
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle up",
@@ -9068,8 +9155,8 @@
           "kind": "reference-only",
           "path": "PROGRESS.md",
           "detail": "Reference provenance only; original checkbox unchanged.",
-          "startLine": 576,
-          "endLine": 576
+          "startLine": 597,
+          "endLine": 597
         },
         {
           "kind": "implementation",
@@ -9115,8 +9202,8 @@
         "title": "12. Application operations and environment management",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 569,
-          "endLine": 569
+          "startLine": 590,
+          "endLine": 590
         }
       },
       "section": {
@@ -9125,8 +9212,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 577,
-        "endLine": 577
+        "startLine": 598,
+        "endLine": 598
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle reload",
@@ -9140,8 +9227,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 577,
-          "endLine": 577,
+          "startLine": 598,
+          "endLine": 598,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         }
       ],
@@ -9158,8 +9245,8 @@
         "title": "12. Application operations and environment management",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 569,
-          "endLine": 569
+          "startLine": 590,
+          "endLine": 590
         }
       },
       "section": {
@@ -9168,8 +9255,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 578,
-        "endLine": 578
+        "startLine": 599,
+        "endLine": 599
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle auth:clear-resets",
@@ -9183,8 +9270,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 578,
-          "endLine": 578,
+          "startLine": 599,
+          "endLine": 599,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         }
       ],
@@ -9201,8 +9288,8 @@
         "title": "12. Application operations and environment management",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 569,
-          "endLine": 569
+          "startLine": 590,
+          "endLine": 590
         }
       },
       "section": {
@@ -9211,8 +9298,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 579,
-        "endLine": 579
+        "startLine": 600,
+        "endLine": 600
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle storage:link",
@@ -9225,8 +9312,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 579,
-          "endLine": 579,
+          "startLine": 600,
+          "endLine": 600,
           "detail": "Reference provenance only; original checkbox unchanged."
         },
         {
@@ -9258,8 +9345,8 @@
         "title": "12. Application operations and environment management",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 569,
-          "endLine": 569
+          "startLine": 590,
+          "endLine": 590
         }
       },
       "section": {
@@ -9268,8 +9355,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 580,
-        "endLine": 580
+        "startLine": 601,
+        "endLine": 601
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle storage:unlink",
@@ -9282,8 +9369,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 580,
-          "endLine": 580,
+          "startLine": 601,
+          "endLine": 601,
           "detail": "Reference provenance only; original checkbox unchanged."
         },
         {
@@ -9315,8 +9402,8 @@
         "title": "13. Feature installation and package integration",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 582,
-          "endLine": 582
+          "startLine": 603,
+          "endLine": 603
         }
       },
       "section": {
@@ -9325,8 +9412,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 584,
-        "endLine": 584
+        "startLine": 605,
+        "endLine": 605
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle install:api",
@@ -9340,8 +9427,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 584,
-          "endLine": 584,
+          "startLine": 605,
+          "endLine": 605,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         }
       ],
@@ -9358,8 +9445,8 @@
         "title": "13. Feature installation and package integration",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 582,
-          "endLine": 582
+          "startLine": 603,
+          "endLine": 603
         }
       },
       "section": {
@@ -9368,8 +9455,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 585,
-        "endLine": 585
+        "startLine": 606,
+        "endLine": 606
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle install:broadcasting",
@@ -9383,8 +9470,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 585,
-          "endLine": 585,
+          "startLine": 606,
+          "endLine": 606,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         }
       ],
@@ -9401,8 +9488,8 @@
         "title": "13. Feature installation and package integration",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 582,
-          "endLine": 582
+          "startLine": 603,
+          "endLine": 603
         }
       },
       "section": {
@@ -9411,12 +9498,12 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 586,
-        "endLine": 586
+        "startLine": 607,
+        "endLine": 607
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle channel:list",
-      "status": "pending",
+      "status": "implemented",
       "milestone": "M5",
       "dependsOn": [
         "M1",
@@ -9426,14 +9513,56 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 586,
-          "endLine": 586,
+          "startLine": 607,
+          "endLine": 607,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
+        },
+        {
+          "kind": "implementation",
+          "path": "src/broadcasting/definitions.ts",
+          "startLine": 1,
+          "endLine": 55,
+          "detail": "Bounded copied/frozen registry validates unique channel patterns and unique whole-segment parameters."
+        },
+        {
+          "kind": "implementation",
+          "path": "src/cli/channels.ts",
+          "startLine": 1,
+          "endLine": 30,
+          "detail": "Loads a safe root channels.ts registry, treats absence as empty, rejects malformed exports and lists text/JSON without DB/service access."
+        },
+        {
+          "kind": "automated-test",
+          "path": "src/cli/channels.test.ts",
+          "startLine": 8,
+          "endLine": 64,
+          "detail": "Tests registry bounds, copy/freeze, duplicate/invalid/accessor/sparse rejection, CLI formats, empty/malformed source and missing-root refusal."
+        },
+        {
+          "kind": "automated-test",
+          "path": "src/cli/compatibility.test.ts",
+          "startLine": 41,
+          "endLine": 49,
+          "detail": "Actual CLI subprocess lists a registered channel and verifies no selected database file is created."
+        },
+        {
+          "kind": "automated-test",
+          "path": "src/installation/project.test.ts",
+          "startLine": 21,
+          "endLine": 26,
+          "detail": "Generated-project allowlist tests require the channel CLI, registry and guide to be copied."
+        },
+        {
+          "kind": "documentation",
+          "path": "docs/broadcasting.md",
+          "startLine": 1,
+          "endLine": 29,
+          "detail": "Documents root registry shape, bounded names, listing behavior, ESM cache and explicit no-transport/auth limits."
         }
       ],
-      "reason": "No broadcast channel registry exists.",
+      "reason": "A bounded trusted channels.ts registry and channel:list CLI now enumerate registered names without opening a database or contacting a broadcast service. This does not imply authorization or transport.",
       "remainingWork": [
-        "List code-registered channel/authorization metadata without opening a service connection."
+        "Channel authorization, authenticated identities and broadcast transport remain separate unfinished capabilities."
       ]
     },
     {
@@ -9444,8 +9573,8 @@
         "title": "13. Feature installation and package integration",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 582,
-          "endLine": 582
+          "startLine": 603,
+          "endLine": 603
         }
       },
       "section": {
@@ -9454,8 +9583,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 587,
-        "endLine": 587
+        "startLine": 608,
+        "endLine": 608
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle vendor:publish for code/config/data assets only",
@@ -9469,8 +9598,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 587,
-          "endLine": 587,
+          "startLine": 608,
+          "endLine": 608,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -9522,8 +9651,8 @@
         "title": "13. Feature installation and package integration",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 582,
-          "endLine": 582
+          "startLine": 603,
+          "endLine": 603
         }
       },
       "section": {
@@ -9532,8 +9661,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 588,
-        "endLine": 588
+        "startLine": 609,
+        "endLine": 609
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle package:discover",
@@ -9547,8 +9676,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 588,
-          "endLine": 588,
+          "startLine": 609,
+          "endLine": 609,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -9625,8 +9754,8 @@
         "title": "13. Feature installation and package integration",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 582,
-          "endLine": 582
+          "startLine": 603,
+          "endLine": 603
         }
       },
       "section": {
@@ -9635,8 +9764,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 589,
-        "endLine": 589
+        "startLine": 610,
+        "endLine": 610
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle lang:publish",
@@ -9650,8 +9779,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 589,
-          "endLine": 589,
+          "startLine": 610,
+          "endLine": 610,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -9708,8 +9837,8 @@
         "title": "13. Feature installation and package integration",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 582,
-          "endLine": 582
+          "startLine": 603,
+          "endLine": 603
         }
       },
       "section": {
@@ -9718,8 +9847,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 590,
-        "endLine": 590
+        "startLine": 611,
+        "endLine": 611
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle stub:publish",
@@ -9732,8 +9861,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 590,
-          "endLine": 590,
+          "startLine": 611,
+          "endLine": 611,
           "detail": "Reference provenance only; original checkbox unchanged."
         },
         {
@@ -9765,8 +9894,8 @@
         "title": "14. Building your own CLI commands",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 592,
-          "endLine": 592
+          "startLine": 613,
+          "endLine": 613
         }
       },
       "section": {
@@ -9775,8 +9904,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 596,
-        "endLine": 596
+        "startLine": 617,
+        "endLine": 617
       },
       "referenceCompleted": false,
       "proposedEquivalent": "Public TypeScript class-based command API",
@@ -9789,8 +9918,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 596,
-          "endLine": 596,
+          "startLine": 617,
+          "endLine": 617,
           "detail": "Reference provenance only; original checkbox unchanged."
         },
         {
@@ -9822,8 +9951,8 @@
         "title": "14. Building your own CLI commands",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 592,
-          "endLine": 592
+          "startLine": 613,
+          "endLine": 613
         }
       },
       "section": {
@@ -9832,8 +9961,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 597,
-        "endLine": 597
+        "startLine": 618,
+        "endLine": 618
       },
       "referenceCompleted": false,
       "proposedEquivalent": "Public TypeScript callback command registration",
@@ -9846,8 +9975,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 597,
-          "endLine": 597,
+          "startLine": 618,
+          "endLine": 618,
           "detail": "Scope/provenance only; reference checkbox remains unchanged."
         },
         {
@@ -9879,8 +10008,8 @@
         "title": "14. Building your own CLI commands",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 592,
-          "endLine": 592
+          "startLine": 613,
+          "endLine": 613
         }
       },
       "section": {
@@ -9889,8 +10018,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 598,
-        "endLine": 598
+        "startLine": 619,
+        "endLine": 619
       },
       "referenceCompleted": false,
       "proposedEquivalent": "Typed required/optional/defaulted/variadic arguments",
@@ -9903,8 +10032,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 598,
-          "endLine": 598,
+          "startLine": 619,
+          "endLine": 619,
           "detail": "Reference provenance only; original checkbox unchanged."
         },
         {
@@ -9936,8 +10065,8 @@
         "title": "14. Building your own CLI commands",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 592,
-          "endLine": 592
+          "startLine": 613,
+          "endLine": 613
         }
       },
       "section": {
@@ -9946,8 +10075,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 599,
-        "endLine": 599
+        "startLine": 620,
+        "endLine": 620
       },
       "referenceCompleted": false,
       "proposedEquivalent": "Typed flags/value/short/repeatable options",
@@ -9960,8 +10089,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 599,
-          "endLine": 599,
+          "startLine": 620,
+          "endLine": 620,
           "detail": "Scope/provenance only; reference checkbox remains unchanged."
         },
         {
@@ -9993,8 +10122,8 @@
         "title": "14. Building your own CLI commands",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 592,
-          "endLine": 592
+          "startLine": 613,
+          "endLine": 613
         }
       },
       "section": {
@@ -10003,8 +10132,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 600,
-        "endLine": 600
+        "startLine": 621,
+        "endLine": 621
       },
       "referenceCompleted": false,
       "proposedEquivalent": "Scoped command dependency injection/context",
@@ -10017,8 +10146,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 600,
-          "endLine": 600,
+          "startLine": 621,
+          "endLine": 621,
           "detail": "Reference provenance only; original checkbox unchanged."
         },
         {
@@ -10050,8 +10179,8 @@
         "title": "14. Building your own CLI commands",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 592,
-          "endLine": 592
+          "startLine": 613,
+          "endLine": 613
         }
       },
       "section": {
@@ -10060,8 +10189,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 601,
-        "endLine": 601
+        "startLine": 622,
+        "endLine": 622
       },
       "referenceCompleted": false,
       "proposedEquivalent": "Text/password console prompts",
@@ -10074,8 +10203,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 601,
-          "endLine": 601,
+          "startLine": 622,
+          "endLine": 622,
           "detail": "Reference provenance only; original checkbox unchanged."
         },
         {
@@ -10107,8 +10236,8 @@
         "title": "14. Building your own CLI commands",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 592,
-          "endLine": 592
+          "startLine": 613,
+          "endLine": 613
         }
       },
       "section": {
@@ -10117,8 +10246,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 602,
-        "endLine": 602
+        "startLine": 623,
+        "endLine": 623
       },
       "referenceCompleted": false,
       "proposedEquivalent": "Confirm/select/search/validated prompts",
@@ -10131,8 +10260,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 602,
-          "endLine": 602,
+          "startLine": 623,
+          "endLine": 623,
           "detail": "Reference provenance only; original checkbox unchanged."
         },
         {
@@ -10164,8 +10293,8 @@
         "title": "14. Building your own CLI commands",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 592,
-          "endLine": 592
+          "startLine": 613,
+          "endLine": 613
         }
       },
       "section": {
@@ -10174,8 +10303,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 603,
-        "endLine": 603
+        "startLine": 624,
+        "endLine": 624
       },
       "referenceCompleted": false,
       "proposedEquivalent": "Prompt for missing required command arguments",
@@ -10188,8 +10317,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 603,
-          "endLine": 603,
+          "startLine": 624,
+          "endLine": 624,
           "detail": "Reference provenance only; original checkbox unchanged."
         },
         {
@@ -10221,8 +10350,8 @@
         "title": "14. Building your own CLI commands",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 592,
-          "endLine": 592
+          "startLine": 613,
+          "endLine": 613
         }
       },
       "section": {
@@ -10231,8 +10360,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 604,
-        "endLine": 604
+        "startLine": 625,
+        "endLine": 625
       },
       "referenceCompleted": false,
       "proposedEquivalent": "Structured console rendering with optional ANSI",
@@ -10245,8 +10374,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 604,
-          "endLine": 604,
+          "startLine": 625,
+          "endLine": 625,
           "detail": "Reference provenance only; original checkbox unchanged."
         },
         {
@@ -10278,8 +10407,8 @@
         "title": "14. Building your own CLI commands",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 592,
-          "endLine": 592
+          "startLine": 613,
+          "endLine": 613
         }
       },
       "section": {
@@ -10288,8 +10417,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 605,
-        "endLine": 605
+        "startLine": 626,
+        "endLine": 626
       },
       "referenceCompleted": false,
       "proposedEquivalent": "CLI exit codes, exception capture, and redacted errors",
@@ -10302,8 +10431,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 605,
-          "endLine": 605,
+          "startLine": 626,
+          "endLine": 626,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -10330,8 +10459,8 @@
         "title": "14. Building your own CLI commands",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 592,
-          "endLine": 592
+          "startLine": 613,
+          "endLine": 613
         }
       },
       "section": {
@@ -10340,8 +10469,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 606,
-        "endLine": 606
+        "startLine": 627,
+        "endLine": 627
       },
       "referenceCompleted": false,
       "proposedEquivalent": "General isolated commands via atomic lock adapters",
@@ -10354,8 +10483,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 606,
-          "endLine": 606,
+          "startLine": 627,
+          "endLine": 627,
           "detail": "Reference provenance only; original checkbox unchanged."
         },
         {
@@ -10387,8 +10516,8 @@
         "title": "14. Building your own CLI commands",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 592,
-          "endLine": 592
+          "startLine": 613,
+          "endLine": 613
         }
       },
       "section": {
@@ -10397,8 +10526,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 607,
-        "endLine": 607
+        "startLine": 628,
+        "endLine": 628
       },
       "referenceCompleted": false,
       "proposedEquivalent": "Command cancellation and graceful signal handling",
@@ -10411,8 +10540,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 607,
-          "endLine": 607,
+          "startLine": 628,
+          "endLine": 628,
           "detail": "Reference provenance only; original checkbox unchanged."
         },
         {
@@ -10444,8 +10573,8 @@
         "title": "14. Building your own CLI commands",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 592,
-          "endLine": 592
+          "startLine": 613,
+          "endLine": 613
         }
       },
       "section": {
@@ -10454,8 +10583,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 608,
-        "endLine": 608
+        "startLine": 629,
+        "endLine": 629
       },
       "referenceCompleted": false,
       "proposedEquivalent": "Programmatic command runner",
@@ -10468,8 +10597,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 608,
-          "endLine": 608,
+          "startLine": 629,
+          "endLine": 629,
           "detail": "Reference provenance only; original checkbox unchanged."
         },
         {
@@ -10501,8 +10630,8 @@
         "title": "14. Building your own CLI commands",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 592,
-          "endLine": 592
+          "startLine": 613,
+          "endLine": 613
         }
       },
       "section": {
@@ -10511,8 +10640,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 609,
-        "endLine": 609
+        "startLine": 630,
+        "endLine": 630
       },
       "referenceCompleted": false,
       "proposedEquivalent": "Dispatch typed commands as durable jobs",
@@ -10526,8 +10655,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 609,
-          "endLine": 609,
+          "startLine": 630,
+          "endLine": 630,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -10574,8 +10703,8 @@
         "title": "14. Building your own CLI commands",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 592,
-          "endLine": 592
+          "startLine": 613,
+          "endLine": 613
         }
       },
       "section": {
@@ -10584,8 +10713,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 610,
-        "endLine": 610
+        "startLine": 631,
+        "endLine": 631
       },
       "referenceCompleted": false,
       "proposedEquivalent": "Command start/success/failure lifecycle hooks",
@@ -10598,8 +10727,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 610,
-          "endLine": 610,
+          "startLine": 631,
+          "endLine": 631,
           "detail": "Reference provenance only; original checkbox unchanged."
         },
         {
@@ -10631,8 +10760,8 @@
         "title": "14. Building your own CLI commands",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 592,
-          "endLine": 592
+          "startLine": 613,
+          "endLine": 613
         }
       },
       "section": {
@@ -10641,8 +10770,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 611,
-        "endLine": 611
+        "startLine": 632,
+        "endLine": 632
       },
       "referenceCompleted": false,
       "proposedEquivalent": "Reusable console input/output assertion harness",
@@ -10655,8 +10784,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 611,
-          "endLine": 611,
+          "startLine": 632,
+          "endLine": 632,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -10703,8 +10832,8 @@
         "title": "14. Building your own CLI commands",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 592,
-          "endLine": 592
+          "startLine": 613,
+          "endLine": 613
         }
       },
       "section": {
@@ -10713,8 +10842,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 612,
-        "endLine": 612
+        "startLine": 633,
+        "endLine": 633
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle make:command ImportProducts",
@@ -10727,8 +10856,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 612,
-          "endLine": 612,
+          "startLine": 633,
+          "endLine": 633,
           "detail": "Reference provenance only; original checkbox unchanged."
         },
         {
@@ -10760,8 +10889,8 @@
         "title": "15. Optional ecosystem CLI tools",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 618,
-          "endLine": 618
+          "startLine": 639,
+          "endLine": 639
         }
       },
       "section": {
@@ -10770,8 +10899,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 622,
-        "endLine": 622
+        "startLine": 643,
+        "endLine": 643
       },
       "referenceCompleted": false,
       "proposedEquivalent": "Optional Bun container development runner, not Laravel Sail",
@@ -10785,8 +10914,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 622,
-          "endLine": 622,
+          "startLine": 643,
+          "endLine": 643,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         }
       ],
@@ -10803,8 +10932,8 @@
         "title": "15. Optional ecosystem CLI tools",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 618,
-          "endLine": 618
+          "startLine": 639,
+          "endLine": 639
         }
       },
       "section": {
@@ -10813,8 +10942,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 623,
-        "endLine": 623
+        "startLine": 644,
+        "endLine": 644
       },
       "referenceCompleted": false,
       "proposedEquivalent": "No PHP Pint integration; a future TypeScript formatter is separate",
@@ -10828,8 +10957,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 623,
-          "endLine": 623,
+          "startLine": 644,
+          "endLine": 644,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -10851,8 +10980,8 @@
         "title": "15. Optional ecosystem CLI tools",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 618,
-          "endLine": 618
+          "startLine": 639,
+          "endLine": 639
         }
       },
       "section": {
@@ -10861,8 +10990,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 624,
-        "endLine": 624
+        "startLine": 645,
+        "endLine": 645
       },
       "referenceCompleted": false,
       "proposedEquivalent": "Optional structured application log inspection",
@@ -10876,8 +11005,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 624,
-          "endLine": 624,
+          "startLine": 645,
+          "endLine": 645,
           "detail": "Reference provenance only; original checkbox unchanged."
         },
         {
@@ -10909,8 +11038,8 @@
         "title": "15. Optional ecosystem CLI tools",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 618,
-          "endLine": 618
+          "startLine": 639,
+          "endLine": 639
         }
       },
       "section": {
@@ -10919,8 +11048,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 625,
-        "endLine": 625
+        "startLine": 646,
+        "endLine": 646
       },
       "referenceCompleted": false,
       "proposedEquivalent": "Optional queue operations/monitoring adapter, not Horizon",
@@ -10934,8 +11063,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 625,
-          "endLine": 625,
+          "startLine": 646,
+          "endLine": 646,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -10987,8 +11116,8 @@
         "title": "15. Optional ecosystem CLI tools",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 618,
-          "endLine": 618
+          "startLine": 639,
+          "endLine": 639
         }
       },
       "section": {
@@ -10997,8 +11126,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 626,
-        "endLine": 626
+        "startLine": 647,
+        "endLine": 647
       },
       "referenceCompleted": false,
       "proposedEquivalent": "Optional Bun long-running server management, not Octane",
@@ -11012,8 +11141,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 626,
-          "endLine": 626,
+          "startLine": 647,
+          "endLine": 647,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         }
       ],
@@ -11030,8 +11159,8 @@
         "title": "15. Optional ecosystem CLI tools",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 618,
-          "endLine": 618
+          "startLine": 639,
+          "endLine": 639
         }
       },
       "section": {
@@ -11040,8 +11169,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 627,
-        "endLine": 627
+        "startLine": 648,
+        "endLine": 648
       },
       "referenceCompleted": false,
       "proposedEquivalent": "Optional Bun WebSocket broadcast server, not Reverb",
@@ -11055,8 +11184,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 627,
-          "endLine": 627,
+          "startLine": 648,
+          "endLine": 648,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         }
       ],
@@ -11073,8 +11202,8 @@
         "title": "15. Optional ecosystem CLI tools",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 618,
-          "endLine": 618
+          "startLine": 639,
+          "endLine": 639
         }
       },
       "section": {
@@ -11083,8 +11212,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 628,
-        "endLine": 628
+        "startLine": 649,
+        "endLine": 649
       },
       "referenceCompleted": false,
       "proposedEquivalent": "Optional TypeScript browser automation, not PHP Dusk",
@@ -11098,8 +11227,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 628,
-          "endLine": 628,
+          "startLine": 649,
+          "endLine": 649,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         }
       ],
@@ -11116,8 +11245,8 @@
         "title": "15. Optional ecosystem CLI tools",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 618,
-          "endLine": 618
+          "startLine": 639,
+          "endLine": 639
         }
       },
       "section": {
@@ -11126,8 +11255,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 629,
-        "endLine": 629
+        "startLine": 650,
+        "endLine": 650
       },
       "referenceCompleted": false,
       "proposedEquivalent": "Optional search-index adapter, not Scout",
@@ -11141,8 +11270,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 629,
-          "endLine": 629,
+          "startLine": 650,
+          "endLine": 650,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         }
       ],
@@ -11159,8 +11288,8 @@
         "title": "15. Optional ecosystem CLI tools",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 618,
-          "endLine": 618
+          "startLine": 639,
+          "endLine": 639
         }
       },
       "section": {
@@ -11169,8 +11298,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 630,
-        "endLine": 630
+        "startLine": 651,
+        "endLine": 651
       },
       "referenceCompleted": false,
       "proposedEquivalent": "Optional code-only application debugging tools, not Telescope",
@@ -11184,8 +11313,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 630,
-          "endLine": 630,
+          "startLine": 651,
+          "endLine": 651,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         }
       ],
@@ -11202,8 +11331,8 @@
         "title": "15. Optional ecosystem CLI tools",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 618,
-          "endLine": 618
+          "startLine": 639,
+          "endLine": 639
         }
       },
       "section": {
@@ -11212,8 +11341,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 631,
-        "endLine": 631
+        "startLine": 652,
+        "endLine": 652
       },
       "referenceCompleted": false,
       "proposedEquivalent": "Optional code-only application monitoring, not Pulse",
@@ -11227,8 +11356,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 631,
-          "endLine": 631,
+          "startLine": 652,
+          "endLine": 652,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         }
       ],
@@ -11245,8 +11374,8 @@
         "title": "15. Optional ecosystem CLI tools",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 618,
-          "endLine": 618
+          "startLine": 639,
+          "endLine": 639
         }
       },
       "section": {
@@ -11255,8 +11384,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 635,
-        "endLine": 635
+        "startLine": 656,
+        "endLine": 656
       },
       "referenceCompleted": false,
       "proposedEquivalent": "Run bundle migrate through optional Bun container runner",
@@ -11270,8 +11399,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 635,
-          "endLine": 635,
+          "startLine": 656,
+          "endLine": 656,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         }
       ],
@@ -11288,8 +11417,8 @@
         "title": "15. Optional ecosystem CLI tools",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 618,
-          "endLine": 618
+          "startLine": 639,
+          "endLine": 639
         }
       },
       "section": {
@@ -11298,8 +11427,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 641,
-        "endLine": 641
+        "startLine": 662,
+        "endLine": 662
       },
       "referenceCompleted": false,
       "proposedEquivalent": "No vendor/bin/pint command",
@@ -11313,8 +11442,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 641,
-          "endLine": 641,
+          "startLine": 662,
+          "endLine": 662,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         },
         {
@@ -11336,8 +11465,8 @@
         "title": "15. Optional ecosystem CLI tools",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 618,
-          "endLine": 618
+          "startLine": 639,
+          "endLine": 639
         }
       },
       "section": {
@@ -11346,8 +11475,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 647,
-        "endLine": 647
+        "startLine": 668,
+        "endLine": 668
       },
       "referenceCompleted": false,
       "proposedEquivalent": "Start optional Bundle queue manager",
@@ -11361,8 +11490,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 647,
-          "endLine": 647,
+          "startLine": 668,
+          "endLine": 668,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         }
       ],
@@ -11379,8 +11508,8 @@
         "title": "15. Optional ecosystem CLI tools",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 618,
-          "endLine": 618
+          "startLine": 639,
+          "endLine": 639
         }
       },
       "section": {
@@ -11389,8 +11518,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 653,
-        "endLine": 653
+        "startLine": 674,
+        "endLine": 674
       },
       "referenceCompleted": false,
       "proposedEquivalent": "Start optional Bundle managed Bun server",
@@ -11404,8 +11533,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 653,
-          "endLine": 653,
+          "startLine": 674,
+          "endLine": 674,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         }
       ],
@@ -11422,8 +11551,8 @@
         "title": "15. Optional ecosystem CLI tools",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 618,
-          "endLine": 618
+          "startLine": 639,
+          "endLine": 639
         }
       },
       "section": {
@@ -11432,8 +11561,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 659,
-        "endLine": 659
+        "startLine": 680,
+        "endLine": 680
       },
       "referenceCompleted": false,
       "proposedEquivalent": "Start optional Bundle WebSocket server",
@@ -11447,8 +11576,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 659,
-          "endLine": 659,
+          "startLine": 680,
+          "endLine": 680,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         }
       ],
@@ -11465,8 +11594,8 @@
         "title": "15. Optional ecosystem CLI tools",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 618,
-          "endLine": 618
+          "startLine": 639,
+          "endLine": 639
         }
       },
       "section": {
@@ -11475,8 +11604,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 665,
-        "endLine": 665
+        "startLine": 686,
+        "endLine": 686
       },
       "referenceCompleted": false,
       "proposedEquivalent": "Run optional TypeScript browser tests",
@@ -11490,8 +11619,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 665,
-          "endLine": 665,
+          "startLine": 686,
+          "endLine": 686,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         }
       ],
@@ -11508,8 +11637,8 @@
         "title": "15. Optional ecosystem CLI tools",
         "location": {
           "path": "PROGRESS.md",
-          "startLine": 618,
-          "endLine": 618
+          "startLine": 639,
+          "endLine": 639
         }
       },
       "section": {
@@ -11518,8 +11647,8 @@
       },
       "sourceLocation": {
         "path": "PROGRESS.md",
-        "startLine": 671,
-        "endLine": 671
+        "startLine": 692,
+        "endLine": 692
       },
       "referenceCompleted": false,
       "proposedEquivalent": "bundle search:import Post (proposed Scout alternative)",
@@ -11533,8 +11662,8 @@
         {
           "kind": "reference-only",
           "path": "PROGRESS.md",
-          "startLine": 671,
-          "endLine": 671,
+          "startLine": 692,
+          "endLine": 692,
           "detail": "Scope/provenance only; reference checkbox is not Bundle implementation evidence."
         }
       ],

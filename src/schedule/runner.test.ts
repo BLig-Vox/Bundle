@@ -2,7 +2,7 @@ import { afterEach, expect, test } from 'bun:test';
 import { mkdtemp, mkdir, writeFile, readFile, rm, readdir } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { acquireCommandLock } from '../console/isolation.ts';
+import { acquireScheduleLock } from './locks.ts';
 import { runDueSchedules, runScheduledTask, workSchedules } from './runner.ts';
 
 const roots: string[] = [];
@@ -24,7 +24,7 @@ test('selected execution ignores due expression but retains pause and owned over
  expect((await runScheduledTask({root,id:'report'})).results).toEqual([{id:'report',outcome:'skipped-paused'}]);
  expect(await Bun.file(join(root,'ran')).exists()).toBe(false);
  await resumeSchedule(root);
- const release=await acquireCommandLock(root,'schedule:report');
+ const release=await acquireScheduleLock(root,'report');
  try{expect((await runScheduledTask({root,id:'report'})).results).toEqual([{id:'report',outcome:'skipped-overlap'}]);}
  finally{await release!();}
  expect((await runScheduledTask({root,id:'report'})).results).toEqual([{id:'report',outcome:'completed',exitCode:0}]);
@@ -55,7 +55,7 @@ test('non-due and contended schedules do not invoke command handlers', async () 
   expect((await runDueSchedules({root,at:at()})).results).toEqual([]);
   expect(await Bun.file(join(root,'ran')).exists()).toBe(false);
   const dueRoot = await fixture();
-  const release = await acquireCommandLock(dueRoot,'schedule:report');
+  const release = await acquireScheduleLock(dueRoot,'report');
   try {
     expect((await runDueSchedules({root:dueRoot,at:at()})).results).toEqual([{id:'report',outcome:'skipped-overlap'}]);
     expect(await Bun.file(join(dueRoot,'ran')).exists()).toBe(false);

@@ -3,19 +3,19 @@ import type { DatabaseConnection } from "../database/config.ts";
 /** Explicit shipped assets, never a recursive copy of application state. */
 export const projectSources: readonly string[] = Object.freeze([
   "index.ts", "tsconfig.json", "mikro-orm.config.ts",
-  "src/cache/cache.ts",
+  "src/cache/cache.ts", "src/broadcasting/definitions.ts",
   "src/cli/development.ts", "src/cli/discovery.ts", "src/cli/event-generation.ts", "src/cli/events.ts",
   "src/cli/generators.ts", "src/cli/http.ts", "src/cli/information.ts", "src/cli/language.ts",
   "src/cli/local-operations.ts", "src/cli/logging.ts", "src/cli/maintenance.ts", "src/cli/migrations.ts",
   "src/cli/model-preflight.ts", "src/cli/model-prune.ts", "src/cli/operations.ts", "src/cli/optimization.ts",
-  "src/cli/packages.ts", "src/cli/program.ts", "src/cli/project.ts", "src/cli/publication.ts",
+  "src/cli/packages.ts", "src/cli/program.ts", "src/cli/project.ts", "src/cli/publication.ts", "src/cli/channels.ts",
   "src/cli/queue-batches.ts", "src/cli/queue-control.ts", "src/cli/queue-listen.ts", "src/cli/queue-operations.ts",
-  "src/cli/queue.ts", "src/cli/runner.ts", "src/cli/scaffolding.ts", "src/cli/schedule-control.ts",
+  "src/cli/queue.ts", "src/cli/runner.ts", "src/cli/scaffolding.ts", "src/cli/database-client.ts", "src/cli/schedule-control.ts",
   "src/cli/schedule.ts", "src/cli/testing.ts", "src/cli/tinker.ts", "src/cli/ui.ts",
   "src/configuration/configuration.ts",
   "src/console/command.ts", "src/console/isolation.ts", "src/console/loader.ts", "src/console/output.ts",
   "src/console/prompts.ts", "src/console/providers.ts", "src/console/services.ts", "src/console/testing.ts", "src/console/tinker.ts",
-  "src/database/config.ts", "src/database/connection.ts", "src/database/generators.ts",
+  "src/database/cache-table.ts", "src/database/session-table.ts", "src/database/config.ts", "src/database/connection.ts", "src/database/generators.ts",
   "src/database/history-uninstall.ts", "src/database/migration-generator.ts", "src/database/migration-tools.ts",
   "src/database/migrator.ts", "src/database/pruning-definitions.ts", "src/database/pruning.ts",
   "src/database/schema-dump.ts", "src/database/targets.ts",
@@ -32,12 +32,12 @@ export const projectSources: readonly string[] = Object.freeze([
   "src/queue/control.ts", "src/queue/dispatch.ts", "src/queue/execution-worker.ts", "src/queue/execution.ts",
   "src/queue/listener.ts", "src/queue/middleware-definitions.ts", "src/queue/middleware.ts", "src/queue/opening.ts",
   "src/queue/store.ts", "src/queue/worker.ts", "src/schedule/control.ts", "src/schedule/cron.ts",
-  "src/schedule/definitions.ts", "src/schedule/runner.ts", "src/storage/links.ts",
+  "src/schedule/definitions.ts", "src/schedule/locks.ts", "src/schedule/runner.ts", "src/storage/links.ts",
   "database/seeders/DatabaseSeeder.ts",
   "database/migrations/sqlite/Migration20261106000000.ts",
   "database/migrations/postgresql/Migration20261106000000.ts",
   "database/migrations/mariadb/Migration20261106000000.ts",
-  "docs/database.md", "docs/console.md", "docs/http.md", "docs/isolated-test-databases.md", "docs/native-orm-generators.md",
+  "docs/database.md", "docs/console.md", "docs/http.md", "docs/isolated-test-databases.md", "docs/native-orm-generators.md", "docs/broadcasting.md",
 ]);
 
 export interface ProjectPackageDependencies {

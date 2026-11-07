@@ -19,6 +19,13 @@ test("project options snapshot before awaits and return immutable bounded metada
   expect(result.directory).toBe(join(root, "snapshot")); expect(result.driver).toBe("sqlite"); expect(result.http).toBe(false);
   expect(Object.isFrozen(result)).toBe(true); expect(Object.isFrozen(result.files)).toBe(true); expect(new Set(result.files).size).toBe(result.files.length);
   expect(result.dependenciesInstalled).toBe(false);
+  expect(await Bun.file(join(result.directory, "src/schedule/locks.ts")).exists()).toBe(true);
+  expect(await Bun.file(join(result.directory, "src/cli/database-client.ts")).exists()).toBe(true);
+  expect(await Bun.file(join(result.directory, "src/cli/channels.ts")).exists()).toBe(true);
+  expect(await Bun.file(join(result.directory, "src/database/cache-table.ts")).exists()).toBe(true);
+  expect(await Bun.file(join(result.directory, "src/database/session-table.ts")).exists()).toBe(true);
+  expect(await Bun.file(join(result.directory, "src/broadcasting/definitions.ts")).exists()).toBe(true);
+  expect(await Bun.file(join(result.directory, "docs/broadcasting.md")).exists()).toBe(true);
   expect(await readFile(join(result.directory, ".gitignore"), "utf8")).toContain(".bundle-test-databases/");
   expect(JSON.parse(await readFile(join(result.directory, "package.json"), "utf8")).scripts["test:isolated"]).toContain("--isolated-databases");
   expect(await Bun.file(join(root, "changed/package.json")).exists()).toBe(false);

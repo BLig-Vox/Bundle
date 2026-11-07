@@ -5,6 +5,8 @@ import { databaseSettings, type Environment } from "../database/config.ts";
 import { withDatabase, type openDatabase } from "../database/connection.ts";
 import { className } from "../database/generators.ts";
 import { SafeMigrationGenerator } from "../database/migration-generator.ts";
+import { renderCacheTableMigration } from "../database/cache-table.ts";
+import { renderSessionTableMigration } from "../database/session-table.ts";
 import { acquireMigrationLock, assertDiffBaseline, historyLocation, lockTable, migrationPlan, positiveInteger, previewMigrations, readHistory, unlockMigrations } from "../database/migration-tools.ts";
 import { resolveTarget } from "../database/targets.ts";
 import { dumpSchema, restoreSchema } from "../database/schema-dump.ts";
@@ -173,6 +175,33 @@ export function registerMigrations(program: Command, context: { env: Environment
     }));
   program.command("migrate:unlock").description("Remove a stale isolation lock; ensure no migration is running (requires --force)")
     .action(async () => run({}, true, async orm => print({ unlocked: await unlockMigrations(orm) })));
+
+  program.command("make:cache-table").description("Generate cache entry and lock tables (not a cache runtime)")
+    .action(async () => {
+      guard(false);
+      const target = await resolveTarget(env, root, program.opts());
+      const settings = databaseSettings(target.env, root);
+      await withDatabase(async orm => {
+        const dialect = databaseSettings(target.env, root).connection;
+        const diff = renderCacheTableMigration(dialect, value => orm.driver.getPlatform().quoteIdentifier(value));
+        const generator = new SafeMigrationGenerator(orm.driver, orm.config.getNamingStrategy(), orm.config.get("migrations"));
+        const [, file] = await generator.generate({ up: [...diff.up], down: [...diff.down] }, undefined, "create_cache_tables");
+        print({ file, tables: ["bundle_cache_entries", "bundle_cache_locks"], message: "Migration generated; review its dialect SQL. A cache runtime is not included." });
+      }, { ...target, root, connect: false });
+    });
+
+  program.command("make:session-table").description("Generate a database session table migration (not a session runtime)")
+    .action(async () => {
+      guard(false);
+      const target = await resolveTarget(env, root, program.opts());
+      await withDatabase(async orm => {
+        const dialect = databaseSettings(target.env, root).connection;
+        const diff = renderSessionTableMigration(dialect, value => orm.driver.getPlatform().quoteIdentifier(value));
+        const generator = new SafeMigrationGenerator(orm.driver, orm.config.getNamingStrategy(), orm.config.get("migrations"));
+        const [, file] = await generator.generate({ up: [...diff.up], down: [...diff.down] }, undefined, "create_sessions_table");
+        print({ file, tables: ["sessions"], message: "Migration generated; review its dialect SQL. A session runtime is not included." });
+      }, { ...target, root, connect: false });
+    });
 
   program.command("make:migration [name]").description("Generate a model diff or handwritten migration stub")
     .option("--blank", "Generate empty up/down methods without changing the snapshot")

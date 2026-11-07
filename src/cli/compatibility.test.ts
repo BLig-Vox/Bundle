@@ -38,6 +38,15 @@ async function fixture() {
 
 // These tests catch missing shared registration/entry-point wiring that standalone hosts miss.
 describe("Artisan foundation entry-point compatibility", () => {
+  test("channel:list consumes registered metadata in a real CLI process without opening a database", async () => {
+    const { root, env, run } = await fixture();
+    await writeFile(join(root, "channels.ts"), 'import { defineChannels } from "./src/broadcasting/definitions.ts"; export default defineChannels([{name:"orders.{orderId}"}]);');
+    const result = await run("channel:list", "--json");
+    expect(result.code, result.stderr).toBe(0);
+    expect(JSON.parse(result.stdout)).toEqual({ channels: [{ name: "orders.{orderId}" }] });
+    expect(await Bun.file(env.DB_DATABASE).exists()).toBe(false);
+  });
+
   test("local cache commands operate on persisted namespaces across actual processes", async () => {
     const { root, env, run } = await fixture();
     await mkdir(join(root, ".bundle-cache"));

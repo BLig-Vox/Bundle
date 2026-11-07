@@ -18,6 +18,7 @@ The target must be a real built-in or trusted custom command. No command existen
 bun run bundle schedule:list --json --at 2026-11-07T12:30:00Z
 bun run bundle schedule:run --at 2026-11-07T12:30:00Z
 bun run bundle schedule:work --sleep 1000 --max-cycles 3
+bun run bundle --force schedule:clear-cache
 ```
 
 ## Definitions and matching
@@ -38,7 +39,7 @@ Trusted `schedule.ts` must be a regular single-link file≤1MiB, not a symlink. 
 
 `--at` accepts an exact UTC ISO timestamp ending `Z`, with seconds and optional1..3 fractional digits. Invalid calendar dates, local offsets and permissive platform date coercions are refused. Explicit repeated run invocations may repeat effects; there is no durable once-only record.
 
-Default overlap skip acquires `acquireCommandLock(root,"schedule:<id>")`, releases its own identity in `finally`, and reports contention without executing. These are cooperative host-local non-expiring command locks, not a multi-host transaction or cache. A crashed owner requires inspection. No automatic stale deletion or `schedule:clear-cache` alias is provided. Opting into allow bypasses this lock.
+Default overlap skip acquires an owned per-task lock with PID-namespace, PID/start-time and token identity, and releases its inode/token in `finally`; contention does not execute the task. These are cooperative host-local locks, not a multi-host transaction. Lock creation and cleanup serialize through a short private mutation gate; a busy/stale gate fails visibly and needs inspection. `schedule:clear-cache` requires global `--force`, runs only on Linux, removes only new-format locks from the same PID namespace whose recorded PID/start identity is verified stale, and retains active locks. If procfs hides an owner, signal-0 probing distinguishes a gone PID from an inaccessible live one; inaccessible identity fails closed. Different-namespace, unknown, corrupt, symlinked or otherwise unsafe state is preserved and causes a refusal. Generic command locks and legacy token-only scheduler locks are preserved and skipped because their owner/type cannot be verified; inspect legacy scheduler locks manually. The command does not clear pause/interrupt control state. Ordinary release/unlink races are skipped or retried within bounded acquisition handling. Opting into allow bypasses overlap locking.
 
 `schedule:work` polls observed minutes; default1000ms, explicit positive max-cycles optional. It executes a minute only when newer than that process's high-water mark, preventing repeat ticks and backward-clock replay. Long commands/polls can skip minutes; there is no backfill, persistent restart deduplication or catch-up. Definitions are fixed for the process. It reports per-slot metadata and bounded final counts without accumulating an unbounded history. Max-cycles counts polls, not executed tasks. SIGINT/SIGTERM propagate cooperative cancellation and choose130/143; uncooperative imports/commands can prevent shutdown because no owned process termination boundary is claimed here.
 
@@ -75,7 +76,7 @@ Interrupt is graceful: active trusted work settles before an observing run/work 
 
 Programmatic state APIs are `readScheduleControl(root)`, `pauseSchedule(root)`, `resumeSchedule(root)` and `interruptSchedule(root)` in `src/schedule/control.ts`. Read-before-import fail-closed checks do not sandbox normal CLI command discovery/import side effects.
 
-Not implemented: timezone/DST scheduling, sub-minute tasks, background finish protocol, service supervision or safe stale-mutex removal. Unsupported controls are not registered as successful no-ops.
+Not implemented: timezone/DST scheduling, sub-minute tasks, background finish protocol or service supervision. Stale-mutex removal is limited to Linux-owned new-format lock records; legacy/corrupt state remains for manual inspection. Unsupported controls are not registered as successful no-ops.
 
 ## Verification
 

@@ -1,6 +1,7 @@
 import { readFileSync } from "node:fs";
 import { lstat } from "node:fs/promises";
 import { registerModelPrune } from "./model-prune.ts";
+import { registerDatabaseClient } from "./database-client.ts";
 import { registerProject } from "./project.ts";
 import { registerTinker } from "./tinker.ts";
 import { registerUi } from "./ui.ts";
@@ -25,6 +26,7 @@ import { registerHttp } from "./http.ts";
 import { registerOptimization } from "./optimization.ts";
 import { registerMaintenance } from "./maintenance.ts";
 import { registerEvents } from "./events.ts";
+import { registerChannels } from "./channels.ts";
 import { registerQueue } from "./queue.ts";
 import { registerQueueOperations } from "./queue-operations.ts";
 import { registerQueueBatches } from "./queue-batches.ts";
@@ -95,10 +97,11 @@ export function createCli(context: CliContext = {}) {
   registerOptimization(program, { root, output });
   registerMaintenance(program, { root, output });
   registerEvents(program, { root, output });
+  registerChannels(program, { root, output });
   registerPackages(program, { root, output, signal: context.signal });
   registerLanguage(program, { root, output });
   registerPublication(program, { root, output, signal: context.signal });
-  registerSchedule(program, { root, env, output, signal: context.signal, handleSignals: context.handleSignals, prompts: context.prompts });
+  registerSchedule(program, { root, env, output, signal: context.signal, handleSignals: context.handleSignals, prompts: context.prompts, force: () => Boolean(program.opts().force) });
   registerScheduleControl(program, { root, output });
   registerQueue(program, { root, output, signal: context.signal });
   registerQueueOperations(program, { root, output, signal: context.signal });
@@ -106,6 +109,7 @@ export function createCli(context: CliContext = {}) {
   registerQueueControl(program, { root, output });
   registerQueueListen(program, { root, env, output: context.output, error: context.error, signal: context.signal });
   registerTesting(program, { root, env, output: context.output, error: context.error, signal: context.signal, globalOptions: () => program.opts() });
+  registerDatabaseClient(program, { root, env, signal: context.signal });
   registerInformation(program, { root, env, output, version, database: async () => {
     const selected = await target();
     const settings = databaseSettings(selected.env, root);

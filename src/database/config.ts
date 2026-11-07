@@ -89,7 +89,7 @@ export function databaseOptions(env: Environment = process.env, root = projectRo
     ensureDatabase: false,
     debug: false,
     logger: () => {},
-    schemaGenerator: { skipTables: ["bundle_migration_lock"] },
+    schemaGenerator: { skipTables: ["bundle_migration_lock", "bundle_cache_entries", "bundle_cache_locks", "sessions"] },
     migrations: {
       path: settings.migrationsPath,
       pathTs: settings.migrationsPath,

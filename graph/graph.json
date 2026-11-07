@@ -137,6 +137,16 @@
       "label": "Consumed native factory, custom type, query helper and observer — integrated database generators"
     },
     {
+      "id": "document:progress/section:bundle-cli-feature-ledger/section:cache-table-migration-schema-partial-foundation",
+      "type": "section",
+      "label": "Cache table migration schema — partial foundation"
+    },
+    {
+      "id": "document:progress/section:bundle-cli-feature-ledger/section:session-table-migration-schema-partial-foundation",
+      "type": "section",
+      "label": "Session table migration schema — partial foundation"
+    },
+    {
       "id": "document:progress/section:bundle-cli-feature-ledger/section:explicit-and-interactive-scheduled-task-testing-integrated-selected-execution",
       "type": "section",
       "label": "Explicit and interactive scheduled-task testing — integrated selected execution"
@@ -220,6 +230,16 @@
       "id": "document:progress/section:bundle-cli-feature-ledger/section:native-http-feature-tests-integrated-generated-live-worker-consumers",
       "type": "section",
       "label": "Native HTTP feature tests — integrated generated live-worker consumers"
+    },
+    {
+      "id": "document:progress/section:bundle-cli-feature-ledger/section:native-sqlite-client-shell-integrated-bounded-local-launch",
+      "type": "section",
+      "label": "Native SQLite client shell — integrated bounded local launch"
+    },
+    {
+      "id": "document:progress/section:bundle-cli-feature-ledger/section:native-channel-name-registry-metadata-only-listing",
+      "type": "section",
+      "label": "Native channel-name registry — metadata-only listing"
     },
     {
       "id": "document:progress/section:1-command-discovery-and-help",
@@ -1697,14 +1717,14 @@
       "label": "- Trusted root schedule.ts exports bounded copied/frozen explicit id/argv/expression/UTC/overlap definitions. Deterministic five-field numeric UTC cron supports wildcard/range/list/positive wildcard-range steps and explicit restricted day/weekday OR; no IANA/DST, seconds/macros or next-date search. schedule:list exposes safe due metadata without argv/handler execution. schedule:run executes exact due argv via real rooted runCli with fresh scopes, noninteractive prompts/discarded injected I/O and conditional status; no shell or queue. Nonzero remains failure, later due work continues; actual cancellation skips later handlers."
     },
     {
-      "id": "note:85dfdd5fc026786d",
+      "id": "note:98041438f358bd8a",
       "type": "note",
-      "label": "- Default skip overlap uses identity-owned local nonexpiring command locks; explicit allow bypasses it. Foreground schedule:work evaluates newly observed minute slots with in-process high-water deduplication, finite polling controls and bounded result counts. Backward clocks do not replay; missed minutes are not backfilled. SIGINT/SIGTERM cooperate and return130/143; uncooperative trusted imports/commands are not forcibly terminated. No persistent once-only/restart history, background finish, unsafe stale-mutex deletion, service supervisor or multi-host guarantee. Persisted controls and selected task execution were integrated later as recorded below."
+      "label": "- Default skip overlap uses versioned per-task lock records with PID-namespace/PID/Linux process-start/token identity; creation and cleanup serialize through a private non-expiring mutation gate. Explicit `schedule:clear-cache --force` removes only verified stale new-format locks in the current PID namespace on Linux, retains active owners, refuses different-namespace/corrupt/unsafe state, and preserves/skips generic and legacy token-only locks whose owner/type cannot be verified. A busy or crashed mutation gate remains for inspection. Explicit allow bypasses overlap locking. Foreground schedule:work evaluates newly observed minute slots with in-process high-water deduplication, finite polling controls and bounded result counts. Backward clocks do not replay; missed minutes are not backfilled. SIGINT/SIGTERM cooperate and return130/143; uncooperative trusted imports/commands are not forcibly terminated. No persistent once-only/restart history, background finish, service supervisor or multi-host guarantee. Persisted controls and selected task execution were integrated later as recorded below."
     },
     {
-      "id": "note:be9da3268b968f1c",
+      "id": "note:b3de235e5daa0932",
       "type": "note",
-      "label": "- Independent review reproduced import side effects after cancellation during root resolution and scheduler overriding embedding handleSignals:false. Both regressions observed red before post-await cancellation and option propagation repairs. Independent re-review confirmed absent import marker and host-owned signal/status0, focused17 tests96 assertions; leader actual list/run/work/SIGTERM tests3pass21 assertions. Final shared leader checkpoint641pass/2skip/0fail/types149 above includes real command argv/status/lock release/work dedup and strict UTC date/refusal tests. Evidence: `src/schedule`, `src/cli/schedule.test.ts`, actual CLI compatibility tests and `docs/scheduling.md`. Ordinary fixed imports/CLI discovery retain trusted ESM/cooperative limitations."
+      "label": "- Independent review reproduced import side effects after cancellation during root resolution and scheduler overriding embedding handleSignals:false. Both regressions observed red before post-await cancellation and option propagation repairs. Independent re-review confirmed absent import marker and host-owned signal/status0, focused17 tests96 assertions; leader actual list/run/work/SIGTERM tests3pass21 assertions. The new lock suite verifies live-owner preservation, stale identity removal, malformed/legacy state preservation and busy-gate refusal; CLI tests cover explicit force and JSON outcome. Evidence: `src/schedule`, `src/cli/schedule.test.ts`, actual CLI compatibility tests and `docs/scheduling.md`. Ordinary fixed imports/CLI discovery retain trusted ESM/cooperative limitations."
     },
     {
       "id": "note:73f4c4cc02bfebe4",
@@ -1735,6 +1755,26 @@
       "id": "note:45d1e58d4b23276f",
       "type": "note",
       "label": "- Actual separate CLI processes generate all four and consume them through disposable SQLite persistence: factory persist/flush, mapped custom type roundtrip, explicit query filtering and registered observer delivery. Default/custom templates, strict compilation, collisions, bounded references and no-overwrite/symlink refusal have evidence. See `src/cli/model-preflight.ts`, generator tests, actual compatibility tests and `docs/native-orm-generators.md`. No live-server/Eloquent command/flag parity implied."
+    },
+    {
+      "id": "note:1bd03f9d1c8e9ff1",
+      "type": "note",
+      "label": "- `make:cache-table` exclusively generates dialect-specific SQL for `bundle_cache_entries` and `bundle_cache_locks`, with namespace/key composite primary keys and expiry indexes. Generation uses the selected migration target with ORM connection disabled. SQLite migration application and duplicate-key rejection are exercised; subsequent model-diff generation skips these infrastructure tables to avoid destructive drops, and `migrate:fresh` refuses them as unmapped. PostgreSQL and MariaDB have renderer-only tests, not live database verification."
+    },
+    {
+      "id": "note:d8f3712617589498",
+      "type": "note",
+      "label": "- This does not implement a database-backed cache runtime. Existing `LocalCache` remains a separate `.bundle-cache/cache.sqlite` store and does not consume these tables; keep the Artisan reference item partial until an actual adapter/runtime consumes the schema and its semantics are tested. See `src/database/cache-table.ts`, `src/database/cache-table.test.ts`, `src/cli/program.test.ts` and `docs/database.md`."
+    },
+    {
+      "id": "note:e725c8b32f28f6bb",
+      "type": "note",
+      "label": "- `make:session-table` generates dialect-specific `sessions` table SQL with primary-key id, optional user id, IP address, user-agent, payload and last-activity fields plus lookup indexes. It uses the selected migration target without connecting during generation; SQLite migration/application, key fields, model-diff exclusion, rollback preservation and fail-closed fresh-reset behavior are tested. PostgreSQL and MariaDB have renderer-only tests."
+    },
+    {
+      "id": "note:6c04b5b65a5ae6d6",
+      "type": "note",
+      "label": "- This is schema only, not an HTTP session store, cookie/session-id lifecycle, expiration policy or authentication system. Keep the reference partial until a secure consuming session runtime and its expiry/rotation/concurrency behavior are implemented and tested. See `src/database/session-table.ts`, `src/database/session-table.test.ts`, `src/cli/program.test.ts` and `docs/database.md`."
     },
     {
       "id": "note:474ceffd66ae1333",
@@ -1992,7 +2032,32 @@
       "label": "- Missing API/--http option RED preceded implementation. Selected dollar-path replacement corruption, then independent shutdown-cancellation and native inherited/non-enumerable RequestInit findings were reproduced RED before repairs.85focused tests441assertions/types215 pass; initial full exposed two more stale26stub count assertions plus both active RED regressions. Repaired pre-ledger full1018pass/2opt-in live-server skips/0fail,19724assertions across108files/types215, whitespace/migration-source hygiene pass. Final source/provenance gates in loop checkpoint; only original feature-test generation reference upgraded after final gates, not browser/parallel-database provisioning/Laravel assertion parity. See src/http/testing.ts, CLI/scaffolding and generated/native tests, docs/http-testing.md."
     },
     {
-      "id": "note:841a8a37362be5a6",
+      "id": "note:22921e051931eb06",
+      "type": "note",
+      "label": "- `bundle db` launches only an existing regular single-link SQLite file through a discovered native `sqlite3` executable. It uses fixed argv with SQLite URI `mode=rw`/`nofollow=1` to refuse missing-file creation and final symlink opens; PostgreSQL/MariaDB clients are explicitly unsupported. No packages are installed, and tests use only fixture files."
+    },
+    {
+      "id": "note:5941b5864701b07e",
+      "type": "note",
+      "label": "- The child environment is a small allowlist that omits Bundle/database credentials; nonzero client status is preserved. Terminal Ctrl+C is left to the foreground SQLite client so query interruption need not close the shell; embedding AbortSignal and SIGTERM retain bounded child cleanup. Path identity is checked before launch, but external concurrent file replacement after preflight remains unsupported."
+    },
+    {
+      "id": "note:fbea8e4993e2c262",
+      "type": "note",
+      "label": "- Fake-client tests cover argv, environment secrecy, missing client/database, server-driver refusal, replacement before spawn, cancellation and terminal-style SIGINT delivery. No real `sqlite3` executable was available for an interactive native-client run; this bounded launch remains partial pending real-client and PostgreSQL/MariaDB adapters. See `src/cli/database-client.ts`, `src/cli/program.test.ts` and `docs/database.md`."
+    },
+    {
+      "id": "note:39000e13115c63f1",
+      "type": "note",
+      "label": "- `channels.ts` may default-export a bounded `defineChannels([...])` registry of unique dot-separated channel patterns. `channel:list` and `channel:list --json` consume trusted root metadata and do not open a database or contact a service; absent registration is explicitly empty, while malformed registration fails closed."
+    },
+    {
+      "id": "note:7a6dc6d1ceb4e86e",
+      "type": "note",
+      "label": "- This implements listing only. No channel authorization/principal inference, broadcast transport/client, `make:channel`, or `install:broadcasting` behavior is implied. See `src/broadcasting/definitions.ts`, `src/cli/channels.ts`, `src/cli/channels.test.ts` and `docs/broadcasting.md`."
+    },
+    {
+      "id": "note:8a6e1395825636e3",
       "type": "note",
       "label": "See [the console guide](docs/console.md) for exact supported APIs/options and the session-specific Bun preload dispatch workaround. These integrated foundations are not full Artisan parity. The compatibility inventory retains all original reference IDs and explicit PHP/markup exclusions; unchecked reference items below are unchanged. The 2026-11-07 wave-6 event-generator/queue checkpoint passed 467 tests with 2 opt-in live-server skips and no failures; strict typechecking passed in 115 files. Later complete verification and counts are recorded in the active implementation plan and loop checkpoints. This is scenario evidence, not exhaustive compatibility or live PostgreSQL/MariaDB verification."
     },
@@ -2975,6 +3040,16 @@
     },
     {
       "from": "document:progress/section:bundle-cli-feature-ledger",
+      "to": "document:progress/section:bundle-cli-feature-ledger/section:cache-table-migration-schema-partial-foundation",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger",
+      "to": "document:progress/section:bundle-cli-feature-ledger/section:session-table-migration-schema-partial-foundation",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger",
       "to": "document:progress/section:bundle-cli-feature-ledger/section:explicit-and-interactive-scheduled-task-testing-integrated-selected-execution",
       "relation": "contains"
     },
@@ -3056,6 +3131,16 @@
     {
       "from": "document:progress/section:bundle-cli-feature-ledger",
       "to": "document:progress/section:bundle-cli-feature-ledger/section:native-http-feature-tests-integrated-generated-live-worker-consumers",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger",
+      "to": "document:progress/section:bundle-cli-feature-ledger/section:native-sqlite-client-shell-integrated-bounded-local-launch",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger",
+      "to": "document:progress/section:bundle-cli-feature-ledger/section:native-channel-name-registry-metadata-only-listing",
       "relation": "contains"
     },
     {
@@ -4535,12 +4620,12 @@
     },
     {
       "from": "document:progress/section:bundle-cli-feature-ledger/section:bounded-utc-command-scheduling-integrated-local-execution",
-      "to": "note:85dfdd5fc026786d",
+      "to": "note:98041438f358bd8a",
       "relation": "has_note"
     },
     {
       "from": "document:progress/section:bundle-cli-feature-ledger/section:bounded-utc-command-scheduling-integrated-local-execution",
-      "to": "note:be9da3268b968f1c",
+      "to": "note:b3de235e5daa0932",
       "relation": "has_note"
     },
     {
@@ -4571,6 +4656,26 @@
     {
       "from": "document:progress/section:bundle-cli-feature-ledger/section:consumed-native-factory-custom-type-query-helper-and-observer-integrated-database-generators",
       "to": "note:45d1e58d4b23276f",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:cache-table-migration-schema-partial-foundation",
+      "to": "note:1bd03f9d1c8e9ff1",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:cache-table-migration-schema-partial-foundation",
+      "to": "note:d8f3712617589498",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:session-table-migration-schema-partial-foundation",
+      "to": "note:e725c8b32f28f6bb",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:session-table-migration-schema-partial-foundation",
+      "to": "note:6c04b5b65a5ae6d6",
       "relation": "has_note"
     },
     {
@@ -4829,8 +4934,33 @@
       "relation": "has_note"
     },
     {
-      "from": "document:progress/section:bundle-cli-feature-ledger/section:native-http-feature-tests-integrated-generated-live-worker-consumers",
-      "to": "note:841a8a37362be5a6",
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:native-sqlite-client-shell-integrated-bounded-local-launch",
+      "to": "note:22921e051931eb06",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:native-sqlite-client-shell-integrated-bounded-local-launch",
+      "to": "note:5941b5864701b07e",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:native-sqlite-client-shell-integrated-bounded-local-launch",
+      "to": "note:fbea8e4993e2c262",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:native-channel-name-registry-metadata-only-listing",
+      "to": "note:39000e13115c63f1",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:native-channel-name-registry-metadata-only-listing",
+      "to": "note:7a6dc6d1ceb4e86e",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:native-channel-name-registry-metadata-only-listing",
+      "to": "note:8a6e1395825636e3",
       "relation": "has_note"
     },
     {
@@ -5059,6 +5189,11 @@
       "relation": "references_command"
     },
     {
+      "from": "note:39000e13115c63f1",
+      "to": "command:artisan:channel:list",
+      "relation": "references_command"
+    },
+    {
       "from": "item:62156775a31f422b",
       "to": "command:artisan:clear-compiled",
       "relation": "references_command"
@@ -5254,6 +5389,11 @@
       "relation": "references_command"
     },
     {
+      "from": "note:7a6dc6d1ceb4e86e",
+      "to": "command:artisan:install:broadcasting",
+      "relation": "references_command"
+    },
+    {
       "from": "item:4d74120fdb77ebfa",
       "to": "command:artisan:key:generate",
       "relation": "references_command"
@@ -5294,6 +5434,11 @@
       "relation": "references_command"
     },
     {
+      "from": "note:1bd03f9d1c8e9ff1",
+      "to": "command:artisan:make:cache-table",
+      "relation": "references_command"
+    },
+    {
       "from": "item:d54ad6e3e82cdd0b",
       "to": "command:artisan:make:cast",
       "relation": "references_command"
@@ -5305,6 +5450,11 @@
     },
     {
       "from": "item:34c29d6584fab606",
+      "to": "command:artisan:make:channel",
+      "relation": "references_command"
+    },
+    {
+      "from": "note:7a6dc6d1ceb4e86e",
       "to": "command:artisan:make:channel",
       "relation": "references_command"
     },
@@ -5564,6 +5714,11 @@
       "relation": "references_command"
     },
     {
+      "from": "note:e725c8b32f28f6bb",
+      "to": "command:artisan:make:session-table",
+      "relation": "references_command"
+    },
+    {
       "from": "item:ac7f5bcc1a7a9412",
       "to": "command:artisan:make:test",
       "relation": "references_command"
@@ -5615,6 +5770,11 @@
     },
     {
       "from": "item:29e04413d30ceeed",
+      "to": "command:artisan:migrate:fresh",
+      "relation": "references_command"
+    },
+    {
+      "from": "note:1bd03f9d1c8e9ff1",
       "to": "command:artisan:migrate:fresh",
       "relation": "references_command"
     },

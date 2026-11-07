@@ -1,9 +1,10 @@
 import { afterEach, expect, test } from 'bun:test';
-import { mkdtemp, mkdir, writeFile, readFile, rm } from 'node:fs/promises';
+import { mkdtemp, mkdir, writeFile, readFile, rm, readlink } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { runCli } from './runner.ts';
 import { PassThrough, Writable } from 'node:stream';
+import { createHash, randomBytes } from 'node:crypto';
 import { createPrompts } from '../console/prompts.ts';
 const roots: string[]=[];
 afterEach(async()=>{for(const root of roots.splice(0))await rm(root,{recursive:true,force:true});});
@@ -85,4 +86,16 @@ test('schedule consumers use noninteractive prompts instead of shared stdin',asy
  expect(await runCli(['schedule:run'],{root,output:s=>output.push(s),error:()=>{}})).toBe(1);
  expect(output.join('')).not.toContain('private prompt');
  expect(await Bun.file(join(root,'prompted')).exists()).toBe(false);
+});
+
+test.skipIf(process.platform !== 'linux')('schedule:clear-cache requires force and removes only a verified stale lock',async()=>{
+ const root=await fixture();const directory=join(root,'.bundle-command-locks');await mkdir(directory,{mode:0o700});
+ const key='schedule:report';const path=join(directory,`${createHash('sha256').update(key).digest('hex')}.lock`);
+ await writeFile(path,JSON.stringify({version:1,key,pid:process.pid,pidNamespace:await readlink('/proc/self/ns/pid'),start:'0',token:randomBytes(32).toString('hex')})+'\n',{mode:0o600});
+ const output:string[]=[];const context={root,output:(value:string)=>output.push(value),error:()=>{}};
+ expect(await runCli(['schedule:clear-cache'],context)).not.toBe(0);
+ expect(await Bun.file(path).exists()).toBe(true);
+ expect(await runCli(['--force','schedule:clear-cache'],context)).toBe(0);
+ expect(JSON.parse(output.at(-1)!)).toEqual({cleared:1,active:0});
+ expect(await Bun.file(path).exists()).toBe(false);
 });

@@ -8,8 +8,8 @@
       "url": "https://laravel.com/framework/docs/artisan/commands",
       "location": {
         "path": "PROGRESS.md",
-        "startLine": 679,
-        "endLine": 679
+        "startLine": 700,
+        "endLine": 700
       }
     },
     {
@@ -19,8 +19,8 @@
       "url": "https://github.com/laravel/framework/blob/13.x/src/Illuminate/Foundation/Providers/ArtisanServiceProvider.php",
       "location": {
         "path": "PROGRESS.md",
-        "startLine": 680,
-        "endLine": 680
+        "startLine": 701,
+        "endLine": 701
       }
     },
     {
@@ -30,8 +30,8 @@
       "url": "https://laravel.com/framework/docs/scheduling",
       "location": {
         "path": "PROGRESS.md",
-        "startLine": 681,
-        "endLine": 681
+        "startLine": 702,
+        "endLine": 702
       }
     }
   ]
