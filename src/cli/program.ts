@@ -1,14 +1,44 @@
 import { readFileSync } from "node:fs";
+import { lstat } from "node:fs/promises";
+import { registerModelPrune } from "./model-prune.ts";
+import { registerProject } from "./project.ts";
+import { registerTinker } from "./tinker.ts";
+import { registerUi } from "./ui.ts";
+import type { ServiceScope } from "../console/services.ts";
+import { registerDevelopment } from "./development.ts";
 import { Command } from "commander";
 import { databaseSettings, projectRoot, type Environment } from "../database/config.ts";
-import { withDatabase, type openDatabase } from "../database/connection.ts";
-import { className, generateModel, generateSeeder } from "../database/generators.ts";
+import { withDatabase, openDatabase } from "../database/connection.ts";
+import { className, generateSeeder } from "../database/generators.ts";
+import { generateModelScaffolds } from "./scaffolding.ts";
 import { resolveTarget } from "../database/targets.ts";
 import { assertDiffBaseline } from "../database/migration-tools.ts";
 import { registerMigrations } from "./migrations.ts";
+import { registerDiscovery } from "./discovery.ts";
+import { registerScaffolding } from "./generators.ts";
+import { registerOperations } from "./operations.ts";
+import { registerTesting } from "./testing.ts";
+import { registerInformation } from "./information.ts";
+import { registerLocalOperations } from "./local-operations.ts";
+import { registerLogging } from "./logging.ts";
+import { registerHttp } from "./http.ts";
+import { registerOptimization } from "./optimization.ts";
+import { registerMaintenance } from "./maintenance.ts";
+import { registerEvents } from "./events.ts";
+import { registerQueue } from "./queue.ts";
+import { registerQueueOperations } from "./queue-operations.ts";
+import { registerQueueBatches } from "./queue-batches.ts";
+import { registerQueueControl } from "./queue-control.ts";
+import { registerQueueListen } from "./queue-listen.ts";
+import { registerSchedule } from "./schedule.ts";
+import { registerScheduleControl } from "./schedule-control.ts";
+import { registerPackages } from "./packages.ts";
+import { registerLanguage } from "./language.ts";
+import { registerPublication } from "./publication.ts";
+import type { createPrompts } from "../console/prompts.ts";
 
 type Database = Awaited<ReturnType<typeof openDatabase>>;
-type CliContext = { env?: Environment; root?: string; output?: (text: string) => void };
+type CliContext = { env?: Environment; root?: string; output?: (text: string) => void; error?: (text: string) => void; signal?: AbortSignal; handleSignals?: boolean; prompts?: ReturnType<typeof createPrompts>; services?: ServiceScope };
 const { version } = JSON.parse(readFileSync(new URL("../../package.json", import.meta.url), "utf8")) as { version: string };
 
 export function createCli(context: CliContext = {}) {
@@ -18,7 +48,8 @@ export function createCli(context: CliContext = {}) {
   const print = (data: unknown) => output(JSON.stringify(data, null, 2));
   const program = new Command()
     .name("bundle")
-    .description("Code-first database tools for Bun, powered by MikroORM")
+    .description("Code-first developer tools for Bun and TypeScript")
+    .configureOutput({ writeOut: text => output(text) })
     .version(version)
     .option("--force", "Explicitly permit destructive operations or production writes")
     .option("--database <connection>", "Select a configured connection name or database driver")
@@ -34,15 +65,56 @@ export function createCli(context: CliContext = {}) {
     }
   };
 
-  program.command("list").description("List available Bundle commands").action(() => output(program.helpInformation()));
-  program.command("about").description("Show configuration without connecting or exposing credentials").action(async () => {
-    const settings = databaseSettings((await target()).env, root);
-    print({ name: "Bundle", version, runtime: `Bun ${Bun.version}`, database: {
+  registerModelPrune(program, { root, output, signal: context.signal, database: async work => {
+    const selected = await target();
+    if (context.signal?.aborted) throw new Error("Model pruning cancelled.");
+    const settings = databaseSettings(selected.env, root);
+    if (settings.connection === "sqlite") {
+      if (settings.database === ":memory:") throw new Error("Model pruning requires an existing database file.");
+      const stat = await lstat(settings.database);
+      if (!stat.isFile() || stat.isSymbolicLink() || stat.nlink !== 1) throw new Error("Model pruning requires a regular single-link database file.");
+    }
+    if (context.signal?.aborted) throw new Error("Model pruning cancelled.");
+    return withDatabase(work, { ...selected, root });
+  } });
+  registerTinker(program, { root, services: context.services, output: context.output, signal: context.signal, openDatabase: async () => {
+    guard();
+    const selected = await target();
+    if (context.signal?.aborted) throw new Error("Tinker database opening cancelled.");
+    return openDatabase(selected.env, root, true, selected.migrationsPath);
+  } });
+  registerProject(program, { root, output, signal: context.signal, prompts: context.prompts });
+  registerDevelopment(program, { root, env, output: context.output, error: context.error, signal: context.signal });
+  registerDiscovery(program, output);
+  registerScaffolding(program, { root, output });
+  registerOperations(program, { root, env, output, signal: context.signal });
+  registerLocalOperations(program, { root, env, output });
+  registerLogging(program, { root, env, output, error: context.error });
+  registerHttp(program, { root, output, signal: context.signal });
+  registerUi(program, { root, output, signal: context.signal });
+  registerOptimization(program, { root, output });
+  registerMaintenance(program, { root, output });
+  registerEvents(program, { root, output });
+  registerPackages(program, { root, output, signal: context.signal });
+  registerLanguage(program, { root, output });
+  registerPublication(program, { root, output, signal: context.signal });
+  registerSchedule(program, { root, env, output, signal: context.signal, handleSignals: context.handleSignals, prompts: context.prompts });
+  registerScheduleControl(program, { root, output });
+  registerQueue(program, { root, output, signal: context.signal });
+  registerQueueOperations(program, { root, output, signal: context.signal });
+  registerQueueBatches(program, { root, output, signal: context.signal });
+  registerQueueControl(program, { root, output });
+  registerQueueListen(program, { root, env, output: context.output, error: context.error, signal: context.signal });
+  registerTesting(program, { root, env, output: context.output, error: context.error, signal: context.signal, globalOptions: () => program.opts() });
+  registerInformation(program, { root, env, output, version, database: async () => {
+    const selected = await target();
+    const settings = databaseSettings(selected.env, root);
+    return {
       connection: settings.connection, database: settings.database,
       ...(settings.connection === "sqlite" ? {} : { host: settings.host, port: settings.port }),
-      migrationsPath: (await target()).migrationsPath ?? settings.migrationsPath,
-    } });
-  });
+      migrationsPath: selected.migrationsPath ?? settings.migrationsPath,
+    };
+  } });
   program.command("db:check").description("Connect and verify the selected database").action(async () => {
     await db(async orm => {
       const result = await orm.checkConnection();
@@ -63,7 +135,7 @@ export function createCli(context: CliContext = {}) {
     });
   });
 
-  registerMigrations(program, { env, root, output, errorText: safeError });
+  registerMigrations(program, { env, root, output, errorText: safeError, signal: context.signal });
 
   program.command("db:seed [class]").description("Run a seeder (defaults to DatabaseSeeder)")
     .option("--class <name>", "Select a seeder class (alternative to positional name)")
@@ -80,14 +152,14 @@ export function createCli(context: CliContext = {}) {
   program.command("make:model <name>").description("Generate a code-first model, automatically discovered by MikroORM")
     .option("-m, --migration", "Also generate a model-diff migration")
     .option("-s, --seed", "Also generate a named seeder")
-    .action(async (name: string, options: { migration?: boolean; seed?: boolean }) => {
+    .option("-f, --factory", "Also generate a native model factory")
+    .action(async (name: string, options: { migration?: boolean; seed?: boolean; factory?: boolean }) => {
       if (options.migration) { guard(); await db(assertDiffBaseline); }
-      const settings = databaseSettings((await target()).env, root);
-      const created = await generateModel(settings.modelsPath, name);
-      const seeder = options.seed ? await generateSeeder(settings.seedersPath, `${name}Seeder`) : undefined;
+      databaseSettings((await target()).env, root);
+      const generated = await generateModelScaffolds(root, name, { seed: options.seed, factory: options.factory });
       let migration: string | undefined;
       if (options.migration) await db(async orm => { migration = (await orm.migrator.create(undefined, false, false, `create_${name.toLowerCase()}`)).fileName; });
-      print({ created, seeder, migration, next: "Edit model properties, then generate/review and apply a migration. Existing models are never modified by the generator." });
+      print({ ...generated, migration, next: "Edit model properties, then generate/review and apply a migration. Existing models are never modified by the generator." });
     });
   program.command("model:show [name]").description("Inspect mapped models without a database connection").action(async (name?: string) => {
     await db(async orm => {

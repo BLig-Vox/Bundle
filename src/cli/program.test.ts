@@ -4,6 +4,7 @@ import { join } from "node:path";
 import { createCli, safeError } from "./program.ts";
 import { databaseFixture } from "../database/testing.ts";
 import { withDatabase } from "../database/connection.ts";
+import { Logger } from "../logging/logger.ts";
 
 const cleanups: Array<() => Promise<unknown>> = [];
 afterEach(async () => { while (cleanups.length) await cleanups.pop()!(); });
@@ -19,6 +20,14 @@ async function fixture() {
 }
 
 describe("Bundle database CLI", () => {
+  test("routes log-follow diagnostics to the injected error handler", async () => {
+    const { root, env } = await fixture();
+    await new Logger({ root, env }).log("info", "fixture record");
+    const errors: string[] = [];
+    await createCli({ root, env, output: () => {}, error: text => errors.push(text) })
+      .parseAsync(["pail", "--follow", "--timeout", "30", "--json"], { from: "user" });
+    expect(errors.some(text => text.includes("In-place rewrites"))).toBe(true);
+  });
   test("lists commands without connecting to a database", async () => {
     const output: string[] = [];
     await createCli({ env: { DB_CONNECTION: "invalid" }, output: text => output.push(text) }).parseAsync(["list"], { from: "user" });

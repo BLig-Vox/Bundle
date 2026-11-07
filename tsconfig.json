@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
     // Environment setup & latest features
-    "lib": ["ESNext"],
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "target": "ESNext",
+    "jsx": "react-jsx",
     "module": "Preserve",
     "moduleDetection": "force",
     "allowJs": true,
@@ -10,6 +11,7 @@
 
     // Bundler mode
     "moduleResolution": "bundler",
+    "paths": { "~/*": ["./resources/js/*"] },
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
     "noEmit": true,

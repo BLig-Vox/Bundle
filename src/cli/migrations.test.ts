@@ -201,7 +201,13 @@ export class ${name} extends Migration { override async up() { await this.execut
     await writeFile(model, source);
     // Real CLI invocations start fresh modules; an in-process test would reuse
     // Bun's cached ESM class from before the model edit.
-    for (const path of ["src/cli", "src/database", "index.ts", "package.json"]) {
+    // Copy runtime modules without replacing the edited model fixture. New CLI
+    // subsystems must not require manually maintaining an incomplete folder list.
+    for (const entry of await readdir(new URL("../../src/", import.meta.url), { withFileTypes: true })) {
+      if (entry.name === "models") continue;
+      await cp(new URL(`../../src/${entry.name}`, import.meta.url), join(root, "src", entry.name), { recursive: true });
+    }
+    for (const path of ["index.ts", "package.json"]) {
       await cp(new URL(`../../${path}`, import.meta.url), join(root, path), { recursive: true });
     }
     const runFresh = async (...args: string[]) => {

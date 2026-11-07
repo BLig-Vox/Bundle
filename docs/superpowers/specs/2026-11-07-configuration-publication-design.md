@@ -1,0 +1,17 @@
+# Consumed explicit configuration publication
+
+## Scope
+
+Complete partial original item:652400405ed48a95 by integrating the existing explicit package/tag publication system into config:publish with actual config consumers, not duplicated copy logic or a successful alias to unrelated vendor assets. Bun/TypeScript code-only configuration, no PHP/markup/UI framework/install/download. Preserve dirty work and source originals; tests disposable local roots, no app DB operations/commits/pushes.
+
+## Behavior
+
+Keep no-argument `config:publish` built-in app.ts publication unchanged, exclusive/no-overwrite even global force, no publish.ts import needed. Add explicit --package <name>, --tag <tag>, --all options. Any selection uses existing trusted version1 root publish.ts via the same validation and package/tag intersection/all exclusivity rules as vendor:publish, but only config/*.ts destination assets are eligible. All-selection selects all config assets, not language/resources. No matched configuration fails, not empty successful output. Malformed/unsafe full manifest still refuses; irrelevant valid non-config sources are not read/copied. Generic errors do not expose source exceptions/bytes/paths. Selected mode outputs `{created:string[]}`; legacy output remains unchanged.
+
+Export publishConfigurationResources(options:{root,selection:PublicationSelection,signal?}) alongside existing publishVendorResources. Internally share native full-selected preflight/read/byte caps/exclusive0600 copy; avoid reimport, temporary manifest edits, duplicated unsafe writer or accepting a user predicate callback. Only internal static scope filter distinguishes vendor/all resources from configuration destinations. Existing vendor behavior/invariants/tests must remain unchanged. Preserve all selected source/destination/ancestor conflict preflight before directories, safe owned single-link source reads, per-file64KiB/total1MiB limits, force never overwrite, native cancellation and later-I/O partial-publication limitation. No transaction or hostile-tree/power-loss guarantees.
+
+OperationsContext gains optional signal, program passes it without claiming unrelated operations are cancellation-aware. Selected config mode validates selection/preabort before trusted import and checks signal after awaits before output. Built-in mode should honor pre/post-await signal too, while normal configuration modules/caches retain ordinary behavior. No implicit cache rebuild/clear after publication; cache precedence documented.
+
+## Ownership/evidence
+
+Backend/CLI worker owns only src/publication/publish.ts and publish.test.ts plus src/cli/operations.ts/operations.test.ts. Leader owns program signal wiring, actual compatibility consumers, docs/source/graph/inventory. Missing selection capability observed red in actual CLI before registration changes. Native tests verify config-only package/tag/all subset, missing selection match, invalid selectors/preabort-before-import, no-overwrite force, later failures/ancestors and existing vendor regression suite. Actual subprocesses publish default/custom package configurations, prove config source not imported during copy, config:show consumes published data, language/resource sources/outputs remain untouched, config cache precedence remains explicit, no app DB state. Independent review/full suite/types/graph/whitespace/historical180 audit before upgrading only config:publish reference; full100%goal and external services remain unfinished.

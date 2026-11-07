@@ -1,4 +1,5 @@
 import { join, resolve } from "node:path";
+import { lstat } from "node:fs/promises";
 import type { Command } from "commander";
 import { databaseSettings, type Environment } from "../database/config.ts";
 import { withDatabase, type openDatabase } from "../database/connection.ts";
@@ -12,7 +13,7 @@ type Database = Awaited<ReturnType<typeof openDatabase>>;
 type Options = { pretend?: boolean; step?: number | boolean; batch?: number; seed?: boolean; seeder?: string; isolated?: boolean; graceful?: boolean; schemaPath?: string };
 type Target = Awaited<ReturnType<typeof resolveTarget>>;
 
-export function registerMigrations(program: Command, context: { env: Environment; root: string; output: (text: string) => void; errorText: (error: unknown, env: Environment) => string }) {
+export function registerMigrations(program: Command, context: { env: Environment; root: string; output: (text: string) => void; errorText: (error: unknown, env: Environment) => string; signal?: AbortSignal }) {
   const { env, root, output } = context;
   const print = (value: unknown) => output(JSON.stringify(value, null, 2));
   const guard = (destructive: boolean, pretend = false) => {
@@ -86,6 +87,31 @@ export function registerMigrations(program: Command, context: { env: Environment
       }
       await apply(orm, options, schema);
     }));
+
+  program.command("migrate:uninstall").description("Remove verified SQLite migration tracking only; preserve application tables (requires --force)")
+    .option("--pretend", "Inspect tracking state without removal or initialization")
+    .action(async (options: { pretend?: boolean }) => {
+      const pretend = options.pretend === true;
+      guard(true, pretend);
+      const checkSignal = () => { if (context.signal?.aborted) throw new Error("Migration history uninstall cancelled."); };
+      checkSignal();
+      try {
+        const selected = await resolveTarget(env, root, program.opts()); checkSignal();
+        const settings = databaseSettings(selected.env, root);
+        if (settings.connection !== "sqlite" || settings.database === ":memory:") throw new Error("An existing SQLite file is required.");
+        const stat = await lstat(settings.database); checkSignal();
+        if (!stat.isFile() || stat.isSymbolicLink() || stat.nlink !== 1) throw new Error("Expected a regular single-link SQLite target.");
+        const { uninstallMigrationHistory } = await import("../database/history-uninstall.ts"); checkSignal();
+        const result = await withDatabase(async orm => {
+          checkSignal();
+          return uninstallMigrationHistory(orm, { pretend, force: program.opts().force === true, ...(context.signal ? { signal: context.signal } : {}) });
+        }, { ...selected, root });
+        checkSignal(); print(result);
+      } catch {
+        checkSignal();
+        throw new Error("Migration history uninstall failed. Inspect tracking state and dependencies; a completed removal is not undone by cancellation.");
+      }
+    });
 
   program.command("migrate:install").description("Install or upgrade migration tracking storage without applying migrations")
     .action(async () => run({}, false, async orm => { await orm.migrator.getExecuted(); print({ installed: true }); }));

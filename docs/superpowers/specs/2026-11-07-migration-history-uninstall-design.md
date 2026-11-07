@@ -1,0 +1,27 @@
+# Explicit migration-history uninstall
+
+## Scope
+
+Implement pending original item:f4915c707e8c7d11 as a bounded Bun native `migrate:uninstall`. Remove only verified configured migration history, not application tables/data, migration source files/snapshots, schemas or the separate migration lock table. No resets of existing application data, installs, services, commits or pushes. Development tests use disposable SQLite roots only. Preserve dirty work and all original180 references. Expanded live PostgreSQL/MariaDB support remains unverified.
+
+## Permission state
+
+Backend delegation was initially denied by the session permission gate on2026-11-07. The user then explicitly approved implementing the force-guarded command and testing deletion of `mikro_orm_migrations` ONLY in newly created disposable test databases, never existing application databases (AskUserQuestion: Allow disposable tests). This precise scope permits one retry; it does not authorize deletion of any existing application table/database, installations, provisioning, commits or other targets. No deletion occurred before consent.
+
+## Contract
+
+New database/history-uninstall.ts exports `uninstallMigrationHistory(orm, {force?,pretend?,signal?})` returning `{pretend:boolean,installed:boolean,removed:boolean}`. Strict own-data closed options; actual removal requires force===true before introspection or writes. Pretend requires no force and performs only read-only native schema queries, no history initialization. Check cancellation before/after awaits; owned fork cleanup, never caller manager flush/clear/ORM close. Generic errors never include SQL/table contents or driver details.
+
+Resolve configured history using existing historyLocation(orm). Validate safe distinct table/schema identifiers using platform quoting. Refuse history name collision with lockTable or any mapped entity table. Inspect native tables without migrator.getExecuted/ensureTable. Missing history returns installed:false/removed:false, an observation not a fabricated deletion. A view at the configured name refuses.
+
+Before dropping, validate a compatible native tracking table shape: own exactly id/name/executed_at columns, optionally Bundle batch; id primary integer, name non-null string, executed_at non-null native timestamp/date/datetime, optional batch non-null integer. Native driver introspection differences must be handled deliberately; local SQLite verified, no unsupported live claims. Refuse extra/missing columns, wrong native types/primary-key/nullability, unexpected indexes/constraints/triggers/dependencies where inspected. Prefer conservative SQLite ownership validation to pretending all-driver validation. If a server contract cannot be confidently implemented without live evidence, explicitly refuse unsupported driver rather than unsafe drop. Preserve foreign/altered state for inspection.
+
+Only after complete preflight, actual mode executes quoted drop table WITHOUT CASCADE. Do not silently remove external dependencies, disable foreign keys or drop schemas. SQLite must refuse triggers on history, inbound foreign keys from any other table, unexpected indexes/constraints; table's own ordinary native unique/name index allowed only if proven native expected schema. Don't remove lock state. Existing live lock refuses (read-only check), no automatic unlock; document cooperative limits: clients not using isolation and concurrent DDL races are not prevented. Missing lock table is not created. Database transaction can protect inspection/drop for SQLite; output only after successful commit, no false successful completion after observed abort. Reusing an ORM's native storage after dropping may retain table-existence cache; do not promise reinstallation in the same instance. CLI runs close/fresh process normally.
+
+## CLI
+
+Leader owns src/cli/migrations.ts integration and tests. Register migrate:uninstall with --pretend; no --graceful successful failures. Always require global force for real removal before target resolution/open. Resolve target once; existing regular single-link nonsymlink SQLite file preflight in both modes, reject missing/:memory: without creating storage. Use withDatabase for owned ORM cleanup; result output only after close. Pass existing named connection/path/TLS options unchanged. Signal propagated from program into migration registration (extend optional context.signal without changing ordinary existing commands). Unknown options rejected by Commander before work. No --isolated creation of a lock as part of this removal; refuse preexisting live lock instead. Trusted normal provider/bootstrap imports retain usual effects outside this command's guards.
+
+## Evidence
+
+Observed actual unknown-command red before registration. Backend/CLI tests demonstrate preview history unchanged, forced tracking removal only, app rows/unmapped tables/views/source/snapshots/lock table unchanged, missing force/invalid options/missing file refuse without writes, missing history truthful result, malformed/foreign/dependent table/view/active-lock refusal. Actual CLI process executes migrations/seeding on disposable SQLite, previews/uninstalls/reopens, verifies all application data preserved, then fresh process reinstall succeeds without applying migrations. Named target and generic diagnostics; cancellation and cleanup at appropriate native layers. Independent review, repair any confirmed issues red-first, full suite/types/graph/whitespace and historical180 provenance before one reference credit. Full100%goal remains unfinished.

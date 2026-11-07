@@ -1,0 +1,25 @@
+# Real console testing harness
+
+## Scope
+
+Complete partial original item:ed1be0bbfb566674 through a reusable consumed native console test harness around actual rooted runCli, not parser mocks, console-global patches or an unused scaffold. Code-only Bun/TypeScript, no UI framework/schema DSL. No installs/services/real application DB operations, commits or pushes. Tests use unique disposable roots and trusted fixture commands.
+
+## Public API
+
+New src/console/testing.ts with adjacent tests:
+
+`testCommand(argv:readonly string[], options:{root:string,env?:Record<string,string|undefined>,prompts?:readonly PromptStep[],signal?:AbortSignal,maxOutputBytes?:number}):Promise<CommandTestResult>`.
+
+PromptStep is closed own-data `{method:'text'|'password'|'confirm'|'select'|'multiselect'|'search',message:string,lines:readonly string[]}`. Dense list0..64, each1..32 lines, bounded4096UTF8bytes per line and64KiB total input. No newline/CR/NUL/control characters in individual submitted lines except ordinary printable Unicode; blank lines allowed for defaults. Message bounded1..4096; input snapshotted/frozen before first await. Prompt method and exact requested message must match next expected step; missing/mismatched/unconsumed steps fail harness AFTER runner-owned cleanup, not silently become an expected command exit1. Do not echo submitted values in harness diagnostics, particularly passwords.
+
+Use actual createPrompts over fresh in-memory PassThrough/Writable streams with test-only TTY/raw-mode state, not native terminal or process.stdin monkeypatches. Wrap native prompt methods to validate expected step and submit that step's lines only after native listener registration (queueMicrotask). Preserve native validation/retry/selection/search/password/typeahead semantics. Each step feeds only that prompt, so password transitions cannot swallow later steps. Native prompt transcript captured separately, never capture typed password as prompt output. Signal cooperatively aborts native prompts and actual runner; no forced termination of trusted uncooperative command/import.
+
+Root absolute/canonicalizable, argv dense bounded strings using existing command argv limits or deliberate1..128argv/4096each/64KiBtotal; no shell. Closed own-data options, captured env strings copied before await (default process.env copied). maxOutputBytes default1MiB range1..1MiB, aggregate framework output/error/prompt transcript; bounded UTF8 capture, never unbounded buffering. On output limit, mark harnessfailure, throw sink exception while runner continues its established cleanup; discard further content, then fail harness generically after cleanup even if command exit1. No process-global output interception: trusted direct console/stdout/subprocess/side effects remain outside captured injected streams. Document this and preserve actual process tests for OS lifecycle.
+
+Run real runCli with root/env/output/error/prompts/signal, `handleSignals:false` to avoid test harness owning global signal listeners. Outer runner owns scopes/providers/container it creates. Harness owns/destroys only its in-memory streams/listeners in finally after command settles. Never mutate process.exitCode/environment, supplied command inputs or real stdin/stdout. Concurrent independent harness calls must not share streams/prompt state.
+
+CommandTestResult readonly/frozen fields `{exitCode:number,output:string,error:string,promptOutput:string}` with reusable chainable assertions `assertExitCode(number)`, `assertOutputIncludes(string)`, `assertErrorIncludes(string)`, `assertPromptIncludes(string)`, `assertNoError()`. Assertions throw normal Node AssertionError (no runtime bun:test dependency), show only bounded captured diagnostic context and never include submitted prompt step values; caller-owned output can itself contain trusted secrets so no comprehensive redaction claim. Invalid assertion arguments refuse. Result fields exact captured injected output only, not merged or fabricated process logs.
+
+## Consumers/evidence
+
+Observe missing testCommand API red, implement real command/prompt consumer tests. Fixtures invoke custom definition handlers and generated make:command output via actual rooted runner. Test required-argument auto text prompting plus explicit text/password/confirm/select/multiselect/search and native validation retries, errors/status assertions, lifecycle/provider/scope disposal despite harness mismatch/output overflow, explicit input snapshots/defaults/cancellation/extra steps, no password transcript echo and no global process.exitCode/TTY/listener change, concurrent independent tests. Test both actual registered CLI generators (make:command and make:test) and custom commands to prove public utility not mock-only. Independent review and repair, full suite/types/graph/whitespace/historical180 provenance before upgrading only the original console-testing reference. Existing automatic parallel DB provisioning and feature-specific HTTP test reference remain partial; do not silently credit them. Full100%scope remains unfinished.

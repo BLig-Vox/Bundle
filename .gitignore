@@ -29,6 +29,28 @@ report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
 .env.production.local
 .env.local
 
+# generated application configuration cache (may contain secrets)
+/bootstrap/cache/
+
+# local application cache, logs, and machine-specific link ownership
+/.bundle-cache/
+/.bundle-queue/
+
+# explicit local text-mail outbox (contains unredacted recipients and bodies)
+/.bundle-mail/
+
+# local scheduler controls and owned mutation lock
+/.bundle-schedule/
+/.bundle-storage-links.json
+/.bundle-storage-links.lock
+/.bundle-command-locks/
+/storage/logs/
+
+# local maintenance state and owned mutation lock
+/storage/framework/down.json
+/storage/framework/.down.lock
+/storage/framework/.down-*.tmp
+
 # caches
 .eslintcache
 .cache

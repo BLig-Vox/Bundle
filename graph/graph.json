@@ -32,6 +32,196 @@
       "label": "Remaining verification and compatibility gaps"
     },
     {
+      "id": "document:progress/section:bundle-cli-feature-ledger",
+      "type": "section",
+      "label": "Bundle CLI feature ledger"
+    },
+    {
+      "id": "document:progress/section:bundle-cli-feature-ledger/section:discovery-and-command-help-implemented",
+      "type": "section",
+      "label": "Discovery and command help — implemented"
+    },
+    {
+      "id": "document:progress/section:bundle-cli-feature-ledger/section:custom-command-runtime-integrated-foundations",
+      "type": "section",
+      "label": "Custom command runtime — integrated foundations"
+    },
+    {
+      "id": "document:progress/section:bundle-cli-feature-ledger/section:code-only-generators-integrated-bounded-equivalents",
+      "type": "section",
+      "label": "Code-only generators — integrated bounded equivalents"
+    },
+    {
+      "id": "document:progress/section:bundle-cli-feature-ledger/section:configuration-and-environment-integrated-explicitly-non-laravel-formats",
+      "type": "section",
+      "label": "Configuration and environment — integrated, explicitly non-Laravel formats"
+    },
+    {
+      "id": "document:progress/section:bundle-cli-feature-ledger/section:native-testing-integrated-bounded-bun-adapter",
+      "type": "section",
+      "label": "Native testing — integrated bounded Bun adapter"
+    },
+    {
+      "id": "document:progress/section:bundle-cli-feature-ledger/section:local-cache-and-owned-storage-integrated-bounded-backends",
+      "type": "section",
+      "label": "Local cache and owned storage — integrated bounded backends"
+    },
+    {
+      "id": "document:progress/section:bundle-cli-feature-ledger/section:information-and-console-rendering-integrated-bounded-apis",
+      "type": "section",
+      "label": "Information and console rendering — integrated bounded APIs"
+    },
+    {
+      "id": "document:progress/section:bundle-cli-feature-ledger/section:structured-logs-and-pail-style-inspection-integrated-local-backend",
+      "type": "section",
+      "label": "Structured logs and Pail-style inspection — integrated local backend"
+    },
+    {
+      "id": "document:progress/section:bundle-cli-feature-ledger/section:code-first-http-and-executable-route-caches-integrated-bounded-runtime",
+      "type": "section",
+      "label": "Code-first HTTP and executable route caches — integrated bounded runtime"
+    },
+    {
+      "id": "document:progress/section:bundle-cli-feature-ledger/section:live-maintenance-and-bootstrap-optimization-integrated-local-operations",
+      "type": "section",
+      "label": "Live maintenance and bootstrap optimization — integrated local operations"
+    },
+    {
+      "id": "document:progress/section:bundle-cli-feature-ledger/section:local-events-and-executable-registration-cache-integrated-bounded-runtime",
+      "type": "section",
+      "label": "Local events and executable registration cache — integrated bounded runtime"
+    },
+    {
+      "id": "document:progress/section:bundle-cli-feature-ledger/section:durable-local-jobs-and-owned-consumption-integrated-bounded-runtime",
+      "type": "section",
+      "label": "Durable local jobs and owned consumption — integrated bounded runtime"
+    },
+    {
+      "id": "document:progress/section:bundle-cli-feature-ledger/section:generated-jobs-queue-snapshots-and-explicit-cleanup-integrated-local-operations",
+      "type": "section",
+      "label": "Generated jobs, queue snapshots and explicit cleanup — integrated local operations"
+    },
+    {
+      "id": "document:progress/section:bundle-cli-feature-ledger/section:atomic-retry-overrides-and-live-worker-controls-integrated-local-contracts",
+      "type": "section",
+      "label": "Atomic retry overrides and live worker controls — integrated local contracts"
+    },
+    {
+      "id": "document:progress/section:bundle-cli-feature-ledger/section:durable-command-dispatch-job-middleware-and-fresh-worker-children-integrated-local-contracts",
+      "type": "section",
+      "label": "Durable command dispatch, job middleware and fresh worker children — integrated local contracts"
+    },
+    {
+      "id": "document:progress/section:bundle-cli-feature-ledger/section:deny-default-policies-and-explicit-http-authorization-integrated-local-contracts",
+      "type": "section",
+      "label": "Deny-default policies and explicit HTTP authorization — integrated local contracts"
+    },
+    {
+      "id": "document:progress/section:bundle-cli-feature-ledger/section:explicit-local-text-mail-and-notification-adaptation-integrated-bounded-delivery",
+      "type": "section",
+      "label": "Explicit local text-mail and notification adaptation — integrated bounded delivery"
+    },
+    {
+      "id": "document:progress/section:bundle-cli-feature-ledger/section:bounded-utc-command-scheduling-integrated-local-execution",
+      "type": "section",
+      "label": "Bounded UTC command scheduling — integrated local execution"
+    },
+    {
+      "id": "document:progress/section:bundle-cli-feature-ledger/section:persisted-scheduler-pause-resume-and-graceful-interruption-integrated-local-controls",
+      "type": "section",
+      "label": "Persisted scheduler pause, resume and graceful interruption — integrated local controls"
+    },
+    {
+      "id": "document:progress/section:bundle-cli-feature-ledger/section:consumed-native-factory-custom-type-query-helper-and-observer-integrated-database-generators",
+      "type": "section",
+      "label": "Consumed native factory, custom type, query helper and observer — integrated database generators"
+    },
+    {
+      "id": "document:progress/section:bundle-cli-feature-ledger/section:explicit-and-interactive-scheduled-task-testing-integrated-selected-execution",
+      "type": "section",
+      "label": "Explicit and interactive scheduled-task testing — integrated selected execution"
+    },
+    {
+      "id": "document:progress/section:bundle-cli-feature-ledger/section:explicit-local-providers-and-consumed-provider-generation-integrated-application-lifecycle",
+      "type": "section",
+      "label": "Explicit local providers and consumed provider generation — integrated application lifecycle"
+    },
+    {
+      "id": "document:progress/section:bundle-cli-feature-ledger/section:source-driven-registered-event-generation-integrated-consumed-listeners",
+      "type": "section",
+      "label": "Source-driven registered event generation — integrated consumed listeners"
+    },
+    {
+      "id": "document:progress/section:bundle-cli-feature-ledger/section:explicit-discovered-package-metadata-integrated-cached-provider-consumption",
+      "type": "section",
+      "label": "Explicit discovered package metadata — integrated cached provider consumption"
+    },
+    {
+      "id": "document:progress/section:bundle-cli-feature-ledger/section:local-language-resources-integrated-code-only-text-consumption",
+      "type": "section",
+      "label": "Local language resources — integrated code-only text consumption"
+    },
+    {
+      "id": "document:progress/section:bundle-cli-feature-ledger/section:code-only-vendor-publication-integrated-resource-consumers",
+      "type": "section",
+      "label": "Code-only vendor publication — integrated resource consumers"
+    },
+    {
+      "id": "document:progress/section:bundle-cli-feature-ledger/section:model-associated-resource-controllers-integrated-native-http-persistence",
+      "type": "section",
+      "label": "Model-associated resource controllers — integrated native HTTP persistence"
+    },
+    {
+      "id": "document:progress/section:bundle-cli-feature-ledger/section:durable-batch-accounting-integrated-local-worker-controls",
+      "type": "section",
+      "label": "Durable batch accounting — integrated local worker controls"
+    },
+    {
+      "id": "document:progress/section:bundle-cli-feature-ledger/section:explicit-native-model-pruning-integrated-bounded-sql-deletion",
+      "type": "section",
+      "label": "Explicit native model pruning — integrated bounded SQL deletion"
+    },
+    {
+      "id": "document:progress/section:bundle-cli-feature-ledger/section:explicit-development-processes-integrated-foreground-command-group",
+      "type": "section",
+      "label": "Explicit development processes — integrated foreground command group"
+    },
+    {
+      "id": "document:progress/section:bundle-cli-feature-ledger/section:verified-sqlite-tracking-uninstall-integrated-force-guarded-history-only-removal",
+      "type": "section",
+      "label": "Verified SQLite tracking uninstall — integrated force-guarded history-only removal"
+    },
+    {
+      "id": "document:progress/section:bundle-cli-feature-ledger/section:native-console-testing-integrated-real-runner-prompt-and-assertion-harness",
+      "type": "section",
+      "label": "Native console testing — integrated real-runner prompt and assertion harness"
+    },
+    {
+      "id": "document:progress/section:bundle-cli-feature-ledger/section:configuration-only-publication-integrated-explicit-package-tag-consumers",
+      "type": "section",
+      "label": "Configuration-only publication — integrated explicit package/tag consumers"
+    },
+    {
+      "id": "document:progress/section:bundle-cli-feature-ledger/section:paired-model-factory-and-seeder-generation-integrated-native-composition",
+      "type": "section",
+      "label": "Paired model, factory and seeder generation — integrated native composition"
+    },
+    {
+      "id": "document:progress/section:bundle-cli-feature-ledger/section:offline-application-installer-and-native-setup-integrated-new-directory-creation",
+      "type": "section",
+      "label": "Offline application installer and native setup — integrated new-directory creation"
+    },
+    {
+      "id": "document:progress/section:bundle-cli-feature-ledger/section:trusted-native-javascript-tinker-integrated-local-developer-session",
+      "type": "section",
+      "label": "Trusted native JavaScript tinker — integrated local developer session"
+    },
+    {
+      "id": "document:progress/section:bundle-cli-feature-ledger/section:native-http-feature-tests-integrated-generated-live-worker-consumers",
+      "type": "section",
+      "label": "Native HTTP feature tests — integrated generated live-worker consumers"
+    },
+    {
       "id": "document:progress/section:1-command-discovery-and-help",
       "type": "section",
       "label": "1. Command discovery and help"
@@ -1182,6 +1372,631 @@
       "label": "See [the migration guide](docs/migrations.md) for the command/option contract and [the database guide](docs/database.md) for configuration and opt-in live-test instructions. These Bundle status notes do not check off the Laravel reference items below."
     },
     {
+      "id": "note:b30a4c3f3b8099a3",
+      "type": "note",
+      "label": "The autonomous implementation loop began on 2026-11-07. This ledger records verified Bun/TypeScript equivalents separately from the unchanged Laravel reference checkboxes. A generated scaffold does not imply its consuming runtime subsystem exists. See [the loop contract](docs/cli-implementation-loop.md) for iteration and completion rules."
+    },
+    {
+      "id": "note:d7b0bf0677c886d8",
+      "type": "note",
+      "label": "- `bun run bundle list [namespace]` lists registered commands and filters by exact namespace, such as `make` or `migrate`, without requiring valid database configuration. `--raw` gives sorted names/descriptions; `--format json` exposes registered names, aliases, arguments, and command-local options. Supported formats are `txt` and `json`, not every Artisan/Symfony output format or option."
+    },
+    {
+      "id": "note:98782e95469d8f1a",
+      "type": "note",
+      "label": "- `bun run bundle help [command...]` resolves command names, aliases, and nested command help without running the target action. Built-in `--help` and `--version` preserve successful exit status, and help/version output uses the injected CLI output handler."
+    },
+    {
+      "id": "note:142bc7c4bdabc3a0",
+      "type": "note",
+      "label": "- Evidence: `src/cli/discovery.test.ts` exercises namespace boundaries, sorted/raw and structured output, nested aliases, invalid formats, unknown help targets, and help/version exit semantics. Existing database CLI behavior remains covered separately. This is discovery functionality, not a claim that every referenced command is implemented."
+    },
+    {
+      "id": "note:b9157fb1e672cfcc",
+      "type": "note",
+      "label": "- The actual `index.ts` entry point now calls `runCli`; `createApplicationCli` constructs built-ins and loads trusted top-level `src/commands/*.ts` definitions before parsing. Callback definitions and class instances preserve injected context, instance/private state, parser failures and exact handler exit statuses without the runner mutating process exit state."
+    },
+    {
+      "id": "note:13ac6794ef62bf41",
+      "type": "note",
+      "label": "- Required/optional/defaulted/variadic arguments and boolean/valued/short/variadic options have parsing tests. Definitions and built-in/name/option collisions are validated before registration; module imports remain trusted executable code, not a sandbox."
+    },
+    {
+      "id": "note:4832fdc4bb272de1",
+      "type": "note",
+      "label": "- `ServiceContainer` supplies synchronous singleton/scoped/transient factories, missing/cyclic dependency checks and identity-owned reverse disposal. Runner invocations and nested `context.call` each get a fresh scope/parser; recursion defaults to a maximum depth of 16. Caller-supplied containers remain caller-owned. Async factories are unsupported; unexpected thenables are observed and eventual resources cleaned, but never-settling work can block completion."
+    },
+    {
+      "id": "note:561b1bc0374617f0",
+      "type": "note",
+      "label": "- `LifecycleRegistry` provides ordered snapshot subscriptions/unsubscribe with aggregated errors. Start failures prevent parsing but finish still runs. SIGINT/SIGTERM choose final 130/143 status, propagate an AbortSignal and clean up listeners; active handlers must cooperate and are awaited, not forcibly stopped. External abort signals propagate without automatically overriding handler exit codes. Custom definitions can opt into always-on atomic `isolation: {key?, contentionExitCode?}` using local owned lock files, explicit skip status and finally-release; there is no unsafe stale expiry or Laravel `--isolated` flag parity. Real-process stress tests cover acquire/release races and SIGKILL stale ownership."
+    },
+    {
+      "id": "note:ac1e1f4e37e2cf4e",
+      "type": "note",
+      "label": "- `createPrompts` supplies text/password/confirmation/selection/search with async validation, cancellation and fail-closed non-TTY defaults. Shared-input serialization, bounded UTF-8/typeahead, split CRLF and terminal restoration are tested; password transitions intentionally discard buffered input. Required scalar argument metadata `prompt` requests omitted values automatically, preserves required help/discovery metadata and prints missing-unprompted diagnostics before asking. Optional/variadic prompts are unsupported."
+    },
+    {
+      "id": "note:e9c27e9fd84d9c73",
+      "type": "note",
+      "label": "- Evidence: `src/console/command.test.ts`, `src/console/loader.test.ts`, `src/console/services.test.ts`, `src/console/prompts.test.ts`, `src/console/argument-prompts.test.ts`, `src/console/isolation.test.ts`, `src/cli/runner.test.ts`, and real generated-command/nested execution/exit/help/TTY prompting in `src/cli/compatibility.test.ts`. Real PTY tests verify password non-echo and complete terminal-flag restoration; these require Python 3/Unix PTY support in the test environment."
+    },
+    {
+      "id": "note:b625ecc645c8ba40",
+      "type": "note",
+      "label": "- Public `make:class`, `make:interface`, `make:enum`, `make:exception`, `make:test`, `make:config`, and `make:command` generate usable TypeScript. Declaration/exception/test names allow slash-separated directories; config and custom commands are top-level because their loaders are nonrecursive. `make:command --command <name>` selects a validated command identity; `make:test --unit` targets `tests/Unit`. `make:trait` is explicitly a TypeScript mixin alternative, not PHP trait compatibility."
+    },
+    {
+      "id": "note:f559284e933391e8",
+      "type": "note",
+      "label": "- Generators validate names/reserved types, refuse symlinked destination parents and exclusively create files without overwrite. Custom command generation preflights built-ins, aliases and existing exported command identities. Concurrent distinct-filename generation can still race on one command identity; trusted project directories must not be concurrently renamed by hostile code."
+    },
+    {
+      "id": "note:e83b4d5621df0b23",
+      "type": "note",
+      "label": "- `stub:publish` exclusively publishes twenty-five code-only `stubs/<kind>.ts.stub` templates, consumed by subsequent generators with required-token and TypeScript syntax checks. The non-source suffix keeps ordinary strict typechecking valid after publication. Existing experimental `.stub.ts` templates must be renamed, not silently migrated. Generator `--force`, arbitrary Laravel flags and unrelated domain runtimes remain unsupported."
+    },
+    {
+      "id": "note:61e80cda1dd8b6cf",
+      "type": "note",
+      "label": "- Evidence: `src/cli/scaffolding.test.ts` checks strict generated-code compilation/runtime behavior and unsafe paths; `src/cli/generators.test.ts` checks ordinary project typechecking after publication and actual configuration-loader consumption; `src/cli/compatibility.test.ts` runs publication/customization, config loading, custom names and generated unit tests through separate real CLI processes."
+    },
+    {
+      "id": "note:c406b56b7bada37e",
+      "type": "note",
+      "label": "- `config:show [name]` loads trusted TypeScript plain-object configuration and supports dot-path selection with recursive sensitive-field, known-environment-secret and credential-URL redaction. Redaction is heuristic, not a guarantee for arbitrary unknown secrets. `config:cache` atomically publishes mode-0600 JSON, requires `--force` for replacement including creation races, and `config:clear` restores source loading. A valid disk cache wins until explicitly rebuilt/cleared; the cache is gitignored because it may contain secrets."
+    },
+    {
+      "id": "note:3d3cb43735d03b23",
+      "type": "note",
+      "label": "- `config:publish` exclusively creates only built-in `config/app.ts`, not vendor/provider manifests. Configuration is a separate API from database environment selection and explicit service registrations; no automatic long-running-process reload is implied."
+    },
+    {
+      "id": "note:8831850e44ed6bb0",
+      "type": "note",
+      "label": "- `env` reports APP_ENV/NODE_ENV precedence. `key:generate` safely updates root `.env`, with explicit `--show` as the only intentional key-printing path. `env:encrypt`/`env:decrypt` consume an explicit canonical 32-byte key from `--key` or `BUNDLE_ENV_ENCRYPTION_KEY`, retain inputs, require force to replace outputs, and authenticate before atomic plaintext publication at mode 0600."
+    },
+    {
+      "id": "note:7ebc71d596a5bc2c",
+      "type": "note",
+      "label": "- Encryption uses Bundle's versioned AES-256-GCM envelope, not Laravel-compatible ciphertext. Alternate ciphers/named env files, automatic bootstrap decryption, key rotation and an application auth/encryption subsystem remain unsupported. Evidence: `src/configuration/configuration.test.ts`, `src/environment/environment.test.ts`, `src/cli/operations.test.ts`, plus separate-process config/cache and encrypted-environment round trips in `src/cli/compatibility.test.ts`, all using disposable roots."
+    },
+    {
+      "id": "note:d28630ad46c325b6",
+      "type": "note",
+      "label": "- `bundle test [files...]` invokes the current Bun executable directly, streams stdout/stderr without inserting chunk-boundary newlines, preserves failure status and forwards SIGINT/SIGTERM. `--filter` maps to native regular-expression test-name filtering; `--coverage` uses native text coverage."
+    },
+    {
+      "id": "note:85785d913281cb92",
+      "type": "note",
+      "label": "- `--parallel --processes <count>` uses isolated native worker processes, two by default. Tests prove overlapping execution in two distinct PIDs and isolated globals. Individual tests still own database/port/service fixtures; this is not Laravel automatic per-worker database provisioning or PHPUnit/Pest compatibility. Additional report formats and Laravel coverage thresholds are unsupported."
+    },
+    {
+      "id": "note:02a1d3820f1ac7af",
+      "type": "note",
+      "label": "- Evidence: `src/cli/testing.test.ts` runs real filtered/failing/coverage/worker fixtures; `src/cli/compatibility.test.ts` verifies real CLI execution, raw Unicode output, exact failure status and termination of a running test child. The full repository suite is also exercised through `bundle test`; opt-in PostgreSQL/MariaDB live tests remain separately gated."
+    },
+    {
+      "id": "note:1a3d51e7c74b4c07",
+      "type": "note",
+      "label": "- `LocalCache` is a persistent namespaced JSON-value SQLite cache with millisecond TTL, any-tag invalidation and stale-tag pruning. CLI `cache:clear`, `cache:forget` and `cache:prune-stale-tags` consume `.bundle-cache/cache.sqlite` and optional trusted `config/cache.ts`; unsupported drivers/settings are rejected. Cache state is separate from ORM databases and migration/scheduler locks."
+    },
+    {
+      "id": "note:b7154dd322884c9c",
+      "type": "note",
+      "label": "- `storage:link` and `storage:unlink` consume root-relative mappings in trusted `config/storage.ts`, preserve unrelated files/links, and record device/inode/target ownership. Creation requires real existing parents/targets; unlink handles owned dangling or changed targets, rejects substitutions and reconciles missing owned destinations. Stale lock removal requires manual inspection; no unsafe automatic expiry or hostile concurrent tree-renaming guarantee is claimed."
+    },
+    {
+      "id": "note:6c78e1a96bff691d",
+      "type": "note",
+      "label": "- Evidence: `src/cache/cache.test.ts`, `src/storage/links.test.ts`, `src/cli/local-operations.test.ts` and separate-process namespace/tag/key/link operations in `src/cli/compatibility.test.ts`. No Redis/Memcached or unrestricted filesystem parity is claimed."
+    },
+    {
+      "id": "note:8a19c6e9c55951d1",
+      "type": "note",
+      "label": "- `about --only environment,database,cache` selects safe application/runtime/environment/cache/database-setting sections without connecting; unselected database configuration is not evaluated. `docs [page] --list --json` inspects safe local Bundle Markdown pages; only explicit `--open` launches the platform opener without a shell. It does not fetch or execute documentation."
+    },
+    {
+      "id": "note:0b0cf6ccc82f0cc4",
+      "type": "note",
+      "label": "- `createConsoleOutput` provides semantic/color messages, sanitized bounded tables, newline progress snapshots and explicit caller-driven spinner frames. Redirected output is plain; `NO_COLOR` suppresses color. Completion and close are idempotent. Unicode width covers common wide ranges, not full terminal/grapheme shaping; no automatic background animation is promised."
+    },
+    {
+      "id": "note:691b08e536f579d1",
+      "type": "note",
+      "label": "- Evidence: `src/cli/information.test.ts`, `src/console/output.test.ts` and actual entry-point docs/about/rendering consumers in `src/cli/compatibility.test.ts`. These APIs do not imply an HTTP/UI framework, queue or scheduler."
+    },
+    {
+      "id": "note:fc16f3ace4e40fa6",
+      "type": "note",
+      "label": "- `Logger` appends mode-0600 bounded JSONL records with UUID/time/severity and validated plain context under `storage/logs`; known secrets/sensitive fields/credential URLs are heuristically redacted, never guaranteed for arbitrary unknown secrets. Unsafe parents/files/hard links are refused."
+    },
+    {
+      "id": "note:a21a55db9bb5ecaa",
+      "type": "note",
+      "label": "- `pail` supports bounded snapshots, `--lines`, severity/regex filters, JSON and incremental follow with explicit timeout/signal cleanup. Initial lines do not cap later bursts. Watchers plus 100 ms idle rescans track offsets/inodes and complete records; rotation/truncation and intrinsically undetectable rewrite gaps are warned on stderr, separately from JSONL. No lossless audit transport, automatic retention manager, remote backend or installed Laravel Pail package is claimed."
+    },
+    {
+      "id": "note:e60abdd725c02710",
+      "type": "note",
+      "label": "- Evidence: `src/logging/logger.test.ts`, `src/cli/logging.test.ts`, injected-diagnostic integration in `src/cli/program.test.ts` and actual CLI snapshot/follow in `src/cli/compatibility.test.ts`. Review regressions cover burst loss, exact byte boundaries, invalid context, rotation and missed-notification recovery; repeated focused runs precede whole-suite verification."
+    },
+    {
+      "id": "note:cc73507326b8b6b9",
+      "type": "note",
+      "label": "- Bun-native Request/Response routing supplies literal/colon parameters, independent URL decoding, per-request state, ordered next-once middleware, HEAD/OPTIONS, sorted Allow and safe unexpected-error responses. Code-only validation bounds JSON bodies and supplies typed safe errors; explicit JSON resources/collections never automatically hide arbitrary model secrets."
+    },
+    {
+      "id": "note:d00fcef1d1cb4a5c",
+      "type": "note",
+      "label": "- Trusted root routes are inspected with `route:list` path/method/name filters, JSON and verbose middleware metadata. `serve` defaults to loopback:8000, validates binding, reports ephemeral readiness, refuses occupied ports and owns its Bun worker. Startup cancellation handles never-settling imports; shutdown closes connections and terminates only an unresponsive owned worker after 250 ms. Signals select 130/143; unexpected worker closure fails. This is not managed reload, a production process manager or a security sandbox."
+    },
+    {
+      "id": "note:afd52e0d0a741d86",
+      "type": "note",
+      "label": "- Cacheable `defineRoutes` descriptors refer to separate safe root-relative TypeScript handler/middleware modules and optional own class methods with fresh per-request instances. `route:cache` validates/hydrates before atomic bounded mode-0600 publication; replacement requires force. Listing and serving consume the cache before directly loading the entrypoint; corruption fails without fallback. Root entrypoint references are rejected, but trusted module dependencies can import it transitively. `route:clear` preserves unrelated config/locks; running workers require restart to load changes. Closure Routers are usable but explicitly uncacheable."
+    },
+    {
+      "id": "note:7d459eb3288b4efc",
+      "type": "note",
+      "label": "- Runtime-backed controller/middleware/request/resource/rule generators emit executable code with nested relative imports and consumed custom stubs. Middleware is pass-through; schema/fields/predicates are examples, not automatic auth/model policies. Model-aware controller flags, authentication and reload remain unfinished; live maintenance is implemented separately below. Evidence: `src/http/*.test.ts`, `src/cli/http.test.ts`, scaffold/generator tests and separate actual CLI/server/cache/generated-code consumption in `src/cli/compatibility.test.ts`; see [the HTTP guide](docs/http.md)."
+    },
+    {
+      "id": "note:54bf0b437205b6d7",
+      "type": "note",
+      "label": "- `down`/`up` control persistent bounded versioned mode-0600 state that the HTTP worker reads before every request. The same live listener blocks with no-store JSON503 and optional bounded retry/refresh headers, then resumes without restart. Canonical root aliases work; unsafe permissions, corrupt/unowned state, symlinked parents/files and foreign/stale mutation locks are preserved for manual inspection. No secret bypass, rendered markup, alternate status or redirect options are implied."
+    },
+    {
+      "id": "note:79d1e880c35df8b9",
+      "type": "note",
+      "label": "- `optimize`/`optimize:clear` invoke the real configuration, executable route and executable event caches, reporting every completed/failed/explicitly unconfigured target. All targets are attempted after ordinary errors, any failure chooses a nonzero status, trusted exception text is not echoed and partial writes/removals remain visible. Force is required for cache replacement. Clear preserves application cache data, maintenance state and unrelated locks/files; it is not a transaction or a no-op alias for excluded PHP artifacts."
+    },
+    {
+      "id": "note:d4b25b8e7e3116bb",
+      "type": "note",
+      "label": "- Evidence: `src/maintenance/*.test.ts`, `src/cli/maintenance.test.ts`, canonical-root HTTP integration, and actual CLI down/up and aggregate cache consumption/clear/partial failure in `src/cli/compatibility.test.ts`. See the HTTP and console guides. Fixed trusted imports retain Bun ESM caching; changed-source cache rebuilds use a fresh CLI process, not in-process hot reload."
+    },
+    {
+      "id": "note:12118d40f600a390",
+      "type": "note",
+      "label": "- `EventBus` provides sequential snapshot dispatch, payload/signal delivery, registration-owned idempotent unsubscribe, named listener introspection and ordered aggregate failures. Cancellation awaits active work and skips later listeners without itself throwing. Explicit branded `events.ts` descriptors resolve safe trusted TypeScript exports and own class methods with fresh instances. No automatic payload validation, durable delivery, queued dispatch or listener dependency injection is implied."
+    },
+    {
+      "id": "note:0dfa58c16d989dcf",
+      "type": "note",
+      "label": "- `event:list` reports both events and listener identities without invoking listeners. `event:cache` atomically publishes bounded mode-0600 executable references, and valid cache precedence is consumed by real next-process dispatch. `event:clear` validates format before scoped idempotent removal, preserving corrupt/unrelated content and other caches/locks. Direct entrypoint references are rejected; trusted transitive imports and normal ESM caching remain explicit. Existing buses/running services are not hot-reloaded."
+    },
+    {
+      "id": "note:7674e2ecc99d32af",
+      "type": "note",
+      "label": "- `make:event` and `make:listener` exclusively emit nested code consumed by the bus. Stable event identities include every namespace segment, preventing basename cross-delivery. Twenty published stubs include required event/runtime tokens and customized listeners; actual next-process cached dispatch proves payload delivery and namespace separation. Registration is explicit; event:generate and queued listeners remain unfinished."
+    },
+    {
+      "id": "note:3185da03dea3b5c3",
+      "type": "note",
+      "label": "- Evidence: `src/events/*.test.ts`, `src/cli/events.test.ts`, generator/scaffold tests and separate CLI inspection/cache/generated dispatch/clear in `src/cli/compatibility.test.ts`; see [the event guide](docs/events.md). Local callbacks do not imply durable delivery; the separate queue backend is described below."
+    },
+    {
+      "id": "note:82597d9851d083a4",
+      "type": "note",
+      "label": "- Dedicated private owned SQLite at `.bundle-queue/queue.sqlite` persists lossless bounded JSON job references, priority/FIFO/delayed availability, atomic random owner receipts, lease heartbeat/expiry recovery, stored attempt policy and failed-job retry/deletion. It is independent of ORM databases/DB_CONNECTION; unsafe/unrelated files/schema/sidecars are refused. Lease-sensitive clocks are sampled after acquiring immediate write locks, verified with real contention barriers. Delivery is at least once, not exactly-once effects or multi-host evidence."
+    },
+    {
+      "id": "note:4b63332b1c22c1bd",
+      "type": "note",
+      "label": "- `queue:work` executes trusted function/own class-method jobs in fresh owned Bun workers, delivering payload/AbortSignal with bounded timeout/cancellation and sanitized outcomes. Only current unexpired receipts acknowledge/settle; lost heartbeat stops owned execution without inventing success. Cancellation refunds/requeues even at the last attempt; failed settlement distinguishes retry from permanent failure. Priority, once/stop-when-empty/max-jobs, idle sleep and backoff are supported. Timing flags use milliseconds; producer maxAttempts supplies the default, and optional --tries1–100 atomically persists a chosen budget on newly considered eligible work."
+    },
+    {
+      "id": "note:2fcd7e8fb99716d7",
+      "type": "note",
+      "label": "- `queue:failed --limit 1..1000 --after <id>` pages through ascending failure IDs with generic metadata and explicit continuation, never raw payloads/exception messages. Deleted cursors do not cause offset skips; pages are live queries, not frozen snapshots. Bad queue/cursor/size options refuse before storage creation. `queue:retry <id>` resets one failed job; force-required `queue:forget <id>` removes only a failed row, with explicit missing-ID results. Signals select 130/143 and release/refund active cancellation. System-service self-respawn, batches, server/Redis adapters and queued events remain unfinished; persisted pause/resume/graceful restart and owned listen child cycles are described below."
+    },
+    {
+      "id": "note:bcd9b0c2ebb7307c",
+      "type": "note",
+      "label": "- Evidence: `src/queue/*.test.ts`, `src/cli/queue.test.ts` and actual CLI execution/acknowledgment, priority limits, failure/retry/forced deletion and SIGINT/SIGTERM reclaim in `src/cli/compatibility.test.ts`; see [the queue guide](docs/queues.md). Tests use disposable local state; worker isolation is not a sandbox or cleanup of application-spawned processes."
+    },
+    {
+      "id": "note:4e18645a7916a5ab",
+      "type": "note",
+      "label": "- `make:job` exclusively emits nested own-method examples under `src/jobs`, consumed through persisted real CLI execution. Sixteen published stubs include customizable job output. The generator shares the queue's descriptor validation before writing, refusing exports above 128 characters or final module paths above 512; exact accepted boundaries enqueue/reserve/execute/ack. Job middleware and automatic registration/dispatch are not implied."
+    },
+    {
+      "id": "note:57daeecca96af649",
+      "type": "note",
+      "label": "- `queue:monitor --queue <name>` reports disjoint ready/delayed/reserved/expired/failed counts. An optional maximum compares nonfailed counts; equality succeeds, exceeding emits real local cached `queue.busy` metadata and exits nonzero. No payloads/reasons are exposed; listener failures are sanitized. This is a snapshot command, not a monitoring daemon, durable notification or Redis/Horizon evidence."
+    },
+    {
+      "id": "note:a5f0f95a66f29228",
+      "type": "note",
+      "label": "- Force-required `queue:clear <queue>` deletes only unreserved ready/delayed jobs, preserving live and expired receipts, failed history and other queues. `queue:flush` and `queue:prune-failed` require exactly one explicit queue/all scope; pruning uses a strict before-epoch-ms cutoff. Invalid inputs/selections and absent force refuse before opening storage. Existing schema/ownership/lease APIs remain unchanged; no automatic retention or all-job reset is implied."
+    },
+    {
+      "id": "note:a395f0742f9b4108",
+      "type": "note",
+      "label": "- Evidence: `src/queue/operations.test.ts`, `src/cli/queue-operations.test.ts`, generator tests and actual CLI pages/cursor deletion, threshold event cache consumption, scoped clear/strict prune/flush/refusals in `src/cli/compatibility.test.ts`. Independent review reproduced the generator-length mismatch and regression-first repair/re-review passed; queue operations had no verified scoped findings. See [the queue guide](docs/queues.md) for limits and programmatic contracts."
+    },
+    {
+      "id": "note:f5da9b16f5857b72",
+      "type": "note",
+      "label": "- Optional `queue:work --tries1–100` chooses an atomic persisted budget for newly considered eligible candidates. Lower limits classify exhausted work without extra execution; higher limits can recover expired candidates before applying old exhaustion. Omitted overrides retain the stored producer/previous policy. Live/unselected/future work is protected, cancellation refunds its attempt but retains policy, and retry resets attempts. Exhaustion is lazy/selected, not a global sweep; timeout/backoff/sleep remain milliseconds."
+    },
+    {
+      "id": "note:ebf665806edef328",
+      "type": "note",
+      "label": "- Persisted root-scoped `queue:pause`/`queue:resume` affect named queues at claim boundaries. `queue:restart` changes a generation, letting active work settle before successful exit without another claim; a new consumer baselines the latest token. Paused work is currently ineligible for once/stop-when-empty. Poll delay and read-to-claim races are explicit; this is not atomic global freeze, active-job cancellation, self-respawn or queue:listen supervision."
+    },
+    {
+      "id": "note:4095d8731476e1d6",
+      "type": "note",
+      "label": "- Private bounded version1 control state uses owned nonexpiring mutation locks and atomic publication, canonical roots, strict keys/queue limits/permissions and corrupt/unsafe preservation. Normal atomic replacement/first-publication reader races use bounded retries; persistent unsafe state or exhausted retries fail closed rather than defaulting clean. Independent concurrency repair re-review observed zero errors across28k reads/3k pause-resume replacements, versus2336 before; actual idle CLI subsequently consumes and acknowledges real work."
+    },
+    {
+      "id": "note:b35506d25b039f38",
+      "type": "note",
+      "label": "- Independent review also reproduced an already-expired claim after a long exhaustion scan. Regression-first repair uses ID-keyset progress, a fresh publication clock after scanning/receipt generation and SQL due/expiry rechecks, including backward-clock ownership protection. Reviewer10k-candidate reproduction improved from1682ms/expired ack to14ms/valid ack; post-publication stalls can still consume lease time. Evidence: `src/queue/retry-policy.test.ts`, `src/queue/control.test.ts`, CLI tests and actual priority/tries/timeout/cancellation/live-control/concurrent-publication processes in `src/cli/compatibility.test.ts`. These are bounded local tests, not exhaustive scheduling or multi-host proof."
+    },
+    {
+      "id": "note:e56af4b50b33a76e",
+      "type": "note",
+      "label": "- `dispatchCommand({root,argv,queue?,availableAt?,maxAttempts?,middleware?})` snapshots bounded explicit arguments/references before opening private queue storage. A disjoint version1 command envelope preserves the jobs schema and legacy module jobs; owned execution invokes the real rooted runner with fresh scopes, noninteractive prompts, discarded injected I/O and optional finished commandExitCode. Actual CLI cases cover deferred discovery, exact argv/no shell, built-in generation, nonzero retry/exhaustion/source-change recovery, timeout and cooperative cancellation/refund. Returned130/143 alone is failure, not cancellation. No environment/services/closures are serialized; argv is stored unredacted and trusted direct output/subprocesses remain possible. Upgrade consumers before producing new envelopes."
+    },
+    {
+      "id": "note:47871a12f097ce4d",
+      "type": "note",
+      "label": "- Invalid stored JSON/descriptors now decode to nullable reservation/failed job values, fail generically under normal receipt/attempt accounting and retain raw SQLite text for inspection. Independent review reproduced the old first-row parse failure rolling back claims and starving later work; regression-first repair and independent re-review verify later consumption, history, cancellation refund and raw retention without an invented executable or database reset."
+    },
+    {
+      "id": "note:0642f7e44e8e4d12",
+      "type": "note",
+      "label": "- `make:job-middleware` emits safe nested pass-through functions with computed imports and a consumed seventeenth custom stub; descriptor export/module bounds are checked before output. Up to16 strict executable references persist with module or command jobs and run inside the owned worker, with fresh own-method instances, ordered next-once nesting, awaited downstream and shared timeout/cancellation. No-next intentionally acknowledges without invoking the target. Native-Promise next always propagates downstream failure even when locally caught; explicit next.recover(handler) permits only successful module recovery and is itself awaited. This deliberate Bun contract avoids ambiguous Promise-observation heuristics; nonzero command status cannot be recovered into success. Actual generated/customized persisted middleware, failure/duplicate/short-circuit/timeout and explicit recovery cases execute; independent recovery re-review passed."
+    },
+    {
+      "id": "note:8726595a4118971f",
+      "type": "note",
+      "label": "- `queue:listen` starts one fresh owned rooted queue:work --once Bun child per cycle, validates before starting and forwards raw bounded-decoded streams without accumulating output. max-cycles counts invocations (including empty/paused cycles), and sleep applies every cycle. Nonzero child exits fail closed. Restart generation is observed between children after active settlement; cancellation/output failure terminates/reaps only the owned child with1000ms escalation. Regression-first repairs cover root aliases, throwing writers and inherited grandchild pipes;250ms post-exit drain then reader cancellation prevents hangs but can lose late output. No process-group cleanup/service self-respawn, forced restart of hung active imports, Redis or multi-host guarantee is claimed. Independent lifecycle review and actual fresh-PID/restart/SIGTERM entry-point cases passed."
+    },
+    {
+      "id": "note:3c91d4afddc1a506",
+      "type": "note",
+      "label": "- Leader verification before ledger credit:581 passing tests,2 opt-in live-database skips,0 failures; strict types133 and79 registered built-ins. Documentation and evidence are in `docs/queues.md`, dispatch/middleware/listener tests and `src/cli/compatibility.test.ts`. Broader scheduling/auth/providers/batches/adapters and live-service verification remain unfinished; these local contracts are not full Artisan parity."
+    },
+    {
+      "id": "note:9baaa95a2b4b8f69",
+      "type": "note",
+      "label": "- `make:policy` emits nested own-can classes with computed aliased runtime imports and an eighteenth consumed stub. Default policies deny; custom async policies consume explicitly resolved principal/resource/ability/signal. `evaluatePolicy` requires strict boolean decisions, `authorizePolicy` throws generic denial, and explicit `policyMiddleware` returns no-store JSON403 before handlers. Invalid/throwing decisions become Router-sanitized500 without private data; unrelated downstream failures are not disguised as denial."
+    },
+    {
+      "id": "note:c232148a16f5aaf6",
+      "type": "note",
+      "label": "- Independent review reproduced cancellation between evaluation completion and caller continuation, allowing an already-aborted handler to run. Both nested-microtask regressions were observed red before immediate post-await signal checks repaired the callers. Independent re-review reproduced aborted/rejected authorization and no handler invocation; no remaining verified scoped defect. Cancellation remains cooperative, not forced termination of trusted application work."
+    },
+    {
+      "id": "note:7e57c5535b399dc2",
+      "type": "note",
+      "label": "- Actual CLI/live HTTP tests consume default/customized generated policies, verify owner/guest/other decisions, strict imports/stub customization/no overwrite and fail-closed errors. Fresh leader full verification:593 pass,2 opt-in live-database skips,0 fail,15211 assertions across64 files; strict types135,80 registered built-ins, graph freshness and whitespace pass before ledger update. This is authorization only: no authentication/session/token verification, trusted header identity inference, automatic route protection or model-aware installer flags. See `src/http/authorization.test.ts`, generator tests, `src/cli/compatibility.test.ts` and `docs/http.md`."
+    },
+    {
+      "id": "note:d025be2b3430412a",
+      "type": "note",
+      "label": "- `make:mail` and `make:notification` emit nested classes with computed aliased imports, consumed custom stubs and no implicit sending; twenty published templates compile under ordinary strict checking. Explicit sendMail/sendMailable and notifyMail consume copied/frozen closed text-message data and injected transports. LocalOutboxMailTransport persists version1 JSON privately under gitignored `.bundle-mail/outbox`, separately from ORM databases/logs/queues. Acceptance is local persistence only, not SMTP/inbox delivery, authentication, notification-table history, extra channels, attachments or markup."
+    },
+    {
+      "id": "note:1c263f8e049c853a",
+      "type": "note",
+      "label": "- Bounds include1–32 conservative ASCII mailboxes,320-byte addresses,998-byte control-free subject,64KiB body and128KiB whole message/record. Unsafe/private filesystem state refuses without reset or body/recipient diagnostics. Complete file plus relevant directories sync before receipt, conditional on OS/filesystem fsync guarantees; no power-loss simulation or atomic hostile tree-replacement claim. Explicit read exposes content only to its caller; list returns bounded filesystem-order metadata and iterate streams caller-controlled traversal. Neither is a stable snapshot/cursor. Matching incomplete two-link publications are omitted, unrelated hardlinks refuse; stale crash remnants require inspection."
+    },
+    {
+      "id": "note:3b4532e486be364f",
+      "type": "note",
+      "label": "- Regression-first repairs cover temporary inode substitution, abort-after-link, unbounded/ordinary1001-message listing failure, normal concurrent publication listing, record-limit mismatch and missing directory sync. Independent repair re-review reproduced all four later findings resolved, including1001-message traversal and paused real publication; no remaining verified scoped important defect. Actual separate CLI processes consume generated/default/custom mail and notifications, lossless content, no overwrite/private modes and invalid-header refusal. Evidence: delivery runtime/tests, generator tests, `src/cli/compatibility.test.ts`, `docs/mail.md`. Final leader pre-ledger verification641pass/2 opt-in live-database skips/0fail,15487 assertions across71 files/types149; graph freshness/whitespace pass,85 registered built-ins."
+    },
+    {
+      "id": "note:fc08556e835bd1ed",
+      "type": "note",
+      "label": "- Trusted root schedule.ts exports bounded copied/frozen explicit id/argv/expression/UTC/overlap definitions. Deterministic five-field numeric UTC cron supports wildcard/range/list/positive wildcard-range steps and explicit restricted day/weekday OR; no IANA/DST, seconds/macros or next-date search. schedule:list exposes safe due metadata without argv/handler execution. schedule:run executes exact due argv via real rooted runCli with fresh scopes, noninteractive prompts/discarded injected I/O and conditional status; no shell or queue. Nonzero remains failure, later due work continues; actual cancellation skips later handlers."
+    },
+    {
+      "id": "note:85dfdd5fc026786d",
+      "type": "note",
+      "label": "- Default skip overlap uses identity-owned local nonexpiring command locks; explicit allow bypasses it. Foreground schedule:work evaluates newly observed minute slots with in-process high-water deduplication, finite polling controls and bounded result counts. Backward clocks do not replay; missed minutes are not backfilled. SIGINT/SIGTERM cooperate and return130/143; uncooperative trusted imports/commands are not forcibly terminated. No persistent once-only/restart history, background finish, unsafe stale-mutex deletion, service supervisor or multi-host guarantee. Persisted controls and selected task execution were integrated later as recorded below."
+    },
+    {
+      "id": "note:be9da3268b968f1c",
+      "type": "note",
+      "label": "- Independent review reproduced import side effects after cancellation during root resolution and scheduler overriding embedding handleSignals:false. Both regressions observed red before post-await cancellation and option propagation repairs. Independent re-review confirmed absent import marker and host-owned signal/status0, focused17 tests96 assertions; leader actual list/run/work/SIGTERM tests3pass21 assertions. Final shared leader checkpoint641pass/2skip/0fail/types149 above includes real command argv/status/lock release/work dedup and strict UTC date/refusal tests. Evidence: `src/schedule`, `src/cli/schedule.test.ts`, actual CLI compatibility tests and `docs/scheduling.md`. Ordinary fixed imports/CLI discovery retain trusted ESM/cooperative limitations."
+    },
+    {
+      "id": "note:73f4c4cc02bfebe4",
+      "type": "note",
+      "label": "- `schedule:pause`, `schedule:resume` and `schedule:interrupt` mutate separate private version1 `.bundle-schedule/control.json`, consumed by actual observing run/work before source import and between handlers/polls. Paused due tasks report skipped-paused without handler/overlap lock; resume allows future observed slots or a new explicit run, not backfill. Interrupt changes generation, waits for active trusted work to settle, skips later tasks and lets a new consumer baseline the latest token. Existing command failures remain failures. It is not force-cancellation, a service supervisor, atomic global freeze/claim or multi-host guarantee."
+    },
+    {
+      "id": "note:4597852c8aedd366",
+      "type": "note",
+      "label": "- Strict owned0700/0600 bounded closed JSON and nonexpiring identity-owned mutation locks preserve unsafe/corrupt/foreign state for inspection. Atomic publication readers retry unstable snapshots rather than killing healthy consumers. Native errors are generic. First-publication pause initially masqueraded as interrupt; leader regression observed cycles1/interrupted versus expected continued skipped-paused work before a stable absent UUID sentinel repaired it. Only explicit interrupt changes that token. No power-loss transactional durability, hostile concurrent tree-replacement defense or automatic stale unlock is implied."
+    },
+    {
+      "id": "note:5f887977b5d4b91f",
+      "type": "note",
+      "label": "- Actual separate CLI processes prove persisted pause/resume affects due markers, active interruption waits for settlement and skips later work, new consumers baseline it, private modes and no ORM coupling. Independent read-only review found no verified scoped defect; focused18 tests and actual2 process cases passed. Fresh leader pre-ledger full verification654pass/2 opt-in live-database skips/0fail,17196 assertions across73files/types153; graph freshness/whitespace pass and88 measured built-ins. Evidence: `src/schedule/control.test.ts`, `runner.test.ts`, `src/cli/schedule-control.test.ts`, actual compatibility tests and `docs/scheduling.md`. Selected schedule:test was integrated later below; background finish/safe stale-cache clearing, timezone/DST and broader backlogs remain unfinished."
+    },
+    {
+      "id": "note:5a8689e1b9767b63",
+      "type": "note",
+      "label": "- `make:factory --model` emits a native MikroORM Factory with computed model import, readonly model and explicit copied attributes; no inferred defaults/Faker. `make:cast` emits an explicitly mapped native string Type with example trim/preserve conversion; `make:scope` emits a real bounded em.find helper, not an automatic Eloquent global scope; `make:observer` emits an explicitly registered native EventSubscriber with an example afterCreate counter. Generation does not import model source, connect to a database or edit mappings."
+    },
+    {
+      "id": "note:c007299e6e4e88b7",
+      "type": "note",
+      "label": "- Bounded top-level model preflight validates syntax/exports and distinguishes real local class declarations/aliased exports from lexical decoys. Independent review reproduced separate-export false rejection, string-decoy false acceptance and postfix ++/-- division false rejection. Each was regression-first repaired, and final independent re-review accepted valid real User sources/separate exports while rejecting decoys, with no further verified scoped defect. This is not runtime metadata/schema validation or a complete JavaScript parser guarantee."
+    },
+    {
+      "id": "note:45d1e58d4b23276f",
+      "type": "note",
+      "label": "- Actual separate CLI processes generate all four and consume them through disposable SQLite persistence: factory persist/flush, mapped custom type roundtrip, explicit query filtering and registered observer delivery. Default/custom templates, strict compilation, collisions, bounded references and no-overwrite/symlink refusal have evidence. See `src/cli/model-preflight.ts`, generator tests, actual compatibility tests and `docs/native-orm-generators.md`. No live-server/Eloquent command/flag parity implied."
+    },
+    {
+      "id": "note:474ceffd66ae1333",
+      "type": "note",
+      "label": "- `schedule:test --task <id>` or existing injected/real terminal selection invokes exactly one configured task even when not due, with real effects rather than a dry run. Choices expose ids only; missing non-TTY input, empty registry, unknown/invalid/non-member selections and cancellation after prompting refuse without a handler. The selected runtime reuses local overlap ownership, persisted pause/interrupt, exact command status and cooperative signals, while nested commands retain noninteractive prompts/discarded injected output."
+    },
+    {
+      "id": "note:cc1aa604813ba8dd",
+      "type": "note",
+      "label": "- No source edits, automatic unpause, high-water advancement, durable once-only record or shell evaluation. Direct scheduler-test recursion refuses before locks. Actual explicit and Linux PTY selection cases pass alongside adapter/failure/cancellation/lock/control coverage. Independent review found no verified defect and independently passed19 focused tests70 assertions plus2 actual cases9 assertions. See `src/schedule/runner.ts`, schedule CLI/tests and `docs/scheduling.md`; timezone/DST/background finish/stale mutex clearing remain unfinished."
+    },
+    {
+      "id": "note:094b4bf058279ddd",
+      "type": "note",
+      "label": "- Strict copied/frozen bounded root providers.ts references select trusted own-hook classes. Outer runCli registers all then boots all before command scopes/imports; nested calls share initialized services without repeated bootstrap. Command scopes settle before reverse provider disposal and owned singleton disposal. Failure cleans instantiated providers generically; caller containers stay caller-owned. Nonempty automatic registries with caller-supplied containers refuse rather than leaving live registrations bound to disposed providers; explicit backend/build-only composition is documented."
+    },
+    {
+      "id": "note:d4980026943f710d",
+      "type": "note",
+      "label": "- `make:provider` emits a consumed class with computed aliased imports and a namespaced singleton example changed by boot. Root registration is explicit; no import-time registration, package discovery or manifest edits. Twenty-five total code-only stubs are consumed, including provider required name/runtimeImport/serviceKey tokens. Actual default/custom generated providers strictly compile and resolve booted services through real CLI commands without ORM coupling."
+    },
+    {
+      "id": "note:4c1c7f89d4f710d6",
+      "type": "note",
+      "label": "- Independent review reproduced signals removed before cleanup and throwing diagnostic sinks skipping command scopes. Leader observed those regressions and a container-cleanup sink regression red, then retained signal ownership through cleanup and moved scope/finish/owned cleanup ahead of diagnostics. Final independent re-review reproduced scope/finish/provider order and SIGTERM143; no remaining verified scoped defect. Actual SIGINT/SIGTERM during asynchronous provider cleanup allow all owned disposal before130/143. Hooks/imports remain trusted/cooperative, fixed Bun ESM caching and ordinary filesystem limits apply."
+    },
+    {
+      "id": "note:b5aca576aa646183",
+      "type": "note",
+      "label": "- Fresh leader pre-ledger verification705pass/2 opt-in PostgreSQL/MariaDB skips/0fail,17763assertions across75files; strict types157. Final source/graph/provenance verification and measured command counts are recorded in the loop checkpoint. Evidence: `src/console/providers.ts`, provider/runner/generator tests, `src/cli/compatibility.test.ts` and `docs/providers.md`. No downloads, service provisioning, real application database resets or broader100% claim."
+    },
+    {
+      "id": "note:7f4af0d7dea593b4",
+      "type": "note",
+      "label": "- `event:generate` reads trusted source defineEvents registrations rather than stale cache, fully preflights128events/256references, deduplicates paths and exclusively creates missing conventional src/listeners PascalCase own-handle classes from consumed default/custom stubs. Existing checked regular single-link files stay byte-identical, even with force; missing unsupported function/path/export/method shapes, unsafe parents/files and invalid templates refuse before outputs. Named string events need no fabricated event class; make:event remains optional producer scaffolding."
+    },
+    {
+      "id": "note:53bbb7935e48cd88",
+      "type": "note",
+      "label": "- Actual separate CLI processes strictly compile generated default/custom classes, build a real event cache and dispatch without changed-source fallback; a custom listener writes only when dispatched. Source/cache/existing output are preserved. Independent review found no verified defect; boundary256/257 and dangling/hardlink refusal coverage passed. Publication is not a multi-file transaction: later filesystem I/O failures may leave earlier new files while reporting failure, without overwrite/rollback/hostile-path guarantees. See `src/cli/event-generation.ts`, generator/event tests, actual compatibility tests and `docs/events.md`."
+    },
+    {
+      "id": "note:022fd5a15af37cd9",
+      "type": "note",
+      "label": "- `package:discover` reads trusted root packages.ts, validates32unique named packages/64total provider references and preflights referenced module paths without importing their code in the builder. It publishes owned private0600 bounded strict version1 bootstrap/cache/packages.json with duplicate-key/fatal-UTF8/path/mode/link checks; force is required to replace valid metadata. package:clear removes only valid owned package metadata, preserving unrelated/unsafe state. No arbitrary installed-dependency scan, downloads, vendor assets or installer is implied."
+    },
+    {
+      "id": "note:b73cd701128e7d2a",
+      "type": "note",
+      "label": "- Cached provider references append to direct root providers through shared duplicate/bound validation and actual outer lifecycle, even without providers.ts. Ordinary startup never imports packages.ts or falls back from invalid metadata. Caller-container and pre-abort ownership boundaries remain; unsafe bootstrap can prevent all public commands until inspection/recovery, not a secret repair bypass. Existing root/cached providers may normally boot before discover/clear actions; the builder's no-provider-execution guarantee does not bypass earlier ordinary startup."
+    },
+    {
+      "id": "note:7d1a1991a7017328",
+      "type": "note",
+      "label": "- Independent review reproduced dropped CLI cancellation; leader deterministic import-abort regression red then signal propagation repaired. Worker final-prepublication abort regression and legitimate replacement's now-unlinked inode false refusal were also observed red before immediate commit-boundary check/bounded reader retry repairs. Final independent re-review reproduced status1/no publication for aborted embedding and found no further verified defect; first-link/replacement stress is coverage, not proof all interleavings. Atomic publication is a commit point, not cancellation rollback."
+    },
+    {
+      "id": "note:6f6c6f088adb84ef",
+      "type": "note",
+      "label": "- Actual CLI processes prove discovery/cache-provider boot without package-source fallback, duplicate/unsafe metadata fail-closed behavior, explicit clear/no DB, and SIGINT/SIGTERM cancellation preserving prior metadata or absence. Fresh leader pre-ledger full737pass/2opt-in live-database skips/0fail,17993assertions across79files/types165. Final source/graph/provenance results are in the loop checkpoint. See `src/packages`, package/provider/runner tests, `src/cli/compatibility.test.ts` and `docs/packages.md`. Broader authentication/session, vendor publication/installers, queue batches, language resources, remaining scheduling and live-service work remain unfinished."
+    },
+    {
+      "id": "note:5848b0ed148b037d",
+      "type": "note",
+      "label": "- `lang:publish` exclusively creates mode0600 lang/en.ts from the bundled English catalogue without importing existing content or overwriting translations, including with force. Explicit translate/loadMessages APIs validate copied/frozen flat catalogues and bounded Unicode replacements; missing English source uses bundled text, English overrides merge, and other locales require explicit local source without cross-locale fallback. Missing keys, missing/unused placeholders and invalid shapes refuse generically. No markup, pluralization, locale detection, downloads or extra stub is implied."
+    },
+    {
+      "id": "note:ca356ba2ec02108e",
+      "type": "note",
+      "label": "- Key/options/replacement validation and snapshots precede trusted fixed-URL imports. Sources/parents reject unsafe links and bounded data controls/bytes; canonical root aliases retain ordinary Bun ESM lifetime. Actual separate CLI processes publish and strictly compile a catalogue, consume default and customized Unicode overrides, preserve existing translations with force, refuse unsafe locale before source import and leave database storage absent. Later exact boundary/snapshot/lifetime coverage is not individually red-proven. Independent backend/integration review found no verified defect;13focused67assertions and2actual15assertions passed."
+    },
+    {
+      "id": "note:e0ed00cc53ec9202",
+      "type": "note",
+      "label": "- Fresh pre-ledger full752pass/2opt-in live-database skips/0fail,18302assertions across82files/types171; graph/whitespace passed before this source update. Final source/provenance results are in the loop checkpoint. See `src/localization`, `src/cli/language.ts`, actual compatibility tests and `docs/localization.md`. Authentication/session, vendor publication/installers, queue batches, remaining scheduling and authorized live-service evidence remain unfinished."
+    },
+    {
+      "id": "note:2758ba28e235a192",
+      "type": "note",
+      "label": "- `vendor:publish` explicitly reads trusted version1 publish.ts manifests with bounded immutable128asset/32package definitions; package/tag selection intersects, all is explicit, no selection refuses before import. Safe selected config/language/JSON/text sources are copied as bytes without asset import; real existing consumers validate and execute published files later. Full source/destination/ancestor/conflict preflight precedes exclusive mode0600 output; existing targets are preserved even with force. No dependency scan/download, PHP/Blade/UI assets, installer or new stub is introduced."
+    },
+    {
+      "id": "note:3b48ef7a356d4675",
+      "type": "note",
+      "label": "- Worker destination-ancestor collision regression observed an earlier file creation before failure, then repaired complete selected-pair preflight in both orders before directory creation. Independent review reproduced valid .d.json/.d.txt wrongly rejected by an overbroad declaration-extension check; leader actual CLI regressions failed red, then declaration-only .d.ts refusal was repaired and independently re-reviewed. Later exact byte/path/count, snapshot, fixed-import lifetime and fixture cleanup coverage is not individually red-proven. Final independent review found no remaining verified finding."
+    },
+    {
+      "id": "note:f7dcd349d835aa07",
+      "type": "note",
+      "label": "- Actual CLI processes strictly compile published TypeScript, consume config:show/explicit locale translation/JSON, prove asset source is never imported by copying, preserve conflicts/targets despite force and sanitize trusted manifest errors. Event-driven SIGINT/SIGTERM manifest-import cases return130/143 without output or database storage. Leader22focused75assertions/8actual46assertions/types176 passed. Fresh pre-ledger full782pass/2opt-in live-database skips/0fail,18284assertions across84files; graph/whitespace pass and99measured built-ins. Later I/O/cancellation may leave earlier new outputs while reporting failure; no multi-file transaction, hostile tree replacement, power-loss or sandbox guarantee. Final provenance gates are recorded in the loop checkpoint. See `src/publication`, CLI/publication tests, actual compatibility tests and `docs/publication.md`."
+    },
+    {
+      "id": "note:b7610857c6cd5cfa",
+      "type": "note",
+      "label": "- Paired make:controller --resource/--model preflights a safe existing top-level model source without executing/importing it, connecting DB or editing mappings. Default/custom controller-resource.ts.stub emits five own index/show/store/update/destroy methods with aliased computed imports; ordinary handle controllers stay unchanged, paired/unrelated flags and unsafe sources/targets refuse. Twenty-six total code-only stubs are consumed. Explicit model-resource middleware requires model/manager/id/validation/serializer callbacks; it isolates a fresh native ORM fork per request and clears only its owned fork, preserving caller pending state/ORM ownership."
+    },
+    {
+      "id": "note:4c99e2d007afc7f4",
+      "type": "note",
+      "label": "- Native bounded index100/JSON1MiB and scalar-key CRUD persist through explicit field validation and selected serialization; missing keys404, invalid IDs400, primary updates refuse, validation responses400..499 remain no-store. No inferred routes/auth/fields, composite keys, transaction, committed-write rollback, soft deletion or external/live-driver equivalence. Actual default/custom generated code strictly compiles and serves live local SQLite HTTP CRUD, then cached own index/show hydrate without source fallback; caller state, model bytes and no generation DB/import side effects are checked."
+    },
+    {
+      "id": "note:b78dd5019c705f88",
+      "type": "note",
+      "label": "- Independent review reproduced missing no-store on sanitized500 and double-microtask completion-abort returning200/entity JSON after abort. Leader4native regressions red before shared Router500 header and caller-side post-await checks; independent exact original probes now500/no-store/generic without entity data and no further verified scoped finding. Leader90combinedfocused582assertions/3actualresource-and-shared-inventory37assertions/types178 passed. Full initially803pass/2skip/1failure from a stale provider-stub25 expectation; corrected to26, focused provider3pass21assertions, then fresh full804pass/2opt-in live-server skips/0fail,18379assertions across85files/types178 and graph/whitespace passed before this ledger. Expected unrelated-option refusal prints an unknown --resource diagnostic, not a failing test. Final source/provenance gates in loop checkpoint. See `src/http/model-resource.ts`, native/Router/generator tests, actual compatibility tests and `docs/model-resources.md`."
+    },
+    {
+      "id": "note:16d77effaa341865",
+      "type": "note",
+      "label": "- `dispatchBatch` validates/snapshots1–128 closed mixed module/command entries with1MiB total encoded jobs before filesystem awaits; private schema2 atomically publishes jobs and durable membership. Ack/settle/fail/exhaustion/clear/retry/history mutations retain truthful counts after job deletion. Existing exact schema1 refuses ordinary opens until explicit opt-in or force-guarded queue:upgrade after ALL old processes stop; ready/delayed/live/failed/corrupt raw fields remain intact. Foreign/altered schema is preserved, not reset; mixed-version operation is unsafe. Existing job envelopes and individual producer return values stay unchanged."
+    },
+    {
+      "id": "note:5ec2d1c51dd501eb",
+      "type": "note",
+      "label": "- `queue:batch` exposes generic persisted counts; explicit cancel prevents new claims but preserves live owners, allows active success and settles later failures as terminal cancelled. Ordinary worker-signal cancellation still refunds/releases. queue:retry-batch atomically reopens only retained noncancelled failures; forced queue:prune-batches uses strict epoch-ms terminal cutoffs, detaches retained failures and preserves pending/live/unrelated jobs. Eight actual entrypoint tests consume generated default-filled/custom jobs and real commands, failure/retry, live success/failure cancellation, SIGTERM refunds, explicit upgrade and pruning without application DB side effects. No callback/chains, ORM batch-table adapter, forced side-effect rollback, Redis/Horizon, exactly-once or multi-host claim."
+    },
+    {
+      "id": "note:fd4e9e6c7e47cb95",
+      "type": "note",
+      "label": "- Independent review found inherited SQL LIKE underscore wildcard ownership filtering accepted lookalike foreign objects. Leader9benign queue/cache rejection regressions failed red, then literal GLOB-prefix repair and independent re-review preserved foreign state while accepting legitimate SQLite internals; no remaining confirmed scoped issue. Later full legacy-field/refusal, transaction-failure, clock rollback and reopen coverage is not individually red-first. Leader120queue/cache/CLI8708assertions +8actual118assertions/types183 pass; fresh repaired pre-ledger full849pass/2opt-in live-server skips/0fail,18862assertions across89files, graph/whitespace pass. Final source/provenance gates are in the loop checkpoint. See `src/queue`, `src/cli/queue-batches.ts`, backend/schema/transaction/actual CLI tests and `docs/queue-batches.md`. The separate make:queue-batches-table reference stays pending without a consuming ORM adapter; broader auth/session, installers, scheduler/adapters/database/live-service work remains unfinished."
+    },
+    {
+      "id": "note:73b1b959bf31cc6e",
+      "type": "note",
+      "label": "- `model:prune` consumes a bounded copied/frozen branded root pruning.ts registry with explicit model/where rules, no model scanning or traits. Preview counts without framework deletion; every real invocation requires global force before source import/target resolution. ONE selected target resolves per invocation; SQLite must already be a regular single-link nonsymlink file, never implicitly created. Native SQL manager forks preserve caller pending state/ORM ownership; all selected metadata/predicates preflight before deletion, then finite ascending mapped keys are consumed in bounded per-rule/chunk limits with original eligibility and native filters rechecked."
+    },
+    {
+      "id": "note:cc1972f5f054d376",
+      "type": "note",
+      "label": "- Native bulk deletion skips per-entity hooks; database cascades/triggers retain effects and counts describe direct targets. Active-chunk rollback cannot undo earlier commits; after-commit cancellation refuses success but preserves committed rows. Actual default/named disposable SQLite entrypoints verify preview, force, scope, multi-chunk limits and reopen preservation; refusal/lifecycle/source/metadata/filter/mapping/cascade/hook/cancellation tests complement consuming behavior. No Eloquent hooks/traits, whole-run transaction, hostile-code sandbox, automatic rules or expanded live PostgreSQL/MariaDB evidence is implied."
+    },
+    {
+      "id": "note:7831c032fb1ecdd2",
+      "type": "note",
+      "label": "- Missing command was observed red before registration. Native BigIntType refusal and independently verified above-safe-integer SQLite precision findings were reproduced before repairs; exact quoted mapped-column text projection now preserves bigint keys, with neighboring-key regression and accepted independent re-review. Later coverage is not all individually red-first. Initial full diagnostic865pass/2skip/2fail also exposed a host-NO_COLOR-sensitive console test; explicit test-env injection repaired it without weakening production NO_COLOR semantics. Fresh repaired pre-ledger full879pass/2opt-in live-server skips/0fail,18932assertions across93files/types190, graph/whitespace pass and105measured built-ins. Final source/provenance gates are recorded in the loop checkpoint. See `src/database/pruning*.ts`, CLI/model-prune tests, actual compatibility consumers and `docs/model-pruning.md`."
+    },
+    {
+      "id": "note:c437d8d6453186af",
+      "type": "note",
+      "label": "- Root dev.ts exports a bounded copied/frozen branded registry of explicit names/argv shared by dev:list and dev. Listing never invokes configured commands; trusted source import still executes and argv are intentionally visible, so secrets must not be placed there. Native rooted Bun children use a fixed package runner, no shell/executable override, automatic registry scan, package installation or background service defaults. Up to8 children stream output and settle as one foreground group; first child exit0/nonzero stops peers and determines normal status, real SIGINT/SIGTERM yield130/143. Generated applications configure explicit API and Vite frontend children; their readiness/HMR integration remains unverified."
+    },
+    {
+      "id": "note:e36f2762a4e67b83",
+      "type": "note",
+      "label": "- Owned shutdown escalates after1000ms and drains inherited pipes at most250ms; startup/output failure reaps started owned children, never claims process-group/descendant cleanup, background service management, readiness, self-respawn or managed reload. Child marker refuses accidental nested dev before source import. Actual entrypoint missing-command red preceded registration;5actual consumers22assertions cover listing without execution, shared registry side effects, first-exit0/7 and real signal reaping. Backend14tests40assertions include later bounded pipe/spawnfailure/snapshot coverage; CLI5guards15assertions. Independent review found no verified issue."
+    },
+    {
+      "id": "note:a2f146fa7e1b7162",
+      "type": "note",
+      "label": "- Fresh combined repaired pre-ledger923pass/2opt-in live-server skips/0fail,18869assertions across98files/types198 and graph/whitespace passed; final source/provenance gates recorded in loop checkpoint. Only dev:list receives original reference credit; broader dev multi-tool/Vite environment stays partial. See `src/development/processes.ts`, CLI/development tests and `docs/development.md`."
+    },
+    {
+      "id": "note:8d424bd3972532b5",
+      "type": "note",
+      "label": "- migrate:uninstall preview inspects without history initialization; real removal requires global force before one existing SQLite target resolves/opens. Conservative exact native history DDL, mapped-name, view/index/trigger/inbound-FK/dependency and active main-lock refusals precede quoted non-CASCADE drop in owned transaction/fork; application tables/rows, migration source/snapshots and lock table remain intact. Missing history reports installed:false/removed:false; nonSQLite/missing/memory/link targets refuse. User explicitly approved mikro_orm_migrations deletion tests only in NEW disposable fixtures, never existing app DBs; initial delegation denial preceded that consent and one permitted retry."
+    },
+    {
+      "id": "note:e6a8b328b2b5db1f",
+      "type": "note",
+      "label": "- Actual default/named migrated/seeded disposable SQLite consumers verify preview/force/removal/reopen and fresh-process tracking reinstall without applying migrations, preserving app/unrelated/view/lock/source bytes. Native/CLI ownership/cancellation/refusal tests complement consumption. Leader mapped-entity collision regression failed before native metadata Map.values iteration repair. Independent lock-read qualification finding repaired with main-schema lookup; non-deleting active-lock querytrace failed before fix and passes after, verifying no DROP while held. Reviewer's denied end-to-end shadow/drop probe was NOT rerun by leader/another worker. Narrow re-reviews accepted both fixes."
+    },
+    {
+      "id": "note:3a85791f9db5fd70",
+      "type": "note",
+      "label": "- First combined full922pass/2skip/1fail exposed a new in-memory migration test using project migration paths and generating an untracked source snapshot; preserved the generated file outside project, moved tests to unique disposable migration roots and added unchanged-project-snapshot guard. Repaired full923pass/2opt-in live-server skips/0fail,18869assertions across98files/types198 and graph/whitespace pass; no existing application DB accessed for deletion. Exact known SQLite layout only, no server-destructive support/global concurrent-DDL coordination, lost-history recovery, same-ORM cached reinstallation or undo of committed cancellation. Final provenance gates in loop checkpoint. See `src/database/history-uninstall.ts`, native/contracts/CLI tests and `docs/history-uninstall.md`."
+    },
+    {
+      "id": "note:6835e4df1fe55725",
+      "type": "note",
+      "label": "- testCommand validates/snapshots argv/env/native prompt steps, executes actual rooted runCli with injected bounded output/error and private in-memory TTY prompt streams, and returns frozen status/output/error/prompt fields with chainable assertions. Per-step EOF makes finite validation input deterministic; no process-global stdin/stdout/exitCode patch. Native text/password/confirm/select/multiselect/search semantics and automatic required-argument retries are consumed; no submitted password echo from native transcript. Trusted direct process/subprocess output and uncooperative code remain outside capture/forced-cancellation guarantees."
+    },
+    {
+      "id": "note:340ed7fff2798b45",
+      "type": "note",
+      "label": "- Real generated make:command and make:test --unit/Bun consumers verify API use, explicit errors/status, prompt methods, input/argv/env snapshots, native async-search cancellation and scoped-before-provider cleanup after mismatch/overflow, without app DB state. Missing API consumer red preceded implementation. Independent review reproduced a caught unexpected concurrent prompt returning success; leader exact regression failed before active guard records mismatch, then final harness failure waits command settlement/cleanup. Narrow re-review accepted; later coverage is not all individually red-first.13combined harness/consumer tests35assertions/types202 pass."
+    },
+    {
+      "id": "note:0ed25f65ee24005f",
+      "type": "note",
+      "label": "- Fresh repaired pre-ledger full944pass/2opt-in live-server skips/0fail,19122assertions across101files/types202, graph/whitespace and no unexpected project snapshot passed. Final source/provenance gates in loop checkpoint. Only original console input/output assertions reference upgraded; no automatic per-worker DB/service provisioning, OS/PTY lifecycle substitute or feature-specific HTTP generator credit. See `src/console/testing.ts`, backend/generated consumer tests and `docs/console-testing.md`."
+    },
+    {
+      "id": "note:85988b11d67c34ca",
+      "type": "note",
+      "label": "- No-argument config:publish preserves exclusive built-in app.ts publication with no manifest import. Explicit package/tag/all uses the existing bounded trusted publish.ts metadata and shared full-selected native preflight/writer, with a static config-destination filter. Package/tag intersection selects only config/*.ts; all never includes language/data, no match refuses. Valid irrelevant non-config sources are not read/copied; full manifest validation remains. Source bytes are never imported during copying, global force never overwrites, optional signal checked before/after work, no implicit cache invalidation."
+    },
+    {
+      "id": "note:0c3599f25382936d",
+      "type": "note",
+      "label": "- Actual unknown --package red preceded registration. Two real process consumers22assertions publish selected Unicode configuration, prove no early import, consume config:show, preserve missing irrelevant sources/language/data outputs, existing files despite force, built-in legacy publication and configuration-cache precedence until explicit clear.34focused publication/CLI tests preserve vendor selection/ancestor/refusal/cancellation behavior, types202 pass. Independent bounded review found no verified issue."
+    },
+    {
+      "id": "note:4c029d3509f5329b",
+      "type": "note",
+      "label": "- Combined repaired pre-ledger full944pass/2opt-in live-server skips/0fail,19122assertions across101files/types202 and graph/whitespace pass. Final provenance gates in loop checkpoint. Only original config:publish reference upgraded; no PHP catalogues/dependency scanning/downloads, overwrite/merge, multi-file transaction, hostile-tree/power-loss guarantee or unrelated app/environment subsystem parity. See `src/publication/publish.ts`, CLI/operations and actual consumers, `docs/publication.md`."
+    },
+    {
+      "id": "note:47ca3807c5570f43",
+      "type": "note",
+      "label": "- make:model now composes -f/--factory with existing -s/--seed and -m/--migration, including -mfs. Selected model/seeder source and the consumed factory.ts.stub are rendered and all selected filename/ancestor/conflict checks complete before any code output is created. Existing regular/directory/dangling-link destinations and symlink parents refuse even with force. No model import during planning, no DB open without -m; existing native migration baseline/production guards remain with -m. Later I/O/native migration failures may retain earlier new code; no multi-file transaction or rollback deletion is claimed."
+    },
+    {
+      "id": "note:54cc704642024d11",
+      "type": "note",
+      "label": "- Actual builder/entrypoint missing-factory red preceded implementation.13focused tests73assertions consume generated Factory with persisted native SQLite rows, actual -mfs migration/application/explicit seeder in disposable roots, custom/malformed factory stubs, selected-output conflicts and unsafe parents. Independent review found predictable suffix-length partial publication and new rejection of previously allowed Promise/Error model names. Exact leader regressions observed red, then all selected filenames are checked before missing-parent handling and original model-name rules retained. Later exact255byte factory/seeder boundary coverage passes; no live-server or Eloquent-factory evidence is inferred."
+    },
+    {
+      "id": "note:ba0439bc39470b90",
+      "type": "note",
+      "label": "- Repaired pre-ledger full957pass/2opt-in live-server skips/0fail,19217assertions across102files/types203; graph freshness/whitespace and no unexpected project migration snapshot pass. Final source/provenance gates are recorded in the loop checkpoint. Only original combined model/migration/factory/seeder example receives bounded implementation credit after gates; richer model flags/inspection and external service verification remain separate. See src/cli/scaffolding.ts, src/database/generators.ts, src/cli/model-generation.test.ts and docs/native-orm-generators.md."
+    },
+    {
+      "id": "note:a7b5062b62d04746",
+      "type": "note",
+      "label": "- new [name] supports explicit parent/driver/without-http/interactive options with SQLite/Bun/JSON-health defaults. A fixed shipped-source allowlist plus generated nonsecret config/package/test/route files creates a separate code-first application, never a recursive copy of caller .env/config/commands/providers/cache/database/log state. Full bounded descriptor-checked source preflight precedes exclusive new-directory claim and checked0600/0700 file/directory publication. Existing destinations refuse even with force; no subprocess/install/download/migrate/seed/server or credential generation during creation. Server choices configure existing driver paths, not provision/live verification. Later I/O/cancellation can leave partial new output, without rollback deletion or a transaction/hostile-tree guarantee."
+    },
+    {
+      "id": "note:1f1b073a333e61de",
+      "type": "note",
+      "label": "- Actual missing command red preceded backend/registration; pure template helper was written earlier, not every template line independently TDD-proven.25focused tests121assertions consume generated CLI/routes/cache, owned live HTTP health, explicit disposable SQLite migration/demo seed, generated Bun test and strict generated-project typecheck with already installed dependencies, native prompt setup, option snapshots and source/link/conflict/cancellation refusals. Generated-test percent encoding and ORM-version alignment defects were reproduced red and repaired. Independent review found application registries executed before new; four leader regressions observed red, then outer new uses snapshotted argv and built-in dispatch without application provider/package/command bootstrap. Ordinary application commands retain bootstrap, including new appearing only as a global-option value/list namespace; trusted runtime preloads/explicit host callbacks are outside the guarantee."
+    },
+    {
+      "id": "note:ae0ff3df628dfabe",
+      "type": "note",
+      "label": "- Repaired pre-ledger full982pass/2opt-in live-server skips/0fail,19482assertions across104files/types208; graph/whitespace and no unexpected project migration snapshot pass.109registered built-ins/26stubs. Final source/provenance gates are recorded in the loop checkpoint. Only original application-creation and interactive-setup references receive bounded Bun equivalent credit after gates; no Laravel/PHP starter kits, automatic dependency install, authentication/session, production service or live-server claims. See src/installation/project.ts/templates.ts, cli/project.ts and consuming tests, docs/project-creation.md."
+    },
+    {
+      "id": "note:bf04d97d2282195d",
+      "type": "note",
+      "label": "- tinker bootstraps ordinary application providers/commands and receives the real runner service scope. Canonical rooted require/import and optional explicit lazy bundle.database helper execute trusted local JavaScript through Bun node:repl, not PHP/TypeScript parsing or a sandbox/remote endpoint. Interactive use requires TTY; explicit bounded --execute evaluates one complete program with one final result. No default database/history/transcript or environment printing; inline source is visible in argv and arbitrary developer code can expose secrets or access host resources. Production helper opening retains force/selected-target guards."
+    },
+    {
+      "id": "note:b936404b8831845d",
+      "type": "note",
+      "label": "- Actual CLI SQLite failure reproduced before replacing racing readline execute cells with whole-program evaluation and serialized interactive input. Async-context-bound native error-hook settlement replaces unsafe lastError guesses; recoverable multiline continuations are not terminal failures. Owned awaited evaluations settle before once-only ORM close; caller streams/scopes survive, owned writes drain and input raw/flow/listeners are restored.23focused tests85assertions consume real provider cleanup, disposable SQLite writes/reopen, copied entrypoint, PTY exit/Ctrl+C/SIGINT/SIGTERM, async/multiline/error continuation, preabort/input reuse, opener rejection and delayed output. Independent review found idle output closure leaked ownership; exact leader regression hung RED before close-listener repair. No forced uncooperative-code termination, descendant cleanup, rollback or comprehensive secret redaction is promised."
+    },
+    {
+      "id": "note:2aacf68611f1490b",
+      "type": "note",
+      "label": "- Repaired pre-ledger full1005pass/2opt-in live-server skips/0fail,19659assertions across106files/types212. Graph/whitespace and no unexpected project migration snapshot pass before source update; final provenance gates in the loop checkpoint. Only the original tinker reference receives bounded native-JavaScript credit after final gates. See src/console/tinker.ts, src/cli/tinker.ts, native/CLI tests and docs/tinker.md; broader auth/session/installers/adapters/live-server scope remains unfinished."
+    },
+    {
+      "id": "note:467b5ba2a24e87f1",
+      "type": "note",
+      "label": "- Explicit make:test NAME --http /health generates tests/Feature native Bun test/expect code with computed relative runtime/root URLs, a selected JSON-safe request path and example status200 assertion. Select a real application endpoint and customize assertions. Generation never imports routes, starts services, provisions databases or creates an endpoint. Unit and HTTP flags are mutually exclusive; default generic/unit paths stay unchanged. Published http-test.ts.stub is consumed, bringing code-only stubs to27; existing outputs/linked parents refuse even force and selected filenames are bounded255bytes."
+    },
+    {
+      "id": "note:1391dcd275564968",
+      "type": "note",
+      "label": "- withHttpApplication starts the actual loopback:0 application worker, not a mock/router-only substitute. Native RequestInit/Response semantics, manual redirects, explicit bounded root-relative targets, route-cache precedence and live maintenance are consumed. Callback failures/cancellation await owned shutdown; cancellation is rechecked after cleanup and retained clients refuse. Caller DBs/scopes and other listeners remain caller-owned; no implicit auth/provider bootstrap, forced uncooperative callback/descendant cleanup or rollback is promised. Actual generated CLI/Bun tests pass in nested space/Unicode roots and custom stubs; source imports are absent during generation."
+    },
+    {
+      "id": "note:eb5ace395d098146",
+      "type": "note",
+      "label": "- Missing API/--http option RED preceded implementation. Selected dollar-path replacement corruption, then independent shutdown-cancellation and native inherited/non-enumerable RequestInit findings were reproduced RED before repairs.85focused tests441assertions/types215 pass; initial full exposed two more stale26stub count assertions plus both active RED regressions. Repaired pre-ledger full1018pass/2opt-in live-server skips/0fail,19724assertions across108files/types215, whitespace/migration-source hygiene pass. Final source/provenance gates in loop checkpoint; only original feature-test generation reference upgraded after final gates, not browser/parallel-database provisioning/Laravel assertion parity. See src/http/testing.ts, CLI/scaffolding and generated/native tests, docs/http-testing.md."
+    },
+    {
+      "id": "note:841a8a37362be5a6",
+      "type": "note",
+      "label": "See [the console guide](docs/console.md) for exact supported APIs/options and the session-specific Bun preload dispatch workaround. These integrated foundations are not full Artisan parity. The compatibility inventory retains all original reference IDs and explicit PHP/markup exclusions; unchecked reference items below are unchanged. The 2026-11-07 wave-6 event-generator/queue checkpoint passed 467 tests with 2 opt-in live-server skips and no failures; strict typechecking passed in 115 files. Later complete verification and counts are recorded in the active implementation plan and loop checkpoints. This is scenario evidence, not exhaustive compatibility or live PostgreSQL/MariaDB verification."
+    },
+    {
       "id": "note:a19f088211d04bb1",
       "type": "note",
       "label": "For an exhaustive list for a particular application, **`php artisan list` is the authoritative source**."
@@ -1807,6 +2622,11 @@
       "label": "php artisan pail"
     },
     {
+      "id": "command:artisan:queue:batch",
+      "type": "command",
+      "label": "php artisan queue:batch"
+    },
+    {
       "id": "command:artisan:queue:clear",
       "type": "command",
       "label": "php artisan queue:clear"
@@ -2046,6 +2866,196 @@
     {
       "from": "document:progress/section:bundle-orm-and-migration-status",
       "to": "document:progress/section:bundle-orm-and-migration-status/section:remaining-verification-and-compatibility-gaps",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress",
+      "to": "document:progress/section:bundle-cli-feature-ledger",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger",
+      "to": "document:progress/section:bundle-cli-feature-ledger/section:discovery-and-command-help-implemented",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger",
+      "to": "document:progress/section:bundle-cli-feature-ledger/section:custom-command-runtime-integrated-foundations",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger",
+      "to": "document:progress/section:bundle-cli-feature-ledger/section:code-only-generators-integrated-bounded-equivalents",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger",
+      "to": "document:progress/section:bundle-cli-feature-ledger/section:configuration-and-environment-integrated-explicitly-non-laravel-formats",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger",
+      "to": "document:progress/section:bundle-cli-feature-ledger/section:native-testing-integrated-bounded-bun-adapter",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger",
+      "to": "document:progress/section:bundle-cli-feature-ledger/section:local-cache-and-owned-storage-integrated-bounded-backends",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger",
+      "to": "document:progress/section:bundle-cli-feature-ledger/section:information-and-console-rendering-integrated-bounded-apis",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger",
+      "to": "document:progress/section:bundle-cli-feature-ledger/section:structured-logs-and-pail-style-inspection-integrated-local-backend",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger",
+      "to": "document:progress/section:bundle-cli-feature-ledger/section:code-first-http-and-executable-route-caches-integrated-bounded-runtime",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger",
+      "to": "document:progress/section:bundle-cli-feature-ledger/section:live-maintenance-and-bootstrap-optimization-integrated-local-operations",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger",
+      "to": "document:progress/section:bundle-cli-feature-ledger/section:local-events-and-executable-registration-cache-integrated-bounded-runtime",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger",
+      "to": "document:progress/section:bundle-cli-feature-ledger/section:durable-local-jobs-and-owned-consumption-integrated-bounded-runtime",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger",
+      "to": "document:progress/section:bundle-cli-feature-ledger/section:generated-jobs-queue-snapshots-and-explicit-cleanup-integrated-local-operations",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger",
+      "to": "document:progress/section:bundle-cli-feature-ledger/section:atomic-retry-overrides-and-live-worker-controls-integrated-local-contracts",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger",
+      "to": "document:progress/section:bundle-cli-feature-ledger/section:durable-command-dispatch-job-middleware-and-fresh-worker-children-integrated-local-contracts",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger",
+      "to": "document:progress/section:bundle-cli-feature-ledger/section:deny-default-policies-and-explicit-http-authorization-integrated-local-contracts",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger",
+      "to": "document:progress/section:bundle-cli-feature-ledger/section:explicit-local-text-mail-and-notification-adaptation-integrated-bounded-delivery",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger",
+      "to": "document:progress/section:bundle-cli-feature-ledger/section:bounded-utc-command-scheduling-integrated-local-execution",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger",
+      "to": "document:progress/section:bundle-cli-feature-ledger/section:persisted-scheduler-pause-resume-and-graceful-interruption-integrated-local-controls",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger",
+      "to": "document:progress/section:bundle-cli-feature-ledger/section:consumed-native-factory-custom-type-query-helper-and-observer-integrated-database-generators",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger",
+      "to": "document:progress/section:bundle-cli-feature-ledger/section:explicit-and-interactive-scheduled-task-testing-integrated-selected-execution",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger",
+      "to": "document:progress/section:bundle-cli-feature-ledger/section:explicit-local-providers-and-consumed-provider-generation-integrated-application-lifecycle",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger",
+      "to": "document:progress/section:bundle-cli-feature-ledger/section:source-driven-registered-event-generation-integrated-consumed-listeners",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger",
+      "to": "document:progress/section:bundle-cli-feature-ledger/section:explicit-discovered-package-metadata-integrated-cached-provider-consumption",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger",
+      "to": "document:progress/section:bundle-cli-feature-ledger/section:local-language-resources-integrated-code-only-text-consumption",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger",
+      "to": "document:progress/section:bundle-cli-feature-ledger/section:code-only-vendor-publication-integrated-resource-consumers",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger",
+      "to": "document:progress/section:bundle-cli-feature-ledger/section:model-associated-resource-controllers-integrated-native-http-persistence",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger",
+      "to": "document:progress/section:bundle-cli-feature-ledger/section:durable-batch-accounting-integrated-local-worker-controls",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger",
+      "to": "document:progress/section:bundle-cli-feature-ledger/section:explicit-native-model-pruning-integrated-bounded-sql-deletion",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger",
+      "to": "document:progress/section:bundle-cli-feature-ledger/section:explicit-development-processes-integrated-foreground-command-group",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger",
+      "to": "document:progress/section:bundle-cli-feature-ledger/section:verified-sqlite-tracking-uninstall-integrated-force-guarded-history-only-removal",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger",
+      "to": "document:progress/section:bundle-cli-feature-ledger/section:native-console-testing-integrated-real-runner-prompt-and-assertion-harness",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger",
+      "to": "document:progress/section:bundle-cli-feature-ledger/section:configuration-only-publication-integrated-explicit-package-tag-consumers",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger",
+      "to": "document:progress/section:bundle-cli-feature-ledger/section:paired-model-factory-and-seeder-generation-integrated-native-composition",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger",
+      "to": "document:progress/section:bundle-cli-feature-ledger/section:offline-application-installer-and-native-setup-integrated-new-directory-creation",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger",
+      "to": "document:progress/section:bundle-cli-feature-ledger/section:trusted-native-javascript-tinker-integrated-local-developer-session",
+      "relation": "contains"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger",
+      "to": "document:progress/section:bundle-cli-feature-ledger/section:native-http-feature-tests-integrated-generated-live-worker-consumers",
       "relation": "contains"
     },
     {
@@ -3199,6 +4209,631 @@
       "relation": "has_note"
     },
     {
+      "from": "document:progress/section:bundle-cli-feature-ledger",
+      "to": "note:b30a4c3f3b8099a3",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:discovery-and-command-help-implemented",
+      "to": "note:d7b0bf0677c886d8",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:discovery-and-command-help-implemented",
+      "to": "note:98782e95469d8f1a",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:discovery-and-command-help-implemented",
+      "to": "note:142bc7c4bdabc3a0",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:custom-command-runtime-integrated-foundations",
+      "to": "note:b9157fb1e672cfcc",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:custom-command-runtime-integrated-foundations",
+      "to": "note:13ac6794ef62bf41",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:custom-command-runtime-integrated-foundations",
+      "to": "note:4832fdc4bb272de1",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:custom-command-runtime-integrated-foundations",
+      "to": "note:561b1bc0374617f0",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:custom-command-runtime-integrated-foundations",
+      "to": "note:ac1e1f4e37e2cf4e",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:custom-command-runtime-integrated-foundations",
+      "to": "note:e9c27e9fd84d9c73",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:code-only-generators-integrated-bounded-equivalents",
+      "to": "note:b625ecc645c8ba40",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:code-only-generators-integrated-bounded-equivalents",
+      "to": "note:f559284e933391e8",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:code-only-generators-integrated-bounded-equivalents",
+      "to": "note:e83b4d5621df0b23",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:code-only-generators-integrated-bounded-equivalents",
+      "to": "note:61e80cda1dd8b6cf",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:configuration-and-environment-integrated-explicitly-non-laravel-formats",
+      "to": "note:c406b56b7bada37e",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:configuration-and-environment-integrated-explicitly-non-laravel-formats",
+      "to": "note:3d3cb43735d03b23",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:configuration-and-environment-integrated-explicitly-non-laravel-formats",
+      "to": "note:8831850e44ed6bb0",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:configuration-and-environment-integrated-explicitly-non-laravel-formats",
+      "to": "note:7ebc71d596a5bc2c",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:native-testing-integrated-bounded-bun-adapter",
+      "to": "note:d28630ad46c325b6",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:native-testing-integrated-bounded-bun-adapter",
+      "to": "note:85785d913281cb92",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:native-testing-integrated-bounded-bun-adapter",
+      "to": "note:02a1d3820f1ac7af",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:local-cache-and-owned-storage-integrated-bounded-backends",
+      "to": "note:1a3d51e7c74b4c07",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:local-cache-and-owned-storage-integrated-bounded-backends",
+      "to": "note:b7154dd322884c9c",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:local-cache-and-owned-storage-integrated-bounded-backends",
+      "to": "note:6c78e1a96bff691d",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:information-and-console-rendering-integrated-bounded-apis",
+      "to": "note:8a19c6e9c55951d1",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:information-and-console-rendering-integrated-bounded-apis",
+      "to": "note:0b0cf6ccc82f0cc4",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:information-and-console-rendering-integrated-bounded-apis",
+      "to": "note:691b08e536f579d1",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:structured-logs-and-pail-style-inspection-integrated-local-backend",
+      "to": "note:fc16f3ace4e40fa6",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:structured-logs-and-pail-style-inspection-integrated-local-backend",
+      "to": "note:a21a55db9bb5ecaa",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:structured-logs-and-pail-style-inspection-integrated-local-backend",
+      "to": "note:e60abdd725c02710",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:code-first-http-and-executable-route-caches-integrated-bounded-runtime",
+      "to": "note:cc73507326b8b6b9",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:code-first-http-and-executable-route-caches-integrated-bounded-runtime",
+      "to": "note:d00fcef1d1cb4a5c",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:code-first-http-and-executable-route-caches-integrated-bounded-runtime",
+      "to": "note:afd52e0d0a741d86",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:code-first-http-and-executable-route-caches-integrated-bounded-runtime",
+      "to": "note:7d459eb3288b4efc",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:live-maintenance-and-bootstrap-optimization-integrated-local-operations",
+      "to": "note:54bf0b437205b6d7",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:live-maintenance-and-bootstrap-optimization-integrated-local-operations",
+      "to": "note:79d1e880c35df8b9",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:live-maintenance-and-bootstrap-optimization-integrated-local-operations",
+      "to": "note:d4b25b8e7e3116bb",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:local-events-and-executable-registration-cache-integrated-bounded-runtime",
+      "to": "note:12118d40f600a390",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:local-events-and-executable-registration-cache-integrated-bounded-runtime",
+      "to": "note:0dfa58c16d989dcf",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:local-events-and-executable-registration-cache-integrated-bounded-runtime",
+      "to": "note:7674e2ecc99d32af",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:local-events-and-executable-registration-cache-integrated-bounded-runtime",
+      "to": "note:3185da03dea3b5c3",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:durable-local-jobs-and-owned-consumption-integrated-bounded-runtime",
+      "to": "note:82597d9851d083a4",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:durable-local-jobs-and-owned-consumption-integrated-bounded-runtime",
+      "to": "note:4b63332b1c22c1bd",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:durable-local-jobs-and-owned-consumption-integrated-bounded-runtime",
+      "to": "note:2fcd7e8fb99716d7",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:durable-local-jobs-and-owned-consumption-integrated-bounded-runtime",
+      "to": "note:bcd9b0c2ebb7307c",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:generated-jobs-queue-snapshots-and-explicit-cleanup-integrated-local-operations",
+      "to": "note:4e18645a7916a5ab",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:generated-jobs-queue-snapshots-and-explicit-cleanup-integrated-local-operations",
+      "to": "note:57daeecca96af649",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:generated-jobs-queue-snapshots-and-explicit-cleanup-integrated-local-operations",
+      "to": "note:a5f0f95a66f29228",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:generated-jobs-queue-snapshots-and-explicit-cleanup-integrated-local-operations",
+      "to": "note:a395f0742f9b4108",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:atomic-retry-overrides-and-live-worker-controls-integrated-local-contracts",
+      "to": "note:f5da9b16f5857b72",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:atomic-retry-overrides-and-live-worker-controls-integrated-local-contracts",
+      "to": "note:ebf665806edef328",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:atomic-retry-overrides-and-live-worker-controls-integrated-local-contracts",
+      "to": "note:4095d8731476e1d6",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:atomic-retry-overrides-and-live-worker-controls-integrated-local-contracts",
+      "to": "note:b35506d25b039f38",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:durable-command-dispatch-job-middleware-and-fresh-worker-children-integrated-local-contracts",
+      "to": "note:e56af4b50b33a76e",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:durable-command-dispatch-job-middleware-and-fresh-worker-children-integrated-local-contracts",
+      "to": "note:47871a12f097ce4d",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:durable-command-dispatch-job-middleware-and-fresh-worker-children-integrated-local-contracts",
+      "to": "note:0642f7e44e8e4d12",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:durable-command-dispatch-job-middleware-and-fresh-worker-children-integrated-local-contracts",
+      "to": "note:8726595a4118971f",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:durable-command-dispatch-job-middleware-and-fresh-worker-children-integrated-local-contracts",
+      "to": "note:3c91d4afddc1a506",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:deny-default-policies-and-explicit-http-authorization-integrated-local-contracts",
+      "to": "note:9baaa95a2b4b8f69",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:deny-default-policies-and-explicit-http-authorization-integrated-local-contracts",
+      "to": "note:c232148a16f5aaf6",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:deny-default-policies-and-explicit-http-authorization-integrated-local-contracts",
+      "to": "note:7e57c5535b399dc2",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:explicit-local-text-mail-and-notification-adaptation-integrated-bounded-delivery",
+      "to": "note:d025be2b3430412a",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:explicit-local-text-mail-and-notification-adaptation-integrated-bounded-delivery",
+      "to": "note:1c263f8e049c853a",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:explicit-local-text-mail-and-notification-adaptation-integrated-bounded-delivery",
+      "to": "note:3b4532e486be364f",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:bounded-utc-command-scheduling-integrated-local-execution",
+      "to": "note:fc08556e835bd1ed",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:bounded-utc-command-scheduling-integrated-local-execution",
+      "to": "note:85dfdd5fc026786d",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:bounded-utc-command-scheduling-integrated-local-execution",
+      "to": "note:be9da3268b968f1c",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:persisted-scheduler-pause-resume-and-graceful-interruption-integrated-local-controls",
+      "to": "note:73f4c4cc02bfebe4",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:persisted-scheduler-pause-resume-and-graceful-interruption-integrated-local-controls",
+      "to": "note:4597852c8aedd366",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:persisted-scheduler-pause-resume-and-graceful-interruption-integrated-local-controls",
+      "to": "note:5f887977b5d4b91f",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:consumed-native-factory-custom-type-query-helper-and-observer-integrated-database-generators",
+      "to": "note:5a8689e1b9767b63",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:consumed-native-factory-custom-type-query-helper-and-observer-integrated-database-generators",
+      "to": "note:c007299e6e4e88b7",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:consumed-native-factory-custom-type-query-helper-and-observer-integrated-database-generators",
+      "to": "note:45d1e58d4b23276f",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:explicit-and-interactive-scheduled-task-testing-integrated-selected-execution",
+      "to": "note:474ceffd66ae1333",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:explicit-and-interactive-scheduled-task-testing-integrated-selected-execution",
+      "to": "note:cc1aa604813ba8dd",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:explicit-local-providers-and-consumed-provider-generation-integrated-application-lifecycle",
+      "to": "note:094b4bf058279ddd",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:explicit-local-providers-and-consumed-provider-generation-integrated-application-lifecycle",
+      "to": "note:d4980026943f710d",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:explicit-local-providers-and-consumed-provider-generation-integrated-application-lifecycle",
+      "to": "note:4c1c7f89d4f710d6",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:explicit-local-providers-and-consumed-provider-generation-integrated-application-lifecycle",
+      "to": "note:b5aca576aa646183",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:source-driven-registered-event-generation-integrated-consumed-listeners",
+      "to": "note:7f4af0d7dea593b4",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:source-driven-registered-event-generation-integrated-consumed-listeners",
+      "to": "note:53bbb7935e48cd88",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:explicit-discovered-package-metadata-integrated-cached-provider-consumption",
+      "to": "note:022fd5a15af37cd9",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:explicit-discovered-package-metadata-integrated-cached-provider-consumption",
+      "to": "note:b73cd701128e7d2a",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:explicit-discovered-package-metadata-integrated-cached-provider-consumption",
+      "to": "note:7d1a1991a7017328",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:explicit-discovered-package-metadata-integrated-cached-provider-consumption",
+      "to": "note:6f6c6f088adb84ef",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:local-language-resources-integrated-code-only-text-consumption",
+      "to": "note:5848b0ed148b037d",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:local-language-resources-integrated-code-only-text-consumption",
+      "to": "note:ca356ba2ec02108e",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:local-language-resources-integrated-code-only-text-consumption",
+      "to": "note:e0ed00cc53ec9202",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:code-only-vendor-publication-integrated-resource-consumers",
+      "to": "note:2758ba28e235a192",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:code-only-vendor-publication-integrated-resource-consumers",
+      "to": "note:3b48ef7a356d4675",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:code-only-vendor-publication-integrated-resource-consumers",
+      "to": "note:f7dcd349d835aa07",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:model-associated-resource-controllers-integrated-native-http-persistence",
+      "to": "note:b7610857c6cd5cfa",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:model-associated-resource-controllers-integrated-native-http-persistence",
+      "to": "note:4c99e2d007afc7f4",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:model-associated-resource-controllers-integrated-native-http-persistence",
+      "to": "note:b78dd5019c705f88",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:durable-batch-accounting-integrated-local-worker-controls",
+      "to": "note:16d77effaa341865",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:durable-batch-accounting-integrated-local-worker-controls",
+      "to": "note:5ec2d1c51dd501eb",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:durable-batch-accounting-integrated-local-worker-controls",
+      "to": "note:fd4e9e6c7e47cb95",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:explicit-native-model-pruning-integrated-bounded-sql-deletion",
+      "to": "note:73b1b959bf31cc6e",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:explicit-native-model-pruning-integrated-bounded-sql-deletion",
+      "to": "note:cc1972f5f054d376",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:explicit-native-model-pruning-integrated-bounded-sql-deletion",
+      "to": "note:7831c032fb1ecdd2",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:explicit-development-processes-integrated-foreground-command-group",
+      "to": "note:c437d8d6453186af",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:explicit-development-processes-integrated-foreground-command-group",
+      "to": "note:e36f2762a4e67b83",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:explicit-development-processes-integrated-foreground-command-group",
+      "to": "note:a2f146fa7e1b7162",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:verified-sqlite-tracking-uninstall-integrated-force-guarded-history-only-removal",
+      "to": "note:8d424bd3972532b5",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:verified-sqlite-tracking-uninstall-integrated-force-guarded-history-only-removal",
+      "to": "note:e6a8b328b2b5db1f",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:verified-sqlite-tracking-uninstall-integrated-force-guarded-history-only-removal",
+      "to": "note:3a85791f9db5fd70",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:native-console-testing-integrated-real-runner-prompt-and-assertion-harness",
+      "to": "note:6835e4df1fe55725",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:native-console-testing-integrated-real-runner-prompt-and-assertion-harness",
+      "to": "note:340ed7fff2798b45",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:native-console-testing-integrated-real-runner-prompt-and-assertion-harness",
+      "to": "note:0ed25f65ee24005f",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:configuration-only-publication-integrated-explicit-package-tag-consumers",
+      "to": "note:85988b11d67c34ca",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:configuration-only-publication-integrated-explicit-package-tag-consumers",
+      "to": "note:0c3599f25382936d",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:configuration-only-publication-integrated-explicit-package-tag-consumers",
+      "to": "note:4c029d3509f5329b",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:paired-model-factory-and-seeder-generation-integrated-native-composition",
+      "to": "note:47ca3807c5570f43",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:paired-model-factory-and-seeder-generation-integrated-native-composition",
+      "to": "note:54cc704642024d11",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:paired-model-factory-and-seeder-generation-integrated-native-composition",
+      "to": "note:ba0439bc39470b90",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:offline-application-installer-and-native-setup-integrated-new-directory-creation",
+      "to": "note:a7b5062b62d04746",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:offline-application-installer-and-native-setup-integrated-new-directory-creation",
+      "to": "note:1f1b073a333e61de",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:offline-application-installer-and-native-setup-integrated-new-directory-creation",
+      "to": "note:ae0ff3df628dfabe",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:trusted-native-javascript-tinker-integrated-local-developer-session",
+      "to": "note:bf04d97d2282195d",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:trusted-native-javascript-tinker-integrated-local-developer-session",
+      "to": "note:b936404b8831845d",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:trusted-native-javascript-tinker-integrated-local-developer-session",
+      "to": "note:2aacf68611f1490b",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:native-http-feature-tests-integrated-generated-live-worker-consumers",
+      "to": "note:467b5ba2a24e87f1",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:native-http-feature-tests-integrated-generated-live-worker-consumers",
+      "to": "note:1391dcd275564968",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:native-http-feature-tests-integrated-generated-live-worker-consumers",
+      "to": "note:eb5ace395d098146",
+      "relation": "has_note"
+    },
+    {
+      "from": "document:progress/section:bundle-cli-feature-ledger/section:native-http-feature-tests-integrated-generated-live-worker-consumers",
+      "to": "note:841a8a37362be5a6",
+      "relation": "has_note"
+    },
+    {
       "from": "document:progress/section:1-command-discovery-and-help",
       "to": "note:a19f088211d04bb1",
       "relation": "has_note"
@@ -3394,12 +5029,27 @@
       "relation": "references_command"
     },
     {
+      "from": "note:1a3d51e7c74b4c07",
+      "to": "command:artisan:cache:clear",
+      "relation": "references_command"
+    },
+    {
       "from": "item:38c7d3371c976dd7",
       "to": "command:artisan:cache:forget",
       "relation": "references_command"
     },
     {
+      "from": "note:1a3d51e7c74b4c07",
+      "to": "command:artisan:cache:forget",
+      "relation": "references_command"
+    },
+    {
       "from": "item:a6c5af9e8ec69ebf",
+      "to": "command:artisan:cache:prune-stale-tags",
+      "relation": "references_command"
+    },
+    {
+      "from": "note:1a3d51e7c74b4c07",
       "to": "command:artisan:cache:prune-stale-tags",
       "relation": "references_command"
     },
@@ -3419,12 +5069,27 @@
       "relation": "references_command"
     },
     {
+      "from": "note:c406b56b7bada37e",
+      "to": "command:artisan:config:cache",
+      "relation": "references_command"
+    },
+    {
       "from": "item:399dc0281abbc2f8",
       "to": "command:artisan:config:clear",
       "relation": "references_command"
     },
     {
+      "from": "note:c406b56b7bada37e",
+      "to": "command:artisan:config:clear",
+      "relation": "references_command"
+    },
+    {
       "from": "item:652400405ed48a95",
+      "to": "command:artisan:config:publish",
+      "relation": "references_command"
+    },
+    {
+      "from": "note:3d3cb43735d03b23",
       "to": "command:artisan:config:publish",
       "relation": "references_command"
     },
@@ -3514,7 +5179,17 @@
       "relation": "references_command"
     },
     {
+      "from": "note:8831850e44ed6bb0",
+      "to": "command:artisan:env:decrypt",
+      "relation": "references_command"
+    },
+    {
       "from": "item:8e8cd07161e9266e",
+      "to": "command:artisan:env:encrypt",
+      "relation": "references_command"
+    },
+    {
+      "from": "note:8831850e44ed6bb0",
       "to": "command:artisan:env:encrypt",
       "relation": "references_command"
     },
@@ -3524,7 +5199,17 @@
       "relation": "references_command"
     },
     {
+      "from": "note:0dfa58c16d989dcf",
+      "to": "command:artisan:event:cache",
+      "relation": "references_command"
+    },
+    {
       "from": "item:1a47667180cc2d5b",
+      "to": "command:artisan:event:clear",
+      "relation": "references_command"
+    },
+    {
+      "from": "note:0dfa58c16d989dcf",
       "to": "command:artisan:event:clear",
       "relation": "references_command"
     },
@@ -3534,7 +5219,17 @@
       "relation": "references_command"
     },
     {
+      "from": "note:7f4af0d7dea593b4",
+      "to": "command:artisan:event:generate",
+      "relation": "references_command"
+    },
+    {
       "from": "item:44f6d66ea839a1d4",
+      "to": "command:artisan:event:list",
+      "relation": "references_command"
+    },
+    {
+      "from": "note:0dfa58c16d989dcf",
       "to": "command:artisan:event:list",
       "relation": "references_command"
     },
@@ -3564,7 +5259,17 @@
       "relation": "references_command"
     },
     {
+      "from": "note:8831850e44ed6bb0",
+      "to": "command:artisan:key:generate",
+      "relation": "references_command"
+    },
+    {
       "from": "item:fef697176a0bc091",
+      "to": "command:artisan:lang:publish",
+      "relation": "references_command"
+    },
+    {
+      "from": "note:5848b0ed148b037d",
       "to": "command:artisan:lang:publish",
       "relation": "references_command"
     },
@@ -3594,6 +5299,11 @@
       "relation": "references_command"
     },
     {
+      "from": "note:5a8689e1b9767b63",
+      "to": "command:artisan:make:cast",
+      "relation": "references_command"
+    },
+    {
       "from": "item:34c29d6584fab606",
       "to": "command:artisan:make:channel",
       "relation": "references_command"
@@ -3604,7 +5314,17 @@
       "relation": "references_command"
     },
     {
+      "from": "note:b625ecc645c8ba40",
+      "to": "command:artisan:make:class",
+      "relation": "references_command"
+    },
+    {
       "from": "item:5e61724ab2afcb50",
+      "to": "command:artisan:make:command",
+      "relation": "references_command"
+    },
+    {
+      "from": "note:b625ecc645c8ba40",
       "to": "command:artisan:make:command",
       "relation": "references_command"
     },
@@ -3624,6 +5344,11 @@
       "relation": "references_command"
     },
     {
+      "from": "note:b625ecc645c8ba40",
+      "to": "command:artisan:make:config",
+      "relation": "references_command"
+    },
+    {
       "from": "item:a1d7160484e49cff",
       "to": "command:artisan:make:controller",
       "relation": "references_command"
@@ -3639,12 +5364,27 @@
       "relation": "references_command"
     },
     {
+      "from": "note:b625ecc645c8ba40",
+      "to": "command:artisan:make:enum",
+      "relation": "references_command"
+    },
+    {
       "from": "item:e0d7a6b8dcb2b443",
       "to": "command:artisan:make:event",
       "relation": "references_command"
     },
     {
+      "from": "note:7674e2ecc99d32af",
+      "to": "command:artisan:make:event",
+      "relation": "references_command"
+    },
+    {
       "from": "item:54f1b3b85ad4a275",
+      "to": "command:artisan:make:exception",
+      "relation": "references_command"
+    },
+    {
+      "from": "note:b625ecc645c8ba40",
       "to": "command:artisan:make:exception",
       "relation": "references_command"
     },
@@ -3659,7 +5399,17 @@
       "relation": "references_command"
     },
     {
+      "from": "note:b625ecc645c8ba40",
+      "to": "command:artisan:make:interface",
+      "relation": "references_command"
+    },
+    {
       "from": "item:45dec3945bea6d16",
+      "to": "command:artisan:make:job",
+      "relation": "references_command"
+    },
+    {
+      "from": "note:4e18645a7916a5ab",
       "to": "command:artisan:make:job",
       "relation": "references_command"
     },
@@ -3669,12 +5419,27 @@
       "relation": "references_command"
     },
     {
+      "from": "note:0642f7e44e8e4d12",
+      "to": "command:artisan:make:job-middleware",
+      "relation": "references_command"
+    },
+    {
       "from": "item:2e17537480d4835c",
       "to": "command:artisan:make:listener",
       "relation": "references_command"
     },
     {
+      "from": "note:7674e2ecc99d32af",
+      "to": "command:artisan:make:listener",
+      "relation": "references_command"
+    },
+    {
       "from": "item:323de6eb43357962",
+      "to": "command:artisan:make:mail",
+      "relation": "references_command"
+    },
+    {
+      "from": "note:d025be2b3430412a",
       "to": "command:artisan:make:mail",
       "relation": "references_command"
     },
@@ -3704,6 +5469,11 @@
       "relation": "references_command"
     },
     {
+      "from": "note:d025be2b3430412a",
+      "to": "command:artisan:make:notification",
+      "relation": "references_command"
+    },
+    {
       "from": "item:c5ff7fa8e4af5936",
       "to": "command:artisan:make:notifications-table",
       "relation": "references_command"
@@ -3714,12 +5484,27 @@
       "relation": "references_command"
     },
     {
+      "from": "note:5a8689e1b9767b63",
+      "to": "command:artisan:make:observer",
+      "relation": "references_command"
+    },
+    {
       "from": "item:2e3628a280a09b5d",
       "to": "command:artisan:make:policy",
       "relation": "references_command"
     },
     {
+      "from": "note:9baaa95a2b4b8f69",
+      "to": "command:artisan:make:policy",
+      "relation": "references_command"
+    },
+    {
       "from": "item:d702150d7341457d",
+      "to": "command:artisan:make:provider",
+      "relation": "references_command"
+    },
+    {
+      "from": "note:d4980026943f710d",
       "to": "command:artisan:make:provider",
       "relation": "references_command"
     },
@@ -3764,6 +5549,11 @@
       "relation": "references_command"
     },
     {
+      "from": "note:5a8689e1b9767b63",
+      "to": "command:artisan:make:scope",
+      "relation": "references_command"
+    },
+    {
       "from": "item:c6ed4d107809aac3",
       "to": "command:artisan:make:seeder",
       "relation": "references_command"
@@ -3779,6 +5569,11 @@
       "relation": "references_command"
     },
     {
+      "from": "note:b625ecc645c8ba40",
+      "to": "command:artisan:make:test",
+      "relation": "references_command"
+    },
+    {
       "from": "example:9b6486e6a677a60d",
       "to": "command:artisan:make:test",
       "relation": "references_command"
@@ -3790,6 +5585,11 @@
     },
     {
       "from": "item:6892a9c937a46b76",
+      "to": "command:artisan:make:trait",
+      "relation": "references_command"
+    },
+    {
+      "from": "note:b625ecc645c8ba40",
       "to": "command:artisan:make:trait",
       "relation": "references_command"
     },
@@ -3869,6 +5669,11 @@
       "relation": "references_command"
     },
     {
+      "from": "note:73b1b959bf31cc6e",
+      "to": "command:artisan:model:prune",
+      "relation": "references_command"
+    },
+    {
       "from": "item:1ea05cd9da618f37",
       "to": "command:artisan:model:show",
       "relation": "references_command"
@@ -3894,13 +5699,28 @@
       "relation": "references_command"
     },
     {
+      "from": "note:79d1e880c35df8b9",
+      "to": "command:artisan:optimize:clear",
+      "relation": "references_command"
+    },
+    {
       "from": "item:f4a10da3896658c9",
+      "to": "command:artisan:package:discover",
+      "relation": "references_command"
+    },
+    {
+      "from": "note:022fd5a15af37cd9",
       "to": "command:artisan:package:discover",
       "relation": "references_command"
     },
     {
       "from": "item:0cbcf7314a0f15cf",
       "to": "command:artisan:pail",
+      "relation": "references_command"
+    },
+    {
+      "from": "note:5ec2d1c51dd501eb",
+      "to": "command:artisan:queue:batch",
       "relation": "references_command"
     },
     {
@@ -3919,12 +5739,22 @@
       "relation": "references_command"
     },
     {
+      "from": "note:a5f0f95a66f29228",
+      "to": "command:artisan:queue:flush",
+      "relation": "references_command"
+    },
+    {
       "from": "item:918d0f58644d9f35",
       "to": "command:artisan:queue:forget",
       "relation": "references_command"
     },
     {
       "from": "item:8761668c254a3bb9",
+      "to": "command:artisan:queue:listen",
+      "relation": "references_command"
+    },
+    {
+      "from": "note:8726595a4118971f",
       "to": "command:artisan:queue:listen",
       "relation": "references_command"
     },
@@ -3939,6 +5769,11 @@
       "relation": "references_command"
     },
     {
+      "from": "note:ebf665806edef328",
+      "to": "command:artisan:queue:pause",
+      "relation": "references_command"
+    },
+    {
       "from": "item:f25df58f99a48e08",
       "to": "command:artisan:queue:prune-batches",
       "relation": "references_command"
@@ -3949,12 +5784,27 @@
       "relation": "references_command"
     },
     {
+      "from": "note:a5f0f95a66f29228",
+      "to": "command:artisan:queue:prune-failed",
+      "relation": "references_command"
+    },
+    {
       "from": "item:c422280c723e82f9",
       "to": "command:artisan:queue:restart",
       "relation": "references_command"
     },
     {
+      "from": "note:ebf665806edef328",
+      "to": "command:artisan:queue:restart",
+      "relation": "references_command"
+    },
+    {
       "from": "item:9ed11d9f729b1e6d",
+      "to": "command:artisan:queue:resume",
+      "relation": "references_command"
+    },
+    {
+      "from": "note:ebf665806edef328",
       "to": "command:artisan:queue:resume",
       "relation": "references_command"
     },
@@ -3970,6 +5820,11 @@
     },
     {
       "from": "item:4326cecded7d2255",
+      "to": "command:artisan:queue:work",
+      "relation": "references_command"
+    },
+    {
+      "from": "note:4b63332b1c22c1bd",
       "to": "command:artisan:queue:work",
       "relation": "references_command"
     },
@@ -3994,12 +5849,27 @@
       "relation": "references_command"
     },
     {
+      "from": "note:afd52e0d0a741d86",
+      "to": "command:artisan:route:cache",
+      "relation": "references_command"
+    },
+    {
       "from": "item:359163eda67d6fb3",
       "to": "command:artisan:route:clear",
       "relation": "references_command"
     },
     {
+      "from": "note:afd52e0d0a741d86",
+      "to": "command:artisan:route:clear",
+      "relation": "references_command"
+    },
+    {
       "from": "item:267bbd4666d6fec2",
+      "to": "command:artisan:route:list",
+      "relation": "references_command"
+    },
+    {
+      "from": "note:d00fcef1d1cb4a5c",
       "to": "command:artisan:route:list",
       "relation": "references_command"
     },
@@ -4029,6 +5899,11 @@
       "relation": "references_command"
     },
     {
+      "from": "note:73f4c4cc02bfebe4",
+      "to": "command:artisan:schedule:interrupt",
+      "relation": "references_command"
+    },
+    {
       "from": "item:0b98ce5da58298ed",
       "to": "command:artisan:schedule:list",
       "relation": "references_command"
@@ -4039,7 +5914,17 @@
       "relation": "references_command"
     },
     {
+      "from": "note:73f4c4cc02bfebe4",
+      "to": "command:artisan:schedule:pause",
+      "relation": "references_command"
+    },
+    {
       "from": "item:4b90aeae9b305e34",
+      "to": "command:artisan:schedule:resume",
+      "relation": "references_command"
+    },
+    {
+      "from": "note:73f4c4cc02bfebe4",
       "to": "command:artisan:schedule:resume",
       "relation": "references_command"
     },
@@ -4089,7 +5974,17 @@
       "relation": "references_command"
     },
     {
+      "from": "note:b7154dd322884c9c",
+      "to": "command:artisan:storage:link",
+      "relation": "references_command"
+    },
+    {
       "from": "item:f52a689b36b662f0",
+      "to": "command:artisan:storage:unlink",
+      "relation": "references_command"
+    },
+    {
+      "from": "note:b7154dd322884c9c",
       "to": "command:artisan:storage:unlink",
       "relation": "references_command"
     },
@@ -4100,6 +5995,11 @@
     },
     {
       "from": "item:01aaaed8b08b5e26",
+      "to": "command:artisan:stub:publish",
+      "relation": "references_command"
+    },
+    {
+      "from": "note:e83b4d5621df0b23",
       "to": "command:artisan:stub:publish",
       "relation": "references_command"
     },
@@ -4140,6 +6040,11 @@
     },
     {
       "from": "item:7ea7d62a4f469484",
+      "to": "command:artisan:vendor:publish",
+      "relation": "references_command"
+    },
+    {
+      "from": "note:2758ba28e235a192",
       "to": "command:artisan:vendor:publish",
       "relation": "references_command"
     },

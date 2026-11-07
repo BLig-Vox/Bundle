@@ -78,6 +78,7 @@ Prefix each command with `bun run bundle`. `bun run start` invokes the same CLI;
 | `db:table <name>` | Inspect a table; use `schema.name` when ambiguous |
 | `migrate [--seed]` | Apply pending migrations, optionally followed by the default seeder |
 | `migrate:install` | Install/upgrade migration history without applying model migrations |
+| `migrate:uninstall [--pretend]` | Inspect or force-remove verified existing SQLite tracking only; preserve app tables and refuse dependencies/active locks. See [tracking uninstall](history-uninstall.md) |
 | `migrate:status [--pending]` | List executed/pending migrations and batch numbers |
 | `migrate:unlock --force` | Remove a stale isolation lock after verifying no migration is active |
 | `migrate:check` | Check whether mapped entity changes need a migration; nonzero exit if changes are found |
@@ -88,12 +89,13 @@ Prefix each command with `bun run bundle`. `bun run start` invokes the same CLI;
 | `make:migration [name] [--blank]` | Generate a schema-diff migration or an empty migration |
 | `db:seed [class]` | Run a named seeder, defaulting to `DatabaseSeeder` |
 | `make:seeder <name>` | Generate a seeder class; the name must end with `Seeder` |
-| `make:model <name>` | Generate a model and its code-first schema in one TypeScript file |
+| `make:model <name> [-mfs]` | Generate a model/schema; optionally compose native migration, factory and seeder with selected code-output preflight |
 | `model:show [name]` | Inspect entity mappings without connecting |
+| `model:prune [--pretend]` | Count explicit `pruning.ts` rules or require `--force` for bounded native bulk deletion against an existing target; see [model pruning](model-pruning.md) |
 | `schema:sql` | Print CREATE SQL for mapped entities; **not** a live schema/data backup |
 | `schema:dump [--prune]` | Save the live schema plus migration history, without application rows; pruning requires `--force` |
 
-See [the migration guide](migrations.md) for the full option matrix, batch semantics, SQL previews, isolation, named connections, path selection, and schema-dump requirements. `make:model -m -s` can also scaffold a migration and seeder; it never edits an existing model.
+See [native ORM generators](native-orm-generators.md) for consumed `make:factory --model`, `make:cast`, `make:scope` and `make:observer` examples with explicit attributes/mappings/helper calls/subscriber registration; generation never connects to a database. See [the migration guide](migrations.md) for the full option matrix, batch semantics, SQL previews, isolation, named connections, path selection, and schema-dump requirements. `make:model Product -mfs` composes model, migration, `ProductFactory` and `ProductSeeder`; `-f/--factory` and `-s/--seed` also work independently without opening the DB. All selected code sources, custom factory tokens/syntax, destinations and existing ancestor types are preflighted before creating code outputs; predictable conflicts or unsafe parents preserve the other outputs. Native migration baseline/production guards still apply with `-m`. Later I/O or migration failure may leave earlier new code files; this is not a whole-operation transaction. It never edits an existing model.
 
 Use `--help` on any command. Structured command results are printed as JSON; help and `schema:sql` are text. Failures return a nonzero exit status. Bundle suppresses ORM query logging and redacts known database credentials from its error messages.
 

@@ -58,7 +58,7 @@ Relationships represent the structure and explicit references in the checklist. 
 
 The corpus includes all 15 numbered categories, as well as subsections, prose, warnings, optional tools, examples, and source links. `manifest.json` reports counts for the current source rather than hard-coded progress totals.
 
-`completed` mirrors the source checkbox only; it is not an installed-package or runtime capability check. The Laravel/PHP and Blade references are source material, not a decision to adopt them in this code-driven Bun/TypeScript project. No implementation items are checked off by generating this corpus.
+`completed` mirrors the source checkbox only; it is not an installed-package or runtime capability check. Laravel/PHP and Blade references remain source material, not a decision to adopt those runtimes. Bundle's backend remains code-driven Bun/TypeScript; generated application frontends use the separately selected React TSX architecture. No implementation items are checked off by generating this corpus.
 
 IDs are deterministic. Changing an item's completion state preserves its ID; renaming it or moving it to another section can change its ID. Identical repeated records receive numeric suffixes. This is a document-derived graph, not a permanent application entity-ID system.
 

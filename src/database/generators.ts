@@ -16,12 +16,12 @@ async function createFile(directory: string, name: string, content: string) {
   return filename;
 }
 
-export function generateModel(directory: string, name: string) {
+export function renderModel(name: string): string {
   className(name);
   if (["Date", "String", "Number", "Boolean", "BigInt", "Buffer", "Object", "Array"].includes(name)) {
     throw new Error("Model names must not shadow built-in scalar types, e.g. Date. Choose a domain-specific name.");
   }
-  return createFile(directory, name, `import { EntitySchema as _BundleEntitySchema, OptionalProps as _BundleOptionalProps } from "@mikro-orm/core";
+  return `import { EntitySchema as _BundleEntitySchema, OptionalProps as _BundleOptionalProps } from "@mikro-orm/core";
 
 export class ${name} {
   [_BundleOptionalProps]?: "createdAt" | "updatedAt";
@@ -38,13 +38,17 @@ export default new _BundleEntitySchema<${name}>({
     updatedAt: { type: globalThis.Date, onUpdate: () => new globalThis.Date() },
   },
 });
-`);
+`;
 }
 
-export function generateSeeder(directory: string, name: string) {
+export function generateModel(directory: string, name: string) {
+  return createFile(directory, name, renderModel(name));
+}
+
+export function renderSeeder(name: string): string {
   className(name);
   if (!name.endsWith("Seeder")) throw new Error("Seeder class names must end with Seeder, e.g. ProductSeeder.");
-  return createFile(directory, name, `import type { EntityManager as _BundleEntityManager } from "@mikro-orm/core";
+  return `import type { EntityManager as _BundleEntityManager } from "@mikro-orm/core";
 import { Seeder as _BundleSeeder } from "@mikro-orm/seeder";
 
 export class ${name} extends _BundleSeeder {
@@ -53,5 +57,9 @@ export class ${name} extends _BundleSeeder {
     void em;
   }
 }
-`);
+`;
+}
+
+export function generateSeeder(directory: string, name: string) {
+  return createFile(directory, name, renderSeeder(name));
 }
