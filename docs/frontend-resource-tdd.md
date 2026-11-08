@@ -1,0 +1,49 @@
+# Generated authenticated resource pages
+
+Historical milestone evidence follows. For the current password-change implementation and verification totals, see [password-change TDD evidence](frontend-password-tdd.md).
+`make:resource Task --field title:string --field 'body:text?' --field count:integer --field price:number --field done:boolean` generates the backend and an editable typed React page, then registers both. App imports `src/resource-pages.tsx` directly. The manifest contains only fixed type imports, named static page imports and a typed array of literal names/hash routes/components. Recognition reconstructs and compares the entire file byte for byte; project code is never executed during registration. API and page resource names must agree exactly. No request-driven import, eval, runtime code generation or new app dependency is used.
+
+The generated App retains its account and Notes UI, and wraps Notes in a labelled navigation component with native links, `aria-current`, and an explicit `#/notes` route. Each registered resource gets a visible link (`#/tasks`); unknown hashes show a safe page-not-found message. Generating another resource never edits App or previous pages. Keep the registry import/navigation hook when editing App. Older apps without the new shared frontend runtime fail prerequisites and need reviewed manual integration.
+
+Each page has a resource-specific Row type, field declarations and a runtime validator delegated to the shared ResourcePage. It supports create/list/edit/PATCH/delete. The editor sends all declared fields for PATCH; null controls explicitly send JSON null for nullable fields. There is no blank-to-zero/null coercion. Strings/text trim and require 1–255/10000 characters, numbers must be finite, integers safe and booleans strict. Nullable fields start as null, and have labelled controls to choose a value. Mutation JSON is bounded to 16 KiB. Lists accept at most 100 strictly ascending positive safe IDs. Every row must have exactly id and declared own fields with valid scalar/null values. Mutation responses must also match the requested ID/values and expected status/media type. DELETE requires 204 with an empty body. Nothing relies on a TypeScript assertion for response validity.
+
+The page has loading, empty, error, refresh and busy states. Errors never echo server bodies. Failed mutations retain the draft and explain refresh-before-retry ambiguity. Native labels, fieldsets, legends, keyboard links/buttons, live status and alert messages supply accessible interaction. Values render through React text escaping. Shared controls retain the app's existing Button dependency.
+
+Requests use same-origin relative URLs, explicit same-origin credentials, no-store and abort/timeout signals. The existing HTTP-only cookie remains the only session. Account/session boundaries unmount resource pages; effect generations reject stale reads, writes, errors and 401s even if fetch ignores abort. Route changes unmount the editor as well. Current 401s invalidate the entire account, clearing Notes and resources through the existing App boundary. Auth/logout behavior and owner-scoped backend checks remain intact.
+
+Both manifests and all new artifacts are constructed and syntax-validated before staging or publication. Existing registered pages must be bounded regular valid TSX files, but may contain user edits. Prerequisite byte/inode snapshots are rechecked after acquiring the shared resource lock and after staging. All staged bytes are checked before the first publication. Destinations refuse existing files/directories/dangling symlinks. Exclusive hard links publish artifacts; both manifest backups participate in rollback. Recovery retains `previous-manifest.ts`, `previous-pages.tsx` and per-file inode identities when concurrent edits prevent restoration. This preserves the backend generator's trusted-directory and crash-recovery limits: publication is not crash-atomic and the app should be stopped during generation.
+
+Pagination uses at most 100 oldest-first rows per page, an exclusive `after` ID cursor and strict `X-Has-More: true|false` metadata. Accessible Previous/Next controls and a page indicator use saved request boundaries. Refresh/mutations stay on the current page; Previous remains explicit even when deletes empty a page. New rows have higher IDs and appear at the tail. Keyset views are live, not snapshots: deletions can shorten pages and revisiting a page may pull in later rows. There is no search, total count or optimistic concurrency check, and resource editors reset on page navigation. Shared runtime edits require manual registry integration rather than automatic generation. Syntactic validation during generation is followed by generated-app TypeScript/build acceptance; the CLI does not run a project-wide typecheck itself.
+
+## Test-first evidence
+
+The new behavioral generated-app acceptance was added before implementation and run through `scripts/verify-app.ts` with linked dependencies and a host-supplied jsdom. The old frontend successfully built and migrated SQLite, then failed because `a[href="#/tasks"]` was null (`/tmp/resource-ui-red.log`). No frontend/generator implementation changed before that RED. A later edge-case test for resource name `Resource` failed on a duplicate ResourcePage binding (`/tmp/resource-ui-shadow-red.log`); aliasing generated imports made it pass.
+
+The DOM acceptance mounts the real App in StrictMode and bridges same-origin requests to the generated router against CLI-migrated SQLite. It covers account/Notes regression, Task navigation/create/list/PATCH-to-null/delete, persisted API state, two-owner item isolation, malformed scalars/extra keys/unsorted or oversized lists, generic errors, draft retention, invalid client integers, pending reads/writes across account changes, stale 401 rejection and current-session expiry. Generator tests cover exact/malicious/mismatched registries, edited App/page preservation, missing/invalid/symlinked targets, frontend name collisions, concurrency, staging and all six publication failure points, both-manifest restoration and preservation of concurrent frontend registry edits.
+
+Reproduce linked acceptance (substitute installed module locations):
+
+```sh
+BUNDLE_ACCEPTANCE_NODE_MODULES=/tmp/bundle-request-acceptance-s8UVwY/example/node_modules \
+BUNDLE_ACCEPTANCE_DOM_MODULE=/root/.hermes/hermes-agent/node_modules/jsdom/lib/api.js \
+bun run scripts/verify-app.ts
+bun test
+bun run typecheck
+bunx --no-install tsc --noEmit
+bun run graph:check
+git diff --check
+```
+
+The dependency paths select linked acceptance, not a fresh package installation. Add `BUNDLE_ACCEPTANCE_FIREFOX=1` to run the expanded real Firefox/HTTP acceptance: register/login, Task create/list, persisted refresh, nullable PATCH, delete, API owner isolation, Notes and logout. It requires Python, Firefox and loopback sockets. The real Firefox run passed these flows against SQLite; no browser-based limit was reported.
+
+Final session verification: full framework suite 243 passed, 3 environment-dependent skips, 0 failures; Bun typecheck, strict TypeScript, graph freshness and diff checks passed. Linked generated-app acceptance passed frontend/node/server typechecks, 31 app tests, production builds, CLI-generated/applied SQLite migrations, model persistence, the 78-assertion paginated resource API fixture and 725-assertion React DOM acceptance. Real Firefox/HTTP acceptance also passed register/login, paginated resource CRUD, nullable PATCH, owner isolation, Notes, refresh and logout. Linked dependencies do not establish a fresh-install pass. No commit or push was made.
+
+## Keyset pagination TDD
+
+Pagination tests preceded implementation. The migrated SQLite resource test failed because the collection response lacked `X-Has-More` (`/tmp/pagination-backend-red.log`, 18 pass / 1 fail). The real StrictMode DOM test built and migrated successfully, then failed on the missing `Page 1` indicator (`/tmp/pagination-frontend-red.log`). The backend focused GREEN run passed all 19 tests (`/tmp/pagination-backend-green.log`).
+
+The backend tests seed more than 201 rows through ORM persistence in one flush, including interleaved foreign-owner rows. They verify exact 100/100/tail windows, ascending order, exclusive boundaries, true/false lookahead (including exactly 100 remaining), empty tails, backward cursor reuse, owner isolation, rejected malformed/duplicate/unknown query parameters, and stable next pages after deleting the boundary or inserting higher IDs. The generated-app API fixture independently verifies 201 owner rows across three pages while preserving the JSON array shape.
+
+DOM acceptance seeds 205 rows in one flush and checks every visible ID plus the first/last row, Previous/Next state, page indicators, backward navigation, failed/in-flight navigation, invalid headers and response shapes, and exclusive-boundary violations. Deleting the tail leaves Page 3 empty until explicit Previous; creating there displays a new higher ID and deleting it stays on Page 3. Existing account-clearing, stale read/write/401 rejection, generic errors and CRUD regressions remain covered.
+
+Pagination final verification: the full framework suite passed 243 tests with 3 environment-dependent skips and no failures. Bun typecheck, strict TypeScript, graph freshness and whitespace checks for tracked/untracked files passed. Linked generated-app acceptance passed frontend/node/server typechecks, 31 app tests, production builds, CLI migrations, SQLite model persistence, the 78-assertion resource API fixture and 725-assertion DOM acceptance. The real Firefox/HTTP acceptance passed resource CRUD, nullable PATCH, owner isolation, Notes, refresh and logout. Linked dependencies do not verify a fresh install. No commit or push was made.

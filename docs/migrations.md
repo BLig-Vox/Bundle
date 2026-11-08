@@ -16,7 +16,9 @@ bun run bundle migrate:status
 
 Apply the checked-in initial migrations before generating the first model diff. When no snapshot exists, Bundle refuses to generate a diff over pending migrations: diffing an empty database could duplicate tables already covered by those migrations. Once snapshots exist, successive model-diff migrations can be generated before applying them.
 
-`make:model Product -m -s` creates the model, a model-diff migration, and `ProductSeeder`. This convenience command uses the same initialized-baseline requirement. Existing models are never edited or overwritten. After editing a generated model, generate another diff for those changes.
+`make:model Product -m -s` creates the model, a model-diff migration, and `ProductSeeder`. This convenience command uses the same initialized-baseline requirement. Existing models are never edited or overwritten. Repeated `--field name:type` options can populate the model before its diff is generated; see [the database guide](database.md) for types and nullable syntax. After editing a generated model, generate another diff for those changes.
+
+Fields are validated before baseline checks or writes. `--migration` checks the initialized baseline, writes the model, then opens a fresh ORM to generate its diff, so discovery includes the new fields. It does not apply the migration. Model/seeder writes are outside database transactions. If migration generation fails, the command returns a failure identifying the preserved model and any generated seeder; review migration files, fix the cause and retry `make:migration`. No rollback or atomicity across files and database is promised.
 
 ## Commands and options
 

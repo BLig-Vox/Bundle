@@ -4,14 +4,18 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project direction
 
-Use a code-driven approach. Do not introduce XML, AXAML/XAML, HTML-like UI syntax (including JSX/TSX), or markup-based UI frameworks. The project uses Bun and TypeScript with MikroORM for database persistence; no web or UI framework has been selected. Entity mappings use TypeScript classes and `EntitySchema`, not decorators or a separate schema DSL.
+The intended product direction is a complete, secure-by-default, AI-friendly full-stack framework. The first proposed app workflow includes a Vite + TypeScript frontend with shadcn/ui configured, integrated with Bundle's Bun backend and CLI. The database tools, plain TypeScript `make:page` generator, and static manifest Bun web runtime are implemented; the integrated workflow remains proposed. See `FRAMEWORK_DIRECTION.md` for milestones and acceptance criteria.
+
+Use a code-driven approach for framework internals: Bun, TypeScript, MikroORM classes and `EntitySchema`, without decorators or a separate schema DSL. **Generated frontend templates are explicitly authorized to use React JSX/TSX, HTML entry documents, CSS, Vite and shadcn/ui conventions**, as approved product scope. Their integration tests may compile/render those assets. This reconciles and replaces the prior blanket restriction on HTML-like syntax for this workflow. Do not introduce XML/AXAML/XAML or unrelated markup frameworks into framework internals. The legacy `make:page` server-rendered TypeScript contract remains independent of React.
 
 ## Development commands
 
 - `bun install` — Install dependencies from `package.json` and `bun.lock`.
 - `bun run start` — Run the Bundle CLI (`index.ts`); no arguments prints the command list.
 - `bun run dev` — Run the CLI in watch mode, restarting on changes.
-- `bun run bundle <command>` — Run Laravel-inspired database commands; `list` shows available commands.
+- `bun run bundle <command>` — Run database commands or page scaffolding; `list` shows available commands.
+- `bun run bundle make:page Dashboard` — Exclusively generate `src/pages/Dashboard.ts`, with an escaped server-renderable `render` function; no route/server registration.
+- `bun run bundle serve` — Load this root's fixed static route manifest, falling back to Home preview only if absent. `--mode routes` selects manifest only; `--mode pages` selects Home only. Default `127.0.0.1:3000`; numeric `--host` and decimal `--port` (including 0) only.
 - `bun run bundle migrate` / `bun run bundle db:seed` — Apply migrations / explicitly seed the selected database.
 - `bun run orm <command>` — Run the matching native MikroORM CLI (development dependency). Its advanced commands bypass Bundle's safety guards.
 - `bun run typecheck` — Run `bun check` with the strict TypeScript configuration.
@@ -26,6 +30,20 @@ No application build pipeline or linter is configured yet.
 ## Architecture and feature reference
 
 The project uses Bun to execute TypeScript directly with ES modules. `index.ts` dispatches to the Commander-based CLI in `src/cli/program.ts`; migration command registration and orchestration live in `src/cli/migrations.ts`. `tsconfig.json` enables strict checking and does not emit compiled files.
+
+### Page scaffolding
+
+Page scaffolding lives in `src/cli/pages.ts`; its CLI/security tests are `src/cli/pages.test.ts`. It validates ASCII PascalCase names, refuses symlinked source/page directories, stages complete files, and publishes with an exclusive hard link (never overwrites, including with `--force`). Generated modules have no imports or JSX/TSX; dynamic title/heading text escapes all five HTML-sensitive characters. The generator does not register routes. The runtime below provides explicit static registration and a Home preview. Parent directories must be trusted against concurrent hostile replacement; the filesystem must support hard links.
+
+### Minimal built-in web runtime
+
+`src/web/server.ts` exports address validation, page/route/server handler factories, and `startServer`. `serve` lazily imports it and uses Bun.serve with development error pages disabled. Default startup loads only `<root>/src/web/routes.ts` when present, otherwise previews `<root>/src/pages/Home.ts`. Explicit `--mode routes` never loads Home or a framework manifest as fallback; absent manifest is an empty table. `--mode pages` loads only Home and snapshots its rendered string. Entry directories/files must be real, regular entries without symlinks. Parent directories remain trusted against races and hard links.
+
+`src/web/routes.ts` is project-owned code with static imports and a `routes` array. `src/web/router.ts` snapshots exact static paths and dispatches handlers on GET/HEAD. Requests never select filesystem paths/imports; do not add filesystem discovery. `make:route` exclusively publishes a handler and prints exact import/entry registration snippets. Opt-in `--register [--path /canonical/path]` creates or extends only an exact Bundle-generated typed static manifest, with lower-kebab defaults and idempotent retries. Arbitrary source fails closed with snippets, leaving both files untouched. Registration stages both files, uses an exclusive cooperative lock and hard links, and rolls back caught publication failures with exact content/identity guards. It is not a crash-safe or reader-atomic two-file transaction; trusted writers and hard-link support are required. See `src/cli/route-registration.test.ts` for failure injection and preservation cases. Manifest/import/registration failures refuse startup. Manifest code and transitive imports execute with process privileges, are not sandboxed, and use normal Bun caching; restart after edits.
+
+Other methods return 405 with Allow even on unknown paths; missing paths return 404; HEAD is bodyless. Known `HttpError` instances (`src/web/http-error.ts`) with status 400/413/415 preserve their deliberately public message; other handler/page failures become generic 500 responses. `src/web/request.ts` exports `readJson(request, { maxBytes })`, returning unknown JSON with a 64 KiB default, strict JSON/UTF-8 media type, declared-size preflight, actual streaming byte enforcement and cancellation on overflow. It emits safe 400/413/415 errors and does not validate value shapes. Generated app templates do not include this helper. All responses enforce nosniff, no-store, no-referrer, frame denial, and restrictive CSP. Preserve application headers/status otherwise. There are no parameterized routes, POST APIs, assets, hot reload, TLS, auth, sessions, request validation layer, or production deployment support. Route handlers receive the original Request; page preview receives no request props.
+
+Use strict TDD for runtime changes: demonstrate failing tests before implementation. Run `bun test ./src/web/server.test.ts ./src/cli/serve.test.ts ./src/cli/pages.test.ts`, full `bun test`, typecheck, graph check, and CLI help. Keep real Bun.serve tests on loopback port 0; skip only proven EPERM socket restrictions and report them. Direct handler tests must still execute all behavior checks. This environment forbids listening, so a passing handler suite alone does not verify real HTTP sockets.
 
 ### Database layer
 

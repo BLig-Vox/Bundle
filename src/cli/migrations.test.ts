@@ -201,7 +201,7 @@ export class ${name} extends Migration { override async up() { await this.execut
     await writeFile(model, source);
     // Real CLI invocations start fresh modules; an in-process test would reuse
     // Bun's cached ESM class from before the model edit.
-    for (const path of ["src/cli", "src/database", "index.ts", "package.json"]) {
+    for (const path of ["src/cli", "src/database", "src/web", "index.ts", "package.json"]) {
       await cp(new URL(`../../${path}`, import.meta.url), join(root, path), { recursive: true });
     }
     const runFresh = async (...args: string[]) => {

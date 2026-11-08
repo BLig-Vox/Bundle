@@ -88,10 +88,18 @@ Prefix each command with `bun run bundle`. `bun run start` invokes the same CLI;
 | `make:migration [name] [--blank]` | Generate a schema-diff migration or an empty migration |
 | `db:seed [class]` | Run a named seeder, defaulting to `DatabaseSeeder` |
 | `make:seeder <name>` | Generate a seeder class; the name must end with `Seeder` |
-| `make:model <name>` | Generate a model and its code-first schema in one TypeScript file |
+| `make:model <name> [--field name:type]... [-m] [-s]` | Generate class properties and EntitySchema mappings; optional migration/seeder |
 | `model:show [name]` | Inspect entity mappings without connecting |
 | `schema:sql` | Print CREATE SQL for mapped entities; **not** a live schema/data backup |
 | `schema:dump [--prune]` | Save the live schema plus migration history, without application rows; pruning requires `--force` |
+
+`make:model Product --field title:string --field price:number --field 'description:text?'` emits fields in argument order. Types: `string`/`text` → TypeScript `string`, `integer`/`number` → `number` (integer/double columns), `boolean` → `boolean`, `date` → `Date`, `json` → recursive JSON values without `any`. Trailing `?` makes the property optional in TypeScript and MikroORM creation data and nullable in the schema; omitted values store as SQL NULL. No-field generation retains id/createdAt/updatedAt.
+
+For `make:resource`, the database-nullable `?` suffix also controls the generated request schemas: nullable fields allow omission or explicit null on create, and PATCH can clear them to SQL NULL with `{ "body": null }`. Omitted PATCH fields remain unchanged; nonnullable fields reject null, and an empty PATCH returns 400. By comparison, `make:request` uses `?` for optional fields only and does not accept null. See the [resource contract](resource-crud-tdd.md).
+
+Required `json` fields accept non-null JSON values at the root (nested nulls are supported). Use `json?` to allow SQL NULL or omission at the root, keeping required JSON fields required in MikroORM creation data.
+
+Validation completes before any filesystem/database work: maximum 64 fields, 1–64 character ASCII identifiers starting with a letter, allowlisted types only, no source expressions. Reserved language/object names, id and timestamp spellings, and duplicate names ignoring case/underscores are rejected with fixed messages that do not echo field input. Model names are at most 64 characters. Exclusive creation refuses files/directories/symlinks, including with `--force`; parent directories must be real and trusted against concurrent replacement.
 
 See [the migration guide](migrations.md) for the full option matrix, batch semantics, SQL previews, isolation, named connections, path selection, and schema-dump requirements. `make:model -m -s` can also scaffold a migration and seeder; it never edits an existing model.
 

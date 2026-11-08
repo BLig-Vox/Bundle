@@ -1,0 +1,15 @@
+# Model fields: test-first evidence
+
+Added `src/cli/models.test.ts` before implementation. The first `bun test src/cli/models.test.ts` run produced **1 pass, 4 failures** because `make:model` rejected the unknown `--field` option. The validation-only test initially passed for that same reason; it now explicitly rejects unknown-option failures as evidence of field validation.
+
+The suite covers bounded field count/identifiers, the complete allowed type grammar, source injection rejection without echoing input, language/object/id/timestamp reserved names, equivalent column-name duplicates, deterministic argument order, the 64-field boundary, and no-field compatibility. Invalid input combined with `-m -s` leaves an empty project untouched, including its SQLite database.
+
+Integration tests generate a model through the CLI, generate and separately apply a real SQLite migration, run its seeder, and persist/reload/query every type. Each type has a populated nullable field; omission and explicit null both round-trip as SQL NULL. Generated source is checked by TypeScript with positive creation-data examples and negative required-field, JSON and primitive assignment checks. A generated app's real CLI additionally checks JSON output, nonzero rejection without writes, migration discovery, nullable metadata, list and help.
+
+A follow-up failing compile test exposed that including top-level null in required JSON properties made MikroORM creation data treat them as optional. The generated recursive JSON type now permits nested null while allowing root null only on optional properties. Both required-JSON omission and root-null assignments are compile-time rejection tests.
+
+A failing seeder-collision test exposed the unreported model left behind by the old convenience flow. Failures now identify the preserved model. An invalid migration snapshot deterministically exercises failure after model/seeder publication: both editable files remain, migration generation reports failure, and no migration is applied. Filesystem publication is outside database transactions; no cross-file/database atomicity is claimed.
+
+Collision tests cover simultaneous exclusive creation, existing user files with `--force`, directories, dangling/existing symlinks, and symlinked destination/source/root ancestors. The generator checks all ancestors before creating directories. As with the other scaffolds, parent directories must be trusted against concurrent replacement.
+
+Validation includes the full repository suite, typecheck, graph verification and diff whitespace check. `scripts/verify-app.ts` now also generates every field type with nullable counterparts through the installed app CLI, generates/applies a SQLite migration, runs a seeder, typechecks creation data and persists/queries values. In this environment fresh installation cannot resolve registry dependencies; the separately identified linked-dependency acceptance checks app typechecks/tests/build, migrations and persistence without claiming installation success.

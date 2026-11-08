@@ -1,11 +1,19 @@
 import { readFileSync } from "node:fs";
-import { Command } from "commander";
+import { Command, Option } from "commander";
 import { databaseSettings, projectRoot, type Environment } from "../database/config.ts";
 import { withDatabase, type openDatabase } from "../database/connection.ts";
-import { className, generateModel, generateSeeder } from "../database/generators.ts";
+import { className, generateModel, generateSeeder, modelSource } from "../database/generators.ts";
 import { resolveTarget } from "../database/targets.ts";
 import { assertDiffBaseline } from "../database/migration-tools.ts";
 import { registerMigrations } from "./migrations.ts";
+import { generateApp } from "./apps.ts";
+import { generateResource, resourceSources } from "./resources.ts";
+import { generateRequest } from "./requests.ts";
+import { generatePage } from "./pages.ts";
+import { generateJob } from "./jobs.ts";
+import { defaultRoutePath, generateRoute, routeRegistration } from "./routes.ts";
+import { registerRoute } from "./route-registration.ts";
+import { inspectProject, formatInspection } from "./inspect.ts";
 
 type Database = Awaited<ReturnType<typeof openDatabase>>;
 type CliContext = { env?: Environment; root?: string; output?: (text: string) => void };
@@ -18,7 +26,8 @@ export function createCli(context: CliContext = {}) {
   const print = (data: unknown) => output(JSON.stringify(data, null, 2));
   const program = new Command()
     .name("bundle")
-    .description("Code-first database tools for Bun, powered by MikroORM")
+    .configureOutput({ writeOut: text => output(text.trimEnd()) })
+    .description("Code-first Bun tools: database commands, TypeScript scaffolding and minimal web runtime")
     .version(version)
     .option("--force", "Explicitly permit destructive operations or production writes")
     .option("--database <connection>", "Select a configured connection name or database driver")
@@ -35,6 +44,12 @@ export function createCli(context: CliContext = {}) {
   };
 
   program.command("list").description("List available Bundle commands").action(() => output(program.helpInformation()));
+  program.command("inspect").description("Summarize project files offline without executing project code")
+    .option("--json", "Emit compact, versioned JSON")
+    .action(async (options: { json?: boolean }) => {
+      const inventory = await inspectProject(context.root ?? process.cwd(), version);
+      output(options.json ? JSON.stringify(inventory) : formatInspection(inventory));
+    });
   program.command("about").description("Show configuration without connecting or exposing credentials").action(async () => {
     const settings = databaseSettings((await target()).env, root);
     print({ name: "Bundle", version, runtime: `Bun ${Bun.version}`, database: {
@@ -65,6 +80,70 @@ export function createCli(context: CliContext = {}) {
 
   registerMigrations(program, { env, root, output, errorText: safeError });
 
+  program.command("serve").description("Serve API routes or a built frontend + API; GET/HEAD default; explicit methods: POST, PUT, PATCH, DELETE, OPTIONS; absent manifest previews Home")
+    .addOption(new Option("--mode <mode>", "Select pages, routes, or app (routes + dist); default detects manifest or Home").choices(["pages", "routes", "app"]))
+    .option("--host <address>", "Numeric IP address to bind; non-loopback explicitly exposes the server", "127.0.0.1")
+    .option("--port <port>", "TCP port (0 selects an available port)", "3000")
+    .action(async (options: { host: string; port: string; mode?: "pages" | "routes" | "app" }) => {
+      const { startServer } = await import("../web/server.ts");
+      const server = await startServer({ root, hostname: options.host, port: options.port, mode: options.mode });
+      try { print({ listening: server.url.href }); }
+      catch (error) { await server.stop(true); throw error; }
+    });
+
+  program.command("make:app <name>").description("Create a Vite + React + Tailwind v4 app in ./name with local Bundle server/database CLI")
+    .action(async (name: string) => {
+      const created = await generateApp(root, name);
+      print({ created, next: `cd ${created} && bun install; then run bun run dev to start Vite and Bundle together.` });
+    });
+
+  program.command("make:page <name>").description("Generate an escaped, server-renderable TypeScript page in src/pages (no overwrite)")
+    .action(async (name: string) => { print({ created: await generatePage(root, name) }); });
+
+  program.command("make:job <name>").description("Generate a schema-validated queue handler in src/jobs and print its static registration")
+    .requiredOption("--type <type>", "Stable queue type name, e.g. mail.welcome")
+    .option("--field <name:type>", "Repeat: string, text, integer, number, boolean; trailing ? makes a field optional", (field: string, fields: string[]) => [...fields, field], [] as string[])
+    .action(async (name: string, options: { type: string; field: string[] }) => {
+      print(await generateJob(root, name, options.type, options.field));
+    });
+
+  program.command("make:request <name>").description("Generate a strict typed request schema in src/requests (no overwrite)")
+    .option("--field <name:type>", "Repeat for each field: string, text, integer, boolean; trailing ? makes it optional", (field: string, fields: string[]) => [...fields, field], [] as string[])
+    .action(async (name: string, options: { field: string[] }) => {
+      print({ created: await generateRequest(root, name, options.field) });
+    });
+
+  program.command("make:resource <name>").description("Generate authenticated owner-scoped REST and React CRUD in a generated app")
+    .option("--field <name:type>", "Repeat: string, text, integer, number, boolean; optional ?", (field: string, fields: string[]) => [...fields, field], [] as string[])
+    .option("-m, --migration", "Also generate a guarded model-diff migration for review (never apply)")
+    .action(async (name: string, options: { field: string[]; migration?: boolean }) => {
+      resourceSources(name, options.field);
+      // Validate prerequisites before any database connection or filesystem writes.
+      const result = await generateResource(root, name, options.field, { beforePublish: async () => {
+        if (options.migration) { guard(); await db(assertDiffBaseline); }
+      } });
+      let migration: string | undefined;
+      if (options.migration) {
+        try {
+          await db(async orm => { migration = (await orm.migrator.create(undefined, false, false, `create_${name.toLowerCase()}`)).fileName; });
+        } catch {
+          throw new Error("Resource scaffold preserved. Migration generation failed; review the database target and migration baseline, then retry make:migration. No migration applied.");
+        }
+      }
+      print({ ...result, migration, next: "Review source and migration; apply with the app CLI migrate command." });
+    });
+
+  program.command("make:route <name>").description("Generate a static typed handler; optionally register it in the project manifest")
+    .option("--register", "Register in a generated static manifest; refuse arbitrary source edits")
+    .option("--path <route>", "Canonical route URL with optional :name segments and --register (default: lower-kebab name)")
+    .action(async (name: string, options: { register?: boolean; path?: string }) => {
+      // Commander consumes the inherited --path before parsing command options.
+      const path = options.path ?? (program.opts().path as string | undefined);
+      if (path !== undefined && !options.register) throw new Error("--path requires --register for make:route.");
+      if (options.register) print(await registerRoute(root, name, path ?? defaultRoutePath(name)));
+      else print({ created: await generateRoute(root, name), registration: routeRegistration(name) });
+    });
+
   program.command("db:seed [class]").description("Run a seeder (defaults to DatabaseSeeder)")
     .option("--class <name>", "Select a seeder class (alternative to positional name)")
     .action(async (name: string | undefined, options: { class?: string }) => {
@@ -77,16 +156,32 @@ export function createCli(context: CliContext = {}) {
   program.command("make:seeder <name>").description("Generate a seeder without overwriting files").action(async (name: string) => {
     print({ created: await generateSeeder(databaseSettings((await target()).env, root).seedersPath, name) });
   });
-  program.command("make:model <name>").description("Generate a code-first model, automatically discovered by MikroORM")
+  program.command("make:model <name>").description("Generate a code-first model with optional typed fields, automatically discovered by MikroORM")
+    .option("--field <name:type>", "Repeat for each field: string, text, integer, number, boolean, date, json; trailing ? makes it nullable", (field: string, fields: string[]) => [...fields, field], [] as string[])
     .option("-m, --migration", "Also generate a model-diff migration")
     .option("-s, --seed", "Also generate a named seeder")
-    .action(async (name: string, options: { migration?: boolean; seed?: boolean }) => {
+    .action(async (name: string, options: { field: string[]; migration?: boolean; seed?: boolean }) => {
+      modelSource(name, options.field);
       if (options.migration) { guard(); await db(assertDiffBaseline); }
       const settings = databaseSettings((await target()).env, root);
-      const created = await generateModel(settings.modelsPath, name);
-      const seeder = options.seed ? await generateSeeder(settings.seedersPath, `${name}Seeder`) : undefined;
+      const created = await generateModel(settings.modelsPath, name, options.field);
+      let seeder: string | undefined;
+      if (options.seed) {
+        try { seeder = await generateSeeder(settings.seedersPath, `${name}Seeder`); }
+        catch {
+          throw new Error(`Seeder generation failed; model file preserved at ${created}. Existing seeder files were not overwritten. Review the seeder destination before retrying make:seeder. No migration was generated or applied by this command.`);
+        }
+      }
       let migration: string | undefined;
-      if (options.migration) await db(async orm => { migration = (await orm.migrator.create(undefined, false, false, `create_${name.toLowerCase()}`)).fileName; });
+      if (options.migration) {
+        try {
+          await db(async orm => { migration = (await orm.migrator.create(undefined, false, false, `create_${name.toLowerCase()}`)).fileName; });
+        } catch {
+          // Filesystem publication is outside any database transaction. Keep the
+          // user-editable model and avoid leaking driver errors or source data.
+          throw new Error(`Migration generation failed; model file preserved at ${created}.${seeder ? ` Seeder file preserved at ${seeder}.` : ""} Review migration files and retry make:migration after fixing the cause. No migration was applied by this command.`);
+        }
+      }
       print({ created, seeder, migration, next: "Edit model properties, then generate/review and apply a migration. Existing models are never modified by the generator." });
     });
   program.command("model:show [name]").description("Inspect mapped models without a database connection").action(async (name?: string) => {

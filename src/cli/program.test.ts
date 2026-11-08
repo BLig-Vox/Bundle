@@ -23,6 +23,7 @@ describe("Bundle database CLI", () => {
     const output: string[] = [];
     await createCli({ env: { DB_CONNECTION: "invalid" }, output: text => output.push(text) }).parseAsync(["list"], { from: "user" });
     expect(output[0]).toContain("make:model");
+    expect(output[0]).toContain("make:job");
     expect(output[0]).toContain("migrate:rollback");
     expect(output[0]).toContain("db:seed");
   });
