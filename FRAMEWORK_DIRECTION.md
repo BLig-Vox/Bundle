@@ -12,6 +12,10 @@ Bundle now has a working `make:app` scaffold with Vite + React + TypeScript, Tai
 
 This is a substantial but incomplete foundation, not Laravel parity or production-auth certification. Production auth currently relies on SQLite for its shared limiter, and recovery, email verification, MFA, queue/scheduler, mail, storage, cache, broader deployment and operations features remain gaps or require separate verification. Treat later sections as historical milestone notes where they conflict with this current status; maintain the shipped-vs-roadmap distinction.
 
+## Progress estimate
+
+**Directional estimate: approximately 12% toward Laravel-level breadth and completeness.** This is a rough planning judgment, not a measured feature-parity score or a production-readiness rating; Bundle does not yet have a weighted, source-linked parity matrix. The estimate reflects a working end-to-end foundation across app scaffolding, backend routing and validation, ORM/migrations, generated auth/resources, production static-plus-API serving, and basic SQLite queue dispatch. Most framework breadth remains absent or partial, including mature authorization, mail, file storage, cache, events/broadcasting, supervised queue and scheduler operations, deployment/observability/backups/upgrades, multi-driver runtime verification, package/versioning maturity, and additional auth flows. Revisit only when verified capability materially changes; replace this estimate with a weighted feature matrix before treating it as a metric.
+
 ## Design principles
 
 - Secure defaults: explicit trust boundaries, safe-by-default configuration, validated inputs, least privilege, safe secrets handling, and security tests. Document tradeoffs and escape hatches; do not promise absolute security.
